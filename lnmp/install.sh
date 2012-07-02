@@ -81,6 +81,7 @@ function main()
 {
 	echo
     echo "This script is going to install [${COMPONENTS}]."
+	echo
     echo "Target path: ${BASE_DIR}"
     echo "Backup path: ${BACKUP_DIR}"
     echo "Data path: ${DATA_BASE_DIR}"
