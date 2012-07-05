@@ -120,6 +120,7 @@ function install_mysql()
 		echo
 
 		${MYSQL_DIR}/bin/mysqladmin -u root password "${MYSQL_PASSWORD}"
+		${MYSQL_DIR}/bin/mysqladmin -u root -h localhost password "${MYSQL_PASSWORD}"
 	else
 		exit_with_error "${MYSQL_TAR_NAME} cannot be started!"
 	fi

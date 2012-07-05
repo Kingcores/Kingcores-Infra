@@ -96,6 +96,7 @@ function main()
     fi
 
     [ -d ${BASE_DIR} ] || mkdir -p ${BASE_DIR}
+	[ -d ${TMP_BASE_DIR} ] || mkdir -p ${TMP_BASE_DIR}
     echo
 
     #add /usr/local/lib to ENVIRONMENT variable LD_LIBRARY_PATH for php to find libnpc.so
