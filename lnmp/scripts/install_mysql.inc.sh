@@ -14,73 +14,35 @@ MYSQL_DATA_DIR=${DATA_BASE_DIR}/${MYSQL_ID_NAME}
 
 function install_mysql()
 {
-    echo
-	echo "Installing ${MYSQL_TAR_NAME} to ${MYSQL_DIR} ......"
-	echo
-
-	[ ${MYSQL_USER} == 'root' ] && exit_with_error "'root' cannot be used as the mysql user!"
-
-	#check mysql running status
-	echo
-    echo "Checking running ${MYSQL_ID_NAME} service ..."
-    echo
-	ensure_service_stopped ${MYSQL_ID_NAME}
-
-	#check and backup if necessary
-	if [ ${NO_BACKUP} -eq 1 ]
-	then
-		[ -d ${MYSQL_DIR} ] && rm -rf ${MYSQL_DIR}/*
-	else
-		ensure_backup ${MYSQL_DIR} ${BACKUP_DIR} ${NO_PROMPT}
-	fi
-
-	#create user and group
-	create_nologin_user ${MYSQL_USER} ${MYSQL_GROUP}
-
-	#check whether the package exists
-    if [ ${AUTO_DOWNLOAD} -eq 1 ]
-    then
-    	prepare_package ${PACKAGE_DIR} ${MYSQL_TAR_NAME} ${PACKAGE_SOURCE_URL}
-    else
-    	prepare_package ${PACKAGE_DIR} ${MYSQL_TAR_NAME}
-    fi
-
-	echo
-	echo "Checking make environment ..."
-	echo
-	./configure --prefix=${MYSQL_DIR} \
-	--enable-assembler \
-	--with-charset=utf8 \
-	--with-extra-charsets=none \
-	--enable-thread-safe-client \
-	--with-big-tables \
-	--with-client-ldflags=-all-static \
-	--with-mysqld-ldflags=-all-static \
-	--with-readline \
-	--with-ssl \
-	--with-embedded-server \
-	--enable-local-infile \
-	--with-plugins=partition,innobase,myisammrg \
-	--without-ndb-debug
-	[ ! $? -eq 0 ] && exit_with_error "Missing dependencies for ${MYSQL_TAR_NAME}!"
-
-	echo
-	echo "Building ${MYSQL_TAR_NAME} ..."
-	echo
-	make -s && make -s install
-	[ ! $? -eq 0 ] && exit_with_error "Building ${MYSQL_TAR_NAME} failed!"
+    prepare_package ${MYSQL_ID_NAME} ${PACKAGE_DIR} ${MYSQL_TAR_NAME} ${MYSQL_DIR} ${DOWNLOAD_BASE_URL} \
+        ${BACKUP_DIR_FLAG} ${NO_PROMPT} ${MYSQL_USER} ${MYSQL_GROUP}    
+    
+    install_package ${PACKAGE_DIR}/${MYSQL_TAR_NAME} ${MYSQL_DIR} ${MYSQL_TAR_NAME} \
+        --enable-assembler \
+        --with-charset=utf8 \
+        --with-extra-charsets=none \
+        --enable-thread-safe-client \
+        --with-big-tables \
+        --with-client-ldflags=-all-static \
+        --with-mysqld-ldflags=-all-static \
+        --with-readline \
+        --with-ssl \
+        --with-embedded-server \
+        --enable-local-infile \
+        --with-plugins=partition,innobase,myisammrg \
+        --without-ndb-debug   			
 
 	#install mysql database
 	if [ ${NO_BACKUP} -eq 1 ]; then
 		[ -d ${MYSQL_DATA_DIR} ] && rm -rf ${MYSQL_DATA_DIR}
 	else
-		ensure_backup ${MYSQL_DATA_DIR} ${BACKUP_DIR} ${NO_PROMPT}
+		backup ${MYSQL_DATA_DIR} ${BACKUP_DIR}/data ${NO_PROMPT}
 	fi
 
 	[ -d ${MYSQL_DATA_DIR} ] || mkdir -p ${MYSQL_DATA_DIR}
 	chown -R ${MYSQL_USER}:${MYSQL_GROUP} ${MYSQL_DATA_DIR}
 
-	[ ! -d ${MYSQL_LOG_DIR} ] && mkdir -p ${MYSQL_LOG_DIR}
+	[ -d ${MYSQL_LOG_DIR} ] || mkdir -p ${MYSQL_LOG_DIR}
 	chown -R ${MYSQL_USER}:${MYSQL_GROUP} ${MYSQL_LOG_DIR}
 
 	echo
@@ -94,6 +56,9 @@ function install_mysql()
 	sed -i "s:__MYSQL_PORT__:${MYSQL_PORT}:g" ${MYSQL_DATA_DIR}/my.cnf
 	sed -i "s:__MYSQL_USER__:${MYSQL_USER}:g" ${MYSQL_DATA_DIR}/my.cnf
 
+    echo
+    echo "Installing mysql db ..."
+    echo
 	${MYSQL_DIR}/bin/mysql_install_db \
 	--user=${MYSQL_USER} \
 	--defaults-file=${MYSQL_DATA_DIR}/my.cnf \
@@ -102,6 +67,9 @@ function install_mysql()
 
 	chown -R ${MYSQL_USER}:${MYSQL_GROUP} ${MYSQL_DIR}
 
+    echo
+    echo "Setting up ${MYSQL_ID_NAME} service ..."
+    echo
 	/bin/cp -f ${INITD_DIR}/mysql /etc/init.d/${MYSQL_ID_NAME}
 	sed -i "s:__MYSQL_DIR__:${MYSQL_DIR}:g" /etc/init.d/${MYSQL_ID_NAME}
 	sed -i "s:__MYSQL_LOG_DIR__:${MYSQL_LOG_DIR}:g" /etc/init.d/${MYSQL_ID_NAME}
@@ -119,19 +87,13 @@ function install_mysql()
 		echo "${MYSQL_TAR_NAME} is installed successfully."
 		echo
 
-		${MYSQL_DIR}/bin/mysqladmin -u root password "${MYSQL_PASSWORD}"
-		${MYSQL_DIR}/bin/mysqladmin -u root -h localhost password "${MYSQL_PASSWORD}"
+		${MYSQL_DIR}/bin/mysqladmin --defaults-file=${MYSQL_DATA_DIR}/my.cnf -u root password "${MYSQL_PASSWORD}"		
 	else
 		exit_with_error "${MYSQL_TAR_NAME} cannot be started!"
 	fi
 	service ${MYSQL_ID_NAME} stop
 
-	#rename old mysql lib files
-	if [ $(uname -m) == "x86_64" ]; then
-		[ -d /usr/lib64/mysql ] && mv /usr/lib64/mysql /usr/lib64/mysql_bak
-	elif [ $(uname -m) == "x86" ]; then
-		[ -d /usr/lib/mysql ] && mv /usr/lib/mysql /usr/lib/mysql_bak
-	fi
+    [ -f /etc/ld.so.conf.d/mysql-x86_64.conf ] && mv /etc/ld.so.conf.d/mysql-x86_64.conf /etc/ld.so.conf.d/mysql-x86_64.conf.bak
 
 	#add mysql lib path to variable LD_LIBRARY_PATH
 	add_custom_lib_path "${MYSQL_DIR}/lib/mysql"

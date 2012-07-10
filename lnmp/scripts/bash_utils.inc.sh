@@ -1,4 +1,4 @@
-# exit_with_error <error message>
+# exit_with_error <1:error_message>
 function exit_with_error()
 {
     echo $1
@@ -6,9 +6,8 @@ function exit_with_error()
     exit 1
 }
 
-# create a nologin user
-# create_nologin_user <user name> <group name>
-function create_nologin_user()
+# create_service_user_if_not_exist <1:user> <2:group>
+function create_service_user_if_not_exist()
 {
     if id "$1" >& /dev/null;
     then
@@ -29,25 +28,26 @@ function create_nologin_user()
 	fi
 }
 
-# create_group_if_not_exist <group name>
+# create_group_if_not_exist <1:group_name>
 function create_group_if_not_exist()
 {
     uc=`grep $1: /etc/group | wc -l`
     [ "$uc" -gt "0" ] || /usr/sbin/groupadd $1
 }
 
-# require_dep <dependency>
-function require_dep()
+# require_yum_package <1:yum_package_name>
+function require_yum_package()
 {
     uc=`yum list installed|grep "^$1"|wc -l`
     [ "$uc" -gt "0" ] || yum -y install $1
 }
 
-# ensure_backup <source_dir> <backup_dir> [<no_prompt: 0|1>]
-function ensure_backup()
+# backup <1:source_dir> <2:backup_dir> [<3:no_prompt: 0|1>]
+function backup()
 {
     if [ -d $1 ]
     then
+        echo
         echo "$1 already exists. The script will move all old data into $2."
         echo
 
@@ -55,46 +55,30 @@ function ensure_backup()
         then
             read -p "Continue?[y|n]:" ANSWER
             [ "${ANSWER}" != "y" ] && exit_with_error "Cancelled by user."
-        fi
+        fi        
 
-        td="$2/$(date "+%Y%m%d_%H%M%S")"
+        [ ! -e $2 ] && mkdir -p $2
+        mv -f $1 $
+        [ $? -eq 0 ] || exit_with_error "Backup $1 to $2 failed!"
 
-        [ ! -e ${td} ] && mkdir -p ${td}
-        mv -f $1 ${td}
-        [ $? -eq 0 ] || exit_with_error "Backup $1 to ${td} failed!"
-
-        echo "$1 is backuped to ${td}."
+        echo
+        echo "$1 is backuped to $2."
+        echo
 	echo
     fi
 }
 
-# check whether the package exists and extract the package
-# if not exist, wget from download_url
-# ensure_package <package_dir> <package_name> [<download_url: url>]
-function prepare_package()
-{
-    if [ $# -gt 2 ]
-    then
-        [ -f $1/$2.tar.gz ] || wget $3/$2.tar.gz
-    fi
-
-    [ -f $1/$2.tar.gz ] || exit_with_error "$2.tar.gz not found!"
-
-    [ -d $1/$2 ] && rm -rf ./$2
-    echo
-    echo "Extracting $2 package ..."
-    echo
-    tar xf $1/$2.tar.gz -C $1
-    cd $1/$2
-}
-
-# ensure_service_stopped <service_name>
-function ensure_service_stopped()
+# stop_service <1:service_name>
+function stop_service()
 {
     wc=`ps u -C $1|wc -l`
 
     if [ $wc -gt 1 ]
     then
+		echo
+		echo "Stopping service $1 ..."
+		echo		
+	
         if [ -f /etc/init.d/$1 ]
         then
             /etc/init.d/$1 stop
@@ -111,31 +95,105 @@ function ensure_service_stopped()
     fi
 }
 
-# ensure_lib <package_dir> <package_name>
-function ensure_lib()
+# prepare_package <1:package_id: lib|service_name> <2:package_dir> <3:package_name> <4:target_dir> 
+# <5:download_url> <6:backup: dir|no_backup> <7:prompt_user: 0|1> [<8:user>] [<9:group>]
+function prepare_package()
 {
-  echo "Installing $2......"
+	echo
+    echo "Installing $3 to $4 ..."
+    echo
 
-  ensure_package $1 $2
+	if [ ! $1 == 'lib' ]
+	then
+	
+		#check $1 running status
+		echo
+		echo "Checking running $1 service ..."
+		echo
+		stop_service $1
+		
+		#check and backup if necessary
+		if [ $6 == "no_backup" ]
+		then
+			[ -d $4 ] && rm -rf $4/*
+		else
+			backup $4 $6 $7
+		fi
+		
+		if [ $# -gt 7 ] 
+		then
+			[ $8 == 'root' ] && exit_with_error "'root' cannot be used as the $1 user!"
+			
+			#create user and group
+			create_service_user_if_not_exist $8 $9
+		fi			
+		
+	fi
 
-  /sbin/ldconfig
-  ./configure --prefix=$BASE_DIR
-  make && make install
+	echo
+	echo "Preparing package $3 ..."
+	echo
+    [ $5 != "no_auto_download" ] && [ ! -f $2/$3.tar.gz ] && wget $5/$3.tar.gz
+    [ -f $2/$3.tar.gz ] || exit_with_error "$3.tar.gz not found!"
+    [ -d $2/$3 ] && rm -rf $2/$3
+	
+    echo
+    echo "Extracting $3 package ..."
+    echo
+    tar xf $2/$3.tar.gz -C $2    
 }
 
-#add custom lib path to ENVRIONMENT variable LD_LIBRARY_PATH
+# install_package: <1:source_dir> <2:target_dir> <3:package_name> [<4:make_flag:no_auto_make>] [<*:flag>]
+function install_package()
+{
+	/sbin/ldconfig
+
+    echo
+    echo "Configuring $3 make environment ..."
+    echo
+	cd $1
+	PREFIX=$2
+    PACKAGE=$3
+    AUTO_MAKE=1
+    if [ $# -gt 3 ] && [ $4 == "no_auto_make" ]
+    then
+        AUTO_MAKE=0
+        shift 4
+    else   
+        shift 3
+    fi
+	./configure --prefix=${PREFIX} $*
+	[ ! $? -eq 0 ] && exit_with_error "Missing dependencies for ${PACKAGE} package!"
+	
+    if [ ${AUTO_MAKE} -eq 1 ]
+    then
+        echo
+        echo "Building ${PACKAGE} package ..."
+        echo
+        make -s && make -s install
+        [ ! $? -eq 0 ] && exit_with_error "Building ${PACKAGE} package failed!"
+    fi
+}
+
+#add_custom_lib_path <1:lib_path>
 function add_custom_lib_path()
 {
 	if ! grep "$1" /etc/ld.so.conf >& /dev/null; then
+        echo
+        echo "Adding '$1' to lib loading path ..."
+        echo
 		echo "$1" >> /etc/ld.so.conf
-		ldconfig
+		/sbin/ldconfig
 	fi
 }
 
-#add custom bin path to ENVIRONMENT variable PATH
+#add_custom_bin_path <1:bin_path>
 function add_custom_bin_path()
 {
 	if ! grep "$1" /etc/profile >& /dev/null; then
+        echo
+        echo "Adding '$1' to environment path ..."
+        echo
 		echo PATH="$1"':$PATH' >> /etc/profile
 		source /etc/profile
 	fi

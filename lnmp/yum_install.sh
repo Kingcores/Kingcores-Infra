@@ -21,4 +21,5 @@ yum -y install \
     libevent libevent-devel \
     libpcap libpcap-devel \
     wget \
-    rsync
+    rsync \
+    libuuid libuuid-devel

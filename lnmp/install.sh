@@ -20,6 +20,9 @@ export NO_BACKUP=0
 export AUTO_DOWNLOAD=0
 export USE_TAR_BASENAME=0
 
+export DOWNLOAD_BASE_URL=no_auto_download
+export BACKUP_DIR_FLAG=${BACKUP_DIR}
+
 echo "Kingcores LNMP Installation Script"
 echo
 
@@ -34,7 +37,7 @@ do
         NO_PROMPT=1
         ;;
       "r")
-        echo "All-reinstall mode enabled."
+        echo "Reinstall mode enabled."
         ALL_REINSTALL=1
         ;;
       "f")
@@ -77,6 +80,18 @@ USAGE
     esac
 done
 
+if [ ${AUTO_DOWNLOAD} -eq 1 ]
+then
+	DOWNLOAD_BASE_URL=${PACKAGE_SOURCE_URL}
+fi
+
+if [ ${NO_BACKUP} -eq 1 ]
+then
+	BACKUP_DIR_FLAG=no_backup
+fi
+
+BACKUP_DIR="${BACKUP_DIR}/$(date "+%Y%m%d_%H%M%S")"
+
 function main()
 {
 	echo
@@ -86,7 +101,7 @@ function main()
     echo "Backup path: ${BACKUP_DIR}"
     echo "Data path: ${DATA_BASE_DIR}"
     echo "Log path: ${LOG_BASE_DIR}"
-    echo "Log path: ${LOG_BASE_DIR}"
+    echo "Tmp path: ${TMP_BASE_DIR}"
     echo
 
     if [ ${NO_PROMPT} -eq 0 ]
@@ -99,8 +114,16 @@ function main()
 	[ -d ${TMP_BASE_DIR} ] || mkdir -p ${TMP_BASE_DIR}
     echo
 
-    #add /usr/local/lib to ENVIRONMENT variable LD_LIBRARY_PATH for php to find libnpc.so
-	add_custom_lib_path /usr/local/lib
+    cat >>/etc/security/limits.conf<<eof
+* soft nproc 65535
+* hard nproc 65535
+* soft nofile 65535
+* hard nofile 65535
+eof
+
+    cat >>/etc/sysctl.conf<<eof
+fs.file-max=65535
+eof
 
     for COMPONENT in ${COMPONENTS}
     do
