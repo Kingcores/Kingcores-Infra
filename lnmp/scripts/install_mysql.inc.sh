@@ -14,16 +14,21 @@ MYSQL_DATA_DIR=${DATA_BASE_DIR}/${MYSQL_ID_NAME}
 
 function install_mysql()
 {
+    #backup my.cnf
+    if [ ${NO_BACKUP} -eq 0 ] && [ -f /etc/my.cnf ]
+    then		
+		backup /etc/my.cnf ${BACKUP_DIR}/etc ${NO_PROMPT}
+	fi
+
     prepare_package ${MYSQL_ID_NAME} ${PACKAGE_DIR} ${MYSQL_TAR_NAME} ${MYSQL_DIR} ${DOWNLOAD_BASE_URL} \
         ${BACKUP_DIR_FLAG} ${NO_PROMPT} ${MYSQL_USER} ${MYSQL_GROUP}    
     
     install_package ${PACKAGE_DIR}/${MYSQL_TAR_NAME} ${MYSQL_DIR} ${MYSQL_TAR_NAME} \
         --enable-assembler \
         --with-charset=utf8 \
-        --with-extra-charsets=none \
+        --with-extra-charsets=complex \
         --enable-thread-safe-client \
         --with-big-tables \
-        --with-client-ldflags=-all-static \
         --with-mysqld-ldflags=-all-static \
         --with-readline \
         --with-ssl \
@@ -48,20 +53,18 @@ function install_mysql()
 	echo
 	echo "Updating my.cnf ..."
 	echo
-	/bin/cp -f ${CONFIG_DIR}/my.cnf ${MYSQL_DATA_DIR}/my.cnf
-	sed -i "s:__MYSQL_DIR__:${MYSQL_DIR}:g" ${MYSQL_DATA_DIR}/my.cnf
-	sed -i "s:__MYSQL_DATA_DIR__:${MYSQL_DATA_DIR}:g" ${MYSQL_DATA_DIR}/my.cnf
-	sed -i "s:__MYSQL_LOG_DIR__:${MYSQL_LOG_DIR}:g" ${MYSQL_DATA_DIR}/my.cnf
-	sed -i "s:__MYSQL_TMP_DIR__:${MYSQL_TMP_DIR}:g" ${MYSQL_DATA_DIR}/my.cnf
-	sed -i "s:__MYSQL_PORT__:${MYSQL_PORT}:g" ${MYSQL_DATA_DIR}/my.cnf
-	sed -i "s:__MYSQL_USER__:${MYSQL_USER}:g" ${MYSQL_DATA_DIR}/my.cnf
+	/bin/cp -f ${CONFIG_DIR}/my-${MYSQL_MEM}.cnf /etc/my.cnf
+	sed -i "s:__MYSQL_DIR__:${MYSQL_DIR}:g" /etc/my.cnf
+	sed -i "s:__MYSQL_DATA_DIR__:${MYSQL_DATA_DIR}:g" /etc/my.cnf
+	sed -i "s:__MYSQL_LOG_DIR__:${MYSQL_LOG_DIR}:g" /etc/my.cnf
+	sed -i "s:__MYSQL_TMP_DIR__:${MYSQL_TMP_DIR}:g" /etc/my.cnf
+	sed -i "s:__MYSQL_PORT__:${MYSQL_PORT}:g" /etc/my.cnf
+	sed -i "s:__MYSQL_USER__:${MYSQL_USER}:g" /etc/my.cnf
 
     echo
     echo "Installing mysql db ..."
     echo
 	${MYSQL_DIR}/bin/mysql_install_db \
-	--user=${MYSQL_USER} \
-	--defaults-file=${MYSQL_DATA_DIR}/my.cnf \
 	--basedir=${MYSQL_DIR} \
 	--datadir=${MYSQL_DATA_DIR}
 
@@ -83,23 +86,41 @@ function install_mysql()
 	chkconfig --level 235 ${MYSQL_ID_NAME} on
 
 	service ${MYSQL_ID_NAME} start
-	if [ $? -eq 0 ]; then
-		echo "${MYSQL_TAR_NAME} is installed successfully."
-		echo
+    [ $? -eq 0 ] || "${MYSQL_TAR_NAME} cannot be started!"
+    
+	echo
+    echo "${MYSQL_TAR_NAME} is installed successfully."
+	echo
 
-		${MYSQL_DIR}/bin/mysqladmin --defaults-file=${MYSQL_DATA_DIR}/my.cnf -u root password "${MYSQL_PASSWORD}"		
-	else
-		exit_with_error "${MYSQL_TAR_NAME} cannot be started!"
-	fi
+	${MYSQL_DIR}/bin/mysqladmin -u root password "${MYSQL_PASSWORD}"	
+    [ $? -eq 0 ] || "Failed to set mysql root password!"
+    
+    cat > /tmp/mysql_secure_script<<EOF
+use mysql;
+update user set password=password('$mysqlrootpwd') where user='root';
+delete from user where not (user='root') ;
+delete from user where user='root' and password=''; 
+drop database test;
+DROP USER ''@'%';
+flush privileges;
+EOF
+
+    ${MYSQL_DIR}/bin/mysql -u root -p${MYSQL_PASSWORD} -h localhost < /tmp/mysql_secure_script
+    [ $? -eq 0 ] || "Failed to secure mysql root account!"
+
+    rm -f /tmp/mysql_secure_script
+
 	service ${MYSQL_ID_NAME} stop
 
-    [ -f /etc/ld.so.conf.d/mysql-x86_64.conf ] && mv /etc/ld.so.conf.d/mysql-x86_64.conf /etc/ld.so.conf.d/mysql-x86_64.conf.bak
+    [ -f /etc/ld.so.conf.d/mysql-x86_64.conf ] && rm -f /etc/ld.so.conf.d/mysql-x86_64.conf
 
 	#add mysql lib path to variable LD_LIBRARY_PATH
 	add_custom_lib_path "${MYSQL_DIR}/lib/mysql"
+    /sbin/ldconfig
 
 	#add mysql bin path to ENVIRONMENT varivle PATH
 	add_custom_bin_path "${MYSQL_DIR}/bin"
+    source /etc/profile
 }
 
 if [ ${ALL_REINSTALL} -eq 1 ] || [ ! -d ${MYSQL_DIR} ]; then

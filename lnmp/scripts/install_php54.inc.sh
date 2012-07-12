@@ -44,7 +44,6 @@ function install_php54()
         prepare_package lib ${PACKAGE_DIR} ${MCRYPT_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}     
     
         add_custom_lib_path "${BASE_DIR}/lib"
-
         /sbin/ldconfig
         
         export LD_LIBRARY_PATH=${BASE_DIR}/lib:${LD_LIBRARY_PATH}
@@ -93,6 +92,7 @@ function install_php54()
         --with-mysql=${PHP_MYSQL_DIR} \
         --with-pdo-mysql=${PHP_MYSQL_DIR} \
         --with-freetype-dir \
+        --with-bz2 \
         --with-gd \
         --with-gettext \
         --with-jpeg-dir \
@@ -129,8 +129,9 @@ function install_php54()
 	[ ! -d ${PHP54_LOG_DIR} ] && mkdir -p ${PHP54_LOG_DIR}
 	chown -R ${PHP_USER}:${PHP_USER} ${PHP54_LOG_DIR}
     sed -i "s:__PHP54_LOG_DIR__:${PHP54_LOG_DIR}:g" ${PHP54_DIR}/etc/php-fpm.conf
-    sed -i "s:__PHP54_USER__:${NGINX_USER}:g" ${PHP54_DIR}/etc/php-fpm.conf
-    sed -i "s:__PHP54_GROUP__:${NGINX_GROUP}:g" ${PHP54_DIR}/etc/php-fpm.conf
+    sed -i "s:__PHP54_USER__:${PHP_USER}:g" ${PHP54_DIR}/etc/php-fpm.conf
+    sed -i "s:__PHP54_GROUP__:${PHP_GROUP}:g" ${PHP54_DIR}/etc/php-fpm.conf
+    sed -i "s:__PHP54_PORT__:${PHP_FPM_PORT}:g" ${PHP54_DIR}/etc/php-fpm.conf
     
     /bin/cp -f ${INITD_DIR}/php-fpm /etc/init.d/${PHP54_ID_NAME}
     sed -i "s:__PHP54_DIR__:${PHP54_DIR}:g" /etc/init.d/${PHP54_ID_NAME}
@@ -143,16 +144,18 @@ function install_php54()
 	#add php bin directory to ENVIRONMENT variable PATH
 	add_custom_bin_path ${PHP54_DIR}/sbin
 	add_custom_bin_path ${PHP54_DIR}/bin
+    source /etc/profile
     
     service ${PHP54_ID_NAME} start
-    if [ $? -eq 0 ]; then 
-    	echo "${PHP54_TAR_NAME} is installed successfully."
-    	echo        
-    else
-    	exit_with_error "${PHP54_TAR_NAME} cannot be started!"
-    fi
+    [ $? -eq 0 ] || "${PHP54_TAR_NAME} cannot be started!"
+    
+    echo
+    echo "${PHP54_TAR_NAME} is installed successfully."
+    echo        
+    
     service ${PHP54_ID_NAME} stop
     
+    # eaccelerator not compatitle with php 5.4
     # prepare_package lib ${PACKAGE_DIR} ${EACCELERATOR_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL} 
     
     # echo
@@ -171,7 +174,8 @@ function install_php54()
     
 	# sed -i '/eaccelerator\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini
     
-    for((j=0;j<=10;j++))
+    # retry 10 times    
+    for((j=0;j<10;j++))
 	do
 		if [ -f ${BASE_DIR}/php/lib/php/extensions/no-debug-non-zts-20100525/uuid.so ]; then
 			sed -i '/uuid\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini
@@ -180,6 +184,7 @@ function install_php54()
     		echo -e '\n'|pecl install uuid
 		fi
 	done
+    [ -f ${BASE_DIR}/php/lib/php/extensions/no-debug-non-zts-20100525/uuid.so ] || exit_with_error "Failed to install uuid php extension!"
 }
   
 if [ ${ALL_REINSTALL} -eq 1 ] || [ ! -d ${PHP54_DIR} ]; then    

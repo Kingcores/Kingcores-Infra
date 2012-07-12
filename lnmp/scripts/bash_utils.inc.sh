@@ -48,7 +48,7 @@ function backup()
     if [ -d $1 ]
     then
         echo
-        echo "$1 already exists. The script will move all old data into $2."
+        echo "$1 already exists. The script will backup $1 into $2."
         echo
 
         if [ $3 -eq 0 ]
@@ -58,7 +58,7 @@ function backup()
         fi        
 
         [ ! -e $2 ] && mkdir -p $2
-        mv -f $1 $
+        mv -f $1 $2
         [ $? -eq 0 ] || exit_with_error "Backup $1 to $2 failed!"
 
         echo
@@ -182,8 +182,7 @@ function add_custom_lib_path()
         echo
         echo "Adding '$1' to lib loading path ..."
         echo
-		echo "$1" >> /etc/ld.so.conf
-		/sbin/ldconfig
+		echo "$1" >> /etc/ld.so.conf		
 	fi
 }
 
@@ -194,7 +193,6 @@ function add_custom_bin_path()
         echo
         echo "Adding '$1' to environment path ..."
         echo
-		echo PATH="$1"':$PATH' >> /etc/profile
-		source /etc/profile
+		echo PATH="$1"':$PATH' >> /etc/profile		
 	fi
 }

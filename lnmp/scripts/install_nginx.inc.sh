@@ -74,12 +74,11 @@ function install_nginx()
     chkconfig --level 235 ${NGINX_ID_NAME} on
 
     service ${NGINX_ID_NAME} start
-    if [ $? -eq 0 ]; then
-        echo "${NGINX_TAR_NAME} is installed successfully."
-        echo
-    else
-        exit_with_error "${NGINX_TAR_NAME} cannot be started!"
-    fi
+    [ $? -eq 0 ] || "${NGINX_TAR_NAME} cannot be started!"
+    
+    echo
+    echo "${NGINX_TAR_NAME} is installed successfully."
+    echo    
 
     service ${NGINX_ID_NAME} stop
 }

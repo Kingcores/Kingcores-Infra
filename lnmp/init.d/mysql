@@ -24,7 +24,7 @@ prog="MySQL"
 # We use my_print_defaults which prints all options from multiple files,
 # with the more specific ones later; hence take the last match.
 get_mysql_option(){
-	result=`__MYSQL_DIR__/bin/my_print_defaults --defaults-file="__MYSQL_DATA_DIR__/my.cnf" "$1" | sed -n "s/^--$2=//p" | tail -n 1`
+	result=`__MYSQL_DIR__/bin/my_print_defaults "$1" | sed -n "s/^--$2=//p" | tail -n 1`
 	if [ -z "$result" ]; then
 	    # not found, use default
 	    result="$3"
@@ -42,7 +42,7 @@ mypidfile="$result"
 
 start(){
 	if [ ! -d "$datadir/mysql" ] ; then
-	    echo "Database should be installed firstly!"
+	    echo "MySQL database not found!"
 		return 1	    
 	fi
 	touch "$errlogfile"
@@ -54,7 +54,7 @@ start(){
 	# Pass all the options determined above, to ensure consistent behavior.
 	# In many cases mysqld_safe would arrive at the same conclusions anyway
 	# but we need to be sure.
-	__MYSQL_DIR__/bin/mysqld_safe --defaults-file="__MYSQL_DATA_DIR__/my.cnf" >/dev/null 2>&1 &
+	__MYSQL_DIR__/bin/mysqld_safe >/dev/null 2>&1 &
 	ret=$?
 	# Spin for a maximum of N seconds waiting for the server to come up.
 	# Rather than assuming we know a valid username, accept an "access

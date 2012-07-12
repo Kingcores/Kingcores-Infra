@@ -8,12 +8,13 @@
 export COMPONENTS="nginx mysql php54"
 
 #define the install path, backup path, data path, web root path and etc.
-export BASE_DIR=/kingcores/local
-export LIB_DIR=${BASE_DIR}
-export BACKUP_DIR=/kingcores/backup
-export DATA_BASE_DIR=/kingcores/data
-export LOG_BASE_DIR=/kingcores/log
-export TMP_BASE_DIR=/kingcores/tmp
+export LNMP_DIR=/kingcores
+export BASE_DIR=${LNMP_DIR}/local
+export LIB_DIR=${LNMP_DIR}/local #will add /lib, /include, /bin, /share automatically
+export BACKUP_DIR=${LNMP_DIR}/backup
+export DATA_BASE_DIR=${LNMP_DIR}/data
+export LOG_BASE_DIR=${LNMP_DIR}/log
+export TMP_BASE_DIR=${LNMP_DIR}/tmp
 
 #define url of package source
 export PACKAGE_SOURCE_URL=http://
@@ -21,24 +22,25 @@ export PACKAGE_SOURCE_URL=http://
 #define nginx configuration
 export NGINX_USER=www
 export NGINX_GROUP=www
-export NGINX_WEB_ROOT=/kingcores/www
+export NGINX_WEB_ROOT=${LNMP_DIR}/www
 
 #define php configuration
 export PHP_USER=www
 export PHP_GROUP=www
+export PHP_FPM_PORT=9000
 
 #define the user and group  for starting mysqld deamon
 export MYSQL_USER=mysql
 export MYSQL_GROUP=mysql
 export MYSQL_PORT=3306
 export MYSQL_PASSWORD=root
+export MYSQL_MEM=128M #64M,128M,512M,2G,4G
 
 #define the user and group  for staring  redis deamon
 export REDIS_USER=redis
 export REDIS_GROUP=redis
 
 #define passwords
-export MYSQL_ROOT_PASSWD=root@mysql
 export REDIS_SECRET_CODE=secret@redis
 
 #define names of the packages which will be included in this installation
