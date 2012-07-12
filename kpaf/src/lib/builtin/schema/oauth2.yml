@@ -1,0 +1,41 @@
+#OAuth
+
+#------------------------------------------------------------------------------
+#自定义类型
+
++unique_code: text|+32|c=唯一码
+
++scope: text|<=250|c=使用范围
+
++redirect_uri: url|c=跳转URI
+
++expires: int|+10|c=过期时间
+
+oauth2_auth_code:
+  comment: 'OAuth2客户授权码'
+  has:
+    code: unique_code|c=授权码
+    client: auth2_client
+    redirect_uri: redirect_uri
+    expires: expires
+    scope|?: scope
+  keys:
+    pk: code
+
+oauth2_client:
+  comment: 'OAuth2客户'
+  with: [ auto_uuid ]
+  has:
+    client_secret: password|c=密码
+    redirect_uri: redirect_uri
+
+oauth2_token:
+  comment: 'OAuth2客户访问口令'
+  has:
+    oauth_token: unique_code|c=访问口令
+    client: auth_client
+    expires: expires
+    scope|?: scope
+  keys:
+    pk: oauth_token
+

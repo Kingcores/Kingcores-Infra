@@ -1,0 +1,6 @@
+#国家首都数据
+#编码，首都编码
+-update country: code, capital_city_code
+CN, CN_110000
+-update province: code, capital_city_code
+CN_410000, CN_410100

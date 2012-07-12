@@ -1,0 +1,115 @@
+#核心模式
+
+#entity prefix
+# ~ or abstract`: abstract entity
+# @ or enum`: enumerable
+# $ or state`: finite state table
+# + or define`: custom type definition
+# ! or pragma`: pragma clause
+
+#keyword
+#is, mix, with, has, keys
+
+#mixture modifer
+# ^: prefix, followed by the prefix, use the name of the source entity if not given
+# $: suffix, followed by the suffix, use the name of the target entity if not given
+# ?: all not required
+# -: remove columns
+
+#field type modifier
+# <=: the value of a number or the length of a string is less than or equal
+# >=: the value of a number or the length of a string is greater than or equal
+# <: the value of a number or the length of a string is less than
+# >: the value of a number or the length of a string is greater than
+# =: default value, set to @@auto to use automatically generated value, f`functor, db`NOW()
+# +: digits or the length of fixed-length string
+# %: precision
+# a: automatically create
+# r: readonly
+# $=: post-functor
+# c=: field name
+# od=: on delete
+# ou=: on update
+# on=: join on which key
+
+#field name modifier
+# 1: has one (default)
+# ?: null or has one
+# +: at least one
+# *: any
+
+#basic types
+# int
+# float
+# bool
+# text
+# bin
+# date
+# time
+# datetime
+# timestamp
+
+#special types
+# idname (mysql: VARCHAR(60))
+# digits
+# email
+# phone
+# money
+# password (mysql: VARCHAR(255))
+# url
+# xml
+# json
+# uuid
+# ipv4
+
+#with features
+# auto_increment_id  # , >= 0
+# create_timestamp
+# update_timestamp
+# created_by
+# updated_by
+# logical_deletion
+# self_cascade
+
+#约定规则
+# 如果有auto_increment_id特性，则该自动字段为主键
+# 自动字段的命名：<entity_name>_id
+# 如没有特别指明，则第一个字段是主键
+# 主键的命名：pk_<entity_name>_<filed_name>，且自动去掉命名中重复出现的单词
+
+#技巧
+# 带~的实体可以当类型来mix使用
+
+#mix and is
+#mix只对字段有效，即忽略feature, key等，后序的mix会覆盖同名的字段
+#is可继承全部，对于不想继承的feature，可在with中用 -feature_name 的形式取消
+
+#keys
+#主键：字段名|p: 或 pk: 字段名
+#唯一键：键名|u: [字段名] , 如省略字段名，则以键名为字段名
+#普通索引键：键名: [字段名] , 如省略字段名，则以键名为字段名
+
+#------------------------------------------------------------------------------
+#抽象基类
+
+~identified_by_code:
+  comment: '自增长标识的实体'
+  has:
+    code: idname|c=编码  # 主键编码
+  keys:
+    pk: code
+
+~dictionary:
+  comment: '数据字典'
+  with: [ auto_increment_id, logical_deletion ]
+  has:
+    name: name
+  keys:
+    name|u: name
+
+#------------------------------------------------------------------------------
+#自定义类型
+
++name: text|c=名称|>=1|<=40
+
++short_name: text|c=简称|>=1|<=20

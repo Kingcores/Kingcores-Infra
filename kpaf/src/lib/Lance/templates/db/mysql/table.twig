@@ -1,0 +1,11 @@
+-- TABLE {{ entityName }}
+CREATE TABLE IF NOT EXISTS `{{ entityName }}` (
+{% for fieldName, field in entity.getSQLColumns %}
+    `{{ fieldName }}` {{ field.getSQLDefinition|raw }},
+{% endfor %}
+    PRIMARY KEY (`{{ entity.getPrimaryKey }}`){% for keyName, keyFields in entity.getUniqueKeys %},
+    UNIQUE KEY `{{ keyName }}` ({% for key in keyFields %}`{{ key }}`{% if not loop.last %},{% endif %}{% endfor %}){% endfor %}{% for keyName, keyFields in entity.getForeignKeys %},
+    KEY `{{ keyName }}` (`{{ keyFields[0] }}`){% endfor %}{% for keyName, keyFields in entity.getAlternativeKeys %},
+    KEY `{{ keyName }}` ({% for key in keyFields %}`{{ key }}`{% if not loop.last %},{% endif %}{% endfor %}){% endfor %}
+
+) {{ entity.getSQLDefinition|raw }};

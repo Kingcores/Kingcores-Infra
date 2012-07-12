@@ -1,0 +1,9 @@
+SET @@foreign_key_checks = 0;
+
+{% for entity in entities %}
+-- TABLE {{ entity }}
+TRUNCATE TABLE `{{ entity }}`;
+
+{% endfor %}
+
+SET @@foreign_key_checks = 1;
