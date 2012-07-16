@@ -44,14 +44,14 @@ do
         echo "Force mode (no backup) enabled."
         NO_BACKUP=1
         ;;
-	  "d")
-	  	echo "Auto-Download mode enabled."
-	  	AUTO_DOWNLOAD=1
-		;;
-	  "t")
-	  	echo "Use tar package basename as component id name."
-	  	USE_TAR_BASENAME=1
-		;;
+      "d")
+          echo "Auto-Download mode enabled."
+          AUTO_DOWNLOAD=1
+        ;;
+      "t")
+          echo "Use tar package basename as component id name."
+          USE_TAR_BASENAME=1
+        ;;
       "?")
         echo "Unknown option ${OPTARG}"
         cat <<USAGE
@@ -82,21 +82,21 @@ done
 
 if [ ${AUTO_DOWNLOAD} -eq 1 ]
 then
-	DOWNLOAD_BASE_URL=${PACKAGE_SOURCE_URL}
+    DOWNLOAD_BASE_URL=${PACKAGE_SOURCE_URL}
 fi
 
 if [ ${NO_BACKUP} -eq 1 ]
 then
-	BACKUP_DIR_FLAG=no_backup
+    BACKUP_DIR_FLAG=no_backup
 fi
 
 BACKUP_DIR="${BACKUP_DIR}/$(date "+%Y%m%d_%H%M%S")"
 
 function main()
 {
-	echo
+    echo
     echo "This script is going to install [${COMPONENTS}]."
-	echo
+    echo
     echo "Target path: ${BASE_DIR}"
     echo "Backup path: ${BACKUP_DIR}"
     echo "Data path: ${DATA_BASE_DIR}"
@@ -111,20 +111,24 @@ function main()
     fi
 
     [ -d ${BASE_DIR} ] || mkdir -p ${BASE_DIR}
-	[ -d ${TMP_BASE_DIR} ] || mkdir -p ${TMP_BASE_DIR}
+    [ -d ${TMP_BASE_DIR} ] || mkdir -p ${TMP_BASE_DIR}
     echo
 
-    cat >>/etc/security/limits.conf<<eof
+    if ! grep "* soft nproc 65535" /etc/sysctl.conf >& /dev/null; then
+    cat >>/etc/security/limits.conf<<EOF
 * soft nproc 65535
 * hard nproc 65535
 * soft nofile 65535
 * hard nofile 65535
-eof
-
-    cat >>/etc/sysctl.conf<<eof
-fs.file-max=65535
-eof
-
+EOF
+    fi
+    
+    if ! grep "fs.file-max = 65535" /etc/sysctl.conf >& /dev/null; then
+    cat >>/etc/sysctl.conf<<EOF
+fs.file-max = 65535
+EOF
+    fi
+    
     for COMPONENT in ${COMPONENTS}
     do
         .  ${SCRIPT_DIR}/scripts/install_${COMPONENT}.inc.sh

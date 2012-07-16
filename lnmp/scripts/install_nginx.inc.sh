@@ -37,6 +37,9 @@ function install_nginx()
     then
         mkdir -p ${NGINX_WEB_ROOT}
         chown -R ${NGINX_USER}:${NGINX_GROUP} ${NGINX_WEB_ROOT}
+        echo "404" > ${NGINX_WEB_ROOT}/404.html
+        echo "50x" > ${NGINX_WEB_ROOT}/50x.html
+        echo "ok" > ${NGINX_WEB_ROOT}/index.html
     fi    
     
     install_package ${PACKAGE_DIR}/${NGINX_TAR_NAME} ${NGINX_DIR} ${NGINX_TAR_NAME} \
@@ -59,13 +62,14 @@ function install_nginx()
     sed -i "s:__NGINX_USER__:"${NGINX_USER}":g" ${NGINX_DIR}/conf/nginx.conf
     sed -i "s:__NGINX_GROUP__:"${NGINX_GROUP}":g" ${NGINX_DIR}/conf/nginx.conf
     sed -i "s:__NGINX_LOG_DIR__:"${NGINX_LOG_DIR}":g" ${NGINX_DIR}/conf/nginx.conf
+    sed -i "s:__PHP_PORT__:"${NGINX_PHP_CGI_PORT}":g" ${NGINX_DIR}/conf/nginx.conf
 
     /bin/cp -f ${CONFIG_DIR}/fastcgi.conf ${NGINX_DIR}/conf/fastcgi.conf
 
     echo
     echo "Setting up ${NGINX_ID_NAME} service ..."
     echo
-    /bin/cp -f ${INITD_DIR}/${NGINX_ID_NAME} /etc/init.d/${NGINX_ID_NAME}
+    /bin/cp -f ${INITD_DIR}/nginx /etc/init.d/${NGINX_ID_NAME}
     sed -i "s:__NGINX_DIR__:"${NGINX_DIR}":g" /etc/init.d/${NGINX_ID_NAME}
     sed -i "s:__NGINX_LOG_DIR__:"${NGINX_LOG_DIR}":g" /etc/init.d/${NGINX_ID_NAME}
     chmod +x /etc/init.d/${NGINX_ID_NAME}
@@ -81,6 +85,14 @@ function install_nginx()
     echo    
 
     service ${NGINX_ID_NAME} stop
+    
+    echo
+    echo "Enabling www port in iptables ..."
+    echo
+    if [ -s /sbin/iptables ]; then
+        /sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+        /sbin/iptables-save
+    fi
 }
 
 if [ ${ALL_REINSTALL} -eq 1 ] || [ ! -d ${NGINX_DIR} ]

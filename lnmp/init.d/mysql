@@ -54,7 +54,7 @@ start(){
 	# Pass all the options determined above, to ensure consistent behavior.
 	# In many cases mysqld_safe would arrive at the same conclusions anyway
 	# but we need to be sure.
-	__MYSQL_DIR__/bin/mysqld_safe >/dev/null 2>&1 &
+	__MYSQL_DIR__/bin/mysqld_safe --datadir="$datadir" >/dev/null 2>&1 &
 	ret=$?
 	# Spin for a maximum of N seconds waiting for the server to come up.
 	# Rather than assuming we know a valid username, accept an "access

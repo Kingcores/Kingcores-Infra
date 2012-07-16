@@ -64,7 +64,7 @@ function install_php54()
         [ ! $? -eq 0 ] && exit_with_error "Building ${PACKAGE} package failed!"
     fi
 
-	prepare_package ${PHP54_ID_NAME} ${PACKAGE_DIR} ${PHP54_TAR_NAME} ${PHP54_DIR} ${DOWNLOAD_BASE_URL} \
+    prepare_package ${PHP54_ID_NAME} ${PACKAGE_DIR} ${PHP54_TAR_NAME} ${PHP54_DIR} ${DOWNLOAD_BASE_URL} \
         ${BACKUP_DIR_FLAG} ${NO_PROMPT} ${PHP54_USER} ${PHP54_GROUP}
         
     if [ ${USE_TAR_BASENAME} -eq 1 ]
@@ -82,7 +82,7 @@ function install_php54()
         fi
     fi
     
-    [ -d ${PHP_MYSQL_DIR} ] || exit_with_error "'mysql' is needed for installing ${PHP54_TAR_NAME}!"
+    [ -d ${PHP_MYSQL_DIR} ] || exit_with_error "'mysql' must be installed first before installing ${PHP54_TAR_NAME}!"
     
     install_package ${PACKAGE_DIR}/${PHP54_TAR_NAME} ${PHP54_DIR} ${PHP54_TAR_NAME} no_auto_make \
         --with-config-file-path=${PHP54_DIR}/etc \
@@ -122,17 +122,26 @@ function install_php54()
     make -s ZEND_EXTRA_FILE='-liconv' && make -s install
     [ ! $? -eq 0 ] && exit_with_error "Building ${PHP54_TAR_NAME} package failed!"
     
+    echo
+    echo "Updating php.ini ..."
+    echo
     /bin/cp -f ${CONFIG_DIR}/php.ini ${PHP54_DIR}/etc/php.ini
     sed -i "s:__PHP54_DIR__:${PHP54_DIR}:g" ${PHP54_DIR}/etc/php.ini
     
+    echo
+    echo "Updating php-fpm.conf ..."
+    echo
     /bin/cp -f ${CONFIG_DIR}/php-fpm.conf ${PHP54_DIR}/etc/php-fpm.conf
-	[ ! -d ${PHP54_LOG_DIR} ] && mkdir -p ${PHP54_LOG_DIR}
-	chown -R ${PHP_USER}:${PHP_USER} ${PHP54_LOG_DIR}
+    [ ! -d ${PHP54_LOG_DIR} ] && mkdir -p ${PHP54_LOG_DIR}
+    chown -R ${PHP_USER}:${PHP_USER} ${PHP54_LOG_DIR}
     sed -i "s:__PHP54_LOG_DIR__:${PHP54_LOG_DIR}:g" ${PHP54_DIR}/etc/php-fpm.conf
     sed -i "s:__PHP54_USER__:${PHP_USER}:g" ${PHP54_DIR}/etc/php-fpm.conf
     sed -i "s:__PHP54_GROUP__:${PHP_GROUP}:g" ${PHP54_DIR}/etc/php-fpm.conf
     sed -i "s:__PHP54_PORT__:${PHP_FPM_PORT}:g" ${PHP54_DIR}/etc/php-fpm.conf
     
+    echo
+    echo "Setting up ${PHP54_ID_NAME} service ..."
+    echo
     /bin/cp -f ${INITD_DIR}/php-fpm /etc/init.d/${PHP54_ID_NAME}
     sed -i "s:__PHP54_DIR__:${PHP54_DIR}:g" /etc/init.d/${PHP54_ID_NAME}
     sed -i "s:__PHP54_LOG_DIR__:${PHP54_LOG_DIR}:g" /etc/init.d/${PHP54_ID_NAME}
@@ -141,9 +150,9 @@ function install_php54()
     chkconfig --add ${PHP54_ID_NAME}
     chkconfig --level 235 ${PHP54_ID_NAME} on
 
-	#add php bin directory to ENVIRONMENT variable PATH
-	add_custom_bin_path ${PHP54_DIR}/sbin
-	add_custom_bin_path ${PHP54_DIR}/bin
+    #add php bin directory to ENVIRONMENT variable PATH
+    add_custom_bin_path ${PHP54_DIR}/sbin
+    add_custom_bin_path ${PHP54_DIR}/bin
     source /etc/profile
     
     service ${PHP54_ID_NAME} start
@@ -172,25 +181,43 @@ function install_php54()
     # make -s && make -s install
     # [ ! $? -eq 0 ] && exit_with_error "Building ${EACCELERATOR_TAR_NAME} failed!"
     
-	# sed -i '/eaccelerator\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini
+    # sed -i '/eaccelerator\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini       
     
     # retry 10 times    
     for((j=0;j<10;j++))
-	do
-		if [ -f ${BASE_DIR}/php/lib/php/extensions/no-debug-non-zts-20100525/uuid.so ]; then
-			sed -i '/uuid\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini
-			break
-		else
-    		echo -e '\n'|pecl install uuid
-		fi
-	done
-    [ -f ${BASE_DIR}/php/lib/php/extensions/no-debug-non-zts-20100525/uuid.so ] || exit_with_error "Failed to install uuid php extension!"
+    do
+        if [ -f ${PHP54_DIR}/lib/php/extensions/no-debug-non-zts-20100525/uuid.so ]; then
+            sed -i '/uuid\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini
+            break
+        else
+            echo -e '\n'|pecl install uuid
+        fi
+    done
+    [ -f ${PHP54_DIR}/lib/php/extensions/no-debug-non-zts-20100525/uuid.so ] || exit_with_error "Failed to install uuid php extension!"
+    
+    # install phing
+    if [ ${PHP_WITH_PHING} -eq 1 ]
+    then
+        cd ${PHP54_DIR}/bin
+        
+        # retry 10 times   
+        for((j=0;j<10;j++))
+        do
+            if [ -f ${PHP54_DIR}/bin/phing ]; then
+                break
+            else
+                ./pear channel-discover pear.phing.info
+                ./pear install phing/phing
+            fi
+        done  
+        [ -f ${PHP54_DIR}/bin/phing ] || exit_with_error "Failed to install phing module!"        
+    fi
 }
   
 if [ ${ALL_REINSTALL} -eq 1 ] || [ ! -d ${PHP54_DIR} ]; then    
     install_php54
 else
-	echo "${PHP54_TAR_NAME} has already installed."
+    echo "${PHP54_TAR_NAME} has already installed."
     echo "Nothing to do."
     echo
 fi

@@ -24,9 +24,13 @@ socket		= __MYSQL_TMP_DIR__/mysql.sock
 
 # The MySQL server
 [mysqld]
+basedir=__MYSQL_DIR__
+datadir=__MYSQL_DATA_DIR__
+user=__MYSQL_USER__
+symbolic-links=0
 port		= __MYSQL_PORT__
 socket		= __MYSQL_TMP_DIR__/mysql.sock
-skip-locking
+skip-external-locking
 key_buffer_size = 16K
 max_allowed_packet = 1M
 table_open_cache = 4

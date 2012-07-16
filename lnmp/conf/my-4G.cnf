@@ -39,6 +39,10 @@ socket		= __MYSQL_TMP_DIR__/mysql.sock
 # The MySQL server
 #
 [mysqld]
+basedir=__MYSQL_DIR__
+datadir=__MYSQL_DATA_DIR__
+user=__MYSQL_USER__
+symbolic-links=0
 
 # generic configuration options
 port		= __MYSQL_PORT__
@@ -65,7 +69,7 @@ back_log = 50
 # allow. One of these connections will be reserved for a user with
 # SUPER privileges to allow the administrator to login even if the
 # connection limit has been reached.
-max_connections = 100
+max_connections = 2000
 
 # Maximum amount of errors allowed per host. If this limit is reached,
 # the host will be blocked from connecting to the MySQL server until
@@ -73,7 +77,7 @@ max_connections = 100
 # passwords and other errors during the connect phase result in
 # increasing this value. See the "Aborted_connects" status variable for
 # global counter.
-max_connect_errors = 10
+#max_connect_errors = 10
 
 # The number of open tables for all threads. Increasing this value
 # increases the number of file descriptors that mysqld requires.
@@ -102,7 +106,7 @@ max_allowed_packet = 16M
 # transaction is larger than this value, temporary file on disk is used
 # instead.  This buffer is allocated per connection on first update
 # statement in transaction
-binlog_cache_size = 1M
+binlog_cache_size = 4M
 
 # Maximum allowed size for a single HEAP (in memory) table. This option
 # is a protection against the accidential creation of a very large HEAP
@@ -113,14 +117,14 @@ max_heap_table_size = 64M
 # queries. If sorted data does not fit into the sort buffer, a disk
 # based merge sort is used instead - See the "Sort_merge_passes"
 # status variable. Allocated per thread if sort is needed.
-sort_buffer_size = 8M
+sort_buffer_size = 16M
 
 # This buffer is used for the optimization of full JOINs (JOINs without
 # indexes). Such JOINs are very bad for performance in most cases
 # anyway, but setting this variable to a large value reduces the
 # performance impact. See the "Select_full_join" status variable for a
 # count of full JOINs. Allocated per thread if full join is found
-join_buffer_size = 8M
+join_buffer_size = 16M
 
 # How many threads we should keep in a cache for reuse. When a client
 # disconnects, the client's threads are put in the cache if there aren't
@@ -167,7 +171,7 @@ ft_min_word_len = 4
 
 # Table type which is used by default when creating new tables, if not
 # specified differently during the CREATE TABLE statement.
-default-storage-engine = MYISAM
+# default-storage-engine = MYISAM
 
 # Thread stack size to use. This amount of memory is always reserved at
 # connection time. MySQL itself usually needs no more than 64K of
@@ -184,7 +188,7 @@ transaction_isolation = REPEATABLE-READ
 # grows larger than this value, it is automatically converted to disk
 # based table This limitation is for a single table. There can be many
 # of them.
-tmp_table_size = 64M
+tmp_table_size = 128M
 
 # Enable binary logging. This is required for acting as a MASTER in a
 # replication configuration. You also need the binary log if you need
@@ -308,11 +312,11 @@ server-id = 1
 # is also required by the OS to cache rows. Even if you're not using
 # MyISAM tables, you should still set it to 8-64M as it will also be
 # used for internal temporary disk tables.
-key_buffer_size = 32M
+key_buffer_size = 64M
 
 # Size of the buffer used for doing full table scans of MyISAM tables.
 # Allocated per thread, if a full scan is needed.
-read_buffer_size = 2M
+read_buffer_size = 4M
 
 # When reading rows in sorted order after a sort, the rows are read
 # through this buffer to avoid disk seeks. You can improve ORDER BY
