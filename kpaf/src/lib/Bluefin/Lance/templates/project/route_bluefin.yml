@@ -1,0 +1,23 @@
+bluefin_service:
+  route: /bluefin/service/:service/:method
+  namespace: Bluefin
+  controller: Service.invoke
+  service: "Bluefin\{route.service|P}.{route.method|C}"
+  view:
+    renderer: json
+    dataSource: result
+
+bluefin_1p:
+  route: /bluefin/:module
+  namespace: Bluefin
+  controller: '{route.module|P}\Default.index'
+
+bluefin_2p:
+  route: /bluefin/:module/:controller
+  namespace: Bluefin
+  controller: '{route.module|P}\{route.controller|P}.index'
+
+bluefin_3p:
+  route: /bluefin/:module/:controller/:action
+  namespace: Bluefin
+  controller: '{route.module|P}\{route.controller|P}.{route.action|C}'

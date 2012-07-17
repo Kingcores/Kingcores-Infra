@@ -1,0 +1,100 @@
+#PHP Configuration
+app:
+  timezone: Asia/Shanghai
+  # Order of precedence: 1. GET, 2.ROUTE, 3. POST, 4. COOKIE
+  requestOrder: GRPC
+  # server rewritable
+  serverUrlRewritable: true
+  #php internal encoding
+  phpInternalEncoding: UTF-8
+
+#LOG Configuration
+#ERROR LEVEL INSTRUCTIONS:
+#    EMERG   = 0;  Emergency: system is unusable
+#    ALERT   = 1;  Alert: action must be taken immediately
+#    CRIT    = 2;  Critical: critical conditions
+#    ERR     = 3;  Error: error conditions
+#    WARN    = 4;  Warning: warning conditions
+#    NOTICE  = 5;  Notice: normal but significant condition
+#    INFO    = 6;  Informational: informational messages
+#    DEBUG   = 7;  De
+log:
+  default:
+    logPath: <?php echo ROOT; ?>/log
+    filenamePrefix: log_
+    logLevel: 7  
+
+cache:
+  session:
+    storage: Redis
+    params:
+      - { host: 127.0.0.1, port: 9333, password: bluefin_redis_secret, database: 0, alias: first }
+      - { host: 127.0.0.1, port: 9334, password: bluefin_redis_secret, database: 0, alias: second }
+    client: {  }
+  auth:
+    storage: Redis
+    params: { host: 127.0.0.1, port: 9333, password: bluefin_redis_secret, database: 1 }
+  locale:
+    storage: Redis
+    params: { host: 127.0.0.1, port: 9333, password: bluefin_redis_secret, database: 2 }
+
+session:
+  saveHandler: \Bluefin\Session\RedisSessionSaveHandler
+  params:
+    cacheId: session
+    lifetime: 86400
+    
+locale:
+  requestName: lcid
+  useSession: false
+  useCache: false
+  supportedLocales: [zh_CN, zh_TW, en_US]
+  defaultLocale: zh_CN
+
+custom:
+  @include:
+    - <?php echo APP_ETC; ?>/custom/ec_school.yml
+
+service:
+  auth:
+    baseUrl: http://localhost:9331
+    params:
+      #maxredirects: 0 #default 5
+      #strict: true #default true
+      #strictredirects: true #default false
+      useragent:  #default 'Zend_Http_Client'
+      timeout:  #default 10
+      httpversion: 1.1 #default 1.1
+      adapter:  #default 'Zend_Http_Client_Adapter_Socket'
+      #keepalive:  #default false
+      storeresponse:  #default true
+      encodecookies:  #default true
+      #below is 'Zend_Http_Client_Adapter_Socket' specific
+      #persistent:
+      #ssltransport:
+      #sslcert:
+      #sslpassphrase:
+      #sslusecontext:
+  local:
+    baseUrl: http://localhost:9331
+    params:
+      timeout: 20
+      encodecookies: false
+
+db:
+  @include:
+    - <?php echo APP_ETC; ?>/db/ec_school.<?php echo ENV; ?>.yml
+
+routing:
+  @include:
+    - <?php echo APP_ETC; ?>/route/bluefin.yml
+    - <?php echo APP_ETC; ?>/route/app.<?php echo ENV; ?>.yml
+
+auth:
+  @include:
+    - <?php echo APP_ETC; ?>/auth/user_auth.yml
+    - <?php echo APP_ETC; ?>/auth/admin_auth.yml
+
+naming:
+  @include: <?php echo APP_ETC; ?>/naming/ec_school.yml
+

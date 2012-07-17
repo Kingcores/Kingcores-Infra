@@ -1,0 +1,15 @@
+app:
+  timezone: Asia/Shanghai
+  requestOrder: GRPC
+  serverUrlRewritable: true
+  phpInternalEncoding: UTF-8
+
+log:
+  default:
+    logPath: <?php echo ROOT; ?>/log
+    filenamePrefix: log_
+    logLevel: 7
+
+routing:
+  @include:
+    - <?php echo APP_ETC; ?>/route/bluefin.yml

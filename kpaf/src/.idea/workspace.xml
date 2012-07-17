@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd2a040c-0c9e-4129-b0ac-50e93ce69fcf" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/src.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/App.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/AuthCode.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/AuthInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/OAuth2.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/OAuth2Client.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/Persistence/PersistenceInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/Persistence/Session.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Common.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Controller.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Controller/RestfulController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Controller/ServiceController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Controller/ViewController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Convention.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Database.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Db/DbInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Db/MySQL.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/DbCondition.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/DbParam.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/FilterContext.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/FilterInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/Validator.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/Validator/GreaterThan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/Validator/LessThan.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/ValueFilterBase.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/ValueFilterInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/AutoDigits.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/AutoPassword.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/AutoUUID.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/Context.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/Copy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/FormatterInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/FunctorInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/PostProcessorInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/SaltedMd5.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/SupplierInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/UnpackUuid.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Model.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/ModelMetadata.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Relation.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Relations.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Select.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Type.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/ValidatorInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Dummy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/AssertException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/BluefinException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/ConfigException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/DatabaseException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/FileNotFoundException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/ForwardException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/InvalidOperationException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/InvalidParamException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/InvalidRequestException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/ModelException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/PageNotFoundException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/RedirectException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/RequestException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/ServerErrorException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/UnauthorizedException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Filter/AbstractFilter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Filter/FilterInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Filter/InputFilter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Filter/OAuth2Filter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Gateway.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Adapter/AdapterInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Adapter/MySQLAdapter.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Auth/AuthInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Auth/DbAuth.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Convention.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Entity.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Exception/AdapterException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Exception/GrammarException.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/AbstractFeature.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/AutoIncrementID.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/AutoUUID.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/ChangeLog.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/CreateTimestamp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/CreatedBy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/FeatureInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/LogicalDeletion.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/SelfCascade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/UpdateTimestamp.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/UpdatedBy.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Field.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/PHPCodingLogic.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Reference.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/SchemaSet.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Skeleton/AbstractBlock.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Skeleton/BlockInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Skeleton/SearchForm.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/System.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Tin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/TypeModifier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/YAMLRunner.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/etc/global.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/auth/db_auth.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/auth/db_auth_yml.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/database_class.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/enumeration.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/finite_state_table.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/model_class.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/drop_tables.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/relation.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/runtime_config.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/table.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/truncate_tables.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/php_init_db.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/php_rebuild_db.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/service/restful.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/action_detail.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/action_edit.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/action_search.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/business.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/controller.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/view_detail.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/view_edit.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/view_new.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/view_search.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/ysd/system.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Modifier/TypeModifier.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/DHTMLXRenderer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/JSONRenderer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/RAWRenderer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/RendererInterface.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/TWIGRenderer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/XMLRenderer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/YAMLRenderer.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Request.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Response.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Service.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/ServiceAgent.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Session/RedisSessionSaveHandler.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Util/Trie.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/View.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/bluefin.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/config/builtin_users_groups.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/capital_city.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/city.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/country.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/district.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/ip_address.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/isp.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/province.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/builtin_users_groups.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/capital_city.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/city.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/country.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/district.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/ip_address.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/isp.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/province.data" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/locale/zh_CN/bluefin.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/address.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/core.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/ip_address.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/oauth2.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/person.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/system.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/view/listArray.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/common/bluefin_conventions.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/common/bluefin_helpers.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/common/common_utils.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/common/fs_utils.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/css/blackbird.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/images/blackbird/blackbird_icons.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/images/blackbird/blackbird_panel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/js/blackbird.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/view/Index.index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/etc/options.dev.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/etc/options.prod.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/etc/options.test.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/etc/options.unit.php" afterPath="" />
+    </list>
+    <ignored path="src.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="src" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/lib/Lance/Creator/SystemCreator.php" />
+        <option value="$PROJECT_DIR$/lib/bluefin.php" />
+        <option value="$PROJECT_DIR$/lib/App.php" />
+        <option value="$PROJECT_DIR$/lib/Lance/templates/project/index.php" />
+        <option value="$PROJECT_DIR$/lib/Lance/Creator/Creator.php" />
+        <option value="$PROJECT_DIR$/lib/Lance/templates/project/global.yml" />
+        <option value="$PROJECT_DIR$/lib/Lance/templates/project/route_bluefin.yml" />
+        <option value="$PROJECT_DIR$/lib/common/fs_utils.php" />
+        <option value="$PROJECT_DIR$/lib/Lance/Creator/ProjectCreator.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="805" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bluefin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/Lance/templates/project" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method>
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="DETECT_NESTED_COPIES" value="true" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <configuration useDefault="false">$USER_HOME$/.subversion_IDEA</configuration>
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1342533674111</created>
+      <updated>1342533674111</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1440" height="805" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19440459" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="ENABLE_BACKGROUND_PROCESSES" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lib/Lance/System.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="14.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Lance/Creator/SystemCreator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="1" selection-start="28" selection-end="28" vertical-scroll-proportion="-1.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/common_utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/bluefin_helpers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="39" selection-start="357" selection-end="357" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Lance/templates/project/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="56" selection-start="155" selection-end="155" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/App.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="35" selection-start="4223" selection-end="4223" vertical-scroll-proportion="0.61129034">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Lance/Creator/Creator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Lance/templates/project/global.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="273" selection-end="273" vertical-scroll-proportion="0.34246576">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Lance/templates/project/route_bluefin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/bluefin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="42" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.8578199">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/common/fs_utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="30" selection-start="682" selection-end="682" vertical-scroll-proportion="-13.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
