@@ -55,7 +55,7 @@ function backup()
         then
             read -p "Continue?[y|n]:" ANSWER
             [ "${ANSWER}" != "y" ] && exit_with_error "Cancelled by user."
-        fi        
+        fi
 
         [ ! -e $2 ] && mkdir -p $2
         mv -f $1 $2
@@ -77,8 +77,8 @@ function stop_service()
     then
         echo
         echo "Stopping service $1 ..."
-        echo        
-    
+        echo
+
         if [ -f /etc/init.d/$1 ]
         then
             /etc/init.d/$1 stop
@@ -95,7 +95,7 @@ function stop_service()
     fi
 }
 
-# prepare_package <1:package_id: lib|service_name> <2:package_dir> <3:package_name> <4:target_dir> 
+# prepare_package <1:package_id: lib|service_name> <2:package_dir> <3:package_name> <4:target_dir>
 # <5:download_url> <6:backup: dir|no_backup> <7:prompt_user: 0|1> [<8:user>] [<9:group>]
 function prepare_package()
 {
@@ -105,13 +105,13 @@ function prepare_package()
 
     if [ ! $1 == 'lib' ]
     then
-    
+
         #check $1 running status
         echo
         echo "Checking running $1 service ..."
         echo
         stop_service $1
-        
+
         #check and backup if necessary
         if [ $6 == "no_backup" ]
         then
@@ -119,21 +119,21 @@ function prepare_package()
         else
             backup $4 $6 $7
         fi
-        
-        if [ $# -gt 7 ] 
+
+        if [ $# -gt 7 ]
         then
             [ $8 == 'root' ] && exit_with_error "'root' cannot be used as the $1 user!"
-            
+
             #create user and group
             create_service_user_if_not_exist $8 $9
-        fi            
-        
+        fi
+
     fi
 
     echo
     echo "Preparing package $3 ..."
     echo
-    download_untar $2 $3 $5    
+    download_untar $2 $3 $5
 }
 
 # download_untar: <1:package_dir> <2:package_name> <3:download_url>
@@ -144,15 +144,17 @@ function download_untar()
         echo
         echo "Downloading package $2 ..."
         echo
+        [ -d $1 ] ||  mkdir -p $1
+        cd $1
         wget $3/$2.tar.gz
     fi
     [ -f $1/$2.tar.gz ] || exit_with_error "$2.tar.gz not found!"
     [ -d $1/$2 ] && rm -rf $1/$2
-    
+
     echo
     echo "Extracting $2 package ..."
     echo
-    tar xf $1/$2.tar.gz -C $1  
+    tar xf $1/$2.tar.gz -C $1
 }
 
 # install_package: <1:source_dir> <2:target_dir> <3:package_name> [<4:make_flag:no_auto_make>] [<*:flag>]
@@ -171,12 +173,12 @@ function install_package()
     then
         AUTO_MAKE=0
         shift 4
-    else   
+    else
         shift 3
     fi
     ./configure --prefix=${PREFIX} $*
     [ ! $? -eq 0 ] && exit_with_error "Missing dependencies for ${PACKAGE} package!"
-    
+
     if [ ${AUTO_MAKE} -eq 1 ]
     then
         echo
@@ -194,7 +196,7 @@ function add_custom_lib_path()
         echo
         echo "Adding '$1' to lib loading path ..."
         echo
-        echo "$1" >> /etc/ld.so.conf        
+        echo "$1" >> /etc/ld.so.conf
     fi
 }
 
@@ -205,6 +207,6 @@ function add_custom_bin_path()
         echo
         echo "Adding '$1' to environment path ..."
         echo
-        echo PATH="$1"':$PATH' >> /etc/profile        
+        echo PATH="$1"':$PATH' >> /etc/profile
     fi
 }

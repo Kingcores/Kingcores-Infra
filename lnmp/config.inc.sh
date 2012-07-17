@@ -1,4 +1,5 @@
 #Installation configuration
+#https://github.com/Kingcores/Kingcores-Infra
 
 #components to install
 export COMPONENTS="nginx mysql php54 phpmyadmin redis" #nginx mysql php54 phpmyadmin redis

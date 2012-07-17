@@ -24,6 +24,7 @@ export DOWNLOAD_BASE_URL=no_auto_download
 export BACKUP_DIR_FLAG=${BACKUP_DIR}
 
 echo "Kingcores LNMP Installation Script"
+echo "https://github.com/Kingcores/Kingcores-Infra"
 echo
 
 [ ${UID} -eq 0 ] || exit_with_error "This script must be run with root account!"
@@ -56,6 +57,8 @@ do
         echo "Unknown option ${OPTARG}"
         cat <<USAGE
 Kingcores LNMP Installation Script
+https://github.com/Kingcores/Kingcores-Infra
+Provided by kingcores.cn
 
 Usages:
     install.sh [-y] [-r] [-f] [-d] [-t]
@@ -122,13 +125,13 @@ function main()
 * hard nofile 65535
 EOF
     fi
-    
+
     if ! grep "fs.file-max = 65535" /etc/sysctl.conf >& /dev/null; then
     cat >>/etc/sysctl.conf<<EOF
 fs.file-max = 65535
 EOF
     fi
-    
+
     for COMPONENT in ${COMPONENTS}
     do
         .  ${SCRIPT_DIR}/scripts/install_${COMPONENT}.inc.sh

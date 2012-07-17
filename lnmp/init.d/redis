@@ -32,7 +32,8 @@ case "$1" in
         else
                 PID=$(cat $PIDFILE)
                 echo "Stopping ..."
-                $CLIEXEC -p $REDISPORT shutdown
+                PASSWORD=`cat __REDIS_PASSWORD_FILE__`
+                $CLIEXEC -p $REDISPORT -a ${PASSWORD} shutdown
                 while [ -x /proc/${PID} ]
                 do
                     echo "Waiting for Redis to shutdown ..."
