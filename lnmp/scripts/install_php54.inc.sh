@@ -1,5 +1,5 @@
 #install php54
-    
+
 if [ ${USE_TAR_BASENAME} -eq 1 ]
 then
     PHP54_ID_NAME=${PHP54_TAR_NAME}
@@ -10,53 +10,53 @@ fi
 PHP54_DIR=${BASE_DIR}/${PHP54_ID_NAME}
 PHP54_TMP_DIR=${TMP_BASE_DIR}/${PHP54_ID_NAME}
 PHP54_LOG_DIR=${LOG_BASE_DIR}/${PHP54_ID_NAME}
-    
-function install_php54() 
+
+function install_php54()
 {
     #libiconv
     if [ ! -f ${BASE_DIR}/lib/libiconv.so ]
     then
-        prepare_package lib ${PACKAGE_DIR} ${LIBICONV_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}    
+        prepare_package lib ${PACKAGE_DIR} ${LIBICONV_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}
         install_package ${PACKAGE_DIR}/${LIBICONV_TAR_NAME} ${BASE_DIR} ${LIBICONV_TAR_NAME}
     fi
 
     #libmcrypt
     if [ ! -f ${BASE_DIR}/lib/libmcrypt.so ]
     then
-        prepare_package lib ${PACKAGE_DIR} ${LIBMCRYPT_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}    
+        prepare_package lib ${PACKAGE_DIR} ${LIBMCRYPT_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}
         install_package ${PACKAGE_DIR}/${LIBMCRYPT_TAR_NAME} ${BASE_DIR} ${LIBMCRYPT_TAR_NAME} --disable-posix-threads
         if [ ! -f ${BASE_DIR}/lib/libltdl.a ]
         then
             install_package ${PACKAGE_DIR}/${LIBMCRYPT_TAR_NAME}/libltdl ${BASE_DIR} libltdl --enable-ltdl-install
         fi
     fi
-    
+
     #mhash
     if [ ! -f ${BASE_DIR}/lib/libmhash.so ]
     then
-        prepare_package lib ${PACKAGE_DIR} ${MHASH_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}    
+        prepare_package lib ${PACKAGE_DIR} ${MHASH_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}
         install_package ${PACKAGE_DIR}/${MHASH_TAR_NAME} ${BASE_DIR} ${MHASH_TAR_NAME}
     fi
-    
+
     #mcrypt
     if [ ! -f ${BASE_DIR}/bin/mcrypt ]
     then
-        prepare_package lib ${PACKAGE_DIR} ${MCRYPT_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}     
-    
+        prepare_package lib ${PACKAGE_DIR} ${MCRYPT_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}
+
         add_custom_lib_path "${BASE_DIR}/lib"
         /sbin/ldconfig
-        
+
         export LD_LIBRARY_PATH=${BASE_DIR}/lib:${LD_LIBRARY_PATH}
-        export LDFLAGS="-L${BASE_DIR}/lib -I${BASE_DIR}/include"  
+        export LDFLAGS="-L${BASE_DIR}/lib -I${BASE_DIR}/include"
         export CFLAGS="-I${BASE_DIR}/include"
-        
+
         echo
         echo "Configuring ${MCRYPT_TAR_NAME} make environment ..."
         echo
         cd ${PACKAGE_DIR}/${MCRYPT_TAR_NAME}
-        ./configure --prefix=${BASE_DIR} --with-libmcrypt-prefix=${BASE_DIR}  
+        ./configure --prefix=${BASE_DIR} --with-libmcrypt-prefix=${BASE_DIR}
         [ ! $? -eq 0 ] && exit_with_error "Missing dependencies for ${MCRYPT_TAR_NAME}!"
-        
+
         echo
         echo "Building ${MCRYPT_TAR_NAME} package ..."
         echo
@@ -66,7 +66,7 @@ function install_php54()
 
     prepare_package ${PHP54_ID_NAME} ${PACKAGE_DIR} ${PHP54_TAR_NAME} ${PHP54_DIR} ${DOWNLOAD_BASE_URL} \
         ${BACKUP_DIR_FLAG} ${NO_PROMPT} ${PHP54_USER} ${PHP54_GROUP}
-        
+
     if [ ${USE_TAR_BASENAME} -eq 1 ]
     then
         PHP_MYSQL_DIR=${BASE_DIR}/${MYSQL_TAR_NAME}
@@ -81,9 +81,9 @@ function install_php54()
             PHP_MYSQL_DIR=${BASE_DIR}/${MYSQL_TAR_NAME}
         fi
     fi
-    
+
     [ -d ${PHP_MYSQL_DIR} ] || exit_with_error "'mysql' must be installed first before installing ${PHP54_TAR_NAME}!"
-    
+
     install_package ${PACKAGE_DIR}/${PHP54_TAR_NAME} ${PHP54_DIR} ${PHP54_TAR_NAME} no_auto_make \
         --with-config-file-path=${PHP54_DIR}/etc \
         --with-iconv=${BASE_DIR} \
@@ -115,19 +115,19 @@ function install_php54()
         --enable-xml \
         --enable-bcmath --enable-shmop --enable-sysvsem \
         --disable-rpath
-    
+
     echo
     echo "Building ${PHP54_TAR_NAME} package ..."
     echo
     make -s ZEND_EXTRA_FILE='-liconv' && make -s install
     [ ! $? -eq 0 ] && exit_with_error "Building ${PHP54_TAR_NAME} package failed!"
-    
+
     echo
     echo "Updating php.ini ..."
     echo
     /bin/cp -f ${CONFIG_DIR}/php.ini ${PHP54_DIR}/etc/php.ini
     sed -i "s:__PHP54_DIR__:${PHP54_DIR}:g" ${PHP54_DIR}/etc/php.ini
-    
+
     echo
     echo "Updating php-fpm.conf ..."
     echo
@@ -138,7 +138,7 @@ function install_php54()
     sed -i "s:__PHP54_USER__:${PHP_USER}:g" ${PHP54_DIR}/etc/php-fpm.conf
     sed -i "s:__PHP54_GROUP__:${PHP_GROUP}:g" ${PHP54_DIR}/etc/php-fpm.conf
     sed -i "s:__PHP54_PORT__:${PHP_FPM_PORT}:g" ${PHP54_DIR}/etc/php-fpm.conf
-    
+
     echo
     echo "Setting up ${PHP54_ID_NAME} service ..."
     echo
@@ -146,7 +146,7 @@ function install_php54()
     sed -i "s:__PHP54_DIR__:${PHP54_DIR}:g" /etc/init.d/${PHP54_ID_NAME}
     sed -i "s:__PHP54_LOG_DIR__:${PHP54_LOG_DIR}:g" /etc/init.d/${PHP54_ID_NAME}
     chmod +x /etc/init.d/${PHP54_ID_NAME}
-    
+
     chkconfig --add ${PHP54_ID_NAME}
     chkconfig --level 235 ${PHP54_ID_NAME} on
 
@@ -154,19 +154,19 @@ function install_php54()
     add_custom_bin_path ${PHP54_DIR}/sbin
     add_custom_bin_path ${PHP54_DIR}/bin
     source /etc/profile
-    
+
     service ${PHP54_ID_NAME} start
     [ $? -eq 0 ] || "${PHP54_TAR_NAME} cannot be started!"
-    
+
     echo
     echo "${PHP54_TAR_NAME} is installed successfully."
-    echo        
-    
+    echo
+
     service ${PHP54_ID_NAME} stop
-    
+
     # eaccelerator not compatitle with php 5.4
-    # prepare_package lib ${PACKAGE_DIR} ${EACCELERATOR_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL} 
-    
+    # prepare_package lib ${PACKAGE_DIR} ${EACCELERATOR_TAR_NAME} ${BASE_DIR} ${DOWNLOAD_BASE_URL}
+
     # echo
     # echo "Building ${EACCELERATOR_TAR_NAME} package ..."
     # echo
@@ -174,51 +174,57 @@ function install_php54()
     # ${PHP54_DIR}/bin/phpize
     # ./configure --with-php-config=${PHP54_DIR}/bin/php-config --enable-eaccelerator=shared
     # [ ! $? -eq 0 ] && exit_with_error "Missing dependencies for ${EACCELERATOR_TAR_NAME}!"
-    
+
     # echo
     # echo "Building ${EACCELERATOR_TAR_NAME} package ..."
     # echo
     # make -s && make -s install
     # [ ! $? -eq 0 ] && exit_with_error "Building ${EACCELERATOR_TAR_NAME} failed!"
-    
-    # sed -i '/eaccelerator\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini       
-    
-    # retry 10 times    
+
+    # sed -i '/eaccelerator\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini
+
+    cd ${PHP54_DIR}/bin
+    # retry 10 times
     for((j=0;j<10;j++))
     do
         if [ -f ${PHP54_DIR}/lib/php/extensions/no-debug-non-zts-20100525/uuid.so ]; then
             sed -i '/uuid\.so/{s/^;//}' ${PHP54_DIR}/etc/php.ini
             break
         else
-            echo -e '\n'|pecl install uuid
+            echo -e '\n'|./pecl install uuid
         fi
     done
     [ -f ${PHP54_DIR}/lib/php/extensions/no-debug-non-zts-20100525/uuid.so ] || exit_with_error "Failed to install uuid php extension!"
-    
+
+    echo "PHP extension 'uuid' is installed successfully."
+    echo
+
     # install phing
     if [ ${PHP_WITH_PHING} -eq 1 ]
     then
         cd ${PHP54_DIR}/bin
-        
-        # retry 10 times   
+        ./pear channel-discover pear.phing.info
+
+        # retry 10 times
         for((j=0;j<10;j++))
         do
             if [ -f ${PHP54_DIR}/bin/phing ]; then
                 break
             else
-                ./pear channel-discover pear.phing.info
                 ./pear install phing/phing
             fi
-        done  
-        [ -f ${PHP54_DIR}/bin/phing ] || exit_with_error "Failed to install phing module!"        
+        done
+        [ -f ${PHP54_DIR}/bin/phing ] || exit_with_error "Failed to install phing module!"
     fi
+    echo "'phing' is installed successfully."
+    echo
 }
-  
-if [ ${ALL_REINSTALL} -eq 1 ] || [ ! -d ${PHP54_DIR} ]; then    
+
+if [ ${ALL_REINSTALL} -eq 1 ] || [ ! -d ${PHP54_DIR} ]; then
     install_php54
 else
     echo "${PHP54_TAR_NAME} has already installed."
     echo "Nothing to do."
     echo
 fi
-    
+
