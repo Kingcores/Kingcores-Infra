@@ -1,15 +1,18 @@
 <?php
 
 use Bluefin\App;
+use Bluefin\Util\Trie;
 
-function _CONTEXT($name, $default = null, $cacheable = false, $this = null)
+function _CONTEXT($name, $defaultValue = null, $cacheable = false,
+                  $thisContext = null, $useThisContextOnly = false,
+                  Trie $handlersTrie = null)
 {
     $modifiers = split_modifiers($name);
     $name = array_shift($modifiers);
 
     $app = App::getInstance();
 
-    if ($app->inRegistry($name))
+    if ($cacheable && $app->inRegistry($name))
     {
         $result = $app->getRegistry($name);
     }
@@ -21,14 +24,39 @@ function _CONTEXT($name, $default = null, $cacheable = false, $this = null)
         if ($numKeys > 1)
         {
             $source = strtolower($keys[0]);
-            $topKey = $keys[1];
 
-            if ($numKeys > 2)
+            if (!$useThisContextOnly || $source == 'this')
             {
-                $rest = $keys[2];
+                $topKey = $keys[1];
+
+                if ($numKeys > 2)
+                {
+                    $rest = $keys[2];
+                }
+            }
+            else
+            {
+                if (!isset($thisContext))
+                {
+                    throw new \Bluefin\Exception\InvalidOperationException("'thisContext' should not be null if useThisContextOnly is true.");
+                }
+
+                $source = 'this';
+                $topKey = $keys[0];
+                $rest = $keys[1];
+
+                if ($numKeys > 2)
+                {
+                    $rest .= '.' . $keys[2];
+                }
             }
         }
-        else if (isset($this))
+        else if ($keys[0][0] == '`')
+        {
+            $source = 'functor';
+            $topKey = substr($keys[0], 1);
+        }
+        else if (isset($thisContext))
         {
             $source = 'this';
             $topKey = $keys[0];
@@ -41,9 +69,9 @@ function _CONTEXT($name, $default = null, $cacheable = false, $this = null)
         switch ($source)
         {
             case 'this':
-                if (isset($this))
+                if (isset($thisContext))
                 {
-                    $result = array_try_get($this, $topKey);
+                    $result = array_try_get($thisContext, $topKey);
                 }
                 else
                 {
@@ -72,7 +100,10 @@ function _CONTEXT($name, $default = null, $cacheable = false, $this = null)
                 $result = $app->auth($topKey)->getAuthData();
                 break;
             case 'request':
-                $result = $this->_request->get($topKey);
+                $result = $thisContext->_request->get($topKey);
+                break;
+            case 'functor':
+                $result = call_user_func($topKey);
                 break;
             default:
                 throw new \Bluefin\Exception\ServerErrorException("Unsupported context source: {$source}");
@@ -81,18 +112,25 @@ function _CONTEXT($name, $default = null, $cacheable = false, $this = null)
 
         if (isset($rest) && $rest != '')
         {
-            $result = _C($rest, $default, $result);
+            $result = _C($rest, $defaultValue, $result);
         }
 
-        if (isset($result) && $cacheable)
+        if ($cacheable)
         {
             $app->setRegistry($name, $result);
         }
     }
 
-    if (isset($modifiers))
+    if (!empty($modifiers))
     {
-        $result = apply_value_modifiers($result, $modifiers);
+        if (!isset($handlersTrie))
+        {
+            throw new \Bluefin\Exception\InvalidOperationException(
+                "Missing modifier handlers!"
+            );
+        }
+
+        $result = apply_value_modifiers($result, $modifiers, $handlersTrie);
     }
 
     return $result;
@@ -115,6 +153,7 @@ function _T($message, $domain, array $param = null)
 /**
  * 翻译METADATA数据的快捷方式
  * @param $text
+ * @param $param
  * @return string
  */
 function _META_($text, array $param = null)

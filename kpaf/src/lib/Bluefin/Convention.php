@@ -34,6 +34,9 @@ class Convention
     const DEFAULT_AUTH_SESSION_NAMESPACE = 'auth';
     const DEFAULT_AUTH_LIFETIME = 1200;
 
+    const SESSION_LIFE_COUNTER = '__init';
+    const SESSION_CURRENT_LOCALE = '__locale';
+
     const FILE_TYPE_LOCALE_FILE = '.yml';
 
     const FEATURE_AUTO_INCREMENT_ID = 'auto_increment_id';
@@ -65,13 +68,13 @@ class Convention
     const BLUEFIN_VIEW_CONTROLLER = 'View';
     const BLUEFIN_REST_CONTROLLER = 'Rest';
 
-    private static $_namingWhileList;
+    private static $__namingWhileList;
 
     public static function getPascalNaming($phrase, $default = null)
     {
-        if (!isset(self::$_namingWhileList))
+        if (!isset(self::$__namingWhileList))
         {
-            self::$_namingWhileList = array(
+            self::$__namingWhileList = array(
                 'email' => 'EMail',
                 'oauth' => 'OAuth',
                 'oauth2' => 'OAuth2',
@@ -85,11 +88,14 @@ class Convention
                 'idc' => 'IDC'
             );
 
-            $naming = _C('naming');
-            $naming && (self::$_namingWhileList = array_merge(self::$_namingWhileList, $naming));
+            if (file_exists(APP_ETC . '/naming.php'))
+            {
+                $naming = require APP_ETC . '/naming.php';
+                self::$__namingWhileList = array_merge(self::$__namingWhileList, $naming);
+            }
         }
 
-        return array_try_get(self::$_namingWhileList, $phrase, $default);
+        return array_try_get(self::$__namingWhileList, $phrase, $default);
     }
 
     public static function getTableAliasNaming($tableName)

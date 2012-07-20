@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="lance_jobs" default="usage">
+
+    <taskdef name="create" classname="CreateTask" />
+
+    <!-- ============================================  -->
+    <!-- Target: usage                                 -->
+    <!-- ============================================  -->
+    <target name="usage">
+        <echo msg="Usage:" />
+        <echo msg="  build create_project" />
+        <echo msg="    Create a new project." />
+        <echo msg="  build reinit_project" />
+        <echo msg="    Re-Initialize a project." />
+        <echo msg="Usage:" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: build                                 -->
+    <!-- ============================================  -->
+    <target name="create_project">
+        <create type="project" />
+        <echo msg="ok" />
+    </target>
+
+    <target name="reinit_project">
+        <propertyprompt propertyName="reinitConfirm" defaultValue="n"
+                        promptText="This job will delete some project files. Are you sure to continue? (y/n)[n]: " />
+        <if>
+         <equals arg1="${reinitConfirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+        <create type="re_init" />
+        <echo msg="ok" />
+    </target>
+
+</project>

@@ -15,7 +15,7 @@ function normalize_dir_separator($dir)
     return strtr($dir, '/', DIRECTORY_SEPARATOR);
 }
 
-function ensure_dir_exist($dir, $mode = 0755)
+function ensure_dir_exist($dir, $mode = \Bluefin\Common::DIR_MODE_OWNER_WRITE_OTHER_READONLY)
 {
     if (!is_dir($dir))
     {
@@ -27,7 +27,7 @@ function ensure_dir_exist($dir, $mode = 0755)
     return 0;
 }
 
-function ensure_file_exist($target, $source = null, $mode = 0644)
+function ensure_file_exist($target, $source = null, $mode = \Bluefin\Common::FILE_MODE_OWNER_WRITE_OTHER_READONLY)
 {
     if (!file_exists($target))
     {
@@ -97,12 +97,12 @@ function del_dir($dir, array &$list = null)
 {
     if (!is_dir($dir))
     {
-        die("Directory \"{$dir}\" not exist!");
+        die("Directory \"{$dir}\" does not exist!");
     }
 
     if (false === ($handle = opendir($dir)))
     {
-        die("Open directory \"{$dir}\" failed!");
+        die("Opening directory \"{$dir}\" failed!");
     }
 
     $dir = add_dir_separator($dir);

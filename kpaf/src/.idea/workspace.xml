@@ -2,184 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd2a040c-0c9e-4129-b0ac-50e93ce69fcf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/src.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/App.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/AuthCode.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/AuthInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/OAuth2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/OAuth2Client.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/Persistence/PersistenceInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Auth/Persistence/Session.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Common.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Controller/RestfulController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Controller/ServiceController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Controller/ViewController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Convention.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Database.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Db/DbInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Db/MySQL.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/DbCondition.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/DbParam.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/FilterContext.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/FilterInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/Validator.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/Validator/GreaterThan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/Validator/LessThan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/ValueFilterBase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Filter/ValueFilterInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/AutoDigits.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/AutoPassword.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/AutoUUID.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/Context.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/Copy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/FormatterInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/FunctorInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/PostProcessorInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/SaltedMd5.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/SupplierInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Functor/UnpackUuid.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Model.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/ModelMetadata.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Relation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Relations.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Select.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/Type.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Data/ValidatorInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Dummy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/AssertException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/BluefinException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/ConfigException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/DatabaseException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/FileNotFoundException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/ForwardException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/InvalidOperationException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/InvalidParamException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/InvalidRequestException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/ModelException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/PageNotFoundException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/RedirectException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/RequestException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/ServerErrorException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Exception/UnauthorizedException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Filter/AbstractFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Filter/FilterInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Filter/InputFilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Filter/OAuth2Filter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Gateway.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Adapter/AdapterInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Adapter/MySQLAdapter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Auth/AuthInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Auth/DbAuth.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Convention.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Entity.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Exception/AdapterException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Exception/GrammarException.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/AbstractFeature.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/AutoIncrementID.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/AutoUUID.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/ChangeLog.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/CreateTimestamp.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/CreatedBy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/FeatureInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/LogicalDeletion.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/SelfCascade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/UpdateTimestamp.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Feature/UpdatedBy.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Field.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/PHPCodingLogic.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Reference.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/SchemaSet.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Skeleton/AbstractBlock.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Skeleton/BlockInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Skeleton/SearchForm.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/System.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/Tin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/TypeModifier.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/YAMLRunner.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/etc/global.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/auth/db_auth.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/auth/db_auth_yml.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/database_class.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/enumeration.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/finite_state_table.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/model_class.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/drop_tables.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/relation.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/runtime_config.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/table.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/mysql/truncate_tables.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/php_init_db.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/db/php_rebuild_db.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/service/restful.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/action_detail.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/action_edit.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/action_search.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/business.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/controller.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/view_detail.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/view_edit.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/view_new.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/templates/skeleton/view_search.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Lance/ysd/system.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Modifier/TypeModifier.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/DHTMLXRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/JSONRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/RAWRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/RendererInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/TWIGRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/XMLRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Renderer/YAMLRenderer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Request.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Response.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Service.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/ServiceAgent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Session/RedisSessionSaveHandler.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Util/Trie.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/View.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/bluefin.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/config/builtin_users_groups.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/capital_city.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/city.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/country.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/district.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/ip_address.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/isp.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/script/province.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/builtin_users_groups.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/capital_city.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/city.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/country.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/district.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/ip_address.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/isp.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/data/source/province.data" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/locale/zh_CN/bluefin.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/address.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/core.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/ip_address.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/oauth2.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/person.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/schema/system.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/builtin/view/listArray.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/common/bluefin_conventions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/common/bluefin_helpers.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/common/common_utils.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/common/fs_utils.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/css/blackbird.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/images/blackbird/blackbird_icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/images/blackbird/blackbird_panel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/js/blackbird.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default/view/Index.index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/etc/options.dev.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/etc/options.prod.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/etc/options.test.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/etc/options.unit.php" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jobs/CreateTask.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jobs/build.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Lance/Creator/ReInitCreator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/Home.index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/HomeController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/route_default.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Log/FileLogger.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Log/Log.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Log/LoggerBase.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Log/LoggerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Session/CacheStorage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Session/SaveHandlerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/VarModifierHandler.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/VarText.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Yaml/Dumper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Yaml/Escaper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Yaml/Inline.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Yaml/Parser.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Yaml/ParserException.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Yaml/Unescaper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/Bluefin/Yaml/Yaml.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Bluefin/Modifier/TypeModifier.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/App.php" afterPath="$PROJECT_DIR$/lib/Bluefin/App.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Common.php" afterPath="$PROJECT_DIR$/lib/Bluefin/Common.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Convention.php" afterPath="$PROJECT_DIR$/lib/Bluefin/Convention.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Data/Type.php" afterPath="$PROJECT_DIR$/lib/Bluefin/Data/Type.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Dummy.php" afterPath="$PROJECT_DIR$/lib/Bluefin/Dummy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Gateway.php" afterPath="$PROJECT_DIR$/lib/Bluefin/Gateway.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Lance/Creator/ProjectCreator.php" afterPath="$PROJECT_DIR$/lib/Bluefin/Lance/Creator/ProjectCreator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/global.yml" afterPath="$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/global.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/route_bluefin.yml" afterPath="$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/route_bluefin.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/Session/RedisSessionSaveHandler.php" afterPath="$PROJECT_DIR$/lib/Bluefin/Session/RedisSessionSaveHandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/bluefin.php" afterPath="$PROJECT_DIR$/lib/Bluefin/bluefin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/common/bluefin_conventions.php" afterPath="$PROJECT_DIR$/lib/Bluefin/common/bluefin_conventions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/common/bluefin_helpers.php" afterPath="$PROJECT_DIR$/lib/Bluefin/common/bluefin_helpers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Bluefin/common/fs_utils.php" afterPath="$PROJECT_DIR$/lib/Bluefin/common/fs_utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../lnmp/scripts/install_php54.inc.sh" afterPath="$PROJECT_DIR$/../../lnmp/scripts/install_php54.inc.sh" />
     </list>
     <ignored path="src.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -200,7 +60,98 @@
     <favorites_list name="src" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="FileLogger.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/Log/FileLogger.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="37" selection-start="719" selection-end="719" vertical-scroll-proportion="-22.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggerBase.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/Log/LoggerBase.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="0" selection-start="1199" selection-end="1199" vertical-scroll-proportion="-11.166667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Type.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/Data/Type.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="502" column="32" selection-start="15868" selection-end="15868" vertical-scroll-proportion="-0.16666667">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggerInterface.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/Log/LoggerInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="54" selection-start="515" selection-end="549" vertical-scroll-proportion="-17.333334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VarModifierHandler.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/VarModifierHandler.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="30" selection-start="453" selection-end="453" vertical-scroll-proportion="-13.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/global.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jobs/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="0" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.9163987">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProjectCreator.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/Lance/Creator/ProjectCreator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="0" selection-start="7" selection-end="1306" vertical-scroll-proportion="-20.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReInitCreator.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/Lance/Creator/ReInitCreator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="-10.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fs_utils.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/Bluefin/common/fs_utils.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="131" column="21" selection-start="2804" selection-end="2804" vertical-scroll-proportion="-26.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -213,15 +164,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/lib/Lance/Creator/SystemCreator.php" />
-        <option value="$PROJECT_DIR$/lib/bluefin.php" />
-        <option value="$PROJECT_DIR$/lib/App.php" />
-        <option value="$PROJECT_DIR$/lib/Lance/templates/project/index.php" />
-        <option value="$PROJECT_DIR$/lib/Lance/Creator/Creator.php" />
-        <option value="$PROJECT_DIR$/lib/Lance/templates/project/global.yml" />
-        <option value="$PROJECT_DIR$/lib/Lance/templates/project/route_bluefin.yml" />
-        <option value="$PROJECT_DIR$/lib/common/fs_utils.php" />
-        <option value="$PROJECT_DIR$/lib/Lance/Creator/ProjectCreator.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/common/bluefin_conventions.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Gateway.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Log/AbstractLogger.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/VarText.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/common/bluefin_helpers.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Log/Log.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/App.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/VarModifierHandler.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Log/LoggerInterface.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Data/Type.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Log/LoggerBase.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Log/FileLogger.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/global.yml" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/common/fs_utils.php" />
+        <option value="$PROJECT_DIR$/lib/Bluefin/Lance/Creator/ReInitCreator.php" />
+        <option value="$PROJECT_DIR$/jobs/build.xml" />
       </list>
     </option>
   </component>
@@ -284,14 +242,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bluefin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -300,6 +250,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jobs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,7 +270,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/Lance/templates/project" />
+      <recent name="$PROJECT_DIR$/lib/Bluefin/Log" />
+      <recent name="$PROJECT_DIR$/lib/Bluefin" />
+      <recent name="$PROJECT_DIR$/lib/Bluefin/Session" />
+      <recent name="$PROJECT_DIR$/lib/Zend" />
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/Bluefin" />
+      <recent name="$PROJECT_DIR$/lib/Bluefin/Log" />
     </key>
   </component>
   <component name="RunManager">
@@ -365,21 +327,21 @@
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24964131" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19440459" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20086083" sideWeight="0.67105263" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19727403" sideWeight="0.67105263" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
     </layout>
   </component>
@@ -438,79 +400,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/Lance/System.php">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/common/bluefin_conventions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="14.875">
+        <state line="167" column="0" selection-start="3722" selection-end="3722" vertical-scroll-proportion="-83.125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Lance/Creator/SystemCreator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="1" selection-start="28" selection-end="28" vertical-scroll-proportion="-1.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/common_utils.php">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/builtin/schema/core.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/bluefin_helpers.php">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/VarText.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="39" selection-start="357" selection-end="357" vertical-scroll-proportion="-10.625">
+        <state line="8" column="41" selection-start="108" selection-end="108" vertical-scroll-proportion="-5.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Lance/templates/project/index.php">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/common/bluefin_helpers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="56" selection-start="155" selection-end="155" vertical-scroll-proportion="-3.75">
+        <state line="105" column="50" selection-start="3141" selection-end="3141" vertical-scroll-proportion="-65.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/App.php">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/Log/Log.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="35" selection-start="4223" selection-end="4223" vertical-scroll-proportion="0.61129034">
+        <state line="101" column="29" selection-start="1957" selection-end="1957" vertical-scroll-proportion="-8.291667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Lance/Creator/Creator.php">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/App.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="-2.5">
+        <state line="262" column="118" selection-start="6036" selection-end="6427" vertical-scroll-proportion="-12.416667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Lance/templates/project/global.yml">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/VarModifierHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="273" selection-end="273" vertical-scroll-proportion="0.34246576">
+        <state line="21" column="30" selection-start="453" selection-end="453" vertical-scroll-proportion="-13.125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Lance/templates/project/route_bluefin.yml">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/Log/LoggerInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
+        <state line="33" column="54" selection-start="515" selection-end="549" vertical-scroll-proportion="-17.333334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/bluefin.php">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/Data/Type.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="42" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.8578199">
+        <state line="502" column="32" selection-start="15868" selection-end="15868" vertical-scroll-proportion="-0.16666667">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/common/fs_utils.php">
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/Log/LoggerBase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="30" selection-start="682" selection-end="682" vertical-scroll-proportion="-13.75">
+        <state line="47" column="0" selection-start="1199" selection-end="1199" vertical-scroll-proportion="-11.166667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/Log/FileLogger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="37" selection-start="719" selection-end="719" vertical-scroll-proportion="-22.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/Lance/templates/project/global.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/Lance/Creator/ProjectCreator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="7" selection-end="1306" vertical-scroll-proportion="-20.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/common/fs_utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="21" selection-start="2804" selection-end="2804" vertical-scroll-proportion="-26.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Bluefin/Lance/Creator/ReInitCreator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="283" selection-end="283" vertical-scroll-proportion="-10.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1351" selection-end="1351" vertical-scroll-proportion="0.9163987">
           <folding />
         </state>
       </provider>

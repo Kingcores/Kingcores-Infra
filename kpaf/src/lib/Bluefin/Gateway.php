@@ -4,6 +4,7 @@ namespace Bluefin;
 
 use Bluefin\App;
 use Bluefin\Convention;
+use Bluefin\Util\Trie;
 use Bluefin\Exception\ForwardException;
 use Bluefin\Exception\RedirectException;
 use Bluefin\Exception\RequestException;
@@ -20,7 +21,6 @@ use Exception;
  */
 class Gateway
 {
-    const DOT_NAME_PATTERN = '/\{(\w+\.\w+(?:\|[^|}]+)*)\}/';
     const MAX_FORWARD_LIMIT = 3;
 
     /**
@@ -68,6 +68,8 @@ class Gateway
 
     private $_dispatchedTimes;
 
+    private $_varTextProcessor;
+
     public function __construct()
     {              
         $this->_request = App::getInstance()->request();
@@ -78,7 +80,15 @@ class Gateway
         $this->_serverUrlRewritable = _C('app.serverUrlRewritable', false);
         $this->_dispatchedTimes = 0;
 
-        App::getInstance()->setRegistry('gateway', $this);
+        $handlers = array(
+            new VarModifierHandler(Convention::MODIFIER_NAMING_PASCAL, 'usw_to_pascal'),
+            new VarModifierHandler(Convention::MODIFIER_NAMING_CAMEL, 'usw_to_camel'),
+            new VarModifierHandler(Convention::MODIFIER_NAMING_UPPER, 'strtoupper'),
+            new VarModifierHandler(Convention::MODIFIER_NAMING_LOWER, 'strtolower'),
+            new VarModifierHandler(Convention::MODIFIER_DEFAULT_VALUE, 'is_null_then', true)
+        );
+
+        $this->_varTextProcessor = new VarText(null, true, $handlers);
     }
 
     public function getRequest()
@@ -152,11 +162,7 @@ class Gateway
 
     public function parseRoutingValue($value)
     {
-        return preg_replace_callback(
-            self::DOT_NAME_PATTERN,
-            array(&$this, '_ruleDotNameMatchCallback'),
-            $value
-        );
+        return $this->_varTextProcessor->parse($value);
     }
 
     public function splitDispatchTarget($name, $asPath = false)
@@ -299,7 +305,7 @@ class Gateway
 
         $this->_response->sendResponse();
 
-        $passedTime = App::getInstance()->end();
+        $passedTime = App::getInstance()->elapsedTime();
         App::getInstance()->log()->info('Execution time: ' . $passedTime . '(s).');
     }
 
@@ -425,7 +431,7 @@ class Gateway
      * 选择合适的路由，匹配到的路由项名称到$_selectedRoute
      * 找到合适的路由时返回true，否则返回false
      * @return bool
-     * @throws Exception\ConfigException
+     * @throws \Bluefin\Exception\ConfigException
      */
     private function _findRoute()
     {
@@ -523,11 +529,6 @@ class Gateway
         $this->_request->setRouteParams($routeParams);
     }
 
-    private function _ruleDotNameMatchCallback($matches)
-    {
-        return _CONTEXT($matches[1], null, true);
-    }
-
     private function _processRouteRule()
     {
         //获取路由分发所需信息
@@ -569,7 +570,7 @@ class Gateway
      * 检查参数是否符合需求。
      * @param $filters array
      * @return bool
-     * @throws Exception\ConfigException
+     * @throws \Bluefin\Exception\ConfigException
      */
     private function _processFilters(array $filters)
     {
@@ -587,6 +588,9 @@ class Gateway
                 throw new \Bluefin\Exception\ConfigException("Invalid filter name: {$filterName}");
             }
 
+            /**
+             * @var Filter\FilterInterface $filter
+             */
             if (false === $filter->filter($filterOptions))
             {
                 return false;
@@ -600,7 +604,8 @@ class Gateway
      * 根据请求分发到指定的controller:action
      * 成功返回true，失败( 仅当视图模板不存在时 )返回false
      *
-     * @throws Exception\PageNotFoundException
+     * @throws \Bluefin\Exception\PageNotFoundException
+     * @throws \Bluefin\Exception\InvalidOperationException
      * @return bool
      */
     private function _dispatchRequest()

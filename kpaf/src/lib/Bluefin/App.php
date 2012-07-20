@@ -2,15 +2,9 @@
 
 namespace Bluefin;
 
-use Symfony\Component\Yaml\Yaml;
-use Zend_Log_Writer_Stream;
-use Zend_Log;
-use Zend_Session;
-use Zend_Locale;
-use Zend_Registry;
-use Zend_Session_Namespace;
-use Zend_Db;
-        
+use Bluefin\Yaml\Yaml;
+use Bluefin\Log\Log;
+
 class App
 {    
     private static $_instance;
@@ -117,7 +111,6 @@ class App
     }
 
     private $_startTime;
-    private $_endTime;
 
     private $_config;
     private $_bathPath;
@@ -183,6 +176,8 @@ class App
     public function startGateway()
     {
         $gateway = new Gateway();
+        $this->setRegistry('gateway', $this);
+
         $gateway->service();
     }
 
@@ -213,8 +208,9 @@ class App
 
     /**
      * Gets a logger.
-     * @param $id logger id
-     * @return \Zend_Log
+     *
+     * @param string $id
+     * @return Log
      */
     public function log($id = Convention::CONFIG_KEYWORD_DEFAULT)
     {        
@@ -231,29 +227,48 @@ class App
                 );
 
                 //根据标识读取配置
-                $logConf = $logSection[$id];
-
-                //如果目录不存在则自动创建
-                if (!file_exists($logConf['logPath']))
-                {
-                    mkdir($logConf['logPath'], 0777);
-                }
-
-                $logpath = $logConf['logPath'] . '/' . $logConf['filenamePrefix'] . date('Ymd', time()) . '.log';
+                $loggersConfig = $logSection[$id];
+                is_array($loggersConfig) || ($loggersConfig = array($loggersConfig));
 
                 //创建日志对象
-                $writer = new Zend_Log_Writer_Stream($logpath);
-                $writer->addFilter($logConf['logLevel']);
+                $log = new Log();
 
-                $logger = new Zend_Log();
-                $logger->addWriter($writer);
+                foreach ($loggersConfig as $loggerConfig)
+                {
+                    $loggerType = array_try_get($loggerConfig, 'type', 'file', true);
+
+                    $loggerClass = "\\Bluefin\\Log\\" . usw_to_pascal($loggerType) . "Logger";
+
+                    /**
+                     * @var \Bluefin\Log\LoggerInterface
+                     */
+                    $logger = new $loggerClass($loggerConfig);
+
+                    $log->addLogger($logger);
+
+
+
+
+
+                    $handlers = array(
+                        VarModifierHandler::getDateTimeFormatHandler()
+                    );
+
+
+
+                    is_array($logTypes) || ($logTypes = array($logTypes));
+
+                    $varText = new VarText(array('id'=>$id), false, $handlers);
+
+                    $filename = $varText->parse(array_try_get($logConf, 'filename', '{%id}_{%`time|date="Ymd"}.log'));
+                }
             }
             else
             {
-                $logger = Dummy::getInstance();
+                $log = Dummy::getInstance();
             }
 
-            $this->_log[$id] = $logger;
+            $this->_log[$id] = $log;
         }
 
         return $this->_log[$id];
@@ -261,6 +276,8 @@ class App
 
     public function addTranslation($domain, $message, $translation)
     {
+        if (!isset($this->_localeText)) return;
+
         if (!array_key_exists($domain, $this->_localeText))
         {
             $this->_localeText[$domain] = array();
@@ -277,6 +294,8 @@ class App
 
     public function translate($message, $domain)
     {
+        if (!isset($this->_localeText)) return $message;
+
         if (array_key_exists($domain, $this->_localeText))
         {
             $domainText = &$this->_localeText[$domain];
@@ -525,30 +544,39 @@ class App
         {
             $sessionSection = $this->_config[Convention::CONFIG_SECTION_SESSION];
 
-            //判断配置文件是否提供类名
+            //判断配置文件是否提供SessionSaveHandler类名
             if (isset($sessionSection['saveHandler']))
             {
-                $params = $sessionSection['params'];
+                $saveHandler = new $sessionSection['saveHandler']($sessionSection['params']);
 
-                Zend_Session::setSaveHandler(new $sessionSection['saveHandler']($params));
+                session_set_save_handler(
+                            array($saveHandler, 'open'),
+                            array($saveHandler, 'close'),
+                            array($saveHandler, 'read'),
+                            array($saveHandler, 'write'),
+                            array($saveHandler, 'destroy'),
+                            array($saveHandler, 'gc')
+                        );
             }
         }
-		
+
+        //Hack for Flash Post
 		if ($_SERVER['HTTP_USER_AGENT'] == 'Shockwave Flash' && isset($_POST['PHPSESSID']))
         {
-            //TODO: check the session id format
             session_id($_POST['PHPSESSID']);            
             unset($_POST['PHPSESSID']);            
         }
 
-        Zend_Session::start();
+        session_start();
 
-        $defaultNamespace = new Zend_Session_Namespace();
-
-        if (!isset($defaultNamespace->initialized))
+        if (!isset($_SESSION[Convention::SESSION_LIFE_COUNTER]))
         {
-            Zend_Session::regenerateId();
-            $defaultNamespace->initialized = true;
+            session_regenerate_id(true);
+            $_SESSION[Convention::SESSION_LIFE_COUNTER] = 0;
+        }
+        else
+        {
+            $_SESSION[Convention::SESSION_LIFE_COUNTER]++;
         }
     }
 
@@ -569,30 +597,22 @@ class App
         // try get lcid from request
         $lcid = $this->request()->get($localeParameter);
         
-        if ($useSession)
+        if (empty($lcid) && $useSession && isset($_SESSION[Convention::SESSION_CURRENT_LOCALE]))
         {
-            $localeSession = new Zend_Session_Namespace(Convention::DEFAULT_SESSION_NAMESPACE);
-
-            if (is_null($lcid))
-            {
-                if (isset($localeSession->locale))
-                {
-                    $lcid = $localeSession->locale;
-                }
-            }
+            $lcid = $_SESSION[Convention::SESSION_CURRENT_LOCALE];
         }
 
-        if (!is_null($lcid))
+        if (!empty($lcid))
         {
             // check if it is supported
             if (!in_array($lcid, $supportedLocales))
             {
-                $lcid = null;
                 $this->log()->notice("Request Error! Requested locale[{$lcid}] not supported!");
+                $lcid = null;
             }
         }
 
-        if (is_null($lcid))
+        if (empty($lcid))
         {
             // try get lcid from header
             $languages = $this->request()->getAcceptLanguages();
@@ -617,21 +637,20 @@ class App
         }
 
         setlocale(LC_ALL, $lcid);
-        $locale = new Zend_Locale($lcid);
-        Zend_Registry::set('Zend_Locale', $locale);
         $this->_currentLocale = $lcid;
 
         if ($useSession)
         {
-            $localeSession->locale = $lcid;
+            $_SESSION[Convention::SESSION_CURRENT_LOCALE] = $lcid;
         }
 
         if ($useCache)
         {
+            /*
             $cache = $this->cache('locale');
-            if (is_null($cache))
+            if (!isset($cache))
             {
-                throw new \Bluefin\Exception\ConfigException('Locale cache not found in config.');
+                throw new \Bluefin\Exception\ConfigException("Locale cache not found in config while 'useCache' is specified.");
             }
 
             $key = Convention::CACHE_KEY_PREFIX_LOCALE . $this->_currentLocale;
@@ -643,8 +662,10 @@ class App
                 $this->log()->debug('Cached locale text loaded.');
                 //[-]DEBUG
             }
+            */
         }
 
+        /*
         if (!isset($this->_localeText))
         {
             $this->_localeText = array();
@@ -695,6 +716,7 @@ class App
                 $cache->set($key, serialize($this->_localeText));
             }
         }
+        */
     }
 
     private function _exportLocale($domain)

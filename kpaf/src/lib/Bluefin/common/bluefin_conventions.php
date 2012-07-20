@@ -1,6 +1,7 @@
 <?php
 
 use Bluefin\Convention;
+use Bluefin\Util\Trie;
 
 function bluefin_autoload($class)
 {
@@ -148,37 +149,58 @@ function combine_usw($prefix, $name)
     return implode('_', array_merge($a1, $a2));
 }
 
-/**
- * @param  $value the value that the filter will be applied to
- * @param  $filter the filter, support(P, C, U, L)
- * @return string
- */
-function apply_value_modifiers($value, array $modifiers)
+function is_null_then($value, $default = null)
 {
+    return is_null($value) ? $default : $value;
+}
+
+/**
+ * Handling modifiers on a given value
+ *
+ * @param $value
+ * @param array $modifiers modifiers to be applied to the value
+ * @param \Bluefin\Util\Trie $handlersTrie handlers to handle each modifiers
+ * @return mixed
+ * @throws Bluefin\Exception\InvalidOperationException
+ */
+function apply_value_modifiers($value, array $modifiers, Trie $handlersTrie)
+{
+
     foreach ($modifiers as $modifier)
     {
-        $token = $modifier[0];
+        $modifierHandler = $handlersTrie->findLongestMatch($modifier);
 
-        switch ($token)
+        if (isset($modifierHandler))
         {
-            case Convention::MODIFIER_NAMING_PASCAL:
-                $value = usw_to_pascal($value);
-                break;
-            case Convention::MODIFIER_NAMING_CAMEL:
-                $value = usw_to_camel($value);
-                break;
-            case Convention::MODIFIER_NAMING_UPPER:
-                $value = strtoupper($value);
-                break;
-            case Convention::MODIFIER_NAMING_LOWER:
-                $value = strtolower($value);
-                break;
-            case Convention::MODIFIER_DEFAULT_VALUE:
-                if (!isset($value))
-                {
-                    $value = trim(substr($modifier, 1));
-                }
-                break;
+            /**
+             * @var \Bluefin\VarModifierHandler $modifierHandler
+             */
+            $modifierToken = $modifierHandler->getModifierToken();
+
+            if ($modifierToken == $modifier)
+            {
+                $parameter = null;
+            }
+            else
+            {
+                $parameter = substr($modifier, strlen($modifierToken));
+                $parameter = trim_quote($parameter);
+            }
+
+            if ($modifierHandler->hasParameter())
+            {
+                $value = call_user_func($modifierHandler->getHandler(), $value, $parameter);
+            }
+            else
+            {
+                $value = call_user_func($modifierHandler->getHandler(), $value);
+            }
+        }
+        else
+        {
+            throw new \Bluefin\Exception\InvalidOperationException(
+                "Handler for modifier '{$modifier}' is not given!"
+            );
         }
     }
 

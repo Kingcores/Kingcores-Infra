@@ -46,6 +46,12 @@ class Common
 
     const HTTP_HEADER_PREFIX = 'HTTP_';
 
+    const DIR_MODE_OWNER_WRITE_OTHER_READONLY = 0755;
+    const DIR_MODE_OWNER_WRITE_GROUP_READONLY = 0750;
+
+    const FILE_MODE_OWNER_WRITE_OTHER_READONLY = 0644;
+    const FILE_MODE_OWNER_WRITE_GROUP_READONLY = 0640;
+
     private static $_statusCodeMessages;
 
     public static function getStatusCodeMessage($status)

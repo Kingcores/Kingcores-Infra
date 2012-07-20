@@ -6,10 +6,13 @@ app:
 
 log:
   default:
-    logPath: <?php echo ROOT; ?>/log
-    filenamePrefix: log_
-    logLevel: 7
+    -
+      type: file
+      path: <?php echo ROOT; ?>/log
+      filename: sys_{%`time|date='Ymd'}.log
+      level: 7
 
 routing:
   @include:
     - <?php echo APP_ETC; ?>/route/bluefin.yml
+    - <?php echo APP_ETC; ?>/route/default.yml

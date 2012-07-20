@@ -1,0 +1,4 @@
+home:
+  route: /
+  namespace: Sample
+  controller: Home.index

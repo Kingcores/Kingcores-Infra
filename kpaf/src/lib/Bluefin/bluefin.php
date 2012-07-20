@@ -25,7 +25,7 @@ define('APP_LOCALE', APP . '/locale');
 define('APP_VIEW', APP . '/view');
 define('APP_EXTEND', APP . '/extend');
 define('LANCE', ROOT . '/lance');
-define('WEB_ROOT', ROOT . '/www');
+define('WEB_ROOT', ROOT . '/webroot');
 
 require_once BLUEFIN_ETC . '/options.' . ENV . '.php';
 

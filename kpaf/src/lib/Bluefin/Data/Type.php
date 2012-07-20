@@ -197,7 +197,7 @@ class Type
                 break;
 
             case self::TYPE_BOOL:
-                self::_convertBool($fieldName, $value);
+                self::convertBool($fieldName, $value);
                 break;
 
             case self::TYPE_BINARY:
@@ -505,7 +505,7 @@ class Type
         }
     }
 
-    private static function _convertBool($fieldName, &$value)
+    public static function convertBool($fieldName, &$value)
     {
         if (true === $value)
         {

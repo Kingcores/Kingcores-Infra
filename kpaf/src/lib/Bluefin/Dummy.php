@@ -33,7 +33,7 @@ class Dummy
      * @static
      * @param  $name
      * @param  $arguments
-     * @return void
+     * @return Dummy
      */
     public static function __callStatic($name, $arguments)
     {

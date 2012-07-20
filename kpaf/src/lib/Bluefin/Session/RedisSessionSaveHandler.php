@@ -3,13 +3,11 @@
 namespace Bluefin\Session;
 
 use Bluefin\App;
-use Zend_Session_SaveHandler_Interface;
-use Zend_Session;
 
 /**
  * Redis save handler for Zend_Session
  */
-class RedisSessionSaveHandler implements Zend_Session_SaveHandler_Interface
+class RedisSessionSaveHandler implements SaveHandlerInterface
 {
     /**
      * Redis client
@@ -60,13 +58,9 @@ class RedisSessionSaveHandler implements Zend_Session_SaveHandler_Interface
     }
 
     /**
-     * Open Session
-     *
-     * @param string $save_path
-     * @param string $name
-     * @return boolean
+     * @inherited
      */
-    public function open($save_path, $name)
+    public function open($savePath, $name)
     {
         return true;
     }
