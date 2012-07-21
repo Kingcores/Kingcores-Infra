@@ -1,19 +1,18 @@
-Kingcores-Infra
-===============
+# Kingcores-Infra
+***
 
-Kingcores Infrastructure
+## Kingcores Infrastructure
 
-[LNMP]
-Nginx+MySQL+PHP on Linux
+### [LNMP]
+Nginx+MySQL+PHP(phing+uuid)+phpMyAdmin+Redis on Linux
 
 Installation
-------------
-1.run ./lnmp/yum_install.sh
-2.update configuration in ./lnmp/config.inc.sh 
-3.run ./lnmp/install.sh
+1. run ./lnmp/yum_install.sh
+2. update configuration in ./lnmp/config.inc.sh 
+3. run ./lnmp/install.sh
 
-[KBITS]
+### [KBITS]
 Kingcores Build/Integration/Test System
 
-[KPAF]
+### [KPAF]
 Kingcores PHP Application Framework
