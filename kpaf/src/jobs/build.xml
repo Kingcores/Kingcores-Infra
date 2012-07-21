@@ -9,9 +9,9 @@
     <!-- ============================================  -->
     <target name="usage">
         <echo msg="Usage:" />
-        <echo msg="  build create_project" />
+        <echo msg="  phing create_project" />
         <echo msg="    Create a new project." />
-        <echo msg="  build reinit_project" />
+        <echo msg="  phing reinit_project" />
         <echo msg="    Re-Initialize a project." />
         <echo msg="Usage:" />
     </target>
