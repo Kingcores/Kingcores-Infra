@@ -245,22 +245,6 @@ class App
                     $logger = new $loggerClass($loggerConfig);
 
                     $log->addLogger($logger);
-
-
-
-
-
-                    $handlers = array(
-                        VarModifierHandler::getDateTimeFormatHandler()
-                    );
-
-
-
-                    is_array($logTypes) || ($logTypes = array($logTypes));
-
-                    $varText = new VarText(array('id'=>$id), false, $handlers);
-
-                    $filename = $varText->parse(array_try_get($logConf, 'filename', '{%id}_{%`time|date="Ymd"}.log'));
                 }
             }
             else

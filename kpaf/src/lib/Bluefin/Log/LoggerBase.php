@@ -10,6 +10,8 @@ class LoggerBase
 
     public function __construct(array $config)
     {
+        var_dump($config);
+
         $this->_format = array_try_get($config, 'format', '[{%timestamp|date=c}][{%levelName}][{%channel}]{%message}');
         $this->_level = (int) array_try_get($config, 'level', Log::INFO);
 

@@ -1152,7 +1152,7 @@ Database}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2012-07-17 09:06:29 +0000</string>
+	<string>2012-07-22 15:49:26 +0000</string>
 	<key>Modifier</key>
 	<string>郭定明</string>
 	<key>NotesVisible</key>
@@ -1228,7 +1228,7 @@ Database}</string>
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{264, 31}, {931, 814}}</string>
+		<string>{{690, 39}, {931, 814}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
