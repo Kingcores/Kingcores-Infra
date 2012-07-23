@@ -28,6 +28,8 @@ class ProjectCreator
         ensure_file_exist(APP_VIEW . '/Sample/Home.default.yml', BLUEFIN_LANCE . '/templates/project/Home.index.html');
         ensure_file_exist(WEB_ROOT . '/index.php', BLUEFIN_LANCE . '/templates/project/index.php');
 
+        chown()
+
         touch(ROOT . '/project.lock');
     }
 }

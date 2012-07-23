@@ -97,7 +97,7 @@ function del_dir($dir, array &$list = null)
 {
     if (!is_dir($dir))
     {
-        die("Directory \"{$dir}\" does not exist!");
+        return;
     }
 
     if (false === ($handle = opendir($dir)))

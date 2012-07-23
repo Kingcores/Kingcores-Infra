@@ -2,12 +2,12 @@
 
 namespace Bluefin;
 
-use Bluefin\Yaml\Yaml;
+use Symfony\Component\Yaml\Yaml;
 use Bluefin\Log\Log;
 
 class App
 {    
-    private static $_instance;
+    private static $__instance;
 
     /**
      * @static
@@ -15,12 +15,12 @@ class App
      */
     public static function getInstance()
     {
-        if (!isset(self::$_instance))
+        if (!isset(self::$__instance))
         {
-            self::$_instance = new self();
+            self::$__instance = new self();
         }
 
-        return self::$_instance;
+        return self::$__instance;
     }
 
     /**
@@ -54,7 +54,7 @@ class App
             }
 
             //ASSERT_BEHAVIOR == 'ignore'
-            App::getInstance()->log()->err($message);
+            App::getInstance()->log()->error($message);
         }
     }
 

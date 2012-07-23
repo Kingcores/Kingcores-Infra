@@ -286,7 +286,7 @@ class Gateway
             $errorCode = \Bluefin\Common::HTTP_SERVICE_UNAVAILABLE;
             $message = \Bluefin\Common::getStatusCodeMessage($errorCode);
 
-            App::getInstance()->log()->err('Unknown Error: ' . $e->getMessage() . "\n" . $e->getTraceAsString());
+            App::getInstance()->log()->error('Unknown Error: ' . $e->getMessage() . "\n" . $e->getTraceAsString());
         }
 
         if (0 !== $errorCode)

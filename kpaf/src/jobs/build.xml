@@ -26,7 +26,7 @@
 
     <target name="reinit_project">
         <propertyprompt propertyName="reinitConfirm" defaultValue="n"
-                        promptText="This job will delete some project files. Are you sure to continue? (y/n)[n]: " />
+                        promptText="This job will delete some project files. Are you sure to continue? (y/n)" />
         <if>
          <equals arg1="${reinitConfirm}" arg2="n" />
          <then>
