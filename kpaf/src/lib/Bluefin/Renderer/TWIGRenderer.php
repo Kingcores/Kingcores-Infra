@@ -51,8 +51,7 @@ class TWIGRenderer implements RendererInterface
             $twig->addTest($testName, new \Twig_Test_Function($testFunction));
         }
         
-        $template = $twig->loadTemplate($template . $view->getOption('templateExt', '.html'));
-        //$template = $twig->loadTemplate($template);
+        $template = $twig->loadTemplate($template);
         $result = $template->render($view->getData());
 
         return $result;

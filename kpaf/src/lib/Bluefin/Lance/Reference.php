@@ -5,13 +5,13 @@ namespace Bluefin\Lance;
 class Reference
 {
     private $_localFieldName;
-    private $_entityName;
+    private $_entityFullName;
     private $_fieldName;
 
     public function __construct($localFieldName, $referencedEntityName, $referencedFieldName)
     {
         $this->_localFieldName = $localFieldName;
-        $this->_entityName = $referencedEntityName;
+        $this->_entityFullName = $referencedEntityName;
         $this->_fieldName = $referencedFieldName;
     }
 
@@ -20,9 +20,9 @@ class Reference
         return $this->_localFieldName;
     }
 
-    public function getEntityName()
+    public function getEntityFullName()
     {
-        return $this->_entityName;
+        return $this->_entityFullName;
     }
 
     public function getFieldName()

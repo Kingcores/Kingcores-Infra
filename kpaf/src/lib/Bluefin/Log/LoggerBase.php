@@ -2,15 +2,25 @@
 
 namespace Bluefin\Log;
 
+use Bluefin\Convention;
+use Bluefin\Log;
+use Bluefin\VarText;
+use Bluefin\VarModifierHandler;
+
 class LoggerBase
 {
     protected $_format;
     protected $_level;
-    protected $_channels = array(Log::CHANNEL_GENERAL => true, Log::CHANNEL_ERROR_REPORT => true);
+    protected $_channels = array(Log::CHANNEL_DEFAULT => true);
 
-    public function __construct(array $config)
+    /**
+     * @var \Bluefin\VarText
+     */
+    protected $_formatTextProcessor;
+
+    public function __construct(array $config, array $context = null)
     {
-        $this->_format = array_try_get($config, 'format', '[{%timestamp|date=c}][{%levelName}][{%channel}]{%message}');
+        $this->_format = array_try_get($config, 'format', Convention::DEFAULT_LOG_FORMAT);
         $this->_level = (int) array_try_get($config, 'level', Log::INFO);
 
         if ($this->_level < Log::FATAL || $this->_level > Log::DEBUG)
@@ -29,6 +39,12 @@ class LoggerBase
                 $this->turnChannel($name, $status);
             }
         }
+
+        $handlers = array(
+            VarModifierHandler::getPredefinedHandler('date')
+        );
+
+        $this->_formatTextProcessor = new VarText($context, false, $handlers);
     }
 
     public function setFormat($format)
@@ -59,5 +75,11 @@ class LoggerBase
     public function getChannels()
     {
         return $this->_channels;
+    }
+
+    protected function _formatMessage(array $message)
+    {
+        $this->_formatTextProcessor->setContext($message);
+        return $this->_formatTextProcessor->parse($this->_format);
     }
 }

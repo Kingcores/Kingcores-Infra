@@ -1,6 +1,7 @@
 # exit_with_error <1:error_message>
 function exit_with_error()
 {
+    echo
     echo $1
     echo
     exit 1
@@ -11,20 +12,28 @@ function create_service_user_if_not_exist()
 {
     if id "$1" >& /dev/null;
     then
+        echo
         echo "User '$1' already exists"
+        echo
         /usr/sbin/usermod -g "$2" "$1"
     else
         if [ "$#" -lt 2 ]; then
+            echo
             echo "Adding user "$1" ..."
+            echo
             /usr/sbin/useradd -M -s /sbin/nologin "$1"
         elif [ "$#" -eq 2 ]; then
+            echo
             echo "Adding user "$1" to group "$2" ..."
+            echo
             create_group_if_not_exist "$2"
             /usr/sbin/useradd -M -s /sbin/nologin "$1" -g "$2"
         fi
 
         [ "$?" -eq 0 ] || exit_with_error "Adding user "$1" failed!"
+        echo
         echo "User "$1" is added."
+        echo
     fi
 }
 
@@ -71,23 +80,19 @@ function backup()
 # stop_service <1:service_name>
 function stop_service()
 {
-    wc=`ps u -C $1|wc -l`
+    wc=`service $1 status 2>/dev/null | grep running | wc -l`
 
-    if [ $wc -gt 1 ]
+    if [ $wc -gt 0 ]
     then
         echo
         echo "Stopping service $1 ..."
         echo
 
-        if [ -f /etc/init.d/$1 ]
-        then
-            /etc/init.d/$1 stop
-        else
-            killall $1
-        fi
+        service $1 stop
+        sleep 1
     fi
 
-    wc=`ps u -C $1|wc -l`
+    wc=`ps aux | grep $2/* | wc -l`
 
     if [ $wc -gt 1 ]
     then
@@ -110,7 +115,7 @@ function prepare_package()
         echo
         echo "Checking running $1 service ..."
         echo
-        stop_service $1
+        stop_service $1 $4
 
         #check and backup if necessary
         if [ $6 == "no_backup" ]

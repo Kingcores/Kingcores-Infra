@@ -68,14 +68,13 @@ abstract class Controller
 
     public function changeView($viewTemplate)
     {
-        $this->_view->setOption('template', $this->getQualifiedViewName($viewTemplate));
-        $this->_view->setOption('templateExt', '.html');
+        $this->_view->setOption('template', $this->getQualifiedViewName($viewTemplate) . '.html');
     }
 
     public function preDispatch()
     {
         $this->changeView($this->_gateway->getActionName());
-        $this->_view->timestamp = strtotime("now");
+        $this->_view->timestamp = time();
         $this->_view->currentLocation = array(
             'module' => $this->_gateway->getModuleName(),
             'controller' => $this->_gateway->getControllerName(),

@@ -21,7 +21,7 @@ class UpdatedBy extends AbstractFeature implements FeatureInterface
 
     public function apply2Pass()
     {
-        $config = $this->_entity->getSchemaSet()->getFeatureConfig($this->getFeatureName());
+        $config = $this->_entity->getSchema()->getFeatureConfig($this->getFeatureName());
         $reference = $config['reference'];
         $source = $config['source'];
         $fallback = $config['fallback_value'];

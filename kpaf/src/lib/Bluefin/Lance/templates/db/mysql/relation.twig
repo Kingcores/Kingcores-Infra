@@ -1,6 +1,7 @@
--- TABLE {{ entityName }}
+-- TABLE {{ entity.getCodeName }}
+
 {% for keyName, keyFields in entity.getForeignKeys %}
-ALTER TABLE `{{ entityName }}`
+ALTER TABLE `{{ entity.getCodeName }}`
 ADD CONSTRAINT `{{ keyName }}` FOREIGN KEY (`{{ keyFields[0] }}`)
 {% set field = entity.getField(keyFields[0]) %}
 REFERENCES `{{ keyFields[1] }}` (`{{ keyFields[2] }}`){{ field.getForeignKeyConstraint }};

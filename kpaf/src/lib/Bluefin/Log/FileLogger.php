@@ -3,8 +3,6 @@
 namespace Bluefin\Log;
 
 use Bluefin\Common;
-use Bluefin\VarText;
-use Bluefin\VarModifierHandler;
 
 class FileLogger extends LoggerBase implements LoggerInterface
 {
@@ -12,11 +10,6 @@ class FileLogger extends LoggerBase implements LoggerInterface
      * @var array|null|resource|string
      */
     protected $_stream = null;
-
-    /**
-     * @var \Bluefin\VarText
-     */
-    protected $_formatTextProcessor;
 
     /**
      * Constructor
@@ -34,7 +27,7 @@ class FileLogger extends LoggerBase implements LoggerInterface
      */
     public function __construct(array $config, array $context = null)
     {
-        parent::__construct($config);
+        parent::__construct($config, $context);
 
         if (!array_key_exists('path', $config))
         {
@@ -51,12 +44,6 @@ class FileLogger extends LoggerBase implements LoggerInterface
         }
 
         $filename = $config['filename'];
-
-        $handlers = array(
-            VarModifierHandler::getPredefinedHandler('date')
-        );
-
-        $this->_formatTextProcessor = new VarText($context, false, $handlers);
 
         $path = $this->_formatTextProcessor->parse($path);
 
@@ -85,14 +72,11 @@ class FileLogger extends LoggerBase implements LoggerInterface
      */
     public function log(array $event)
     {
-        $this->_formatTextProcessor->setContext($event);
-        $message = $this->_formatTextProcessor->parse($this->_format);
-
-        $result = @fwrite($this->_stream, $message);
+        $result = @fwrite($this->_stream, $this->_formatMessage($event));
 
         if (false === $result)
         {
-            throw new \RuntimeException("Unable to write to stream");
+            error_log("Unable to write to log stream!");
         }
     }
 

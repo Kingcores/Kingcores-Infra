@@ -3,7 +3,6 @@
 yum -y install \
     yum-utils \
     make autoconf gcc gcc-c++ \
-    kernel-devel \
     libjpeg libjpeg-devel libpng libpng-devel libpng10 libpng10-devel \
     freetype freetype-devel \
     libxml2 libxml2-devel \

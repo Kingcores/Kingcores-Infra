@@ -18,7 +18,7 @@ class AutoUUID extends AbstractFeature implements FeatureInterface
 
     public function apply1Pass()
     {
-        $fieldName = $this->_entity->getEntityName() . self::FIELD_NAME_SUFFIX;
+        $fieldName = $this->_entity->getCodeName() . self::FIELD_NAME_SUFFIX;
 
         $fieldModifier = array();
         $fieldModifier[] = Type::TYPE_UUID;

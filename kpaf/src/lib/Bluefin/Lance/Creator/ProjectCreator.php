@@ -2,34 +2,40 @@
 
 namespace Bluefin\Lance\Creator;
 
-class ProjectCreator
+use Bluefin\Lance\ReportEntry;
+
+class ProjectCreator extends CreatorBase
 {
-    public function create()
+    public function create($params = null)
     {
+        $report = array();
+
         if (file_exists(ROOT . '/project.lock'))
         {
             echo "The project has been locked. ";
             echo "It means the project has already been created. ";
             echo "If you want to continue, please delete 'project.lock' manually.";
+        }
+        else
+        {
+            $this->_createDirIfNotExist(APP_LIB, $report);
+            $this->_createDirIfNotExist(APP_ETC, $report);
+            $this->_createDirIfNotExist(APP_VIEW, $report);
+            $this->_createDirIfNotExist(LANCE . '/schema', $report);
+            $this->_createDirIfNotExist(LANCE . '/data', $report);
+            $this->_createDirIfNotExist(LANCE . '/auth', $report);
+            $this->_createDirIfNotExist(WEB_ROOT, $report);
 
-            return;
+            $this->_copyFileIfNotExist(APP_ETC . '/global.dev.yml', BLUEFIN_LANCE . '/templates/project/global.yml', $report);
+            $this->_copyFileIfNotExist(APP_ETC . '/route/bluefin.yml', BLUEFIN_LANCE . '/templates/project/route_bluefin.yml', $report);
+            $this->_copyFileIfNotExist(APP_ETC . '/route/default.yml', BLUEFIN_LANCE . '/templates/project/route_default.yml', $report);
+            $this->_copyFileIfNotExist(APP_LIB . '/Sample/Controller/HomeController.php', BLUEFIN_LANCE . '/templates/project/HomeController.php', $report);
+            $this->_copyFileIfNotExist(APP_VIEW . '/Sample/Home.index.html', BLUEFIN_LANCE . '/templates/project/Home.index.html', $report);
+            $this->_copyFileIfNotExist(WEB_ROOT . '/index.php', BLUEFIN_LANCE . '/templates/project/index.php', $report);
+
+            touch(ROOT . '/project.lock');
         }
 
-        ensure_dir_exist(APP_LIB);
-        ensure_dir_exist(APP_ETC);
-        ensure_dir_exist(APP_VIEW);
-        ensure_dir_exist(LANCE);
-        ensure_dir_exist(WEB_ROOT);
-
-        ensure_file_exist(APP_ETC . '/global.dev.yml', BLUEFIN_LANCE . '/templates/project/global.yml');
-        ensure_file_exist(APP_ETC . '/route/bluefin.yml', BLUEFIN_LANCE . '/templates/project/route_bluefin.yml');
-        ensure_file_exist(APP_ETC . '/route/default.yml', BLUEFIN_LANCE . '/templates/project/route_default.yml');
-        ensure_file_exist(APP_LIB . '/Sample/Controller/HomeController.php', BLUEFIN_LANCE . '/templates/project/HomeController.php');
-        ensure_file_exist(APP_VIEW . '/Sample/Home.default.yml', BLUEFIN_LANCE . '/templates/project/Home.index.html');
-        ensure_file_exist(WEB_ROOT . '/index.php', BLUEFIN_LANCE . '/templates/project/index.php');
-
-        chown()
-
-        touch(ROOT . '/project.lock');
+        return $report;
     }
 }

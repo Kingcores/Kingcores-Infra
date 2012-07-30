@@ -171,7 +171,7 @@ function array_get_by_reg(array $array, $regex, $all = false)
         {
             if ($all)
             {
-                $result[$key] = $val;
+                $result[$matches[1]] = $val;
             }
             else
             {
@@ -378,7 +378,7 @@ function exec_shell_command($cmd)
     if ($return_var != 0)
     {
         $outputMsg = implode("\n", $output);
-        \Bluefin\App::getInstance()->log()->err("Shell command failed. Cmd: {$cmd}, Code: {$return_var}, Output: {$outputMsg}");
+        \Bluefin\App::getInstance()->log()->error("Shell command failed. Cmd: {$cmd}, Code: {$return_var}, Output: {$outputMsg}");
         return false;
     }
 

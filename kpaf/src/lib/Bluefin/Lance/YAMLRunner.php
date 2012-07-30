@@ -76,7 +76,7 @@ class YAMLRunner
             $field = $entity->getField($key);
             if (is_null($field))
             {
-                throw new \Bluefin\Lance\Exception\GrammarException("Unknown field. Entity: {$entity->getEntityName()} Field: {$key}");
+                throw new \Bluefin\Lance\Exception\GrammarException("Unknown field. Entity: {$entity->getCodeName()} Field: {$key}");
             }
 
             if ($field->isManyToManyField() || $field->isOneToManyField())

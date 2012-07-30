@@ -184,7 +184,17 @@ function apply_value_modifiers($value, array $modifiers, Trie $handlersTrie)
             else
             {
                 $parameter = substr($modifier, strlen($modifierToken));
+                if ($parameter[0] == Convention::MODIFIER_PARAMETER_DELIMITER)
+                {
+                    $parameter = substr($parameter, 1);
+                }
+
                 $parameter = trim_quote($parameter);
+
+                if (!$modifierHandler->hasParameter())
+                {
+                    throw new \Bluefin\Exception\BluefinException("Invalid modifier syntax: {$modifier}! Parameter is not expected.");
+                }
             }
 
             if ($modifierHandler->hasParameter())
@@ -216,20 +226,6 @@ function make_dot_name()
 {
     $args = func_get_args();
     return implode('.', $args);
-}
-
-function dot_name_normalize($name, $thisName)
-{
-    if ('this.' == substr($name, 0, 5))
-    {
-        return $thisName . '.' . substr($name, 5);
-    }
-    else if (false === strpos($name, '.'))
-    {
-        return $thisName . '.' . $name;
-    }
-
-    return $name;
 }
 
 /**

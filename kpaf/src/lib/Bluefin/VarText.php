@@ -22,13 +22,16 @@ class VarText
         $this->_useBluefinContext = $useBluefinContext;
         $this->_handlersTrie = new Trie();
 
-        foreach ($handlers as $handler)
+        if (isset($handlers))
         {
-            /**
-             * @var VarModifierHandler $handler
-             */
+            foreach ($handlers as $handler)
+            {
+                /**
+                 * @var VarModifierHandler $handler
+                 */
 
-            $this->_handlersTrie->add($handler->getModifierToken(), $handler);
+                $this->_handlersTrie->add($handler->getModifierToken(), $handler);
+            }
         }
     }
 

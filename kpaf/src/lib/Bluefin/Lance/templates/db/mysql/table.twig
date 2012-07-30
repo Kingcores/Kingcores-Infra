@@ -1,5 +1,6 @@
--- TABLE {{ entityName }}
-CREATE TABLE IF NOT EXISTS `{{ entityName }}` (
+-- TABLE {{ entity.getCodeName }}
+
+CREATE TABLE IF NOT EXISTS `{{ entity.getCodeName }}` (
 {% for fieldName, field in entity.getSQLColumns %}
     `{{ fieldName }}` {{ field.getSQLDefinition|raw }},
 {% endfor %}

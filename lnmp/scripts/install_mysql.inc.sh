@@ -16,13 +16,16 @@ function install_mysql()
 {
     #backup my.cnf
     if [ ${NO_BACKUP} -eq 0 ] && [ -f /etc/my.cnf ]
-    then        
+    then
         backup /etc/my.cnf ${BACKUP_DIR}/etc ${NO_PROMPT}
     fi
 
+    [ -f /etc/ld.so.conf.d/mysql-x86_64.conf ] && rm -f /etc/ld.so.conf.d/mysql-x86_64.conf
+    /sbin/ldconfig
+
     prepare_package ${MYSQL_ID_NAME} ${PACKAGE_DIR} ${MYSQL_TAR_NAME} ${MYSQL_DIR} ${DOWNLOAD_BASE_URL} \
-        ${BACKUP_DIR_FLAG} ${NO_PROMPT} ${MYSQL_USER} ${MYSQL_GROUP}    
-    
+        ${BACKUP_DIR_FLAG} ${NO_PROMPT} ${MYSQL_USER} ${MYSQL_GROUP}
+
     install_package ${PACKAGE_DIR}/${MYSQL_TAR_NAME} ${MYSQL_DIR} ${MYSQL_TAR_NAME} \
         --enable-assembler \
         --with-charset=utf8 \
@@ -35,7 +38,7 @@ function install_mysql()
         --with-embedded-server \
         --enable-local-infile \
         --with-plugins=partition,innobase,myisammrg \
-        --without-ndb-debug               
+        --without-ndb-debug
 
     #backup mysql database
     if [ ${NO_BACKUP} -eq 1 ]; then
@@ -49,7 +52,7 @@ function install_mysql()
 
     [ -d ${MYSQL_LOG_DIR} ] || mkdir -p ${MYSQL_LOG_DIR}
     chown -R ${MYSQL_USER}:${MYSQL_GROUP} ${MYSQL_LOG_DIR}
-    
+
     [ -d ${MYSQL_TMP_DIR} ] || mkdir -p ${MYSQL_TMP_DIR}
     chown -R ${MYSQL_USER}:${MYSQL_GROUP} ${MYSQL_TMP_DIR}
 
@@ -90,38 +93,38 @@ function install_mysql()
 
     service ${MYSQL_ID_NAME} start
     [ $? -eq 0 ] || exit_with_error "${MYSQL_TAR_NAME} cannot be started!"
-    
+
     echo
     echo "${MYSQL_TAR_NAME} is installed successfully."
     echo
 
-    ${MYSQL_DIR}/bin/mysqladmin --socket="${MYSQL_TMP_DIR}/mysql.sock" -u root password "${MYSQL_PASSWORD}"    
+    ${MYSQL_DIR}/bin/mysqladmin -u root password "${MYSQL_PASSWORD}"
     [ $? -eq 0 ] || exit_with_error "Failed to set mysql root password!"
-    
+    ${MYSQL_DIR}/bin/mysqladmin -u root -h localhost password "${MYSQL_PASSWORD} -p${MYSQL_PASSWORD}"
+    [ $? -eq 0 ] || exit_with_error "Failed to set mysql root password for localhost!"
+
     cat > /tmp/mysql_secure_script<<EOF
 use mysql;
-update user set password=password('$mysqlrootpwd') where user='root';
 delete from user where not (user='root') ;
-delete from user where user='root' and password=''; 
+delete from user where user='root' and password='';
 drop database test;
 DROP USER ''@'%';
 flush privileges;
 EOF
 
-    ${MYSQL_DIR}/bin/mysql --socket="${MYSQL_TMP_DIR}/mysql.sock" -u root -p${MYSQL_PASSWORD} -h localhost < /tmp/mysql_secure_script
+    ${MYSQL_DIR}/bin/mysql -u root -p${MYSQL_PASSWORD} -h localhost < /tmp/mysql_secure_script
     [ $? -eq 0 ] || "Failed to secure mysql root account!"
 
     rm -f /tmp/mysql_secure_script
 
     service ${MYSQL_ID_NAME} stop
 
-    [ -f /etc/ld.so.conf.d/mysql-x86_64.conf ] && rm -f /etc/ld.so.conf.d/mysql-x86_64.conf
-
     #add mysql lib path to variable LD_LIBRARY_PATH
-    add_custom_lib_path "${MYSQL_DIR}/lib/mysql"    
+    add_custom_lib_path "${MYSQL_DIR}/lib/mysql"
 
     #add mysql bin path to ENVIRONMENT varivle PATH
-    add_custom_bin_path "${MYSQL_DIR}/bin"    
+    add_custom_bin_path "${MYSQL_DIR}/bin"
+    source /etc/profile
 }
 
 if [ ${ALL_REINSTALL} -eq 1 ] || [ ! -d ${MYSQL_DIR} ]; then

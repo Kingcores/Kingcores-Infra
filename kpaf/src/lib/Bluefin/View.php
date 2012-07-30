@@ -68,20 +68,17 @@ class View
     {        
         $renderer = array_try_get($this->_options, 'renderer', Convention::DEFAULT_VIEW_RENDERER);
 
-        if ($renderer == Convention::DEFAULT_VIEW_RENDERER)
-        {
-            $functions = array_try_get($this->_options, 'functions', array());
-            $functions['config'] = '_C';
-            $functions['text'] = '_T';
-            $functions['url'] = '_U';
-            $functions['route'] = '_R';
-            $functions['yml'] = '_Y';
+        $functions = array_try_get($this->_options, 'functions', array());
+        $functions['config'] = '_C';
+        $functions['text'] = '_T';
+        $functions['url'] = '_U';
+        $functions['route'] = '_R';
+        $functions['yml'] = '_Y';
 
-            $this->setOption('functions', $functions);
-            $this->set('_locale_', App::getInstance()->currentLocale());
-            $this->set('_elapsed_', App::getInstance()->end() * 1000);
-            $this->set('_www_', App::getInstance()->basePath());
-        }
+        $this->setOption('functions', $functions);
+        $this->set('_locale_', App::getInstance()->currentLocale());
+        $this->set('_elapsed_', App::getInstance()->elapsedTime() * 1000);
+        $this->set('_webroot_', App::getInstance()->basePath());
 
         try
         {
@@ -92,6 +89,10 @@ class View
         {
             throw new \Bluefin\Exception\InvalidOperationException("Unsupported view renderer: {$renderer}");
         }
+
+        /**
+         * @var \Bluefin\Renderer\RendererInterface $rendererObject
+         */
 
         return $rendererObject->render($this);
     }

@@ -2,15 +2,20 @@
 
 namespace Bluefin\Lance\Creator;
 
-class ReInitCreator
+class ReInitCreator extends CreatorBase
 {
-    public function create()
+    public function create($params = null)
     {
-        del_dir(APP);
-        del_dir(LANCE);
-        del_dir(CACHE);
-        del_dir(WEB_ROOT);
+        $report = array();
 
-        file_exists(ROOT . '/project.lock') && unlink(ROOT . '/project.lock');
+        $this->_deleteDirIfExist(APP, $report);
+        $this->_deleteDirIfExist(LANCE, $report);
+        $this->_deleteDirIfExist(CACHE, $report);
+        $this->_deleteDirIfExist(WEB_ROOT, $report);
+        $this->_deleteDirIfExist(ROOT . '/log', $report);
+
+        file_exists(ROOT . '/project.lock') && @unlink(ROOT . '/project.lock');
+
+        return $report;
     }
 }

@@ -1,10 +1,10 @@
-{{ schemaSet.getSchemaSetName }}:
-  namespace: {{ schemaSet.getNamespace }}
-  adapter: {{ schemaSet.getDB.adapter }}
+{{ schema.getSehemaName }}:
+  namespace: {{ schema.getNamespace }}
+  adapter: {{ schema.getDb.adapter }}
   params:
-    host: {{ schemaSet.getDB.connection.host }}
-    port: {{ schemaSet.getDB.connection.port }}
-    username: {{ schemaSet.getDB.connection.username }}
-    password: {{ schemaSet.getDB.connection.password }}
-    dbname: {{ schemaSet.getDB.connection.dbname }}
-    charset: {{ schemaSet.getDB.charset }}
+    host: {{ schema.getDb.connection.host }}
+    port: {{ schema.getDb.connection.port }}
+    username: {{ schema.getDb.connection.username }}
+    password: {{ schema.getDb.connection.password }}
+    dbname: {{ schema.getDb.connection.dbname }}
+    charset: {{ schema.getDb.charset }}

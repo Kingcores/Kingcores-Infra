@@ -3,7 +3,7 @@
 namespace Bluefin;
 
 use Symfony\Component\Yaml\Yaml;
-use Bluefin\Log\Log;
+use Bluefin\Log;
 
 class App
 {    
@@ -176,7 +176,7 @@ class App
     public function startGateway()
     {
         $gateway = new Gateway();
-        $this->setRegistry('gateway', $this);
+        $this->setRegistry('gateway', $gateway);
 
         $gateway->service();
     }
@@ -591,7 +591,7 @@ class App
             // check if it is supported
             if (!in_array($lcid, $supportedLocales))
             {
-                $this->log()->notice("Request Error! Requested locale[{$lcid}] not supported!");
+                $this->log()->info("Request Error! Requested locale[{$lcid}] not supported!");
                 $lcid = null;
             }
         }
@@ -611,7 +611,7 @@ class App
                 else
                 {
                     $lcid = $defaultLocale;
-                    $this->log()->notice('Request Error! HTTP_ACCEPT_LANGUAGE[' . implode(' ', $languages) . '] not supported!');
+                    $this->log()->info('Request Error! HTTP_ACCEPT_LANGUAGE[' . implode(' ', $languages) . '] not supported!');
                 }
             }
             else

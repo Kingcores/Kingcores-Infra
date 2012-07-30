@@ -1,6 +1,6 @@
 <?php
 
-namespace Sample;
+namespace Sample\Controller;
 
 use Bluefin\Controller;
 

@@ -97,7 +97,7 @@ function del_dir($dir, array &$list = null)
 {
     if (!is_dir($dir))
     {
-        return;
+        return 0;
     }
 
     if (false === ($handle = opendir($dir)))
@@ -133,16 +133,41 @@ function del_dir($dir, array &$list = null)
     {
         $list[] = $dir;
     }
+
+    return 1;
 }
 
-function del_files($filesPattern)
+function del_file($filename, $failOnError = false)
+{
+    if (file_exists($filename))
+    {
+        $flag = @unlink($filename);
+
+        if (false === $flag && $failOnError)
+        {
+            die("Deleting file \"{$filename}\" failed!");
+        }
+
+        return $flag ? true : false;
+    }
+
+    return false;
+}
+
+function del_files($filesPattern, $failOnError = false)
 {
     $result = array();
     
     foreach (glob($filesPattern) as $filename)
     {
-        $result[] = $filename;
-        unlink($filename);
+        $flag = @unlink($filename);
+
+        if (false === $flag && $failOnError)
+        {
+            die("Deleting file \"{$filename}\" failed!");
+        }
+
+        if ($flag) $result[] = $filename;
     }
 
     return $result;

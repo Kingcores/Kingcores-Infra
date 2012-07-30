@@ -20,7 +20,7 @@ class AutoIncrementId extends AbstractFeature implements FeatureInterface
 
     public function apply1Pass()
     {
-        $fieldName = $this->_entity->getEntityName() . self::FIELD_NAME_SUFFIX;
+        $fieldName = $this->_entity->getCodeName() . self::FIELD_NAME_SUFFIX;
         $length = self::DEFAULT_LENGTH;
         $base = self::DEFAULT_BASE;
 

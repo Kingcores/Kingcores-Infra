@@ -1,0 +1,26 @@
+#IP地址库
+
+#------------------------------------------------------------------------------
+#预编译指令
+!commentLocale: zh_CN
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+ip_address:
+  comment: 'IP地址库'
+  with: [ auto_increment_id, create_timestamp ]
+  has:
+    start_value: int|c=起始IP数值|+10
+    end_value: int|c=结束IP数值|+10
+    start_ip: text|c=起始IP地址|<=15
+    end_ip: text|c=结束IP地址|<=15
+    country|?: address.country
+    province|?: address.province
+    city|?: address.city
+    possible_locality|?: text|c=详细地址|>=1|<=20
+    isp|?: isp|on=name
+
+isp:
+  comment: '运营商'
+  is: core.dictionary

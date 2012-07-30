@@ -3,6 +3,8 @@
 require_once "phing/Task.php";
 require_once '../lib/Bluefin/bluefin.php';
 
+use Bluefin\Lance\ReportEntry;
+
 class CreateTask extends Task {
 
     /**
@@ -17,6 +19,13 @@ class CreateTask extends Task {
         $this->_type = $str;
     }
 
+    private $_params = null;
+
+    public function setParams($params)
+    {
+        $this->_params = $params;
+    }
+
     /**
      * The init method: Do init steps.
      */
@@ -29,7 +38,15 @@ class CreateTask extends Task {
      */
     public function main() {
         $className = "\\Bluefin\\Lance\\Creator\\" . usw_to_pascal($this->_type) . 'Creator';
-        $creator = new $className;
-        $creator->create();
+        $creator = new $className();
+        $report = $creator->create($this->_params);
+
+        foreach ($report as $entry)
+        {
+            /**
+             * @var ReportEntry $entry
+             */
+            echo "{$entry->op}: {$entry->target} " . ($entry->succeeded ? "[OK]\n" : "[FAIL]\n");
+        }
     }
 }

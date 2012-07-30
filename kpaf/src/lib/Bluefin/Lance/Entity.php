@@ -31,13 +31,21 @@ class Entity
         throw new GrammarException("Unknown entity type: {$entityType}");
     }
 
-    private $_schemaSet;
-    private $_schemaName;
+    private $_schema;
+
+    private $_schemaSetName;
     private $_entityName;
 
-    private $_comment;
-    private $_entityType;
+    private $_shortCodeName;
+    private $_fullCodeName;
 
+    private $_entityRawFullName;
+    private $_entityNamePascal;
+
+    private $_comment;
+    private $_displayName;
+
+    private $_entityType;
     private $_entityConfig;
     private $_entityOptions;
 
@@ -57,38 +65,47 @@ class Entity
     private $_foreignKeys;
     private $_alternativeKeys;
 
-    //private $_referenceNamingMapping;
-
     private $_data;
-    private $_hardCoded;
 
     private $_status;
     private $_pendingCounter;
 
     private $_m2nRelationships;
 
-    public function __construct(SchemaSet $schemaSet, $schemaName, $entityName, array $entityConfig, $entityType)
+    public function __construct(Schema $schema, $schemaSetName, $entityName, array $entityConfig, $entityType)
     {
-        //[+]DEBUG
-        App::getInstance()->log()->debug("Loading entity: {$schemaName}.{$entityName} ...");
-        //[-]DEBUG
+        $this->_schema = $schema;
+
+        $this->_schemaSetName = $schemaSetName;
+
+        $this->_entityName = $entityName;
+        $this->_entityRawFullName = make_dot_name($schemaSetName, $entityName);
+        $this->_shortCodeName = $schema->getEntityCodeName($this);
+        $this->_fullCodeName = make_dot_name($schema->getSchemaName(), $this->_shortCodeName);
+        $this->_entityNamePascal = usw_to_pascal($this->_shortCodeName);
 
         $this->_entityConfig = $entityConfig;
-        $this->_status = Convention::ENTITY_STATUS_INITIAL;
-        $this->_hardCoded = false;
+        $this->_entityType = $entityType;
 
-        $dbms = $schemaSet->getDB();
+        $db = $this->_schema->getDb();
+
         $this->_entityOptions = array(
-            Convention::ENTITY_OPTION_DBMS_ENGINE => $dbms[Convention::KEYWORD_SCHEMA_DB_ENGINE],
-            Convention::ENTITY_OPTION_CHARSET => $dbms[Convention::KEYWORD_SCHEMA_DB_CHARSET],
+            Convention::ENTITY_OPTION_DBMS_ENGINE => $db[Convention::KEYWORD_SCHEMA_DB_ENGINE],
+            Convention::ENTITY_OPTION_CHARSET => $db[Convention::KEYWORD_SCHEMA_DB_CHARSET],
         );
 
-        $this->_schemaSet = $schemaSet;
-        $this->_schemaName = $schemaName;
-        $this->_entityName = $entityName;
+        $this->_status = Convention::ENTITY_STATUS_INITIAL;
 
-        $this->_comment = isset($entityConfig[Convention::KEYWORD_ENTITY_COMMENT]) ? $entityConfig[Convention::KEYWORD_ENTITY_COMMENT] : '';
-        $this->_entityType = $entityType;
+        $this->_comment = array_try_get($entityConfig, Convention::KEYWORD_ENTITY_COMMENT, $this->_entityNamePascal);
+        $this->_displayName = Convention::getDisplayName(
+            Arsenal::getInstance()->getSchemaSetPragma(
+                $schemaSetName,
+                Convention::KEYWORD_PRAGMA_COMMENT_LOCALE,
+                Convention::DEFAULT_PRAGMA_COMMENT_LOCALE
+            ),
+            $this->_fullCodeName,
+            $this->_comment
+        );
 
         $this->_baseEntities = array();
         $this->_mixtures = array();
@@ -105,27 +122,34 @@ class Entity
         $this->_alternativeKeys = array();
         $this->_foreignKeys = array();
 
-        //$this->_referenceNamingMapping = array();
-
         $this->_m2nRelationships = array();
     }
 
-    public function continueProcessing(Entity $entity = null, $state = null)
+    public function isReady()
     {
-        /*
-        if ($this->_entityName == 'identified_by_autoid')
-        {
-            echo "Entity {$this->_entityName} status: {$this->_status}<br/>";
-        }
-        */
+        return $this->_status == Convention::ENTITY_STATUS_READY;
+    }
 
-        if ($this->_status == Convention::ENTITY_STATUS_READY) return;
+    public function continueProcessing(Entity $dependedEntity = null, $state = null)
+    {
+        if ($this->_status == Convention::ENTITY_STATUS_READY)
+        {
+            Arsenal::getInstance()->log()->info(
+                "Entity '{$this->getEntityFullName()}' is ready!" ,
+                Convention::LOG_CAT_LANCE_CORE);
+
+            return;
+        }
 
         $continue = false;
 
         switch ($this->_status)
         {
             case Convention::ENTITY_STATUS_INITIAL:
+                Arsenal::getInstance()->log()->verbose(
+                    "Initializing {$this->_entityType} entity '{$this->getEntityFullName()}' ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 switch ($this->_entityType)
                 {
                     case Convention::ENTITY_TYPE_ENUM:
@@ -143,67 +167,139 @@ class Entity
                 break;
 
             case Convention::ENTITY_STATUS_INHERIT:
-                $continue = $this->_endInheritanceBlock($entity);
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling inheritance of entity '{$this->getEntityFullName()}' ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
+                $continue = $this->_endInheritanceBlock($dependedEntity);
                 break;
 
             case Convention::ENTITY_STATUS_TO_MIX:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling mixtures of entity '{$this->getEntityFullName()}' (1) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_beginMixtureBlock();
                 break;
 
             case Convention::ENTITY_STATUS_MIX_ONE:
-                $continue = $this->_endOneMixture($entity, $state);
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling mixtures of entity '{$this->getEntityFullName()}' (2) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
+                $continue = $this->_endOneMixture($dependedEntity, $state);
                 break;
 
             case Convention::ENTITY_STATUS_FEATURE1:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling features of entity '{$this->getEntityFullName()}' (1) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_processFeatureBlock1Pass();
                 break;
 
             case Convention::ENTITY_STATUS_MEMBER:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling members of entity '{$this->getEntityFullName()}' ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_processMemberBlock();
                 break;
 
             case Convention::ENTITY_STATUS_TO_ADD_REFERENCE:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling n:1 references of entity '{$this->getEntityFullName()}' (1) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_beginReferencedRelation();
                 break;
 
             case Convention::ENTITY_STATUS_ADDING_A_REFERENCE:
-                //if (is_null($state)) echo $this->getEntityFullName();
-                $continue = $this->_endOneReferencedRelation($state, $entity);
+                /**
+                 * @var Reference $reference
+                 */
+                $reference = $state;
+
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling n:1 references of entity '{$this->getEntityFullName()}' on '{$reference->getLocalFieldName()}' (2) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+                $continue = $this->_endOneReferencedRelation($reference, $dependedEntity);
                 break;
 
             case Convention::ENTITY_STATUS_TO_ADD_M2N:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling m:n references of entity '{$this->getEntityFullName()}' (1) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_beginM2NRelation();
                 break;
 
             case Convention::ENTITY_STATUS_ADDING_A_M2N:
-                $continue = $this->_endOneM2NRelation($state, $entity);
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling m:n references of entity '{$this->getEntityFullName()}' (2) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
+                $continue = $this->_endOneM2NRelation($state, $dependedEntity);
                 break;
 
             case Convention::ENTITY_STATUS_FEATURE2:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling features of entity '{$this->getEntityFullName()}' (2) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_processFeatureBlock2Pass();
                 break;
 
             case Convention::ENTITY_STATUS_TO_ADD_REFERENCE2:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling n:1 references of entity '{$this->getEntityFullName()}' (3) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_beginReferencedRelation();
                 break;
 
             case Convention::ENTITY_STATUS_ADDING_A_REFERENCE2:
-                $continue = $this->_endOneReferencedRelation($state, $entity);
+                /**
+                 * @var Reference $reference
+                 */
+                $reference = $state;
+
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling n:1 references of entity '{$this->getEntityFullName()}' (4) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
+                $continue = $this->_endOneReferencedRelation($reference, $dependedEntity);
                 break;
 
             case Convention::ENTITY_STATUS_TO_ADD_M2N2:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling m:n references of entity '{$this->getEntityFullName()}' (3) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_beginM2NRelation();
                 break;
 
             case Convention::ENTITY_STATUS_ADDING_A_M2N2:
-                $continue = $this->_endOneM2NRelation($state, $entity);
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling m:n references of entity '{$this->getEntityFullName()}' (4) ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
+                $continue = $this->_endOneM2NRelation($state, $dependedEntity);
                 break;
 
             case Convention::ENTITY_STATUS_KEY:
+                Arsenal::getInstance()->log()->verbose(
+                    "Handling keys of entity '{$this->getEntityFullName()}' ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_processKeyBlock();
                 break;
 
             case Convention::ENTITY_STATUS_FINAL_CHECK:
+                Arsenal::getInstance()->log()->verbose(
+                    "Performing final check of entity '{$this->getEntityFullName()}' ..." ,
+                    Convention::LOG_CAT_LANCE_DIAG);
+
                 $continue = $this->_finalCheck();
                 break;
         }
@@ -216,15 +312,9 @@ class Entity
         return $this->_status;
     }
 
-    // 代码类，不存在于数据库
-    public function isHardCoded()
+    public function isModelEntity()
     {
-        return $this->_hardCoded;
-    }
-
-    public function hardCode()
-    {
-        $this->_hardCoded = true;
+        return $this->_entityType == Convention::ENTITY_TYPE_ENTITY;
     }
 
     public function getData()
@@ -232,14 +322,14 @@ class Entity
         return $this->_data;
     }
 
-    public function getSchemaSet()
+    public function getSchema()
     {
-        return $this->_schemaSet;
+        return $this->_schema;
     }
 
-    public function getSchemaName()
+    public function getSchemaSetName()
     {
-        return $this->_schemaName;
+        return $this->_schemaSetName;
     }
 
     public function getEntityName()
@@ -249,23 +339,27 @@ class Entity
 
     public function getEntityFullName()
     {
-        return $this->_schemaName . '.' . $this->_entityName;
+        return $this->_entityRawFullName;
     }
 
-    public function getEntityExportFullName()
+    public function getCodeName()
     {
-        return $this->_schemaSet->getSchemaSetName() . '.' . $this->_entityName;
+        return $this->_shortCodeName;
     }
 
-    public function getClassFullName()
+    public function getFullCodeName()
     {
-        return "\\{$this->_schemaSet->getNamespace()}\\Model\\" .
-            usw_to_pascal($this->_schemaSet->getSchemaSetName()) . "\\" . usw_to_pascal($this->getEntityName());
+        return $this->_fullCodeName;
     }
 
     public function getComment()
     {
         return $this->_comment;
+    }
+
+    public function getDisplayName()
+    {
+        return $this->_displayName;
     }
 
     public function getEntityType()
@@ -338,46 +432,13 @@ class Entity
         return $this->_childEntityFields;
     }
 
-    public function getQualifiedFieldName($anyFieldName)
-    {
-        if (in_array($anyFieldName, $this->_memberFields))
-        {
-            return $anyFieldName;
-        }
-
-        /*
-        if (array_key_exists($anyFieldName, $this->_referenceNamingMapping))
-        {
-            return $this->_referenceNamingMapping[$anyFieldName];
-        }
-        */
-
-        throw new GrammarException("Unknown field name: " + $anyFieldName);
-    }
-
     /**
      * @param  $fieldName
      * @return \Bluefin\Lance\Field
      */
     public function getField($fieldName)
     {
-        if (array_key_exists($fieldName, $this->_fieldObjects))
-        {
-            return $this->_fieldObjects[$fieldName];
-        }
-        else
-        {
-            /*
-            if (array_key_exists($fieldName, $this->_referenceNamingMapping))
-            {
-                return array_try_get($this->_fieldObjects, $this->_referenceNamingMapping[$fieldName]);
-            }
-            else
-            {
-            */
-                return null;
-            //}
-        }
+        return array_try_get($this->_fieldObjects, $fieldName);
     }
 
     public function getPrimaryKey()
@@ -389,7 +450,6 @@ class Entity
     {
         if (is_array($fieldName))
         {
-            var_dump($fieldName);
             throw new GrammarException("Combination primary key is not supported by LANCE.");
         }
 
@@ -406,16 +466,9 @@ class Entity
         return $this->_foreignKeys; 
     }
 
-    /*
-    public function getReferenceNamingMapping()
-    {
-        return $this->_referenceNamingMapping;
-    }
-    */
-
     public function getForeignKey($localFieldName)
     {
-        $fkName = Convention::getForeignKeyName($this->getEntityName(), $localFieldName);
+        $fkName = Convention::getForeignKeyName($this->getCodeName(), $localFieldName);
         return array_try_get($this->_foreignKeys, $fkName); 
     }
 
@@ -457,7 +510,7 @@ class Entity
 
     public function getSQLDefinition()
     {
-        return $this->getSchemaSet()->getDBLanceAdapter()->getEntitySQLDefinition($this);
+        return $this->getSchema()->getDbLancer()->getEntitySQLDefinition($this);
     }
 
     public function getSQLColumns()
@@ -551,7 +604,7 @@ class Entity
                     $this->_memberFields[] = $fieldName;
                 }
             }
-            else if ($this->_schemaSet->isCustomType($field->getFieldType()))
+            else if ($this->_schema->isCustomType("Entity {$this->getEntityFullName()}", $field->getFieldType()))
             {
                 if ($inFront)
                 {
@@ -562,7 +615,7 @@ class Entity
                     $this->_memberFields[] = $fieldName;
                 }
 
-                $baseModifier = $this->_schemaSet->getCustomType($field->getFieldType());
+                $baseModifier = $this->_schema->getCustomType($field->getFieldType());
                 $parts = split_modifiers($fieldTypeWithModifiers);
                 array_shift($parts);
                 $newModifiers = $baseModifier . \Bluefin\Convention::DELIMITER_MODIFIER . merge_modifiers($parts);
@@ -637,7 +690,6 @@ class Entity
     {
         $this->_data = array_try_get($this->_entityConfig, Convention::KEYWORD_ENTITY_STATES);
 
-        $this->hardCode();
         $this->addField(Convention::FIELD_NAME_STATE, Convention::FIELD_TYPE_STATE);
         $this->addField(Convention::FIELD_NAME_COMMENT, Convention::FIELD_TYPE_COMMENT);
 
@@ -650,7 +702,6 @@ class Entity
     {
         $this->_data = array_try_get($this->_entityConfig, Convention::KEYWORD_ENTITY_VALUES);
 
-        $this->hardCode();
         $this->addField(Convention::FIELD_NAME_ENUM_VALUE, Convention::FIELD_TYPE_ENUM_VALUE);
         $this->addField(Convention::FIELD_NAME_DISPLAY_NAME, Convention::FIELD_TYPE_DISPLAY_NAME);
 
@@ -674,8 +725,9 @@ class Entity
             $this->_status++;
 
             $parts = split_modifiers($baseEntityName);
-            $entityFullName = dot_name_normalize(trim($parts[0]), $this->_schemaName);
-            $this->_schemaSet->getEntityAsync($this, $entityFullName, null, Convention::ENTITY_STATUS_READY);
+
+            $entityFullName = $this->_normalizeEntityName(trim($parts[0]));
+            $this->_schema->getEntityAsync($this, $entityFullName, null, Convention::ENTITY_STATUS_READY);
             return false;
         }
 
@@ -713,9 +765,9 @@ class Entity
             foreach ($mixes as $mixtureEntityName)
             {
                 $parts = split_modifiers($mixtureEntityName);
-                $entityFullName = dot_name_normalize(trim($parts[0]), $this->_schemaName);
+                $entityFullName = $this->_normalizeEntityName(trim($parts[0]));
                 array_shift($parts);
-                $this->_schemaSet->getEntityAsync($this, $entityFullName, $parts, Convention::ENTITY_STATUS_READY);
+                $this->_schema->getEntityAsync($this, $entityFullName, $parts, Convention::ENTITY_STATUS_READY);
             }
 
             return false;
@@ -773,10 +825,9 @@ class Entity
             /**
              * @var \Bluefin\Lance\Reference $ref
              */
-            $refEntityName = $ref->getEntityName();
+            $refEntityName = $ref->getEntityFullName();
 
-            $this->_schemaSet->addEntity2Export($refEntityName);
-            $this->_schemaSet->getEntityAsync($this, $refEntityName, $ref);
+            $this->_schema->getEntityAsync($this, $refEntityName, $ref);
         }
 
         return false;
@@ -788,17 +839,6 @@ class Entity
         $refFieldName = $ref->getFieldName();
         isset($refFieldName) || ($refFieldName = $refEntity->getPrimaryKey());
         $refField = $refEntity->getField($refFieldName);
-
-        /*
-        if ($refEntity->isHardCoded())
-        {
-            $newFieldName = $fieldName;
-        }
-        else
-        {
-            $newFieldName = Convention::getRelationFieldNaming($fieldName, $refFieldName);
-        }
-        */
 
         $this->_memberFields[] = $fieldName;
         $localField = $this->getField($fieldName);
@@ -812,32 +852,15 @@ class Entity
         $refFieldCopy->setReadonlyOnCreation($localField->isReadonlyOnCreation());
         $refFieldCopy->setReadonlyOnUpdating($localField->isReadonlyOnUpdating());
 
-        if ($refEntity->isHardCoded())
+        if ($refEntity->isModelEntity())
         {
-            //$indexName = Convention::getNormalKeyName($this->getEntityName(), $newFieldName);
-            //$this->_alternativeKeys[$indexName] = array($newFieldName);
-            //$refFieldCopy->setIndexed();
-        }
-        else if (!$refEntity->isAbstract())
-        {
-            $fkName = Convention::getForeignKeyName($this->getEntityName(), $fieldName);
-            $this->_foreignKeys[$fkName] = array($fieldName, $refEntity->getEntityName(), $refFieldName);
+            $fkName = Convention::getForeignKeyName($this->getCodeName(), $fieldName);
+            $this->_foreignKeys[$fkName] = array($fieldName, $refEntity->getCodeName(), $refFieldName);
             $refFieldCopy->setForeignKey();
-
-            //$this->_referenceNamingMapping[$fieldName] = $fieldName;
         }
 
-        /*
-        if ($fieldName != $newFieldName)
-        {
-            $this->_fieldObjects[$newFieldName] = $refFieldCopy;
-            unset($this->_fieldObjects[$fieldName]);
-        }
-        else
-        {
-        */
-            $this->_fieldObjects[$fieldName] = $refFieldCopy;
-        //}
+        $this->_fieldObjects[$fieldName] = $refFieldCopy;
+        $this->_schema->exportEntity($refEntity);
 
         $this->_pendingCounter--;
 
@@ -865,8 +888,7 @@ class Entity
 
         foreach ($this->_childEntityFields as $fieldName => $refEntityName)
         {
-            $this->_schemaSet->addEntity2Export($refEntityName);
-            $this->_schemaSet->getEntityAsync($this, $refEntityName, $fieldName);
+            $this->_schema->getEntityAsync($this, $refEntityName, $fieldName);
         }
 
         return false;
@@ -876,7 +898,7 @@ class Entity
     {
         $field = $this->getField($fieldName);
 
-        $relationEntityName = $this->getEntityName() . '_' . $refEntity->getEntityName();
+        $relationEntityName = $this->getCodeName() . '_' . $refEntity->getCodeName();
         $relationEntityConfig = array(
             Convention::KEYWORD_ENTITY_FEATURE => array(
                 Convention::FEATURE_AUTO_UUID,
@@ -884,32 +906,32 @@ class Entity
                 Convention::FEATURE_CREATED_BY,
             ),
             Convention::KEYWORD_ENTITY_MEMBER => array(
-                $this->_entityName => $this->getEntityFullName(),
-                $refEntity->getEntityName() => $refEntity->getEntityFullName(),
+                $this->_shortCodeName => $this->getEntityFullName(),
+                $refEntity->getCodeName() => $refEntity->getEntityFullName(),
             )
         );
 
         if ($field->isOneToManyField())
         {
-            $uk = merge_modifiers(array($this->_entityName, Convention::MODIFIER_INDEX_UNIQUE));
-            $relationEntityConfig[Convention::KEYWORD_ENTITY_INDEX] = array($uk => $this->_entityName);
+            $uk = merge_modifiers(array($this->_shortCodeName, Convention::MODIFIER_INDEX_UNIQUE));
+            $relationEntityConfig[Convention::KEYWORD_ENTITY_INDEX] = array($uk => $this->_shortCodeName);
         }
 
-        //var_dump($relationEntityConfig);
+        $this->_schema->exportEntity($refEntity);
 
-        $relationEntity = new Entity($this->_schemaSet, $this->_schemaName, $relationEntityName, $relationEntityConfig, false);
+        $relationEntity = new Entity($this->_schema, $this->_schemaSetName, $relationEntityName, $relationEntityConfig, false);
+        $this->_schema->addNewEntity($relationEntity);
+
         $relationEntity->continueProcessing();
 
         App::assert($relationEntity->getStatus() == Convention::ENTITY_STATUS_READY);
 
-        $this->_schemaSet->addRelationEntity($this->_schemaName, $relationEntity);
-
         $this->addM2NRelationship(
             $fieldName,
-            $refEntity->getEntityName(),
+            $refEntity->getCodeName(),
             $relationEntityName,
-            $this->_entityName,
-            $refEntity->getEntityName()
+            $this->_shortCodeName,
+            $refEntity->getCodeName()
         );
 
         $this->_pendingCounter--;
@@ -1021,16 +1043,9 @@ class Entity
 
             if (!isset($indexFields) || $indexFields === '')
             {
-                $indexFields = $isPrimary ? $indexName : array($this->getQualifiedFieldName($indexName));
+                $indexFields = $isPrimary ? $indexName : array($indexName);
             }
-            else if (is_array($indexFields))
-            {
-                foreach ($indexFields as &$fieldName)
-                {
-                    $fieldName = $this->getQualifiedFieldName($fieldName);
-                }
-            }
-            else
+            else if (!is_array($indexFields))
             {
                 $indexFields = $isPrimary ? $indexFields : array($indexFields);
             }
@@ -1043,8 +1058,8 @@ class Entity
             {
                 $this->setKey(
                     $isUnique
-                            ? Convention::PREFIX_UNIQUE_KEY . combine_usw($this->getEntityName(), $indexName)
-                            : Convention::PREFIX_NORMAL_KEY . combine_usw($this->getEntityName(), $indexName),
+                            ? Convention::PREFIX_UNIQUE_KEY . combine_usw($this->getCodeName(), $indexName)
+                            : Convention::PREFIX_NORMAL_KEY . combine_usw($this->getCodeName(), $indexName),
                     $indexFields,
                     $isUnique
                 );
@@ -1072,12 +1087,12 @@ class Entity
                 {
                     case Convention::MODIFIER_MIXTURE_PREFIX:
                         $prefix = trim(substr($modifier, 1));
-                        if ($prefix == '') $prefix = $baseEntity->getEntityName();
+                        if ($prefix == '') $prefix = $baseEntity->getCodeName();
                         break;
 
                     case Convention::MODIFIER_MIXTURE_SUFFIX:
                         $suffix = trim(substr($modifier, 1));
-                        if ($suffix == '') $suffix = $this->_entityName;
+                        if ($suffix == '') $suffix = $this->_shortCodeName;
                         break;
 
                     case Convention::MODIFIER_MIXTURE_NON_REQUIRED:
@@ -1128,5 +1143,19 @@ class Entity
 
         $this->_status++;
         return true;
+    }
+
+    private function _normalizeEntityName($entityName)
+    {
+        if ('this.' == substr($entityName, 0, 5))
+        {
+            return $this->_schemaSetName . '.' . substr($entityName, 5);
+        }
+        else if (false === strpos($entityName, '.'))
+        {
+            return $this->_schemaSetName . '.' . $entityName;
+        }
+
+        return $entityName;
     }
 }

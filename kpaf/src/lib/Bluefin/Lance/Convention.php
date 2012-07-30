@@ -7,13 +7,13 @@ namespace Bluefin\Lance;
  */
 class Convention
 {
-    const EXT_DSL_FILE = '.yml';
-
-    const ENTITY_TYPE_ENTITY = 'entity';
+    const ENTITY_TYPE_ENTITY = 'model';
     const ENTITY_TYPE_ABSTRACT = 'abstract';
     const ENTITY_TYPE_ENUM = 'enum';
     const ENTITY_TYPE_FST = 'state';
-    const PREFIX_ENTITY_SET = '(\~|\@|\$|abstract\`|enum\`|state\`)';
+    const PATTERN_ENTITY_PREFIX = '(\~|\@|\$|abstract\`|enum\`|state\`)';
+
+    const PATTERN_PRAGMA_PREFIX = '(?:\!|pragma\`)';
 
     const PREFIX_CUSTOM_TYPE = '(\+|type\`)';
 
@@ -21,8 +21,6 @@ class Convention
     const PREFIX_FOREIGN_KEY = 'fk_';
     const PREFIX_UNIQUE_KEY = 'uk_';
     const PREFIX_NORMAL_KEY = 'ak_';
-
-    const SUFFIX_CLASS_DATABASE = 'Database';
 
     const MODIFIER_MIXTURE_PREFIX = '^';
     const MODIFIER_MIXTURE_SUFFIX = '$';
@@ -53,8 +51,12 @@ class Convention
     const MODIFIER_INDEX_UNIQUE = 'u';
     const MODIFIER_INDEX_PRIMARY = 'p';
 
-    const KEYWORD_SCHEMA_LOCALE = 'locale';
+    const KEYWORD_PRAGMA_COMMENT_LOCALE = 'commentLocale';
+
+    const DEFAULT_PRAGMA_COMMENT_LOCALE = 'en_US';
+
     const KEYWORD_SCHEMA_COMMENT = 'comment';
+    const KEYWORD_SCHEMA_LOCALE = 'locale';
     const KEYWORD_SCHEMA_DB = 'db';
     const KEYWORD_SCHEMA_DB_TYPE = 'type';
     const KEYWORD_SCHEMA_DB_ENGINE = 'engine';
@@ -129,6 +131,9 @@ class Convention
 
     const SQL_INSERT_MAX_LINES = 200;
 
+    const LOG_CAT_LANCE_CORE = 'core';
+    const LOG_CAT_LANCE_DIAG = 'diag';
+
     public static function dumpArray(array $array)
     {
         $result = 'array(';
@@ -187,9 +192,9 @@ class Convention
         return $value;
     }
 
-    public static function getDisplayName($locale, $name, $fullName, $preferredName = null)
+    public static function getDisplayName($locale, $fullName, $preferredName)
     {
-        self::addMetadataTranslation($locale, $fullName, isset($preferredName) ? $preferredName : usw_to_words($name));
+        self::addMetadataTranslation($locale, $fullName, $preferredName);
 
         return _T($fullName, \Bluefin\Convention::LOCALE_METADATA_DOMAIN);
     }
@@ -237,9 +242,9 @@ class Convention
         }
     }
 
-    public static function getTemplatePath($path)
+    public static function getTemplateRoot($path)
     {
-        $extend = APP_EXTEND . "/templates/{$path}";
-        return file_exists($extend) ? "extend/templates/{$path}" : "lib/Bluefin/Lance/templates/{$path}";
+        $extend = LANCE_EXTEND . "/templates/{$path}";
+        return (file_exists($extend) ? LANCE_EXTEND : BLUEFIN_LANCE) . '/templates';
     }
 }

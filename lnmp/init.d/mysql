@@ -43,10 +43,11 @@ mypidfile="$result"
 start(){
 	if [ ! -d "$datadir/mysql" ] ; then
 	    echo "MySQL database not found!"
-		return 1	    
+		return 1
 	fi
+	/sbin/ldconfig
 	touch "$errlogfile"
-	chown __MYSQL_USER__:__MYSQL_GROUP__ "$errlogfile" 
+	chown __MYSQL_USER__:__MYSQL_GROUP__ "$errlogfile"
 	chmod 0640 "$errlogfile"
 	[ -x /sbin/restorecon ] && /sbin/restorecon "$errlogfile"
 	chown __MYSQL_USER__:__MYSQL_GROUP__ "$datadir"
@@ -62,8 +63,8 @@ start(){
 	if [ $ret -eq 0 ]; then
 	    STARTTIMEOUT=30
 	    while [ $STARTTIMEOUT -gt 0 ]; do
-		RESPONSE=`__MYSQL_DIR__/bin/mysqladmin --socket="$socketfile" --user=UNKNOWN_MYSQL_USER ping 2>&1` && break
-		echo "$RESPONSE" | grep -q "Access denied for user" && break
+		RESPONSE=`__MYSQL_DIR__/bin/mysqladmin --user=UNKNOWN_MYSQL_USER ping 2>&1` && break
+		echo "$RESPONSE" | grep -q "mysqld is alive" && break
 		sleep 1
 		let STARTTIMEOUT=${STARTTIMEOUT}-1
 	    done
@@ -111,7 +112,7 @@ stop(){
         fi
         return $ret
 }
- 
+
 restart(){
     stop
     start
@@ -130,7 +131,7 @@ case "$1" in
     stop
     ;;
   status)
-    status mysqld
+    status __MYSQL_DIR__/bin/mysqld
     ;;
   restart)
     restart

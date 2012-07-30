@@ -3,6 +3,7 @@
 <project name="lance_jobs" default="usage">
 
     <taskdef name="create" classname="CreateTask" />
+    <taskdef name="render" classname="RenderTask" />
 
     <!-- ============================================  -->
     <!-- Target: usage                                 -->
@@ -11,20 +12,147 @@
         <echo msg="Usage:" />
         <echo msg="  phing create_project" />
         <echo msg="    Create a new project." />
-        <echo msg="  phing reinit_project" />
+        <echo msg="  phing add_database" />
+        <echo msg="    Add a new database into the project." />
+        <echo msg="  phing create_database" />
+        <echo msg="    Create the database in database server." />
+        <echo msg="  phing reinit" />
         <echo msg="    Re-Initialize a project." />
         <echo msg="Usage:" />
     </target>
 
     <!-- ============================================  -->
-    <!-- Target: build                                 -->
+    <!-- Target: create_project                        -->
     <!-- ============================================  -->
     <target name="create_project">
+        <chown file="../" user="www" group="www" verbose="true" />
         <create type="project" />
-        <echo msg="ok" />
+        <echo msg="done." />
     </target>
 
-    <target name="reinit_project">
+    <!-- ============================================  -->
+    <!-- Target: create_project_finished               -->
+    <!-- ============================================  -->
+    <target name="create_project_finished">
+        <available file="../project.lock" property="create_project_finished" value="1" />
+        <fail msg="Project has not been created yet. Please run create_project first." unless="create_project_finished" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: add_database                          -->
+    <!-- ============================================  -->
+    <target name="add_database" depends="create_project_finished">
+        <available file="database.properties" property="db.exist" value="1" />
+
+        <if>
+            <equals arg1="${db.exist}" arg2="1" />
+            <then>
+                <propertyprompt propertyName="dbExistConfirm" defaultValue="y"
+                                promptText="A previous database properties file 'database.properties' exists. Do you want to use it? (y/n)" />
+
+                <if>
+                    <equals arg1="${dbExistConfirm}" arg2="n" />
+                    <then>
+                        <delete file="database.properties" />
+                        <property name="db.needInput" value="1" />
+                    </then>
+                </if>
+            </then>
+            <else>
+                <property name="db.needInput" value="1" />
+            </else>
+        </if>
+
+        <if>
+            <equals arg1="${db.needInput}" arg2="1" />
+            <then>
+                <!-- input parameters -->
+                <propertyprompt propertyName="db.name" promptText="Please enter the database name" />
+                <propertyprompt propertyName="db.type" promptText="Please enter the database type" defaultValue="mysql" />
+                <if>
+                 <equals arg1="${db.type}" arg2="mysql" />
+                 <then>
+                     <propertyprompt propertyName="db.engine" promptText="Please enter the database engine" defaultValue="InnoDB" />
+                     <propertyprompt propertyName="db.charset" promptText="Please enter the default database charset" defaultValue="utf8" />
+                 </then>
+                </if>
+                <propertyprompt propertyName="db.host" promptText="Please enter the database host" defaultValue="localhost" />
+                <propertyprompt propertyName="db.port" promptText="Please enter the database port" defaultValue="3306" />
+                <propertyprompt propertyName="db.user" promptText="Please enter the database username" defaultValue="root" />
+                <propertyprompt propertyName="db.pass" promptText="Please enter the database password" />
+
+                <!-- write parameters to a file -->
+                <echo file="database.properties" append="false" msg="db.name=${db.name}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.type=${db.type}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.engine=${db.engine}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.charset=${db.charset}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.host=${db.host}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.port=${db.port}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.user=${db.user}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.pass=${db.pass}${line.separator}"/>
+            </then>
+            <else>
+                <property file="database.properties" />
+            </else>
+        </if>
+
+        <available file="../lance/${db.name}.yml" property="db.etc.exist" value="1" />
+
+        <fail msg="Database configuration file 'lance/${db.name}.yml' already exist. Job aborts!" if="db.etc.exist" />
+
+        <render from="project/database.yml.twig" to="lance/${db.name}.yml" with="database.properties" />
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: add_database_finished                 -->
+    <!-- ============================================  -->
+    <target name="add_database_finished">
+        <available file="database.properties" property="add_database_finished" value="1" />
+        <fail msg="Database properties file 'database.properties' not found. Please run add_database first." unless="add_database_finished" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: create_database                       -->
+    <!-- ============================================  -->
+    <target name="create_database" depends="add_database_finished">
+        <property file="database.properties" />
+
+        <available file="../lance/${db.name}.yml" property="db.etc.exist" value="1" />
+
+        <fail msg="Database configuration file 'lance/${db.name}.yml' not found. Job aborts!" unless="db.etc.exist" />
+
+        <propertyprompt propertyName="createDatabaseConfirm" defaultValue="n"
+                        promptText="This job may delete existing project files. Are you sure to continue? (y/n)" />
+        <if>
+         <equals arg1="${createDatabaseConfirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+
+        <create type="database" params="db.name: ${db.name}" />
+
+        <exec command="mysql -h${db.host} -u${db.user} -p${db.pass} &lt; ../app/schema/create_${db.name}.sql"
+             dir="${application.startdir}"
+            checkreturn="true" />
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: add_database_finished                 -->
+    <!-- ============================================  -->
+    <target name="create_database_finished">
+        <available file="../app/schema/create_${db.name}.sql" property="create_database_finished" value="1" />
+        <fail msg="Database '${db.name}' has not been created yet. Please run create_database first." unless="create_database_finished" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: reinit                                -->
+    <!-- ============================================  -->
+    <target name="reinit">
         <propertyprompt propertyName="reinitConfirm" defaultValue="n"
                         promptText="This job will delete some project files. Are you sure to continue? (y/n)" />
         <if>
@@ -34,7 +162,8 @@
          </then>
         </if>
         <create type="re_init" />
-        <echo msg="ok" />
+        <delete file="database.properties" />
+        <echo msg="done." />
     </target>
 
 </project>

@@ -1,8 +1,8 @@
 SET @@foreign_key_checks = 0;
 
-{% for entity in entities %}
--- TABLE {{ entity }}
-TRUNCATE TABLE `{{ entity }}`;
+{% for entity in schema.getModelEntities %}
+-- TABLE {{ entity.getCodeName }}
+TRUNCATE TABLE `{{ entity.getCodeName }}`;
 
 {% endfor %}
 

@@ -34,6 +34,8 @@ class Convention
     const DEFAULT_AUTH_SESSION_NAMESPACE = 'auth';
     const DEFAULT_AUTH_LIFETIME = 1200;
 
+    const DEFAULT_LOG_FORMAT = "[{%timestamp|date=c}][{%levelName}][{%channel}]{%message}\n";
+
     const SESSION_LIFE_COUNTER = '__init';
     const SESSION_CURRENT_LOCALE = '__locale';
 
@@ -62,7 +64,8 @@ class Convention
     const MODIFIER_NAMING_UPPER = 'U';
     const MODIFIER_NAMING_LOWER = 'L';
 
-    const MODIFIER_DEFAULT_VALUE = '=';
+    const MODIFIER_DEFAULT_VALUE = '';
+    const MODIFIER_PARAMETER_DELIMITER = '=';
 
     const BLUEFIN_NAMESPACE = 'Bluefin';
     const BLUEFIN_VIEW_CONTROLLER = 'View';
