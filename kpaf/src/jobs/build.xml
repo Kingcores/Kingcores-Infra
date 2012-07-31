@@ -4,6 +4,7 @@
 
     <taskdef name="create" classname="CreateTask" />
     <taskdef name="render" classname="RenderTask" />
+    <taskdef name="runlist" classname="RunListTask" />
 
     <!-- ============================================  -->
     <!-- Target: usage                                 -->
@@ -137,6 +138,8 @@
         <exec command="mysql -h${db.host} -u${db.user} -p${db.pass} &lt; ../app/schema/create_${db.name}.sql"
              dir="${application.startdir}"
             checkreturn="true" />
+
+        <runlist dbName="${db.name}" listName="../app/schema/rebuild_${db.name}.lst" />
 
         <echo msg="done." />
     </target>

@@ -7,7 +7,8 @@ use Bluefin\App;
 use Bluefin\View;
 use Bluefin\Lance\FileRenderer;
 
-class RenderTask extends Task {
+class RenderTask extends Task
+{
 
     /**
      * The from passed in the buildfile.

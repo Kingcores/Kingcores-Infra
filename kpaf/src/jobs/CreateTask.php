@@ -5,7 +5,8 @@ require_once '../lib/Bluefin/bluefin.php';
 
 use Bluefin\Lance\ReportEntry;
 
-class CreateTask extends Task {
+class CreateTask extends Task
+{
 
     /**
      * The type passed in the buildfile.
