@@ -56,6 +56,13 @@ class DatabaseCreator extends CreatorBase
             $report
         );
 
+        $this->_renderTemplate(
+            "db/list_rebuild_db.twig",
+            "app/schema/rebuild_{$schema->getSchemaName()}.lst",
+            $data,
+            $report
+        );
+
         $this->_deleteFiles(ROOT . "/app/schema/{$schema->getSchemaName()}/*.sql", $report);
 
         foreach ($schema->getModelEntities() as $entityName => $entity)
