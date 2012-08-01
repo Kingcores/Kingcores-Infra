@@ -114,7 +114,7 @@ function array_str_pad(array $array, $var, $left = false, $right = true)
     return $result;
 }
 
-function array_get_all(array $array, array $keys, $pop = false)
+function array_get_all(array &$array, array $keys, $pop = false)
 {
     $result = array();
 
@@ -295,9 +295,27 @@ function json_encode_cn($data)
 }
 
 /**
- * 
+ * @param array $pairs
+ * @param string $pairDelimiter
+ * @param string $kvDelimiter
+ * @return string
+ */
+function join_key_value_pairs(array $pairs, $pairDelimiter = ';', $kvDelimiter = '=')
+{
+    $buffer = array();
+
+    foreach ($pairs as $key => $val)
+    {
+        $buffer = "{$key}{$kvDelimiter}{$val}";
+    }
+
+    return implode($pairDelimiter, $buffer);
+}
+
+/**
  * @param $uri
- * @param $params array
+ * @param array $queryParams
+ * @param array $fragmentParams
  * @return string
  */
 function build_uri($uri, array $queryParams = null, array $fragmentParams = null)

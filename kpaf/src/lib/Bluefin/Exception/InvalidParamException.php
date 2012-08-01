@@ -16,6 +16,6 @@ class InvalidParamException extends RequestException
             array('%name%' => _META_($paramName), '%type%' => _BUILTIN_($paramType))
         );
 
-        parent::__construct($message, \Bluefin\Common::HTTP_BAD_REQUEST);
+        parent::__construct($message, null, \Bluefin\Common::HTTP_BAD_REQUEST);
     }
 }

@@ -18,11 +18,6 @@ class Database
     private $_name;
 
     /**
-     * @var \Zend_Db_Adapter_Abstract
-     */
-    private $_dao;
-
-    /**
      * @var array
      */
     private $_modelClasses;
@@ -37,8 +32,6 @@ class Database
         $this->_namespace = $namespace;
         $this->_name = $name;
         $this->_modelClasses = $modelClasses;
-
-        $this->_dao = App::getInstance()->db($name);
 
         $this->_adapter = $adapter;
     }
@@ -65,15 +58,6 @@ class Database
     {
         \Bluefin\App::assert(array_key_exists($modelName, $this->_modelClasses), "Model [{$modelName}] not found!");
         return $this->_modelClasses[$modelName];
-    }
-
-    /**
-     * Gets the database access object.
-     * @return \Zend_Db_Adapter_Abstract
-     */
-    public function getDAO()
-    {
-        return $this->_dao;
     }
 
     /**

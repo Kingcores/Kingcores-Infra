@@ -14,6 +14,7 @@ class PageNotFoundException extends RequestException
                 \Bluefin\Convention::LOCALE_BLUEFIN_DOMAIN,
                 array('%url%' => $url)
             ),
+            null,
             \Bluefin\Common::HTTP_NOT_FOUND
         );
     }

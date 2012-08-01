@@ -9,6 +9,12 @@ interface DbInterface
 {
     /**
      * @abstract
+     * @return \Bluefin\Log
+     */
+    function log();
+
+    /**
+     * @abstract
      * @param $idName
      * @return string
      */
@@ -20,6 +26,14 @@ interface DbInterface
      * @param null $type
      */
     function quoteValue($value, $type = null);
+
+    /**
+     * @abstract
+     * @param $sql
+     * @param array $params
+     * @return mixed
+     */
+    function query($sql, array $params = null);
 
     /**
      * @abstract

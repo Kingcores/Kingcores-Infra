@@ -4,7 +4,7 @@ namespace Bluefin\Exception;
 
 use Exception;
 
-class ForwardException  extends Exception
+class ForwardException extends Exception
 {
     public $namespace;
     public $moduleName;

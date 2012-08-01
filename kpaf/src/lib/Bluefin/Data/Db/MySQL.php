@@ -8,10 +8,30 @@ use Bluefin\Data\Select;
 use Bluefin\Data\Relations;
 use Bluefin\Data\Type;
 use Bluefin\Convention;
- 
+use Bluefin\Log;
+use Bluefin\Dummy;
+
 class MySQL implements DbInterface
 {
     const SQL_IDENTIFIER_QUOTE = '`';
+
+    protected $_pdo;
+    protected $_log;
+
+    public function __construct(Log $log, array $config)
+    {
+        $this->_log = $log;
+
+        $dsnParams = array_get_all($config, array('host', 'port', 'dbname', 'charset'), true);
+        $config[PDO::CONFIG_DSN] = 'mysql:' . join_key_value_pairs($dsnParams);
+
+        $this->_pdo = new PDO($this, $config);
+    }
+
+    public function log()
+    {
+        return $this->_log;
+    }
 
     public function isIdentifierQuoted($id)
     {
@@ -21,7 +41,7 @@ class MySQL implements DbInterface
     public function quoteIdentifier($id)
     {
         if ($id == '*') return $id;
-        if (strpos($id, '(') !== false) $id;
+        if (strpos($id, '(') !== false) return $id;
 
         return $this->isIdentifierQuoted($id) ? $id : ('`' . str_replace('`', '``', $id) . '`');
     }
@@ -31,6 +51,51 @@ class MySQL implements DbInterface
         isset($type) || ($type = \Bluefin\Data\Type::TYPE_TEXT);
 
         return str_is_quoted($value, true, false) ? $value : str_quote($value);
+    }
+
+    public function query($sql, array $params = null)
+    {
+        // prepare and execute the statement with profiling
+        $stmt = $this->_pdo->prepare($sql);
+        /**
+         * @var \PDOStatement $pdoStmt
+         */
+        $pdoStmt = $stmt->getDriverStatement();
+
+        $pos = 1;
+        foreach ($dbParams as $dbParam)
+        {
+            //var_dump($dbParam); echo "<br>";
+            /**
+             * @var \Bluefin\Data\DbParam $dbParam
+             */
+            $pdoStmt->bindValue($pos++, $dbParam->value, $dbParam->dbType);
+        }
+
+        try
+        {
+            $pdoStmt->execute();
+        }
+        catch (\PDOException $e)
+        {
+            if (23000 == $e->getCode())
+            {
+                $data = array();
+                foreach ($dbParams as $dbParam)
+                {
+                    $data[] = $dbParam->value;
+                }
+                $data = implode(',', $data);
+
+                App::getInstance()->log()->err("Error executing SQL: {$sql}, with data: {$data}");
+            }
+
+            throw $e;
+        }
+
+        // return the results embedded in the prepared statement object
+        $stmt->setFetchMode($this->_dao->getFetchMode());
+        return $stmt;
     }
 
     public function combineCondition($quotedColumn, $value)

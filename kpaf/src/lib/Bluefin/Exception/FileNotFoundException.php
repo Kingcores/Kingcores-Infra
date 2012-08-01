@@ -4,14 +4,11 @@ namespace Bluefin\Exception;
 
 class FileNotFoundException extends ServerErrorException
 {
-    public function __construct($filename)
+    public function __construct($filename, $previousException = null)
     {
         parent::__construct(
-            _T(
-                'File not found. Path: %name%',
-                'bluefin',
-                array('%name%' => $filename)
-            ),
+            "File not found. Path: {$filename}",
+            $previousException,
             \Bluefin\Common::HTTP_INTERNAL_SERVER_ERROR
         );
     }

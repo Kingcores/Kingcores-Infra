@@ -8,6 +8,7 @@ class UnauthorizedException extends RequestException
     {
         parent::__construct(
             null,
+            null,
             \Bluefin\Common::HTTP_UNAUTHORIZED
         );
     }

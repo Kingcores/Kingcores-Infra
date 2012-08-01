@@ -256,6 +256,8 @@ class Gateway
         }
         catch (RedirectException $redirEx)
         {
+            $this->_response->setRedirect($redirEx->targetUrl, $redirEx->statusCode);
+
             //[+]DEBUG
             App::getInstance()->log()->debug("Redirected to \"{$redirEx->getMessage()}\".");
             //[-]DEBUG
@@ -267,7 +269,7 @@ class Gateway
             $errorCode = $reqEx->getCode();
             $message = $reqEx->getMessage();
 
-            App::getInstance()->log()->notice('Request Exception: ' . $reqEx->getMessage());
+            App::getInstance()->log()->info('Request Exception: ' . $reqEx->getMessage());
         }
         catch (ServerErrorException $srvEx)
         {
@@ -320,8 +322,7 @@ class Gateway
 
     public function redirect($uri, $code = Common::HTTP_FOUND)
     {
-        $this->_response->setRedirect($uri, $code);
-        throw new \Bluefin\Exception\RedirectException($uri);
+        throw new \Bluefin\Exception\RedirectException($uri, $code);
     }
 
     public function url($routeName = null, $params = null, array $queryParams = null, array $fragmentParams = null)
