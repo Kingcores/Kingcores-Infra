@@ -1,0 +1,83 @@
+{% extends "Bluefin/bootstrap.twig" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="span4">
+            <div class="well">
+                <form id="formApiTesterInput" class="form-horizontal">
+                    <legend>API Tester</legend>
+                    <div class="control-group">
+                        <label class="control-label">URL</label>
+                        <div class="controls">
+                          <input id="inputURL" type="text" placeholder="Service API URL">
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <label class="control-label">API参数</label>
+                        <div class="controls">
+                          <input class="input-small" type="text" placeholder="Key"> : <input class="input-small" type="text" placeholder="Value">
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <div class="controls">
+                          <input class="input-small" type="text" placeholder="Key"> : <input class="input-small" type="text" placeholder="Value">
+                        </div>
+                      </div>
+                        <div id="divTemplate" class="control-group">
+                        <div class="controls">
+                          <input class="input-small" type="text" placeholder="Key"> : <input class="input-small" type="text" placeholder="Value">
+                        </div>
+                      </div>
+                      <div id="divPlaceHolder" class="control-group">
+                        <div class="controls">
+                          <button id="buttonAdd" type="button" class="btn">添加</button>
+                        </div>
+                      </div>
+                      <div class="control-group">
+                        <div class="controls">
+                          <button id="submitApi" type="submit" class="btn btn-primary">调用</button>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </div>
+        <div class="span8">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_foot %}
+    <script type="text/javascript">
+        $(function(){
+            $('#buttonAdd').click(function(){
+                $('#divPlaceHolder').before($('#divTemplate').clone());
+            });
+
+            $('#formApiTesterInput').submit(function(){
+                var inputs = $("#formApiTesterInput input");
+                var il = inputs.length;
+                var params = {};
+
+                for (var i = 1; i < il; i+=2)
+                {
+                    var key = inputs[i].value;
+                    if (key != '')
+                    {
+                        value = inputs[i+1].value;
+                        params[key] = value;
+                    }
+                }
+
+                $.post($('#inputURL').val(), params,
+                   function(data){
+                     alert("Data Loaded: " + data);
+                   });
+
+                return false;
+            });
+        });
+    </script>
+{% endblock %}

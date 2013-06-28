@@ -1,0 +1,27 @@
+[2013-03-26 17:05:02 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-26 17:05:02 CST][debug][default]REQ: /
+[2013-03-26 17:05:02 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-26 17:05:02 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-26 17:05:02 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-26 17:05:02 CST][debug][diag]Read session[2phdtio87v8nrdhp0skhva9q31]: app|a:3:{s:7:"counter";i:85;s:10:"created_at";i:1363790481;s:10:"updated_at";i:1364202695;}
+[2013-03-26 17:05:02 CST][debug][default]Found route: so
+[2013-03-26 17:05:02 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-03-26 17:05:02 CST][info][default]Execution time: 0.16442704200745(s).
+[2013-03-26 18:32:52 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-26 18:32:52 CST][debug][default]REQ: /
+[2013-03-26 18:32:52 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-26 18:32:52 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-26 18:32:52 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-26 18:32:52 CST][debug][diag]Read session[2phdtio87v8nrdhp0skhva9q31]: app|a:3:{s:7:"counter";i:86;s:10:"created_at";i:1363790481;s:10:"updated_at";i:1364288702;}
+[2013-03-26 18:32:52 CST][debug][default]Found route: so
+[2013-03-26 18:32:52 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-03-26 18:32:52 CST][info][default]Execution time: 0.22089600563049(s).
+[2013-03-26 18:44:09 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-26 18:44:09 CST][debug][default]REQ: /
+[2013-03-26 18:44:09 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-26 18:44:09 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-26 18:44:09 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-26 18:44:09 CST][debug][diag]Read session[2phdtio87v8nrdhp0skhva9q31]: app|a:3:{s:7:"counter";i:87;s:10:"created_at";i:1363790481;s:10:"updated_at";i:1364293972;}
+[2013-03-26 18:44:09 CST][debug][default]Found route: so
+[2013-03-26 18:44:09 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-03-26 18:44:09 CST][info][default]Execution time: 0.16200017929077(s).

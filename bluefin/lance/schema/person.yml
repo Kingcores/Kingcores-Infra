@@ -1,0 +1,64 @@
+#个人信息模式
+
+#------------------------------------------------------------------------------
+#预编译指令
+!comment-locale: zh_CN
+
+#------------------------------------------------------------------------------
+#枚举类型
+
+@gender:
+  comment: '性别'
+  values:
+    male: '男'
+    female: '女'
+    unknown: '保密'
+
+@personal_name_order:
+  comment: '姓名组合次序'
+  values:
+    last_first: '姓+名'
+    first_last: '名+姓'
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+personal_profile:
+  comment: '个人档案'
+  with: [ auto_uuid, update_timestamp, logical_deletion, owner_field|=user ]
+  has:
+    user: system.user|on_reference_delete=@@cascade
+    first_name|?: core.short_name|comment=名
+    last_name|?: core.short_name|comment=姓
+    display_name|?: core.name|comment=姓名
+    nick_name|?: core.short_name|comment=昵称
+    gender|?: gender
+    photo|?: path|comment=相片
+    avatar|?: path|comment=头像
+    email|?: email|comment=邮件地址
+    email_verified: bool|=0|comment=邮件地址验证
+    id_no|?: text|<=20|comment=身份证
+    birthday|?: date|comment=生日
+    mobile|?: phone|comment=手机
+    mobile_verified: bool|=0|comment=手机验证
+    home_phone|?: phone|comment=家庭电话
+    office_phone|?: phone|comment=办公电话
+    address|?: address.address|comment=联系地址
+    homepage|?: url|comment=个人主页
+    qq|?: digits|<=20|comment=QQ
+    description|?: text|comment=个人简介
+    extra|?: json|comment=其他
+    name_order: personal_name_order|=last_first|comment=姓名顺序
+  keys:
+    id_no|u: id_no
+    display_name: display_name
+  crud:
+    update:
+      ROLES: { weibotui: [ *any* ] }
+      API: true
+  php-triggers:
+    AFTER-UPDATE: |
+      if (\WBT\Business\AuthBusiness::getLoggedInUserId() == $this->getUser())
+      {
+          \WBT\Business\AuthBusiness::refreshLoggedInProfile();
+      }

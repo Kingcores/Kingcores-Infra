@@ -1,0 +1,8 @@
+url:
+  register_by_sna: http://www.weibotui.com/register/social
+  social_entry: http://so.weibotui.com
+  mms_entry: http://www.weibotui.com/home/weibotui/index
+  payment_redirect:
+    changweibo_deposit: http://www.weibotui.com/home/test_pay_ok
+  payment_notify:
+    changweibo_deposit: http://www.weibotui.com/api/sample/hello/test_pay

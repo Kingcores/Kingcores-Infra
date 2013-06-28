@@ -1,0 +1,31 @@
+{% extends "WBT/home.twig" %}
+
+{% set controller = context('gateway.controller') %}
+{% set action = context('gateway.action') %}
+
+
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <ul class="nav nav-tabs">
+
+                <li{{ (controller == 'mp_user') ? ' class="active"' : '' }}><a href="{{ route('m-c-a', ['weixin','mp_user','index']) }}">公众帐号列表</a></li>
+
+                {% if controller == 'mp_rule' %}
+                    {% if action == 'index' %}
+                <li class="active"><a href="{{mpRuleUrl}}">规则列表</a></li>
+                    {% endif %}
+
+                    {% if action == 'detail' %}
+                <li ><a href="{{ mpRuleUrl }}">规则列表</a></li>
+                <li class="active"><a href="{{ mpRuleDetail }}">规则详情</a></li>
+                    {% endif %}
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+    {% block tuikeContent %}{% endblock %}
+</div>
+{% endblock %}

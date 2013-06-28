@@ -1,0 +1,19 @@
+[2013-04-05 11:43:03 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-05 11:43:03 CST][debug][default]REQ: /account/logout
+[2013-04-05 11:43:03 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-05 11:43:03 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-05 11:43:03 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-05 11:43:03 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: 
+[2013-04-05 11:43:03 CST][debug][default]Found route: so_c-a
+[2013-04-05 11:43:03 CST][verbose][default]Dispatching route: SO > Account > logout
+[2013-04-05 11:43:04 CST][debug][default]Redirected to "/".
+[2013-04-05 11:43:04 CST][info][default]Execution time: 0.098015069961548(s).
+[2013-04-05 11:43:04 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-05 11:43:04 CST][debug][default]REQ: /
+[2013-04-05 11:43:04 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-05 11:43:04 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-05 11:43:04 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-05 11:43:04 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:2:{s:7:"counter";i:0;s:10:"created_at";i:1365133383;}
+[2013-04-05 11:43:04 CST][debug][default]Found route: so
+[2013-04-05 11:43:04 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-05 11:43:04 CST][info][default]Execution time: 0.13924503326416(s).

@@ -1,0 +1,184 @@
+[2013-03-30 15:12:12 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-30 15:12:12 CST][debug][default]REQ: 
+[2013-03-30 15:12:26 CST][error][default]Shell command failed. Cmd: chown -hR www:www /mnt/hgfs/Kingcores-WBT/src, Code: 1, Output: 
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[10000,"int"],["微博推社交管理","text"],["a2145c2ba9e80b92dd2bd8d403bf3a6d","text"],["http:\/\/so.weibotui.com","url"],["private_client","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `oauth_client` (`oauth_client_id`, `name`, `secret`, `redirect_uri`, `level`) VALUES (?, ?, ?, ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[10001,"int"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[10001,"int"],["长微博高级版","text"],["3601984d5eb4f4c08db4bfda45ed81e3","text"],["http:\/\/cwb.weibotui.com","url"],["private_client","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `oauth_client` (`oauth_client_id`, `name`, `secret`, `redirect_uri`, `level`) VALUES (?, ?, ?, ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["administrators","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `role_name`,`display_name` FROM `admin_role` WHERE `role_name`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["administrators","idname"],["管理员","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `admin_role` (`role_name`, `display_name`) VALUES (?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["sales","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `role_name`,`display_name` FROM `admin_role` WHERE `role_name`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["sales","idname"],["销售","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `admin_role` (`role_name`, `display_name`) VALUES (?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["customer_service","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `role_name`,`display_name` FROM `admin_role` WHERE `role_name`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["customer_service","idname"],["客服","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `admin_role` (`role_name`, `display_name`) VALUES (?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["finance","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `role_name`,`display_name` FROM `admin_role` WHERE `role_name`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["finance","idname"],["财务","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `admin_role` (`role_name`, `display_name`) VALUES (?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["admin","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `admin_id` FROM `admin` WHERE `username`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["admin","idname"],["65bca7ca59bd3a4e4b6cf0ccf2190882","password"],["26944065","digits"],["2013-03-30 15:12:29","datetime"],["nonactivated","text"],["activated","idname"],["2013-03-30 15:12:29","datetime"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `admin` (`_created_at`, `username`, `password`, `password_salt`, `activated_time`, `status_log`, `status`, `nonactivated_time`) VALUES (NOW(), ?, ?, ?, ?, ?, ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["admin","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `admin_id` FROM `admin` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["administrators","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `role_name` FROM `admin_role` WHERE `role_name`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[1000,"int"],["administrators","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `admin_with_role_id` FROM `admin_with_role` WHERE `admin`=? AND `role`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[1000,"int"],["administrators","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `admin_with_role` (`_created_at`, `admin`, `role`) VALUES (NOW(), ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["news","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `code`,`name`,`_is_deleted` FROM `topic_category` WHERE `code`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["news","idname"],["新闻","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `topic_category` (`code`, `name`) VALUES (?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["fashion","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `code`,`name`,`_is_deleted` FROM `topic_category` WHERE `code`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["fashion","idname"],["时尚","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `topic_category` (`code`, `name`) VALUES (?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["diet","idname"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `code`,`name`,`_is_deleted` FROM `topic_category` WHERE `code`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["diet","idname"],["饮食","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `topic_category` (`code`, `name`) VALUES (?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"],["9c291f881528d7eca4a82a5d744b1ced","password"],["88730821","digits"],["{}","json"],["2013-03-30 15:12:29","datetime"],["nonactivated","text"],["activated","idname"],["2013-03-30 15:12:29","datetime"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `user` (`_created_at`, `username`, `password`, `password_salt`, `preferences`, `activated_time`, `status_log`, `status`, `nonactivated_time`) VALUES (NOW(), ?, ?, ?, ?, ?, ?, ?, ?)
+[2013-03-30 15:12:29 CST][verbose][diag]User::_afterInsert
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `user_asset` (`_created_at`, `user`) VALUES (NOW(), ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["5d388a346b9c43059a28d078236a07bf","uuid"],["微博推","text"],["金果","text"],["金果微博推","text"],["微博推","text"],["\/upload\/user\/100000\/avatar.png","path"],[100000,"int"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `personal_profile` (`personal_profile_id`, `first_name`, `last_name`, `display_name`, `nick_name`, `avatar`, `user`) VALUES (?, ?, ?, ?, ?, ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["微博推","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT HEX(`personal_profile_id`) AS personal_profile_id FROM `personal_profile` WHERE `first_name`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `user_id`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"],["5d388a346b9c43059a28d078236a07bf","uuid"],[100000,"int"]]
+[2013-03-30 15:12:29 CST][debug][diag]UPDATE SQL: UPDATE `user` SET `username`=?, `profile`=? WHERE `user_id`=?
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"],["advertiser","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_with_role_id` FROM `user_with_role` WHERE `user`=? AND `role`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"],["advertiser","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `user_with_role` (`_created_at`, `user`, `role`) VALUES (NOW(), ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"],["tuike","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_with_role_id` FROM `user_with_role` WHERE `user`=? AND `role`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"],["tuike","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `user_with_role` (`_created_at`, `user`, `role`) VALUES (NOW(), ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"],["staff","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_with_role_id` FROM `user_with_role` WHERE `user`=? AND `role`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"],["staff","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `user_with_role` (`_created_at`, `user`, `role`) VALUES (NOW(), ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"],["sn_user","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_with_role_id` FROM `user_with_role` WHERE `user`=? AND `role`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [[100000,"int"],["sn_user","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `user_with_role` (`_created_at`, `user`, `role`) VALUES (NOW(), ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["weibo","text"],["1882037885","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT HEX(`weibo_id`) AS weibo_id FROM `weibo` WHERE `type`=? AND `uid`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["f77743a4d7dc4476b981cae80227f341","uuid"],["1882037885","text"],["微博推","text"],["http:\/\/e.weibo.com\/weibotui","url"],["http:\/\/tp2.sinaimg.cn\/1882037885\/50\/5639647767\/1","url"],["http:\/\/tp2.sinaimg.cn\/1882037885\/180\/5639647767\/1","url"],["XX","text"],["XX","text"],["\/w1882037885","path"],[3265,"int"],[101,"int"],[68,"int"],[1,"int"],["weibo","text"],[100000,"int"],["male","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `weibo` (`weibo_id`, `_created_at`, `uid`, `display_name`, `url`, `avatar_s`, `avatar_l`, `location`, `description`, `wbt_home`, `num_follower`, `num_following`, `num_post`, `num_like`, `type`, `user`, `gender`) VALUES (?, NOW(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["1882037885","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT HEX(`weibo_id`) AS weibo_id FROM `weibo` WHERE `uid`=? LIMIT 0,1
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["f77743a4d7dc4476b981cae80227f341","uuid"],["2409085682","text"]]
+[2013-03-30 15:12:29 CST][debug][diag]SELECT SQL: SELECT `weibo_token_id` FROM `weibo_token` WHERE `weibo`=? AND `app_key`=?
+[2013-03-30 15:12:29 CST][debug][diag]PARAMS: [["2.00lBq3DCgORCdCc895c3c1b50oT7YK","password"],[668507,"int"],[668507,"int"],["2409085682","text"],["a084ff59d3588b62e40e81c06186a703","password"],["f77743a4d7dc4476b981cae80227f341","uuid"]]
+[2013-03-30 15:12:29 CST][debug][diag]INSERT SQL: INSERT INTO `weibo_token` (`access_token`, `remind_in`, `expires_in`, `app_key`, `app_secret`, `expires_at`, `weibo`) VALUES (?, ?, ?, ?, ?, DATE_ADD('2013-03-30 15:12:29', INTERVAL 668507 SECOND), ?)
+[2013-03-30 15:12:29 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:30 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-03-30 15:12:30 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `user_id`=? LIMIT 0,1
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["5078db14a88460dc68d05ef88ad33ffb","password"],[100000,"int"]]
+[2013-03-30 15:12:30 CST][debug][diag]UPDATE SQL: UPDATE `user` SET `password`=? WHERE `user_id`=?
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:30 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["测试用的广告活动","text"],["2013-03-30 15:12:30","datetime"],[1000,"money"],["广告活动广告活动广告活动广告活动广告活动广告活动广告活动广告活动广告活动","text"],["附加要求附加要求附加要求附加要求附加要求附加要求附加要求附加要求附加要求","text"],[100000,"int"],["post","text"],["2013-03-30 15:12:30","datetime"],["unpublished","text"]]
+[2013-03-30 15:12:30 CST][debug][diag]INSERT SQL: INSERT INTO `weibo_campaign` (`name`, `start_time`, `end_time`, `budget`, `text`, `comment`, `user`, `type`, `unpublished_time`, `status_log`) VALUES (?, ?, DATE_ADD('2013-03-30 15:12:30', INTERVAL 86400 SECOND), ?, ?, ?, ?, ?, ?, ?)
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-30 15:12:30 CST][debug][diag]SELECT SQL: SELECT `user_id` FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["测试用的广告活动","text"],["2013-03-30 15:12:30","datetime"],[1000,"money"],["广告活动广告活动广告活动广告活动广告活动广告活动广告活动广告活动广告活动","text"],["附加要求附加要求附加要求附加要求附加要求附加要求附加要求附加要求附加要求","text"],[100000,"int"],["forward","text"],["2013-03-30 15:12:30","datetime"],["unpublished","text"]]
+[2013-03-30 15:12:30 CST][debug][diag]INSERT SQL: INSERT INTO `weibo_campaign` (`name`, `start_time`, `end_time`, `budget`, `text`, `comment`, `user`, `type`, `unpublished_time`, `status_log`) VALUES (?, ?, DATE_ADD('2013-03-30 15:12:30', INTERVAL 86400 SECOND), ?, ?, ?, ?, ?, ?, ?)
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["1882037885","text"]]
+[2013-03-30 15:12:30 CST][debug][diag]SELECT SQL: SELECT HEX(`weibo_id`) AS weibo_id FROM `weibo` WHERE `uid`=? LIMIT 0,1
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:30 CST][verbose][diag]WeiboInventory::_beforeInsert
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["f77743a4d7dc4476b981cae80227f341","uuid"]]
+[2013-03-30 15:12:30 CST][debug][diag]SELECT SQL: SELECT HEX(`weibo_id`) AS weibo_id,`_created_at`,`_updated_at`,`uid`,`display_name`,`url`,`avatar_s`,`avatar_l`,`location`,`description`,`profile`,`wbt_home`,`num_follower`,`num_following`,`num_post`,`num_like`,`type`,`user`,`gender` FROM `weibo` WHERE `weibo_id`=? LIMIT 0,1
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [[1000,"int"],[100,"money"],[80,"money"],[0.2,"float"],["f77743a4d7dc4476b981cae80227f341","uuid"],["100000","int"],["post","text"],["2013-03-30 15:12:30","datetime"],["unaudit","text"],["available","idname"],["2013-03-30 15:12:30","datetime"]]
+[2013-03-30 15:12:30 CST][debug][diag]INSERT SQL: INSERT INTO `weibo_inventory` (`num_audience`, `original_price`, `current_price`, `service_charge_rate`, `weibo`, `user`, `type`, `available_time`, `status_log`, `status`, `unaudit_time`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["1882037885","text"]]
+[2013-03-30 15:12:30 CST][debug][diag]SELECT SQL: SELECT HEX(`weibo_id`) AS weibo_id FROM `weibo` WHERE `uid`=? LIMIT 0,1
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION BEGUN.
+[2013-03-30 15:12:30 CST][verbose][diag]WeiboInventory::_beforeInsert
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [["f77743a4d7dc4476b981cae80227f341","uuid"]]
+[2013-03-30 15:12:30 CST][debug][diag]SELECT SQL: SELECT HEX(`weibo_id`) AS weibo_id,`_created_at`,`_updated_at`,`uid`,`display_name`,`url`,`avatar_s`,`avatar_l`,`location`,`description`,`profile`,`wbt_home`,`num_follower`,`num_following`,`num_post`,`num_like`,`type`,`user`,`gender` FROM `weibo` WHERE `weibo_id`=? LIMIT 0,1
+[2013-03-30 15:12:30 CST][debug][diag]PARAMS: [[1000,"int"],[60,"money"],[60,"money"],[0.2,"float"],["f77743a4d7dc4476b981cae80227f341","uuid"],["100000","int"],["forward","text"],["2013-03-30 15:12:30","datetime"],["unaudit","text"],["available","idname"],["2013-03-30 15:12:30","datetime"]]
+[2013-03-30 15:12:30 CST][debug][diag]INSERT SQL: INSERT INTO `weibo_inventory` (`num_audience`, `original_price`, `current_price`, `service_charge_rate`, `weibo`, `user`, `type`, `available_time`, `status_log`, `status`, `unaudit_time`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2013-03-30 15:12:30 CST][debug][diag]TRANSACTION COMMITTED.

@@ -1,0 +1,3 @@
+adapter: PDO_MYSQL
+engine: InnoDB
+charset: utf8

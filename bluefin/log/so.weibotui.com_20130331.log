@@ -1,0 +1,67 @@
+[2013-03-31 11:57:16 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 11:57:16 CST][debug][default]REQ: /
+[2013-03-31 11:57:16 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 11:57:16 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 11:57:16 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 11:57:16 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: 
+[2013-03-31 11:57:16 CST][debug][default]Found route: so
+[2013-03-31 11:57:16 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-03-31 11:57:16 CST][info][default]Execution time: 0.25020408630371(s).
+[2013-03-31 16:48:22 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 16:48:22 CST][debug][default]REQ: /
+[2013-03-31 16:48:22 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 16:48:22 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 16:48:22 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 16:48:22 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:2:{s:7:"counter";i:0;s:10:"created_at";i:1364702236;}
+[2013-03-31 16:48:22 CST][debug][default]Found route: so
+[2013-03-31 16:48:22 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-03-31 16:48:23 CST][info][default]Execution time: 0.1970579624176(s).
+[2013-03-31 16:48:51 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 16:48:51 CST][debug][default]REQ: /home/dashboard?ticket=3SGPXUgTt40j9q5YozFmiLWa7804f40c
+[2013-03-31 16:48:51 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 16:48:51 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 16:48:51 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 16:48:51 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:1;s:10:"created_at";i:1364702236;s:10:"updated_at";i:1364719702;}
+[2013-03-31 16:48:51 CST][debug][default]Found route: so_c-a
+[2013-03-31 16:48:51 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-03-31 16:48:51 CST][debug][default][file:WBTClient.php][line:186][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Sun, 31 Mar 2013 08:48:51 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=hce6jdgn98ei0id4coa55sf0j7; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-03-31 16:48:51 CST][debug][default][file:WBTClient.php][line:187][fun:_send]DUMP body: '{"access_token":"3uCvXu3k44pGaStQlMXE7rLa15ee41365fe227e0","expires_in":86400,"token_type":"bearer","scope":"sso sna payment"}'
+[2013-03-31 16:48:51 CST][debug][default][file:WBTClient.php][line:186][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Sun, 31 Mar 2013 08:48:51 GMT',
+  3 => 'Content-Type: application/json;charset=utf-8',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=qic5j0be8iqqd18gd4n8robih5; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-03-31 16:48:51 CST][debug][default][file:WBTClient.php][line:187][fun:_send]DUMP body: '{"user_id":"100000","username":"weibotui@kingcores.com","preferences":[],"status":"activated","profile_nick_name":"\\u5fae\\u535a\\u63a8","profile_display_name":"\\u91d1\\u679c\\u5fae\\u535a\\u63a8","profile_photo":null,"profile_avatar":"\\/upload\\/user\\/100000\\/avatar.png","profile_gender":"male","profile_homepage":null,"profile_description":null}'
+[2013-03-31 16:48:51 CST][debug][default]Redirected to "/home/dashboard".
+[2013-03-31 16:48:51 CST][info][default]Execution time: 0.37280917167664(s).
+[2013-03-31 16:48:51 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 16:48:51 CST][debug][default]REQ: /home/dashboard
+[2013-03-31 16:48:51 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 16:48:51 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 16:48:51 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 16:48:51 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:2;s:10:"created_at";i:1364702236;s:10:"updated_at";i:1364719731;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100000";s:8:"username";s:22:"weibotui@kingcores.com";s:12:"display_name";s:9:"微博推";s:6:"avatar";s:30:"/upload/user/100000/avatar.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"3uCvXu3k44pGaStQlMXE7rLa15ee41365fe227e0";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-03-31 16:48:51 CST][debug][default]Found route: so_c-a
+[2013-03-31 16:48:51 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-03-31 16:48:51 CST][debug][diag]PARAMS: [[100000,"int"],["2409085682","text"]]
+[2013-03-31 16:48:51 CST][debug][diag]SELECT SQL: SELECT wt.`access_token`,wt.`expires_at`,we.`weibo_id` AS weibo_id,we.`_created_at` AS _created_at,we.`_updated_at` AS _updated_at,we.`uid` AS uid,we.`display_name` AS display_name,we.`url` AS url,we.`avatar_s` AS avatar_s,we.`avatar_l` AS avatar_l,we.`location` AS location,we.`description` AS description,we.`profile` AS profile,we.`wbt_home` AS wbt_home,we.`num_follower` AS num_follower,we.`num_following` AS num_following,we.`num_post` AS num_post,we.`num_like` AS num_like,we.`type` AS type,we.`user` AS user,we.`gender` AS gender FROM `weibo_token` AS wt LEFT JOIN `weibo` AS we ON wt.`weibo` = we.`weibo_id` WHERE we.`user`=? AND wt.`app_key`=? ORDER BY `_created_at`
+[2013-03-31 16:48:52 CST][info][default]Execution time: 0.38505887985229(s).

@@ -1,0 +1,13 @@
+<div{{ component.renderAttributes|raw }}>
+{% if compoennt.hasDate %}
+    <div class="input-append pull-left">
+        <input class="date-picker" type="text" name="{{ component.attributes.name }}{% if component.hasTime %}_D{% endif %}" style="width:80px;" value="{{ component.date }}"><span class="add-on"><i class="icon-calendar"></i></span>
+    </div>
+{% endif %}
+{% if component.hasTime %}
+    <div class="input-append bootstrap-timepicker-component pull-left">
+        <input class="time-picker" type="text" name="{{ component.attributes.name }}{% if component.hasDate %}_T{% endif %}" style="width:65px;" value="{{ component.time }}"><span class="add-on"><i class="icon-time"></i></span>
+    </div>
+{% endif %}
+    <div class="clearfix"></div>
+</div>

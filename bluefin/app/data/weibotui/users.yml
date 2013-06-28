@@ -1,0 +1,33 @@
+user:
+  -
+    username: weibotui@kingcores.com
+    password: wbt@2003q4!
+    status: activated
+
+personal_profile:
+  -
+    user: { username: weibotui@kingcores.com }
+    first_name: 微博推
+    last_name: 金果
+    display_name: 金果微博推
+    nick_name: 微博推
+    avatar: /upload/user/100000/avatar.png
+
+user|2:
+  -
+    username: weibotui@kingcores.com
+    profile: { first_name: 微博推 }
+
+user_with_role:
+  -
+    user: { username: weibotui@kingcores.com }
+    role: advertiser
+  -
+    user: { username: weibotui@kingcores.com }
+    role: tuike
+  -
+    user: { username: weibotui@kingcores.com }
+    role: staff
+  -
+    user: { username: weibotui@kingcores.com }
+    role: sn_user

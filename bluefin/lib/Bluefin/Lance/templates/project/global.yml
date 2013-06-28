@@ -1,0 +1,37 @@
+app:
+  timezone: Asia/Shanghai
+  requestOrder: GRPC
+  serverUrlRewritable: true
+  phpInternalEncoding: UTF-8
+
+session:
+  saveHandler: redis
+  savePath: "tcp://localhost:6379?weight=1&timeout=5&prefix=ss.&auth=redis"
+  lifetime: 86400
+
+log:
+  default:
+    -
+      type: file
+      path: <?php echo ROOT; ?>/log
+      filename: "sys_{{app.timestamp|date='Ymd'}}.log"
+      level: 7
+
+locale:
+  requestName: lang
+  supportedLocales: zh_CN
+  useSession: false
+  useCache: false
+  defaultLocale: zh_CN
+
+routing:
+  @include:
+    - <?php echo APP_ETC; ?>/route/default.yml
+
+db:
+  @include:
+    - <?php echo APP_ETC; ?>/db/placeholder.yml
+
+auth:
+  @include:
+    - <?php echo APP_ETC; ?>/auth/placeholder.yml

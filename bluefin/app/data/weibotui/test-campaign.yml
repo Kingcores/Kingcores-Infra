@@ -1,0 +1,20 @@
+weibo_campaign:
+  -
+    user: { username: weibotui@kingcores.com }
+    name: '测试用的广告活动1'
+    type: post
+    start_time: @"{{app.timestamp}}"
+    end_time: @expr:@"DATE_ADD('{{app.timestamp|date='Y-m-d H:i:s'}}', INTERVAL 86400 SECOND)"
+    budget: 1000.0
+    text: '广告活动广告活动广告活动广告活动广告活动广告活动广告活动广告活动广告活动'
+    comment: '附加要求附加要求附加要求附加要求附加要求附加要求附加要求附加要求附加要求'
+
+  -
+    user: { username: weibotui@kingcores.com }
+    name: '测试用的广告活动2'
+    type: forward
+    start_time: @"{{app.timestamp}}"
+    end_time: @expr:@"DATE_ADD('{{app.timestamp|date='Y-m-d H:i:s'}}', INTERVAL 86400 SECOND)"
+    budget: 1000.0
+    text: '广告活动广告活动广告活动广告活动广告活动广告活动广告活动广告活动广告活动'
+    comment: '附加要求附加要求附加要求附加要求附加要求附加要求附加要求附加要求附加要求'

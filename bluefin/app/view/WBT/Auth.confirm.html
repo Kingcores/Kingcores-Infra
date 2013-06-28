@@ -1,0 +1,40 @@
+{% extends "WBT/sso.twig" %}
+
+{% block content %}
+            <div class="tabbable">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">快速登录</a></li>
+                <li><a href="#tab2" data-toggle="tab">其他帐号登录</a></li>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                  <div class="text-align-center confirm-login">
+                      <span>点击以下帐号头像，可以使用该帐号登录</span>
+                      <div>
+{% if confirmUrl %}
+                          <div{% if confirmUrl2 %} class="pull-left" style="margin-left: 120px;"{% endif %}>
+                              <p class="text-align-center">
+                                  <a href="{{confirmUrl}}"><img class="img-polaroid" src="{{avatarUrl}}"></a><br>
+                                  <span>{{nickName}}</span>
+                              </p>
+                          </div>
+{% endif %}
+{% if confirmUrl2 %}
+                          <div{% if confirmUrl %} class="pull-right" style="margin-right: 120px;"{% endif %}>
+                              <p class="text-align-center">
+                                  <a href="{{confirmUrl2}}"><img class="img-polaroid" src="{{avatarUrl2}}"></a><br>
+                                  <span>{{nickName2}}</span>
+                                </p>
+                          </div>
+{% endif %}
+                          <div class="clearfix"></div>
+                      </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <br>
+                    {{ form|raw }}
+                </div>
+              </div>
+            </div>
+{% endblock %}

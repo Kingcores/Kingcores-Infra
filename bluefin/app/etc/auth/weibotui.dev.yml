@@ -1,0 +1,34 @@
+weibotui:
+  class: \Bluefin\Auth\DbAuth
+  config:
+    authUrl: 'http://www.weibotui.com/auth/index'
+    responseUrl: 'http://www.weibotui.com/auth/index'
+    modelClass: \WBT\Model\Weibotui\User
+    uidColumn: user_id
+    identityColumn: username
+    credentialColumn: password
+    dataColumns:
+      - '*'
+      - profile.nick_name
+      - profile.gender
+      - profile.avatar
+      - profile.description
+    persistence:
+      type: session
+      options: { namespace: auth.weibotui }
+wbt_admin:
+  class: \Bluefin\Auth\DbAuth
+  config:
+    authUrl: 'http://admin.weibotui.com/home/login'
+    responseUrl: 'http://admin.weibotui.com/home/login'
+    modelClass: \WBT\Model\Weibotui\Admin
+    uidColumn: admin_id
+    identityColumn: username
+    credentialColumn: password
+    dataColumns:
+      - '*'
+      - profile.display_name
+      - profile.avatar
+    persistence:
+      type: session
+      options: { namespace: auth.wbt_admin }

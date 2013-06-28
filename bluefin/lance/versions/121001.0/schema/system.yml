@@ -1,0 +1,98 @@
+#系统模式
+
+#------------------------------------------------------------------------------
+#预编译指令
+!commentLocale: zh_CN
+
+#------------------------------------------------------------------------------
+#自定义类型
+
+#------------------------------------------------------------------------------
+#枚举类型
+
+@login_type:
+  comment: '登录来源类型'
+  values:
+    weibotui: '微博推'
+    weibo: '新浪微博'
+
+#------------------------------------------------------------------------------
+#有限状态表
+
+$user_status:
+  comment: '用户状态'
+  states:
+    unactive: '未激活'
+    active: '正常'
+    disabled: '已禁用'
+
+#------------------------------------------------------------------------------
+#抽象基类
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+user:
+  comment: '用户'
+  with: [ auto_increment_id|>=100000, create_timestamp, update_timestamp, logical_deletion ]
+  has:
+    username: email|comment=用户账号
+    password: password|=@auto|$=make_password_salted|comment=密码
+    password_salt: digits|+8|=@auto|readonly|comment=干扰码
+    status: user_status|=active
+    profile|?: person.personal_profile
+  keys:
+    username|u: username
+  actions:
+    make_password_salted:
+      password: "{{ this.data.password | md5_salt = @this.data.password_salt }}"
+
+user_role:
+  comment: '用户角色'
+  has:
+    role_name: idname
+    display_name: text|>=1|<=20
+  keys:
+    pk: role_name
+
+user_login_record:
+  comment: '用户登录记录'
+  with: [ auto_uuid, create_timestamp ]
+  has:
+    user: user|=@"{{auth.weibotui.user_id}}"
+    type: login_type
+    ip_address: ipv4|=@"{{app.session.ip}}"|comment=登录地址
+
+admin:
+  comment: '内部用户'
+  is: user
+  has:
+      username: idname|comment=用户账号
+
+admin_role:
+  comment: '内部用户角色'
+  is: user_role
+
+admin_login_record:
+  comment: '管理员登录记录'
+  with: [ auto_uuid, create_timestamp ]
+  has:
+    admin: admin|=@"{{auth.wbt_admin.admin_id}}"
+    ip_address: ipv4|=@"{{app.session.ip}}"|comment=登录地址
+
+#------------------------------------------------------------------------------
+#复杂关系定义
+
+&user_with_role:
+  comment: '用户组包含的用户'
+  with: [ auto_increment_id, create_timestamp ]
+  between:
+    user: user
+    role: user_role
+
+&admin_with_role:
+  comment: '管理用户组包含的管理员'
+  with: [ auto_increment_id, create_timestamp ]
+  between:
+    admin: admin
+    role: admin_role

@@ -1,0 +1,109 @@
+{% extends "SO/home.twig" %}
+
+{% block main %}
+<div class="row">
+    <div class="span12">
+        <ul class="thumbnails">
+{% for sna in snaProfiles %}
+            <li class="span3">
+                <div class="labeled-box labeled-weibo thumbnail">
+                    <div class="th-content-img">
+                        <img src="{{ sna.avatar_l }}" class="img-polaroid" alt="微博用户信息">
+                    </div>
+                    <div class="th-content">
+                        <span class="badge {{ sna.gender == 'male' ? 'badge-info' : 'badge-error' }}">&nbsp;{{ sna.display_name }}&nbsp;</span>
+                    </div>
+                    <div class="th-content">
+                        <span>{{ sna.location }}</span>
+                    </div>
+                    <div class="th-content">
+                        <span class="{{ sna.num_following|following_class }}">{{ sna.num_following }}</span> <span>关注</span> | <span class="{{ sna.num_follower|follower_class }}">{{ sna.num_follower }}</span> <span>粉丝</span> | <span class="{{ sna.num_post|post_class }}">{{ sna.num_post }}</span> <span>微博</span>
+                    </div>
+                    <div class="th-content">
+                        <span>{{ sna.description }}</span>
+                    </div>
+                    <div class="th-content">
+                        <a class="btn btn-small btn-primary" href="#"><i class="icon-edit icon-white"></i> 发布</a>
+                        <a class="btn btn-small btn-success" href="{{ sna.wbt_home }}"><i class="icon-search icon-white"></i> 浏览</a>
+{% if loginProfile.weibotui %}
+                        <a class="btn btn-small btn-inverse" href="javascript:unbindSNA('{{sna.weibo_id|hex}}');"><i class="icon-remove icon-white"></i> 移除</a>
+{% endif %}
+                    </div>
+                    <div class="th-content">
+                        <span>授权有效期：{{ sna.expires_at|date("Y-m-d H:i") }}</span>
+                    </div>
+                </div>
+            </li>
+{% endfor %}
+{% if loginProfile.weibotui %}
+            <li class="span3">
+                <div class="labeled-box humbnail">
+                    <div class="th-content-img">
+                        <img src="/images/avatar_add.png" class="img-polaroid" alt="添加微博账户">
+                    </div>
+                    <div class="th-content">
+                        <p><span class="badge badge-info">&nbsp;管理多个微博&nbsp;</span></p>
+
+                        <p>微博推提供了通过一个微博推账号来管理多个微博的功能。</p>
+                    </div>
+                    <div class="th-content" style="text-align: center;">
+{% for authInfo in snAuth %}
+                        <a class="btn btn-small btn-info" onclick="_hmt.push(['_trackEvent', '第三方账号', '{{ authInfo.name }}', '绑定SNA'])" href="{{ authInfo.entry }}"><i class="icon-plus icon-white"></i> {{ authInfo.name }}</a>
+{% endfor %}
+                    </div>
+                </div>
+            </li>
+{% else %}
+            <li class="span3">
+                <div class="labeled-box humbnail">
+                    <div class="th-content-img">
+                        <img src="/images/so/wbt_logo_180.jpeg" class="img-polaroid" alt="注册微博推帐号">
+                    </div>
+                    <div class="th-content">
+                        <p><span class="badge badge-info">&nbsp;注册微博推账号&nbsp;</span></p>
+
+                        <p>用微博推帐号登录，可同时管理多个社交媒体，如新浪微博、腾讯微博、微信、人人网等。你还等什么，赶快注册吧！</p>
+                    </div>
+                    <div class="th-content" style="text-align: center;">
+                        <a class="btn btn-small btn-danger" onclick="_hmt.push(['_trackEvent', '注册', '微博推社交管理', 'Dashboard'])" href="{{ my_url(_.config.custom.url.register_by_sna, {type: loginProfile.type, id: loginProfile.uid, skip:0}) }}"><i class="icon-user icon-white"></i> 注册帐号</a>
+                    </div>
+                </div>
+            </li>
+{% endif %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block js_link_foot %}
+     <script src="/libs/masonry/jquery.masonry.min.js"></script>
+{{ parent() }}
+{% endblock %}
+
+{% block extra_foot_script %}
+    <script type="text/javascript">
+        function unbindSNA(id)
+        {
+            bluefinBH.confirm('确认要移除该帐号吗？', function(){
+                wbtAPI.call('weibo/unbind', id, function(){
+                    bluefinBH.showInfo('移除操作成功。', function(){
+                        location.reload();
+                    })
+                });
+                return true;
+            });
+        }
+    </script>
+{% endblock %}
+
+{% block doc_ready %}
+{{ parent() }}
+
+             var $container = $('.thumbnails');
+             $container.imagesLoaded(function(){
+             $container.masonry({
+                 itemSelector : '.span3'
+                 });
+             });
+
+{% endblock %}

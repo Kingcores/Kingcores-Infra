@@ -1,0 +1,18 @@
+[2013-03-27 14:11:57 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-27 14:11:57 CST][debug][default]REQ: /
+[2013-03-27 14:11:57 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-27 14:11:57 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-27 14:11:57 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-27 14:11:57 CST][debug][diag]Read session[2phdtio87v8nrdhp0skhva9q31]: app|a:3:{s:7:"counter";i:88;s:10:"created_at";i:1363790481;s:10:"updated_at";i:1364294649;}
+[2013-03-27 14:11:57 CST][debug][default]Found route: so
+[2013-03-27 14:11:57 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-03-27 14:11:57 CST][info][default]Execution time: 0.95919299125671(s).
+[2013-03-27 15:39:23 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-27 15:39:23 CST][debug][default]REQ: /
+[2013-03-27 15:39:23 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-27 15:39:23 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-27 15:39:23 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-27 15:39:23 CST][debug][diag]Read session[2phdtio87v8nrdhp0skhva9q31]: app|a:3:{s:7:"counter";i:89;s:10:"created_at";i:1363790481;s:10:"updated_at";i:1364364716;}
+[2013-03-27 15:39:23 CST][debug][default]Found route: so
+[2013-03-27 15:39:23 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-03-27 15:39:23 CST][info][default]Execution time: 0.28881502151489(s).

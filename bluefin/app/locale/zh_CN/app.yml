@@ -1,0 +1,165 @@
+'Identity not found': 用户名或密码不正确。
+'Verification code invalid': 验证码不正确。
+'Captcha input is required.': 缺少验证码。
+WBT.Auth.index: 登录
+WBT.Home.index: 首页
+WBT.Home.id: 主页
+WBT.Uesr.Account.registerFromWeibo: 微博登录
+'Page not found. URL: %url%': 您访问的页面不存在。地址：%url%
+auth.weibotui: 微博推
+auth.weibo: 新浪微博
+WBT.Auth.weibo: 新浪微博登录
+WBT.User.Account.registerFromWeibo: 新浪微博登录
+WBT.Auth.logout: 退出登录
+WBT.User.Account.newAdvertiser: 广告主注册
+WBT.Home.Advertiser.index: 广告主
+WBT.Home.Weibozhu.index: 微博主
+WBT.Home.Tuike.index: 推客
+auth.qqweibo: 腾讯微博
+WBT.Auth.qqweibo: 腾讯微博登录
+WBT.User.Account.registerFromQQWeibo: 腾讯微博登录
+WBT.Home.Advertiser.campaign: 广告活动
+WBT.Auth.qqWeibo: 腾讯微博登录
+WBT.Home.Advertiser.newCampaign: 添加广告活动
+WBT.Home.Advertiser.findInventory: 寻找推广渠道
+'The inventory does not exist.': ''
+'"%name%" is required but not given.': 参数%name%必须提供。
+WBT.Home.Advertiser.tuike: ''
+'"%name%" is not a valid UUID.': ''
+'Invalid credential': 用户名或密码错误
+WBT.Home.Tuike.order: ''
+'Task Progress': 任务进度
+Cost: 成本情况
+WBT.Home.Advertiser.campaignOrder: ''
+'Order Time': 下单时间
+'Proof URL': ''
+WBT.Home.Advertiser.weiboCampaignList: 活动列表
+WBT.Home.Advertiser.weiboInventoryList: 渠道列表
+WBT.Home.Advertiser.weiboOrderList: 订单列表
+'Order Status': 订单情况
+WBT.Home.advertiser: ''
+WBT.User.Account.addAdvertiserRole: ''
+'The weibo campaign does not exist.': ''
+'The initial value of "%name%" cannot be set manually by user.': ''
+WBT.User.Account.authEMail: 验证邮箱
+WBT.User.Account.authEMailResult: ''
+WBT.Home.Tuike.snsAcount: ''
+WBT.Home.Tuike.userSetting: ''
+WBT.User.Account.setting: ''
+WBT.Home.tuike: ''
+WBT.Home.Tuike.changeUserInfo: ''
+WBT.Home.Tuike.changePassword: ''
+WBT.User.Account.home: ''
+WBT.Home.Advertiser.changeUserInfo: ''
+WBT.Home.Advertiser.changePassword: ''
+'Insufficient deposit balance.': 账户余额不足。
+WBT.Home.Advertiser.depositRecordList: ''
+'Channel is successfully added.': 推广渠道添加成功。
+'Missing required value "%name%"!': '缺少必要的参数："%name%"。'
+'Missing required field "%key%"!': '字段"%key%"是必须的。'
+WBT.ThirdParty.alipay: ''
+Deposit: 充值
+'Waiting for payment ...': 等待支付
+'Please turn to the newly opened page to proceed with the payment. If no new page is opened, please try <a href="%link%">this link</a>.': '请在新页面完成支付过程，如果已完成请点击以下相应按钮。如果您的新页面被浏览器阻止，请点击<a href="%link%">这里</a>。'
+'I''ve paid': 支付成功
+'I fail to pay': 支付失败
+WBT.User.Asset.deposit: 用户充值
+'User Deposit': ''
+WBT.ThirdParty.mockAlipay: 支付宝模拟支付
+WBT.Home.Tuike.weiboOrderList: 微博任务
+WBT.Home.Tuike.weiboInventoryList: 渠道管理
+WBT.Home.Advertiser.expenseRecordList: 消费记录
+'Your campaign is successfully published.': 广告活动发布成功。
+WBT.Home.testSession: ''
+'Channel is successfully accepted.': ''
+'Channel is successfully submitted.': ''
+'The marketing order is successfully accepted.': 推广任务已接受。
+'The marketing order is successfully submitted.': 推广任务已提交。
+'The marketing order is refused.': 推广任务已拒绝。
+'Task Submission': 任务提交
+'The record has already been added.': 您已添加过此记录了。
+'Auto-pay time': ''
+'The order [%order_id%] is cancelled.': '订单 [%order_id%] 已取消成功。'
+'Are you sure to pay the order?': 您确认要付款吗？
+'The order [%order_id%] is paid.': '您的订单 [%order_id%] 已付款成功。'
+'Please fill in the link address related to the task.': 请提供您完成任务相关的链接地址。
+'You can upload a snapshot image related to the task if any.': 请上传证明任务已完成的相关截图。
+'"%name%" is required.': ''
+WBT.Home.wxWeibotuiCom: ''
+WBT.User.Account.authEmail: ''
+WBT.User.Account.newWeibozhu: ''
+WBT.User.Account.authEmailResult: ''
+WBT.Weixin.Wx.index: ''
+WBT.Weixin.Wx.mpAccountList: ''
+WBT.Weixin.Wx.mpRuleList: ''
+WBT.Weixin.MpUser.index: ''
+WBT.Weixin.MpRule.index: ''
+'"%name%" cannot be NULL.': ''
+WBT.Weixin.MpRule.detail: ''
+WBT.Weixin.MpUser.ind: ''
+WBTAdmin.Home.index: ''
+SO.Home.index: 微博推社交管理
+'Weibo API returned empty result.': ''
+SO.Home.session: ''
+auth.qq_weibo: 腾讯微博
+WBT.Home.redis: ''
+WBT.Home.session: ''
+SO.Account.logout: ''
+WBT.Home.cache: ''
+WBT.Auth.sso: ''
+SO.Account.login: ''
+SO.Account.snaLogin: ''
+api.open.user.sn_auth.type: ''
+api.open.user.sn_auth.id: ''
+WBT.Register.social: 用户注册
+config.weibo.weibotui.appKey: ''
+WBT.Register.advertiser: ''
+WBT.Register.verifyEmail: 验证邮箱
+WBT.Register.index: 用户注册
+WBT.Home.Weibotui.index: 首页
+SO.Home.id: 我的社交动态
+WBT.ThirdParty.notify: ''
+WBT.Register.eula: 微博推用户服务协议
+'Name of Contact': 联系人姓名
+'"%name%" should not be shorter than %min% characters.': '%name%不能包含少于''%min%''个字符。'
+WBT.Home.Weibotui.nonactivated: 激活帐号
+WBT.Home.Weibotui.activate: ''
+form.wbt.personal_description: 修改个人简介
+'The value of "%name%" is different from the one of "%name% Confirmation".': 两次输入的密码不同。
+'Two passwords are not the same.': 两次输入的密码不同。
+'Operation succeeded.': 操作成功。
+WBT.Register.tuike: 注册为推客
+'Send Verification Code': 发送验证码
+'Mobile Authentication Code': 手机验证码
+请: ''
+'Invalid "%name%" pattern.': ''
+WBT.Register.inventory: 添加社交媒体渠道
+'You are not a tweeter.': 您还不是一个推客，请先注册为推客再访问此页面。
+WBT.Home.sso: ''
+WBT.Home.Tuike.incomeRecordList: ''
+SO.Account.session: ''
+WBT.User.Account.bind: ''
+'Duplicate entry "%value%" as [%name%].': '%name% "%value%" 已存在。'
+'The given "%name%" value is not a valid integer.': ''
+WBTAdmin.Home.login: 登录
+'The requested ''%name%'' record does not exist.': 请求的%name%记录不存在。
+WBT.Home.testPay: ''
+WBT.ThirdParty.Alipay.submit: 支付宝订单提交
+'The bill [#%bill%] is being processing.': '订单 [%bill%] 已正在处理。'
+'The bill [#%bill%] has already been paid.': '订单 [%bill%] 已经支付过了。'
+'The bill [#%bill%] is invalid.': '订单 [%bill%] 已失效。'
+WBT.ThirdParty.Alipay.mock: ''
+WBT.ThirdParty.Alipay.notify: ''
+WBT.ThirdParty.Alipay.return: 支付宝结果
+WBT.Home.testPayOk: ''
+api.open.payment.get_status.type: 业务类型
+api.open.payment.get_status.bill_id: 订单号
+WBT.Auth.authorize: 微博推授权登录
+'Invalid redirect_uri!': ''
+SO.Home.dashboard: 首页
+WBT.Register.sendVerifyEmail: 发送激活邮件
+WBT.Register.verifyemail: ''
+'The account verification email is resent successfully.': 帐号激活确认邮件已重发成功。
+'Invalid signature!': ''
+WBT.Register.activate: 帐户激活
+WBT.Auth.jsCallback: ''

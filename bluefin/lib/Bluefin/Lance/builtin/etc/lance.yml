@@ -1,6 +1,7 @@
 lance:
   timezone: Asia/Shanghai
   phpInternalEncoding: UTF-8
+  locale: zh_CN
 
 log:
   -

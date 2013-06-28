@@ -1,0 +1,93 @@
+{% extends "WBT/auth.twig" %}
+
+{% block main %}
+{% if _eventMessage %}
+    <div id="eventMessage" class="alert{{ _eventAlertClass }}"><button type="button" class="close" data-dismiss="alert">×</button>
+     <strong>{{ _eventMessage|raw }}</strong>
+    </div>
+{% endif %}
+<div class="row content-area">
+    <div class="offset1 span5">
+        <div id="authCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div>
+                        <img src="/images/login/weibotui1.png" alt="帮助你与客户建立更深联系。">
+                        <br><br><br><br><br>
+                    </div>
+                    <div class="carousel-caption">
+                      <h4>帮助你与客户建立更深联系。</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div>
+                        <img src="/images/login/weibotui2.png" alt="打造喜欢你的客户群体。">
+                        <br><br><br><br><br>
+                    </div>
+                    <div class="carousel-caption">
+                      <h4>打造喜欢你的客户群体。</h4>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control left" href="#authCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#authCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+    <div class="offset1 span4">
+        <div class="login-unit">
+            <form method="post" action="{{ my_url('auth/index', {'_from':_from}, null, true) }}">
+                <legend><h3 class="form-title">欢迎登录微博推</h3></legend>
+                <div class="control-group">
+                    <div class="controls">
+                        <span class="label label-info label-large">微博推账号</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!--[if lt IE 10]>
+                    <label class="control-label" for="inputUsername">用户名：</label>
+                    <![endif]-->
+                    <div class="controls">
+                        <input type="email" id="inputUsername" name="username" placeholder="电子邮箱">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <!--[if lt IE 10]>
+                    <label class="control-label" for="inputPassword">密码：</label>
+                    <![endif]-->
+                    <div class="controls">
+                        <input type="password" id="inputPassword" name="password" placeholder="密码">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="checkbox">
+                            <input type="checkbox">记住用户名
+                        </label>
+                        <button type="submit" class="btn btn-primary">登录</button>
+                        <a class="btn btn-info" href="{{ my_url('register', {'_from':_from}) }}">注册</a>
+                    </div>
+                </div>
+
+{% if not auth.weibotui.captcha and not _eventMessage %}
+                <div class="form-gap form-divider">&nbsp;</div>
+                <div>欢迎使用社交媒体账号登录微博推：</div>
+                <div class="form-gap">&nbsp;</div>
+
+                <div class="control-group">
+                    <div class="controls">
+{% for authType, authContext in auth %}
+                        <a onclick="_hmt.push(['_trackEvent', '社交媒体账号', '{{ authContext.name }}', '登录'])" href="{{ authContext.entry }}" title="{{ authContext.name }}"><img src="/images/3rd/{{authType}}_login.png" alt="{{ authContext.name }}"></a>
+{% endfor %}
+                    </div>
+                </div>
+{% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block doc_ready %}
+{{ parent() }}
+        $('#authCarousel').carousel();
+{% endblock %}

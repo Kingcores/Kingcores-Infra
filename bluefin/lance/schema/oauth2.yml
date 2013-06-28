@@ -1,0 +1,54 @@
+#微博推开放模式
+
+#------------------------------------------------------------------------------
+#预编译指令
+!comment-locale: zh_CN
+
+#------------------------------------------------------------------------------
+#自定义类型
+
+@oauth_client_level:
+  comment: 客户端等级
+  values:
+    public_client: 公有
+    private_client: 私有
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+oauth_client:
+  comment: 'OAuth客户'
+  with: [ auto_increment_id|>=10000 ]
+  has:
+    name: core.short_name|comment=客户端名称
+    secret: text|+32|comment=密钥
+    level: oauth_client_level
+    redirect_uri: url|comment=回调地址
+
+oauth_token:
+  comment: 'OAuth令牌'
+  with: [ create_timestamp ]
+  has:
+    access_token: text|+40|comment=访问令牌
+    client: oauth_client
+    user|?: system.user|on_reference_delete=@@cascade
+    expires: datetime|comment=有效期
+    scope|?: text|<=1000|comment=授权范围
+    session_data|?: json|comment=会话数据
+  keys:
+    pk: access_token
+
+oauth_code:
+  comment: 'OAuth授权码'
+  with: [ create_timestamp ]
+  has:
+    code: text|+40|comment=授权码
+    client: oauth_client
+    user|?: system.user|on_reference_delete=@@cascade
+    redirect_uri: url|comment=回调地址
+    expires: datetime|comment=有效期
+    scope|?: text|<=1000|comment=授权范围
+  keys:
+    pk: code
+
+

@@ -1,0 +1,38 @@
+{% extends "WBT/home.twig" %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="offset2 span8">
+                <div class="form-unit">
+{% if _eventMessage %}
+                    <div id="eventMessage" class="alert {{ _eventAlertClass }}"><button type="button" class="close" data-dismiss="alert">×</button>
+                     <strong>{{ _eventMessage|raw }}</strong>
+                    </div>
+{% endif %}
+                    <legend><h4 class="legend">添加社交媒体渠道</h4></legend>
+                    <div class="progress">
+                        <div class="bar bar-success" style="width: 33%;">第1步：完善个人信息</div>
+                        <div class="bar bar-info" style="width: 33%;">第2步：添加社交媒体渠道</div>
+                        <div class="bar" style="width: 34%;">第3步：推客注册成功</div>
+                    </div>
+                    <div class="gap20">
+                        添加社交媒体渠道后，广告主将可以选择这些渠道用于付费推广活动，您也将有机会获得可观的收入。
+                    </div>
+                    <hr>
+                    <div class="gap10">
+                        您的社交媒体帐号：
+                    </div>
+                    <div>
+                        {{ table|raw }}
+                    </div>
+                    <div>
+{% for authInfo in snAuth %}
+                        <a class="btn btn-primary" href="{{ authInfo.entry }}"><i class="icon-plus icon-white"></i> {{ authInfo.name }}</a>
+{% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

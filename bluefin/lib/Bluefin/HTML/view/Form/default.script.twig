@@ -1,0 +1,116 @@
+{% set _datePicker = component.getView.get('_datePicker') %}
+{% set _timePicker = component.getView.get('_timePicker') %}
+{% set _inputSpinner = component.getView.get('_inputSpinner') %}
+{% set _fileUpload = component.getView.get('_fileUpload') %}
+<script type="text/javascript">
+{{ component.bodyScript|raw }}
+    var {{ component.attributes.id }}Meta = {};
+{% for child in component.components %}
+{% set name = child.attributes.name %}
+{% if name %}
+    {{ component.attributes.id }}Meta['{{ name }}'] = {{ child.clientSide|json|raw }};
+{% endif %}
+{% endfor %}
+    $(function (){
+        var scripts = [];
+{% if _datePicker %}
+        scripts.push('/scripts/jquery-datepicker.locale.zh_CN.js');
+{% endif %}
+{% if _timePicker %}
+        scripts.push('/libs/bootstrap-timepicker/js/bootstrap-timepicker.js');
+{% endif %}
+{% if _fileUpload %}
+        scripts.push('/libs/jquery-fileupload/js/jquery.iframe-transport.js');
+        scripts.push('/libs/jquery-fileupload/js/jquery.fileupload.js');
+{% endif %}
+        bluefinBH.loadScript(scripts, function() {
+            var form = $('#{{ component.attributes.id }}');
+{% if _datePicker %}
+            form.find('.date-picker').datepicker();
+{% endif %}
+{% if _timePicker %}
+            form.find('.time-picker').timepicker();
+{% endif %}
+{% if _inputSpinner %}
+            form.find('.input-spinner').spinner({{ _inputSpinner|raw }});
+{% endif %}
+{% if _fileUpload %}
+            $('input.file-upload').fileupload({
+                dataType: 'json',
+                add: function (e, data) {
+                    var id = $(this).attr('id') + 'C',
+                        div = $('#'+id);
+
+                    div.find('div.progress').removeClass('hide');
+                    div.siblings('span.help-block').addClass('hide');
+
+                    data.context = div;
+                    data.submit();
+                },
+                done: function (e, data) {
+                    $.each(data.result, function (index, file) {
+                        data.context.find('div.progress').addClass('hide');
+                        if (file.thumbnail_url) {
+                            $('<img src="'+file.thumbnail_url+'"> ').prependTo(data.context);
+                        }
+                        data.context.find('input').val(file.url);
+                    });
+                },
+                progressall: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10),
+                        id = $(this).attr('id') + 'P';
+                    $('#'+id).css('width', progress + '%');
+                },
+                fail: function (e, data) {
+                    bluefinBH.showError(data.errorThrown);
+                }
+
+
+            });
+{% endif %}
+
+            //TODO: Add on key up
+        });
+
+{% if component.ajaxForm %}
+        var FORM = $('#{{ component.attributes.id }}');
+        FORM.submit(function(e) {
+            var fields = FORM.find(":input").serializeArray(),
+                fieldName, fieldValue, PARAMS = {}, flag;
+            e.preventDefault();
+            $.each(fields, function(i, field){
+                if (field.value == '') return;
+                flag = field.name.substr(-2);
+                if (flag == '_D') {
+                    fieldName = field.name.substr(0, field.name.length-2);
+                    if (typeof PARAMS[fieldName] == 'undefined') {
+                        PARAMS[fieldName] = field.value;
+                    } else {
+                        PARAMS[fieldName] = field.value + ' ' + PARAMS[fieldName];
+                    }
+                } else if (flag == '_T') {
+                    fieldName = field.name.substr(0, field.name.length-2);
+                    if (typeof PARAMS[fieldName] == 'undefined') {
+                        PARAMS[fieldName] = field.value;
+                    } else {
+                        PARAMS[fieldName] += ' ' + field.value;
+                    }
+                } else {
+                    PARAMS[field.name] = field.value;
+                }
+            });
+
+{{ component.submitAction|raw }}
+            return false;
+        });
+{% else %}
+        var FORM = $('#{{ component.attributes.id }}');
+        FORM.submit(function(e) {
+
+{{ component.submitAction|raw }}
+            return true;
+        });
+{% endif %}
+{{ component.initScript|raw }}
+    });
+</script>

@@ -1,0 +1,73 @@
+sample2:
+  comment: 'Sample2'
+  locale: zh_CN
+
+  db:
+    type: mysql
+    adapter: PDO_MYSQL
+    engine: InnoDB
+    charset: utf8
+    connection:
+      host: 127.0.0.1
+      port: 3306
+      username: root
+      password: root
+      dbname: weibotui
+
+  entities:
+    - oauth2.oauth_token
+    - oauth2.oauth_code
+
+  auth:
+    -
+      name: weibotui
+      authUrl: http://www.weibotui.com/auth/index
+      responseUrl: http://www.weibotui.com/auth/index
+      modelClass: "\WBT\Model\Weibotui\User"
+      uidColumn: user_id
+      identityColumn: username
+      credentialColumn: password
+      dataColumns:
+        - '*'
+        - profile.nick_name
+        - profile.gender
+        - profile.avatar
+        - profile.description
+      persistence:
+        type: session
+        options: { namespace: auth.weibotui }
+
+    -
+      name: wbt_admin
+      authUrl: http://admin.weibotui.com/home/login
+      responseUrl: http://admin.weibotui.com/home/login
+      modelClass: "\WBT\Model\Weibotui\Admin"
+      uidColumn: admin_id
+      identityColumn: username
+      credentialColumn: password
+      dataColumns:
+        - '*'
+        - profile.display_name
+        - profile.avatar
+      persistence:
+        type: session
+        options: { namespace: auth.wbt_admin }
+
+  data:
+    init:
+      - sdk.yml
+      - roles.yml
+      - admins.yml
+      - country.sql
+      - province.sql
+      - city.sql
+      - capital_city.sql
+      - district.sql
+      - topic_categories.yml
+      - users.yml
+      - weibos.yml
+    test:
+      - test-clear.sql
+      - test-user.yml
+      - test-campaign.yml
+      - test-inventory.yml

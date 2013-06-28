@@ -1,0 +1,145 @@
+{% extends "WBT/home.twig" %}
+
+{% block css_link %}
+{{ parent() }}
+    <link href="/libs/jquery-lightbox/css/jquery.lightbox-0.5.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<div class="container">
+
+    <ul class="thumbnails">
+        <li class="span3">
+            <div class="thumbnail">
+                <div class="th-content-img">
+                    <img src="{{ weiboProfile.head }}/120" alt="微博用户信息">
+                </div>
+                <div class="th-content">
+                    <p><span class="badge badge-success">&nbsp;{{ weiboProfile.nick }}&nbsp;</span>
+                    </p>
+                    <div id="send-weibo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; ">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h5 id="send-weibo-label">发布微博</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="">
+                                <textarea rows="5" class="weibo-content"></textarea>
+                            </div>
+                            <div>
+                                <i class=icon-heart></i>表情
+                                <i class="icon-picture"></i>图片
+                                <i class="icon-bullhorn"></i>话题
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">发布</button>
+                        </div>
+                    </div>
+                    <a class="btn btn-small btn-info"data-toggle="modal" href="#send-weibo"><i class="icon-edit"></i>发布微博</a>
+                    <hr class="soften">
+                    <p>{{ weiboProfile.location }}</p>
+                    <p><span class="label label-warning">我的腾讯微博</span><br><a
+                            href="http://t.qq.com/{{ weiboProfile.name }}" target="_blank">http://t.qq.com/{{ weiboProfile.name }}</a>
+                    </p>
+                    <p>{{ weiboProfile.introduction }}</p>
+                    <div class="user-info">
+                        <span class="label label-success"><a href="http://t.qq.com/{{ weiboProfile.name }}/following" target="_blank">{{ weiboProfile.idolnum }}收听</a></span>
+                        <span class="label label-success">&nbsp;<a href="http://t.qq.com/{{ weiboProfile.name }}/follower" target="_blank">{{ weiboProfile.fansnum }}听众</a></span>
+                        <span class="label label-success">&nbsp;<a href="http://t.qq.com/{{ weiboProfile.name }}/mine" target="_blank">{{ weiboProfile.tweetnum }}微博</a></span>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+        </li>
+        {% for message in homeTimeline.info %}
+        {% set raw_msg = message.source ? message.source : message %}
+        <!-- 转发的原创 -->
+        <li class="span3">
+            <div class="thumbnail">
+                <div class="hover-option">
+                    <a class="btn btn" href="javascript:;" title="赞">
+                        <i class="icon-thumbs-up"></i>
+                        赞</a>
+                    <a class="btn btn" href="javascript:;" title="转发">
+                        <i class="icon-retweet"></i>
+                        转发</a>
+                    <a class="btn btn" href="javascript:;" title="评论">
+                        <i class="icon-comment"></i>
+                        评论</a>
+                </div>
+                {% if raw_msg.image %}
+                <div class="th-content-img">
+                    <a href="{{ raw_msg.image[0] }}/400" alt="微博图片">
+                        <img src="{{ raw_msg.image[0] }}/2000" alt="微博图片">
+                    </a>
+                </div>
+                {% endif %}
+                <div class="th-content">
+                    <p><a href="http://t.qq.com/{{ raw_msg.name }}" target="_blank">{{ raw_msg.nick }}</a> ：{{
+                        raw_msg.origtext }}</p>
+                    <ul class="nav nav-pills">
+                        <li class="pull-right"><a
+                                href="http://t.qq.com/p/t/{{ raw_msg.id}}" target="_blank">评论({{ raw_msg.mcount }})</a></li>
+                        <li class="pull-right"><a
+                                href="http://t.qq.com/p/t/{{ raw_msg.id}}" target="_blank">转发({{ raw_msg.count }})</a></li>
+                    </ul>
+                </div>
+                {% if message.source %}
+                <div class="th-content-gray">
+                    <div class="clearfix">
+                        <a href="http://t.qq.com/{{ message.name }}" target="_blank"
+                           title="{{ message.nick }}" class="pull-left">
+                            <img src="{{ message.head}}/40"
+                                 alt="{{ message.nick }} 头像">
+                        </a>
+
+                        <p class="retweet-text"><a href="http://t.qq.com/{{ message.name }}" target="_blank">{{ message.nick }}</a> {{ message.origtext }}
+                        </p>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="row">
+    &nbsp;<br>&nbsp;
+</div>
+{% endblock %}
+
+{% block js_link_foot %}
+<script src="/libs/jquery-lightbox/js/jquery.lightbox-0.5.min.js"></script>
+<script src="/libs/masonry/jquery.masonry.min.js"></script>
+{% endblock %}
+
+{% block doc_ready %}
+{{ parent() }}
+
+        var $container = $('.thumbnails');
+        $container.imagesLoaded(function(){
+            $container.masonry({
+                itemSelector : '.span3'
+            });
+        });
+
+        $(".th-content-img a").lightBox(
+                settings = jQuery.extend({
+                    imageLoading:	'/libs/jquery-lightbox/images/lightbox-ico-loading.gif',
+                    imageBtnPrev:	'/libs/jquery-lightbox/images/lightbox-btn-prev.gif',
+                    imageBtnNext:	'/libs/jquery-lightbox/images/lightbox-btn-next.gif',
+                    imageBtnClose:	'/libs/jquery-lightbox/images/lightbox-btn-close.gif',
+                    imageBlank:		'/libs/jquery-lightbox/images/lightbox-blank.gif'
+                })
+        );
+
+        $(".thumbnail").mouseover(function(){
+            $(this).children(".hover-option").css("display","block");
+        });
+
+        $(".thumbnail").mouseout(function(){
+            $(this).children(".hover-option").css("display","none");
+        });
+
+{% endblock %}

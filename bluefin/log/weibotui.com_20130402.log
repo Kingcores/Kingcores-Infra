@@ -1,0 +1,56 @@
+[2013-04-02 10:22:59 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-02 10:22:59 CST][debug][default]REQ: /
+[2013-04-02 10:22:59 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-02 10:22:59 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-02 10:22:59 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-02 10:22:59 CST][debug][diag]Read session[rh2mste0nsl7fcp3dk42kdr2p5]: 
+[2013-04-02 10:22:59 CST][info][default]Request Exception: 您访问的页面不存在。地址：/
+[2013-04-02 10:22:59 CST][info][default]Execution time: 0.077852964401245(s).
+[2013-04-02 11:25:18 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-02 11:25:18 CST][debug][default]REQ: /
+[2013-04-02 11:25:18 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-02 11:25:18 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-02 11:25:18 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-02 11:25:18 CST][debug][diag]Read session[0sbhc27j7pb0fmoh4arb9000p5]: 
+[2013-04-02 11:25:18 CST][info][default]Request Exception: 您访问的页面不存在。地址：/
+[2013-04-02 11:25:18 CST][info][default]Execution time: 0.072993993759155(s).
+[2013-04-02 11:26:49 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-02 11:26:49 CST][debug][default]REQ: /
+[2013-04-02 11:26:49 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-02 11:26:49 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-02 11:26:49 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-02 11:26:49 CST][debug][diag]Read session[uri4a4j73ioss37aepqb3dhhn4]: 
+[2013-04-02 11:26:49 CST][info][default]Request Exception: 您访问的页面不存在。地址：/
+[2013-04-02 11:26:49 CST][info][default]Execution time: 0.061922073364258(s).
+[2013-04-02 11:27:10 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-02 11:27:10 CST][debug][default]REQ: /
+[2013-04-02 11:27:10 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-02 11:27:10 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-02 11:27:10 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-02 11:27:10 CST][debug][diag]Read session[i4h9cdphc5hnt2eruv4b3a86q0]: 
+[2013-04-02 11:27:10 CST][info][default]Request Exception: 您访问的页面不存在。地址：/
+[2013-04-02 11:27:10 CST][info][default]Execution time: 0.06694507598877(s).
+[2013-04-02 14:31:47 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-02 14:31:47 CST][debug][default]REQ: /
+[2013-04-02 14:31:47 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-02 14:31:47 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-02 14:31:47 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-02 14:31:47 CST][debug][diag]Read session[e8pudjttguljvg2mvmukbvqpf2]: 
+[2013-04-02 14:31:47 CST][info][default]Request Exception: 您访问的页面不存在。地址：/
+[2013-04-02 14:31:47 CST][info][default]Execution time: 0.10591793060303(s).
+[2013-04-02 14:33:09 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-02 14:33:09 CST][debug][default]REQ: /
+[2013-04-02 14:33:09 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-02 14:33:09 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-02 14:33:09 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-02 14:33:09 CST][debug][diag]Read session[1gnjrc1lb6u1bjohgv92md65u7]: 
+[2013-04-02 14:33:09 CST][info][default]Request Exception: 您访问的页面不存在。地址：/
+[2013-04-02 14:33:09 CST][info][default]Execution time: 0.077342987060547(s).
+[2013-04-02 14:33:42 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-02 14:33:42 CST][debug][default]REQ: /
+[2013-04-02 14:33:42 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-02 14:33:42 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-02 14:33:42 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-02 14:33:42 CST][debug][diag]Read session[bejnp761fr3gnu0c005fbc4qr4]: 
+[2013-04-02 14:33:42 CST][info][default]Request Exception: 您访问的页面不存在。地址：/
+[2013-04-02 14:33:42 CST][info][default]Execution time: 0.1319739818573(s).

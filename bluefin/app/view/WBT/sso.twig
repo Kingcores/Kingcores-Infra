@@ -1,0 +1,27 @@
+{% extends "WBT/bootstrap.twig" %}
+
+{% block css_link %}
+    <link href="/styles/sso.css?rand={{ random() }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="box-signin">
+        <div>
+            <h2 class="logo pull-left">微博推</h2>
+            <a class="btn btn-link top-right-link pull-right" href="{{ registerUrl }}">注册新帐号</a>
+        </div>
+        <div class="clearfix"></div>
+{% if _eventMessage %}
+        <div class="alert{{ _eventAlertClass }}"><button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ _eventMessage|raw }}</strong>
+        </div>
+{% endif %}
+        <div class="well-signin">
+            <div class="well-title"><i class="icon-info-sign"></i>使用您的微博推账号访问 <span class="legend">{{ clientName }}</span></div>
+{% block content %}{% endblock %}
+        </div>
+        <div class="tips">提示：为保障帐号安全，请认准本页面地址必须以 www.weibotui.com 开头。</div>
+    </div>
+</div>
+{% endblock %}

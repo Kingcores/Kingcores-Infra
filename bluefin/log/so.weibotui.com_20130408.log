@@ -1,0 +1,648 @@
+[2013-04-08 18:09:59 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:09:59 CST][debug][default]REQ: /
+[2013-04-08 18:09:59 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:09:59 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:09:59 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:09:59 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: 
+[2013-04-08 18:09:59 CST][debug][default]Found route: so
+[2013-04-08 18:09:59 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:10:00 CST][info][default]Execution time: 0.19385290145874(s).
+[2013-04-08 18:11:55 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:11:55 CST][debug][default]REQ: /
+[2013-04-08 18:11:55 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:11:55 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:11:55 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:11:55 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:2:{s:7:"counter";i:0;s:10:"created_at";i:1365415799;}
+[2013-04-08 18:11:55 CST][debug][default]Found route: so
+[2013-04-08 18:11:55 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:11:55 CST][info][default]Execution time: 0.14601898193359(s).
+[2013-04-08 18:12:46 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:12:46 CST][debug][default]REQ: /
+[2013-04-08 18:12:46 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:12:46 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:12:46 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:12:46 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:1;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365415915;}
+[2013-04-08 18:12:46 CST][debug][default]Found route: so
+[2013-04-08 18:12:46 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:12:46 CST][info][default]Execution time: 0.1539478302002(s).
+[2013-04-08 18:13:29 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:13:29 CST][debug][default]REQ: /
+[2013-04-08 18:13:29 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:13:29 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:13:29 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:13:29 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:2;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365415966;}
+[2013-04-08 18:13:29 CST][debug][default]Found route: so
+[2013-04-08 18:13:29 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:13:29 CST][info][default]Execution time: 0.14699983596802(s).
+[2013-04-08 18:15:44 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:15:44 CST][debug][default]REQ: /
+[2013-04-08 18:15:44 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:15:44 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:15:44 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:15:44 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:3;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365416009;}
+[2013-04-08 18:15:44 CST][debug][default]Found route: so
+[2013-04-08 18:15:44 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:15:44 CST][info][default]Execution time: 0.15508484840393(s).
+[2013-04-08 18:16:31 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:16:31 CST][debug][default]REQ: /
+[2013-04-08 18:16:31 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:16:31 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:16:31 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:16:31 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:4;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365416144;}
+[2013-04-08 18:16:31 CST][debug][default]Found route: so
+[2013-04-08 18:16:31 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:16:31 CST][info][default]Execution time: 0.15415906906128(s).
+[2013-04-08 18:17:23 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:17:23 CST][debug][default]REQ: /
+[2013-04-08 18:17:23 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:17:23 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:17:23 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:17:23 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:5;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365416191;}
+[2013-04-08 18:17:23 CST][debug][default]Found route: so
+[2013-04-08 18:17:23 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:17:23 CST][debug][default][file:WBTClient.php][line:78][fun:getAuthorizeURL]DUMP var: 'www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard'
+[2013-04-08 18:17:23 CST][info][default]Execution time: 0.15694713592529(s).
+[2013-04-08 18:19:39 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:19:39 CST][debug][default]REQ: /
+[2013-04-08 18:19:39 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:19:39 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:19:39 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:19:39 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:6;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365416243;}
+[2013-04-08 18:19:39 CST][debug][default]Found route: so
+[2013-04-08 18:19:39 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:19:40 CST][debug][default][file:WBTClient.php][line:79][fun:getAuthorizeURL]DUMP var: 'a6b8f7c029e32842b370fb507abba743'
+[2013-04-08 18:19:40 CST][info][default]Execution time: 0.14855003356934(s).
+[2013-04-08 18:19:41 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:19:41 CST][debug][default]REQ: /
+[2013-04-08 18:19:41 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:19:41 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:19:41 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:19:41 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:7;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365416379;}
+[2013-04-08 18:19:41 CST][debug][default]Found route: so
+[2013-04-08 18:19:41 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:19:41 CST][debug][default][file:WBTClient.php][line:79][fun:getAuthorizeURL]DUMP var: 'a6b8f7c029e32842b370fb507abba743'
+[2013-04-08 18:19:41 CST][info][default]Execution time: 0.14938592910767(s).
+[2013-04-08 18:20:50 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:20:50 CST][debug][default]REQ: /
+[2013-04-08 18:20:50 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:20:50 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:20:50 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:20:50 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:8;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365416381;}
+[2013-04-08 18:20:50 CST][debug][default]Found route: so
+[2013-04-08 18:20:50 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:20:50 CST][debug][default][file:WBTClient.php][line:79][fun:getAuthorizeURL]DUMP var: '46f1ee3fb5e6833b645cb55bedeeb053'
+[2013-04-08 18:20:50 CST][info][default]Execution time: 0.15172386169434(s).
+[2013-04-08 18:24:18 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:24:18 CST][debug][default]REQ: /
+[2013-04-08 18:24:18 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:24:18 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:24:18 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:24:18 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:9;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365416450;}
+[2013-04-08 18:24:18 CST][debug][default]Found route: so
+[2013-04-08 18:24:18 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:24:18 CST][debug][default][file:WBTClient.php][line:79][fun:getAuthorizeURL]DUMP var: 'a2145c2ba9e80b92dd2bd8d403bf3a6d'
+[2013-04-08 18:24:18 CST][info][default]Execution time: 0.14782094955444(s).
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/home/dashboard&ticket=33GAwC9VA5N0bv8VLtxLeh0ac057e8a9',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/home/dashboard?ticket=33GAwC9VA5N0bv8VLtxLeh0ac057e8a9',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49853',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'so.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=ev1hs9tm7jmps8o3ssh5d0l4e7; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.7618,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:53 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/home/dashboard&ticket=33GAwC9VA5N0bv8VLtxLeh0ac057e8a9',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/home/dashboard?ticket=33GAwC9VA5N0bv8VLtxLeh0ac057e8a9',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49853',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'so.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=ev1hs9tm7jmps8o3ssh5d0l4e7; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.7618,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:53 CST][debug][default]REQ: /home/dashboard?ticket=33GAwC9VA5N0bv8VLtxLeh0ac057e8a9
+[2013-04-08 18:45:53 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:45:53 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:45:53 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:45:53 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:10;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365416658;}
+[2013-04-08 18:45:53 CST][debug][default]Found route: so_c-a
+[2013-04-08 18:45:53 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 18:45:53 CST][debug][default][file:WBTClient.php][line:188][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 400 Bad Request',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 10:45:53 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=69m2h23311kbhmt2lnrcgdeal1; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-08 18:45:53 CST][debug][default][file:WBTClient.php][line:189][fun:_send]DUMP body: '{"error":"invalid_client","error_description":"The client credentials are invalid"}'
+[2013-04-08 18:45:53 CST][error][default]SSO Error: Bad Request: invalid_client
+[2013-04-08 18:45:53 CST][debug][diag]#0 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(54): WBTClient->_send('oauth/client', Array, NULL, Array)
+#1 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(63): WBTPrivateClient->_get_client_token()
+#2 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTClient.php(116): WBTPrivateClient->_beAuthorized()
+#3 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(28): WBTClient->_api('user/get_user_p...', Array)
+#4 /mnt/hgfs/Kingcores-WBT/src/app/lib/SO/Controller/SOControllerBase.php(23): WBTPrivateClient->get_user_profile_by_ticket('33GAwC9VA5N0bv8...')
+#5 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Controller.php(36): SO\Controller\SOControllerBase->_init()
+#6 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(719): Bluefin\Controller->__construct()
+#7 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(514): Bluefin\Gateway->_dispatchRequest()
+#8 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(282): Bluefin\Gateway->_runService()
+#9 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/App.php(220): Bluefin\Gateway->service()
+#10 /mnt/hgfs/Kingcores-WBT/src/webroot/index.php(5): Bluefin\App->startGateway()
+#11 {main}
+[2013-04-08 18:45:53 CST][verbose][diag]Redirected to sso entry page.
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/home/dashboard&ticket=33GAwC9VA5N0bv8VLtxLeh0ac057e8a9',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/home/dashboard?ticket=33GAwC9VA5N0bv8VLtxLeh0ac057e8a9',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49853',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'so.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=ev1hs9tm7jmps8o3ssh5d0l4e7; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.7618,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:46:11 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/home/dashboard&ticket=1gR0h66Vt5y0am01oTLph4b12e9ccf6c',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/home/dashboard?ticket=1gR0h66Vt5y0am01oTLph4b12e9ccf6c',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49853',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'so.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=ev1hs9tm7jmps8o3ssh5d0l4e7; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417971.8336,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:46:11 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:46:11 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/home/dashboard&ticket=1gR0h66Vt5y0am01oTLph4b12e9ccf6c',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/home/dashboard?ticket=1gR0h66Vt5y0am01oTLph4b12e9ccf6c',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49853',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'so.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=ev1hs9tm7jmps8o3ssh5d0l4e7; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417971.8336,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:46:11 CST][debug][default]REQ: /home/dashboard?ticket=1gR0h66Vt5y0am01oTLph4b12e9ccf6c
+[2013-04-08 18:46:11 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:46:11 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:46:11 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:46:11 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:11;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365417953;}
+[2013-04-08 18:46:11 CST][debug][default]Found route: so_c-a
+[2013-04-08 18:46:11 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 18:46:12 CST][debug][default][file:WBTClient.php][line:188][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 400 Bad Request',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 10:46:12 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=0aur1f7kvjpojgcis4rudconp0; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-08 18:46:12 CST][debug][default][file:WBTClient.php][line:189][fun:_send]DUMP body: '{"error":"invalid_client","error_description":"The client credentials are invalid"}'
+[2013-04-08 18:46:12 CST][error][default]SSO Error: Bad Request: invalid_client
+[2013-04-08 18:46:12 CST][debug][diag]#0 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(54): WBTClient->_send('oauth/client', Array, NULL, Array)
+#1 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(63): WBTPrivateClient->_get_client_token()
+#2 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTClient.php(116): WBTPrivateClient->_beAuthorized()
+#3 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(28): WBTClient->_api('user/get_user_p...', Array)
+#4 /mnt/hgfs/Kingcores-WBT/src/app/lib/SO/Controller/SOControllerBase.php(23): WBTPrivateClient->get_user_profile_by_ticket('1gR0h66Vt5y0am0...')
+#5 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Controller.php(36): SO\Controller\SOControllerBase->_init()
+#6 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(719): Bluefin\Controller->__construct()
+#7 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(514): Bluefin\Gateway->_dispatchRequest()
+#8 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(282): Bluefin\Gateway->_runService()
+#9 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/App.php(220): Bluefin\Gateway->service()
+#10 /mnt/hgfs/Kingcores-WBT/src/webroot/index.php(5): Bluefin\App->startGateway()
+#11 {main}
+[2013-04-08 18:46:12 CST][verbose][diag]Redirected to sso entry page.
+[2013-04-08 18:46:12 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/home/dashboard&ticket=1gR0h66Vt5y0am01oTLph4b12e9ccf6c',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/home/dashboard?ticket=1gR0h66Vt5y0am01oTLph4b12e9ccf6c',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49853',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'so.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=ev1hs9tm7jmps8o3ssh5d0l4e7; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417971.8336,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:48:14 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:48:14 CST][debug][default]REQ: /
+[2013-04-08 18:48:14 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:48:14 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:48:14 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:48:14 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:12;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365417971;}
+[2013-04-08 18:48:14 CST][debug][default]Found route: so
+[2013-04-08 18:48:14 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:48:14 CST][info][default]Execution time: 0.23464179039001(s).
+[2013-04-08 18:48:20 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:48:20 CST][debug][default]REQ: /
+[2013-04-08 18:48:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:48:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:48:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:48:21 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:13;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365418094;}
+[2013-04-08 18:48:21 CST][debug][default]Found route: so
+[2013-04-08 18:48:21 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 18:48:21 CST][info][default]Execution time: 0.21324396133423(s).
+[2013-04-08 18:48:35 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:48:35 CST][debug][default]REQ: /home/dashboard?ticket=4esrgf3G844R9nVq1pOeOIx0e7189bd6
+[2013-04-08 18:48:35 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:48:35 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:48:35 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:48:35 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:14;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365418100;}
+[2013-04-08 18:48:35 CST][debug][default]Found route: so_c-a
+[2013-04-08 18:48:35 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 18:48:35 CST][debug][default][file:WBTClient.php][line:188][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 400 Bad Request',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 10:48:35 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=uho09ffe9id3quu7k4u5lfhrv0; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-08 18:48:35 CST][debug][default][file:WBTClient.php][line:189][fun:_send]DUMP body: '{"error":"invalid_client","error_description":"The client credentials are invalid"}'
+[2013-04-08 18:48:35 CST][error][default]SSO Error: Bad Request: invalid_client
+[2013-04-08 18:48:35 CST][debug][diag]#0 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(54): WBTClient->_send('oauth/client', Array, NULL, Array)
+#1 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(63): WBTPrivateClient->_get_client_token()
+#2 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTClient.php(116): WBTPrivateClient->_beAuthorized()
+#3 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(28): WBTClient->_api('user/get_user_p...', Array)
+#4 /mnt/hgfs/Kingcores-WBT/src/app/lib/SO/Controller/SOControllerBase.php(23): WBTPrivateClient->get_user_profile_by_ticket('4esrgf3G844R9nV...')
+#5 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Controller.php(36): SO\Controller\SOControllerBase->_init()
+#6 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(719): Bluefin\Controller->__construct()
+#7 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(514): Bluefin\Gateway->_dispatchRequest()
+#8 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(282): Bluefin\Gateway->_runService()
+#9 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/App.php(220): Bluefin\Gateway->service()
+#10 /mnt/hgfs/Kingcores-WBT/src/webroot/index.php(5): Bluefin\App->startGateway()
+#11 {main}
+[2013-04-08 18:48:35 CST][verbose][diag]Redirected to sso entry page.
+[2013-04-08 23:24:35 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:24:35 CST][debug][default]REQ: /home/dashboard?ticket=1Fzjrwc9V4yobzCRoADYrfU3ce6362c7
+[2013-04-08 23:24:35 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:24:35 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:24:35 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:24:35 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:15;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365418115;}
+[2013-04-08 23:24:35 CST][debug][default]Found route: so_c-a
+[2013-04-08 23:24:35 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 23:24:35 CST][debug][default][file:WBTClient.php][line:188][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 400 Bad Request',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 15:24:35 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=ceuqfarnl4njarddr31ftc0r54; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-08 23:24:35 CST][debug][default][file:WBTClient.php][line:189][fun:_send]DUMP body: '{"error":"invalid_client","error_description":"The client credentials are invalid"}'
+[2013-04-08 23:24:35 CST][error][default]SSO Error: Bad Request: invalid_client
+[2013-04-08 23:24:35 CST][debug][diag]#0 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(54): WBTClient->_send('oauth/client', Array, NULL, Array)
+#1 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(63): WBTPrivateClient->_get_client_token()
+#2 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTClient.php(116): WBTPrivateClient->_beAuthorized()
+#3 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(28): WBTClient->_api('user/get_user_p...', Array)
+#4 /mnt/hgfs/Kingcores-WBT/src/app/lib/SO/Controller/SOControllerBase.php(23): WBTPrivateClient->get_user_profile_by_ticket('1Fzjrwc9V4yobzC...')
+#5 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Controller.php(36): SO\Controller\SOControllerBase->_init()
+#6 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(719): Bluefin\Controller->__construct()
+#7 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(514): Bluefin\Gateway->_dispatchRequest()
+#8 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(282): Bluefin\Gateway->_runService()
+#9 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/App.php(220): Bluefin\Gateway->service()
+#10 /mnt/hgfs/Kingcores-WBT/src/webroot/index.php(5): Bluefin\App->startGateway()
+#11 {main}
+[2013-04-08 23:24:35 CST][verbose][diag]Redirected to sso entry page.
+[2013-04-08 23:27:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:27:21 CST][debug][default]REQ: /home/dashboard?ticket=3WEZ5LIg4KZbcKOR15XaJm010c28337e
+[2013-04-08 23:27:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:27:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:27:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:27:21 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:16;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365434675;}
+[2013-04-08 23:27:21 CST][debug][default]Found route: so_c-a
+[2013-04-08 23:27:21 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 23:27:21 CST][debug][default][file:WBTClient.php][line:188][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 400 Bad Request',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 15:27:21 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=r9nnmmdleol34l19gq1h02ogq3; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-08 23:27:21 CST][debug][default][file:WBTClient.php][line:189][fun:_send]DUMP body: '{"error":"invalid_client","error_description":"The client credentials are invalid"}'
+[2013-04-08 23:27:21 CST][error][default]SSO Error: Bad Request: invalid_client
+[2013-04-08 23:27:21 CST][debug][diag]#0 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(54): WBTClient->_send('oauth/client', Array, NULL, Array)
+#1 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(63): WBTPrivateClient->_get_client_token()
+#2 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTClient.php(116): WBTPrivateClient->_beAuthorized()
+#3 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(28): WBTClient->_api('user/get_user_p...', Array)
+#4 /mnt/hgfs/Kingcores-WBT/src/app/lib/SO/Controller/SOControllerBase.php(23): WBTPrivateClient->get_user_profile_by_ticket('3WEZ5LIg4KZbcKO...')
+#5 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Controller.php(36): SO\Controller\SOControllerBase->_init()
+#6 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(719): Bluefin\Controller->__construct()
+#7 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(514): Bluefin\Gateway->_dispatchRequest()
+#8 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(282): Bluefin\Gateway->_runService()
+#9 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/App.php(220): Bluefin\Gateway->service()
+#10 /mnt/hgfs/Kingcores-WBT/src/webroot/index.php(5): Bluefin\App->startGateway()
+#11 {main}
+[2013-04-08 23:27:21 CST][verbose][diag]Redirected to sso entry page.
+[2013-04-08 23:51:40 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:51:40 CST][debug][default]REQ: /
+[2013-04-08 23:51:40 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:51:40 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:51:40 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:51:40 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:17;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365434841;}
+[2013-04-08 23:51:40 CST][debug][default]Found route: so
+[2013-04-08 23:51:40 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 23:51:40 CST][info][default]Execution time: 0.16731190681458(s).
+[2013-04-08 23:51:55 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:51:55 CST][debug][default]REQ: /home/dashboard?ticket=3EzisE6lr4lH85JjO4F4kT5d2554c46f
+[2013-04-08 23:51:55 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:51:55 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:51:55 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:51:55 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:18;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365436300;}
+[2013-04-08 23:51:55 CST][debug][default]Found route: so_c-a
+[2013-04-08 23:51:55 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 23:51:55 CST][error][default]SSO Error: 
+[2013-04-08 23:51:55 CST][debug][diag]#0 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(57): WBTClient->_send('https://127.0.0...', Array, NULL, Array)
+#1 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(66): WBTPrivateClient->_get_client_token()
+#2 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTClient.php(116): WBTPrivateClient->_beAuthorized()
+#3 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(31): WBTClient->_api('user/get_user_p...', Array)
+#4 /mnt/hgfs/Kingcores-WBT/src/app/lib/SO/Controller/SOControllerBase.php(23): WBTPrivateClient->get_user_profile_by_ticket('3EzisE6lr4lH85J...')
+#5 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Controller.php(36): SO\Controller\SOControllerBase->_init()
+#6 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(719): Bluefin\Controller->__construct()
+#7 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(514): Bluefin\Gateway->_dispatchRequest()
+#8 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(282): Bluefin\Gateway->_runService()
+#9 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/App.php(220): Bluefin\Gateway->service()
+#10 /mnt/hgfs/Kingcores-WBT/src/webroot/index.php(5): Bluefin\App->startGateway()
+#11 {main}
+[2013-04-08 23:51:55 CST][verbose][diag]Redirected to sso entry page.
+[2013-04-08 23:56:41 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:56:41 CST][debug][default]REQ: /
+[2013-04-08 23:56:41 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:56:41 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:56:41 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:56:41 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:19;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365436315;}
+[2013-04-08 23:56:41 CST][debug][default]Found route: so
+[2013-04-08 23:56:41 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 23:56:41 CST][info][default]Execution time: 0.16732096672058(s).
+[2013-04-08 23:56:54 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:56:54 CST][debug][default]REQ: /home/dashboard?ticket=49Yz99bWa5008MGCIycK%21%21L8518fc57b
+[2013-04-08 23:56:54 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:56:54 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:56:54 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:56:54 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:20;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365436601;}
+[2013-04-08 23:56:54 CST][debug][default]Found route: so_c-a
+[2013-04-08 23:56:54 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 23:56:54 CST][error][default]SSO Error: Peer certificate cannot be authenticated with known CA certificates
+[2013-04-08 23:56:54 CST][debug][diag]#0 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(57): WBTClient->_send('https://127.0.0...', Array, NULL, Array)
+#1 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(66): WBTPrivateClient->_get_client_token()
+#2 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTClient.php(116): WBTPrivateClient->_beAuthorized()
+#3 /mnt/hgfs/Kingcores-WBT/src/lib/WBTSdk/WBTPrivateClient.php(31): WBTClient->_api('user/get_user_p...', Array)
+#4 /mnt/hgfs/Kingcores-WBT/src/app/lib/SO/Controller/SOControllerBase.php(23): WBTPrivateClient->get_user_profile_by_ticket('49Yz99bWa5008MG...')
+#5 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Controller.php(36): SO\Controller\SOControllerBase->_init()
+#6 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(719): Bluefin\Controller->__construct()
+#7 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(514): Bluefin\Gateway->_dispatchRequest()
+#8 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/Gateway.php(282): Bluefin\Gateway->_runService()
+#9 /mnt/hgfs/Kingcores-WBT/src/lib/Bluefin/App.php(220): Bluefin\Gateway->service()
+#10 /mnt/hgfs/Kingcores-WBT/src/webroot/index.php(5): Bluefin\App->startGateway()
+#11 {main}
+[2013-04-08 23:56:54 CST][verbose][diag]Redirected to sso entry page.
+[2013-04-08 23:58:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:58:21 CST][debug][default]REQ: /home/dashboard?ticket=3WlT6d8%21O4otaqrR0KCcNlHfd542d2d2
+[2013-04-08 23:58:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:58:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:58:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:58:21 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:21;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365436614;}
+[2013-04-08 23:58:21 CST][debug][default]Found route: so_c-a
+[2013-04-08 23:58:21 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 23:58:21 CST][debug][default][file:WBTClient.php][line:191][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 15:58:21 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=nfl54ct2dpsbkair4f8ipmg791; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-08 23:58:21 CST][debug][default][file:WBTClient.php][line:192][fun:_send]DUMP body: '{"access_token":"3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021","expires_in":86400,"token_type":"bearer","scope":"sso sna payment"}'
+[2013-04-08 23:58:21 CST][debug][default][file:WBTClient.php][line:191][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 15:58:21 GMT',
+  3 => 'Content-Type: application/json;charset=utf-8',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=vapuo2ebch1f3vhrlot079o485; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-08 23:58:21 CST][debug][default][file:WBTClient.php][line:192][fun:_send]DUMP body: '{"user_id":"100000","username":"weibotui@kingcores.com","preferences":[],"status":"activated","profile_nick_name":"\\u5fae\\u535a\\u63a8","profile_display_name":"\\u91d1\\u679c\\u5fae\\u535a\\u63a8","profile_photo":null,"profile_avatar":"\\/upload\\/user\\/100000\\/avatar.png","profile_gender":"male","profile_homepage":null,"profile_description":null}'
+[2013-04-08 23:58:21 CST][debug][default]Redirected to "/home/dashboard".
+[2013-04-08 23:58:21 CST][info][default]Execution time: 0.46053385734558(s).
+[2013-04-08 23:58:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:58:21 CST][debug][default]REQ: /home/dashboard
+[2013-04-08 23:58:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:58:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:58:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:58:21 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:22;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365436701;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100000";s:8:"username";s:22:"weibotui@kingcores.com";s:12:"display_name";s:9:"微博推";s:6:"avatar";s:30:"/upload/user/100000/avatar.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-04-08 23:58:21 CST][debug][default]Found route: so_c-a
+[2013-04-08 23:58:21 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [[100000,"int"],["2409085682","text"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT wt.`access_token`,wt.`expires_at`,we.`weibo_id` AS weibo_id,we.`_created_at` AS _created_at,we.`_updated_at` AS _updated_at,we.`uid` AS uid,we.`display_name` AS display_name,we.`url` AS url,we.`avatar_s` AS avatar_s,we.`avatar_l` AS avatar_l,we.`location` AS location,we.`description` AS description,we.`profile` AS profile,we.`wbt_home` AS wbt_home,we.`num_follower` AS num_follower,we.`num_following` AS num_following,we.`num_post` AS num_post,we.`num_like` AS num_like,we.`type` AS type,we.`user` AS user,we.`gender` AS gender FROM `weibo_token` AS wt LEFT JOIN `weibo` AS we ON wt.`weibo` = we.`weibo_id` WHERE we.`user`=? AND wt.`app_key`=? ORDER BY `_created_at`
+[2013-04-08 23:58:21 CST][info][default]Execution time: 0.24607801437378(s).
+[2013-04-08 23:59:16 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:59:16 CST][debug][default]REQ: /account/logout
+[2013-04-08 23:59:16 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:59:16 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:59:16 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:59:16 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:23;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365436701;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100000";s:8:"username";s:22:"weibotui@kingcores.com";s:12:"display_name";s:9:"微博推";s:6:"avatar";s:30:"/upload/user/100000/avatar.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-04-08 23:59:16 CST][debug][default]Found route: so_c-a
+[2013-04-08 23:59:16 CST][verbose][default]Dispatching route: SO > Account > logout
+[2013-04-08 23:59:16 CST][debug][default]Redirected to "/".
+[2013-04-08 23:59:16 CST][info][default]Execution time: 0.090188026428223(s).
+[2013-04-08 23:59:16 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:59:16 CST][debug][default]REQ: /
+[2013-04-08 23:59:16 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:59:16 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:59:16 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:59:16 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:24;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365436755;}
+[2013-04-08 23:59:16 CST][debug][default]Found route: so
+[2013-04-08 23:59:16 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-08 23:59:16 CST][info][default]Execution time: 0.14779305458069(s).

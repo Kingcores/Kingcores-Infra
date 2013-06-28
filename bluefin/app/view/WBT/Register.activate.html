@@ -1,0 +1,25 @@
+{% extends "WBT/register.twig" %}
+
+{% block content %}
+{% if succeeded %}
+                <legend><h4 class="status-title">恭喜！您的微博推帐号已成功激活！</h4></legend>
+                <div class="progress">
+                    <div class="bar bar-success" style="width: 33%;">第1步：填写信息</div>
+                    <div class="bar bar-success" style="width: 33%;">第2步：激活帐号</div>
+                    <div class="bar bar-success" style="width: 34%;">第3步：注册成功</div>
+                </div>
+                <div>
+                    您可以选择 <a href="javascript:window.opener=null;window.open('','_self');window.close();">关闭</a> 此页面，或 <a href="{{ my_url('auth/index') }}">登录</a> 微博推。
+                </div>
+{% else %}
+                <legend><h4 class="status-title">微博推帐号激活失败！</h4></legend>
+                <div class="progress">
+                    <div class="bar bar-success" style="width: 33%;">第1步：填写信息</div>
+                    <div class="bar bar-danger" style="width: 33%;">第2步：激活帐号</div>
+                    <div class="bar bar-danger" style="width: 34%;">第3步：注册成功</div>
+                </div>
+                <div>
+                    {{ failureMessage|raw }}
+                </div>
+{% endif %}
+{% endblock %}

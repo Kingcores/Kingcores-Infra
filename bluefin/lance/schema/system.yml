@@ -1,0 +1,116 @@
+#系统模式
+
+#------------------------------------------------------------------------------
+#预编译指令
+!comment-locale: zh_CN
+
+#------------------------------------------------------------------------------
+#自定义类型
+
+#------------------------------------------------------------------------------
+#枚举类型
+
+@login_type:
+  comment: '登录来源类型'
+  values:
+    weibotui: '微博推'
+    weibo: '新浪微博'
+
+#------------------------------------------------------------------------------
+#有限状态表
+
+$user_status:
+  comment: '用户状态'
+  states:
+    nonactivated: '未激活'
+    activated: '正常'
+    disabled: '已禁用'
+
+#------------------------------------------------------------------------------
+#抽象基类
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+user:
+  comment: '用户'
+  with: [ auto_increment_id|>=100000, create_timestamp, update_timestamp, logical_deletion ]
+  has:
+    username: email|comment=帐号|$=@'{{this.username||trim||L}}'
+    password: password|=@auto|comment=密码|$=@'{{this.password||md5_salt=this.password_salt}}'
+    password_salt: digits|+8|=@auto|auto|fixed|comment=干扰码
+    status: user_status
+    profile|?: person.personal_profile|on_reference_delete=@@set_null
+    preferences|?: json|comment=用户偏好|=@php:'{}'
+  keys:
+    username|u: username
+  php-triggers:
+    AFTER-INSERT: |
+      $userAsset = new \WBT\Model\Weibotui\UserAsset();
+      $userAsset->setUser($this->pk())->insert();
+
+user_login_record:
+  comment: '用户登录记录'
+  with: [ auto_uuid, create_timestamp ]
+  has:
+    user: user|=@"{{auth.weibotui.user_id}}"|on_reference_delete=@@cascade
+    type: login_type
+    ip_address: ipv4|=@"{{gateway.client_ip}}"|comment=登录地址
+
+admin:
+  comment: '内部用户'
+  with: [ auto_increment_id|>=1000, create_timestamp, update_timestamp, logical_deletion ]
+  has:
+    username: idname|comment=用户账号|$=@'{{this.username||trim||L}}'
+    password: password|=@auto|comment=密码|$=@'{{this.password||md5_salt=this.password_salt}}'
+    password_salt: digits|+8|=@auto|auto|fixed|comment=干扰码
+    status: user_status
+  keys:
+    username|u: username
+
+admin_role:
+  comment: '内部用户角色'
+  has:
+    role_name: idname
+    display_name: text|>=1|<=20
+  keys:
+    pk: role_name
+
+admin_login_record:
+  comment: '管理员登录记录'
+  with: [ auto_uuid, create_timestamp ]
+  has:
+    admin: admin|=@"{{auth.wbt_admin.admin_id}}"
+    ip_address: ipv4|=@"{{gateway.client_ip}}"|comment=登录地址
+
+system_property:
+  comment: '系统全局属性'
+  with: [ update_timestamp, key_value_cache|=value ]
+  has:
+    name: core.name
+    value: text|comment=属性值
+  keys:
+    pk: name
+
+#------------------------------------------------------------------------------
+#复杂关系定义
+
+&user_with_role:
+  comment: '用户组包含的用户'
+  with: [ auto_increment_id, create_timestamp ]
+  between:
+    user: user|on_reference_delete=@@cascade
+    role: role.user_role
+  php-triggers:
+    AFTER-UPDATE: |
+      if (\WBT\Business\AuthBusiness::getLoggedInUserId() == $this->getUser())
+      {
+          \WBT\Business\AuthBusiness::refreshLoggedInUserRoles();
+      }
+
+&admin_with_role:
+  comment: '管理用户组包含的管理员'
+  with: [ auto_increment_id, create_timestamp ]
+  between:
+    admin: admin
+    role: admin_role

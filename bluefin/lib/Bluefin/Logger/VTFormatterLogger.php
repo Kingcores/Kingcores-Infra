@@ -2,14 +2,14 @@
 
 namespace Bluefin\Logger;
 
-use Bluefin\Common;
+use Bluefin\Log;
 use Bluefin\VarText;
 
-class ConsoleLogger extends LoggerBase implements LoggerInterface
+class VTFormatterLogger extends LoggerBase implements LoggerInterface
 {
-    const DEFAULT_MESSAGE_FORMAT = "{{ level }}: [{{ channel }}]{{ message }}\n";
-
-    protected $_messageFormat;
+    protected $_regularFormat;
+    protected $_currentFormat;
+    protected $_usingSpecialFormat;
 
     /**
      * Constructor
@@ -21,15 +21,15 @@ class ConsoleLogger extends LoggerBase implements LoggerInterface
      *   mode
      *
      * @param array $config
+     * @param array $defaultFormat
      * @param array $context
-     * @throws \Bluefin\Exception\ConfigException
-     * @throws \RuntimeException
      */
-    public function __construct(array $config, array $context = null)
+    public function __construct(array $config, $defaultFormat, array $context = null)
     {
         parent::__construct($config, $context);
 
-        $this->_messageFormat = array_try_get($config, 'format', self::DEFAULT_MESSAGE_FORMAT);
+        $this->_regularFormat = array_try_get($config, 'format', $defaultFormat);
+        $this->_resetFormat();
     }
 
     /**
@@ -41,9 +41,30 @@ class ConsoleLogger extends LoggerBase implements LoggerInterface
      */
     public function log(array $event)
     {
-        if ($event['message'])
+        if (isset($event[Log::EVENT_MESSAGE]))
+        {
+            $this->_doLog(VarText::parseVarText($this->_currentFormat, $event));
+        }
 
-        echo VarText::parseVarText($this->_messageFormat, $event);
+        if ($this->_usingSpecialFormat)
+        {
+            $this->_resetFormat();
+        }
+    }
+
+    public function setLogWithoutCR()
+    {
+        if (substr($this->_currentFormat, -1, 1) == "\n")
+        {
+            $this->_usingSpecialFormat = true;
+            $this->_currentFormat = substr($this->_currentFormat, 0, -1);
+        }
+    }
+
+    public function setLogMessageOnly()
+    {
+        $this->_usingSpecialFormat = true;
+        $this->_currentFormat = "{{ message }}\n";
     }
 
     /**
@@ -53,5 +74,15 @@ class ConsoleLogger extends LoggerBase implements LoggerInterface
      */
     public function shutdown()
     {
+    }
+
+    protected function _doLog($formattedMessage)
+    {
+    }
+
+    protected function _resetFormat()
+    {
+        $this->_currentFormat = $this->_regularFormat;
+        $this->_usingSpecialFormat = false;
     }
 }

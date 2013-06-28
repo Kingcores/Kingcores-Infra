@@ -1,0 +1,17 @@
+admin_root:
+  host: admin.weibotui.com
+  route: /
+  namespace: WBTAdmin
+  action: home.index
+
+admin_c:
+  host: admin.weibotui.com
+  route: /:controller
+  namespace: WBTAdmin
+  action: "{{route.controller}}.index"
+
+admin_c-a:
+  host: admin.weibotui.com
+  route: /:controller/:action
+  namespace: WBTAdmin
+  action: "{{route.controller}}.{{route.action}}"

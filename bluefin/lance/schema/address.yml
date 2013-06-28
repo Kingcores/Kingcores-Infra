@@ -1,0 +1,83 @@
+#地理位置模式
+
+#------------------------------------------------------------------------------
+#预编译指令
+!comment-locale: zh_CN
+
+#------------------------------------------------------------------------------
+#自定义类型
+
++postcode: text|comment=邮编|>=1|<=10
+
++admin_code: idname|comment=行政区号
+
++phone_area_code: int|+4|comment=电话区号
+
+#------------------------------------------------------------------------------
+#枚举类型
+
+@province_type:
+  comment: '地区类型'
+  values:
+    province: '省份'
+    autonomous_region: '自治区'
+    dgc: '直辖市'
+    sar: '特别行政区'
+    state: '州'
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+country:
+  comment: '国家'
+  is: core.identified_by_code
+  with: [ logical_deletion ]
+  has:
+    name: core.name
+    phone_area_code|?: phone_area_code
+    capital_city|?: province|comment=首都
+
+province:
+  comment: '省'
+  is: core.identified_by_code
+  with: [ logical_deletion ]
+  has:
+    name: core.name
+    short_name|?: core.short_name
+    admin_code|?: admin_code
+    type|?: province_type
+    country: country
+    capital_city|?: city
+
+city:
+  comment: '市'
+  is: core.identified_by_code
+  with: [ logical_deletion ]
+  has:
+    name: core.name
+    admin_code|?: admin_code
+    postcode|?: postcode
+    phone_area_code|?: phone_area_code
+    province: province
+
+district:
+  comment: '区'
+  is: core.identified_by_code
+  with: [ logical_deletion ]
+  has:
+    name: core.name
+    admin_code|?: admin_code
+    postcode|?: postcode
+    city: city
+
+address:
+  comment: '地址'
+  with: [ auto_increment_id, create_timestamp, update_timestamp, logical_deletion ]
+  has:
+    country|?: country
+    province|?: province
+    city|?: city
+    district|?: district
+    detail_locality|?: text|comment=详细地址|<=80 #具体位置
+    district_address: text|comment=地区地址|<=100
+    full_address: text|comment=完整地址|<=200 #拼接成的全地址

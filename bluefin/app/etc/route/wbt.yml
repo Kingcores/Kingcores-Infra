@@ -1,0 +1,32 @@
+root:
+  host: www.weibotui.com
+  route: /
+  namespace: WBT
+  action: home.index
+
+json:
+  route: /api/:category/:service/:method/*
+  namespace: Bluefin
+  action: service.invoke
+  service: "{{route.category}}.{{route.service}}.{{route.method}}"
+  view:
+    renderer: json
+    dataSource: result
+
+c:
+  host: www.weibotui.com
+  route: /:controller
+  namespace: WBT
+  action: "{{route.controller}}.index"
+
+c-a:
+  host: www.weibotui.com
+  route: /:controller/:action
+  namespace: WBT
+  action: "{{route.controller}}.{{route.action}}"
+
+m-c-a:
+  host: www.weibotui.com
+  route: /:module/:controller/:action
+  namespace: WBT
+  action: "{{route.module}}.{{route.controller}}.{{route.action}}"

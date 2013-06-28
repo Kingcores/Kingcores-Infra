@@ -1,0 +1,14 @@
+alipay:
+  #后台通知
+  notifyUrl: "{{ app.root }}third_party/alipay/notify";
+  #前台跳转
+  returnUrl: "{{ app.root }}third_party/alipay/return";
+  #卖家账号
+  sellerEmail: corp-alipay@kingcores.com
+  config:
+    partner: '2088801185090907'
+    key: 'rxggofuufjyhy1qjfsex1ce9skr4umer'
+    sign_type: 'MD5'
+    input_charset: 'utf-8'
+    cacert: '<?php echo LIB ?>/Alipay/cacert.pem'
+    transport: 'http'

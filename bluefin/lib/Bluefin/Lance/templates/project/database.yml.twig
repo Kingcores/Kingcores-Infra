@@ -1,0 +1,49 @@
+{{ dbName }}:
+  comment: '新数据库'
+  locale: zh_CN
+  namespace: {{ namespace }}
+
+  db:
+    type: {{ dbType }}
+    adapter: PDO_{{ dbType|const }}
+    engine: {{ dbEngine }}
+    charset: {{ dbCharset }}
+    connection:
+      host: {{ dbHost }}
+      port: {{ dbPort }}
+      username: {{ dbUser }}
+      password: {{ dbPass }}
+      dbname: {{ dbName }}
+
+  entities:
+    user_profile: person.personal_profile
+    user: system.user
+    ip_address: ip_address.ip_address
+
+  auth:
+    -
+      name: {{ dbName }}
+      authUrl: "/auth"
+      responseUrl: "/auth/login"
+      modelClass: "\{{ namespace }}\Model\{{ dbName }}\User"
+      identityColumn: username
+      credentialColumn: password
+      numFailureNeedVerifyCode: 3
+      dataColumns: [ user_id, username ]
+      persistence:
+        type: session
+        namespace: auth.{{ dbName }}
+
+  data:
+    init:
+      - builtin_users_groups.data
+      - builtin_users_groups.yml
+      - country.sql
+      - province.sql
+      - city.sql
+      - capital_city.sql
+      - district.sql
+      - isp.sql
+      - ip_address.sql
+    update:
+      - truncate_on_update.sql

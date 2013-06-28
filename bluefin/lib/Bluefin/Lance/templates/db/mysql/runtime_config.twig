@@ -1,0 +1,9 @@
+{{ schema.getSchemaName }}:
+  class: {{ schema.getDatabaseClass }}
+  config:
+    host: {{ schema.getDb.connection.host }}
+    port: {{ schema.getDb.connection.port }}
+    username: {{ schema.getDb.connection.username }}
+    password: {{ schema.getDb.connection.password }}
+    dbname: {{ schema.getDb.connection.dbname }}
+    charset: {{ schema.getDb.charset }}

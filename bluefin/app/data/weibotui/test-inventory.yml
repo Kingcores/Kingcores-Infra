@@ -1,0 +1,17 @@
+weibo_inventory:
+  -
+    weibo: { uid: '1882037885' }
+    type: post
+    original_price: 100.00
+    current_price: 80.00
+    num_audience: 1000
+    service_charge_rate: 0.2
+    status: available
+  -
+    weibo: { uid: '1882037885' }
+    type: forward
+    original_price: 60.00
+    current_price: 60.00
+    num_audience: 1000
+    service_charge_rate: 0.2
+    status: available

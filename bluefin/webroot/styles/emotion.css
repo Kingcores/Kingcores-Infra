@@ -1,0 +1,8 @@
+@charset "utf-8";
+
+.faceWrap {clear:both;background:#FEFEFE;border:1px solid #DDDDDD;padding:5px;width:500px;text-align:left;display:none;}
+.imgWrap  {clear:both;background:#FEFEFE;border:1px solid #DDDDDD;width:510px;height:40px;text-align:left;display:none;position: relative;}
+
+.imgWrap #imgfile {position: absolute;top:5px; left: 5px; width:316px; height:30px;filter:alpha(opacity:0);opacity:0;cursor:pointer;}
+.imgWrap #imgbutton {margin: 5px;}
+.imgWrap #imgtext {margin: 5px;}

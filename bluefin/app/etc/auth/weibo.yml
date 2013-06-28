@@ -1,0 +1,17 @@
+weibo:
+  class: \Bluefin\Auth\WeiboAuth
+  config:
+    responseUrl: "http://so.weibotui.com/account/login"
+    appName: weibotui
+    persistence:
+      type: session
+      options: { namespace: auth.weibo }
+
+qq_weibo:
+  class: \Bluefin\Auth\QQWeiboAuth
+  config:
+    responseUrl: "http://so.weibotui.com/account/login"
+    appName: weibotui
+    persistence:
+      type: session
+      options: { namespace: auth.qq_weibo }

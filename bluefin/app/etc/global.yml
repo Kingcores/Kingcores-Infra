@@ -1,0 +1,71 @@
+app:
+  timezone: Asia/Shanghai
+  requestOrder: CPRG
+  serverUrlRewritable: true
+  phpInternalEncoding: UTF-8
+  sessionNamespace: app
+
+gateway:
+  exceptionView: WBT/Error.message.html
+
+cache:
+  @include:
+    - <?php echo APP_ETC; ?>/cache/l1cache.<?php echo ENV; ?>.yml
+
+session:
+  saveHandler: custom
+  class: \Bluefin\Util\SessionHandler
+  options:
+    persistence: session
+
+log:
+  @include:
+    - <?php echo APP_ETC; ?>/log/log.<?php echo ENV; ?>.yml
+
+locale:
+  requestName: lang
+  supportedLocales: [ zh_CN ]
+  useSession: false
+  useCache: false
+  defaultLocale: zh_CN
+
+routing:
+  @include:
+    - <?php echo APP_ETC; ?>/route/wbt.yml
+    - <?php echo APP_ETC; ?>/route/social.yml
+    - <?php echo APP_ETC; ?>/route/admin.yml
+
+db:
+  @include:
+    - <?php echo APP_ETC; ?>/db/weibotui.<?php echo ENV; ?>.yml
+
+auth:
+  @include:
+    - <?php echo APP_ETC; ?>/auth/weibotui.<?php echo ENV; ?>.yml
+    - <?php echo APP_ETC; ?>/auth/weibo.yml
+
+pay:
+  @include:
+    - <?php echo APP_ETC; ?>/pay/alipay.<?php echo ENV; ?>.yml
+
+weibo:
+  weibotui:
+    appKey: "2409085682"
+    appSecret: "a084ff59d3588b62e40e81c06186a703"
+
+qqweibo:
+  weibotui:
+    appKey: "801254646"
+    appSecret: "7271bc707d9f684a0ccc47e36d0144ee"
+
+upload:
+  woss:
+    roles: { weibotui: [ 'tuike' ] }
+    options:
+      custom_dir: "u{{auth.weibotui.user_id}}/wosnap/"
+      max_file_size: 1M
+
+custom:
+  @include:
+    - <?php echo APP_ETC; ?>/custom/url.<?php echo ENV; ?>.yml
+    - <?php echo APP_ETC; ?>/custom/misc.yml

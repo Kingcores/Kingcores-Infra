@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <title>Kingcores PHP Application Framework - API Tester</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="金果创新（北京）科技有限公司">
+
+    <link href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/libs/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    {% block css_link %}{% endblock %}
+
+    <!--[if lt IE 9]>
+    <script src="/libs/html5shim/html5.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+          body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+
+          .form-horizontal .control-label {
+              width: 60px;
+          }
+
+          .form-horizontal .controls {
+            margin-left: 80px;
+          }
+    </style>
+
+    {% block js_link_head %}{% endblock %}
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">KPAF</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    {% block body %}{% endblock %}
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    {% block js_link_foot %}{% endblock %}
+    {% block extra_foot %}{% endblock %}
+</body>
+</html>

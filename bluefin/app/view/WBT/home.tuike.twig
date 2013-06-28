@@ -1,0 +1,52 @@
+{% extends "WBT/home.twig" %}
+
+{% set actionName = context('gateway.action') %}
+
+{% block main %}
+<div class="container">
+    {% if error %}
+    <div class="form-gap">&nbsp;</div>
+    <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>{{ error }}</strong>
+    </div>
+    {% endif %}
+</div>
+
+    <div class="container">
+        <div id="role-boxes">
+            <div class="row">
+                <div class="span12">
+                    <ul class="nav nav-tabs">
+                        <li{{ (actionName == 'snsAccount') ? ' class="active"' : '' }}><a href="{{ route('m-c-a', ['sns_account']) }}">SNS帐号管理</a></li>
+                        <li{{ (actionName == 'order') ? ' class="active"' : '' }}><a href="{{ route('m-c-a', ['order']) }}">订单管理</a></li>
+
+{% set dropdownstyle = '' %}
+{% if actionName == 'changePassword'  or actionName == 'changeUserInfo' %}
+{% set dropdownstyle = 'active' %}
+{% endif %}
+                        <li class="dropdown {{dropdownstyle}}">
+                            <a href="" class="dropdown-toggle" data-toggle="dropdown">用户中心 <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+
+                                <li><a href="{{ route('m-c-a', ['home','tuike','change_user_info']) }}">用户信息</a></li>
+
+                                <li><a href="{{ route('m-c-a', ['home','tuike','change_password']) }}">修改密码</a></li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block homeRoleContent %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block js_link_foot %}
+    {{ parent() }}
+    <script src="/scripts/home.role.js"></script>
+    <script src="/libs/wbt/sdk.js"></script>
+{% endblock %}

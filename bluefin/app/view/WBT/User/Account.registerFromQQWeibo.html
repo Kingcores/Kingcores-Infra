@@ -1,0 +1,72 @@
+{% extends "WBT/auth.twig" %}
+
+{% block main %}
+    <div class="row">
+        <div class="span12 bound-form">
+            <div class="well well-large">
+                <form method="post" action="{{ route() }}">
+                    <input type="hidden" name="from" value="{{ from }}">
+                    <legend><h3 class="form-title">我还没有微博推账号，快速注册一个。</h3></legend>
+                    <p class="text-info"><i class="icon-info-sign"></i> 成功注册后，系统会自动生成登录密码，并发送到您注册的邮箱。</p>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <!--[if lt IE 9]>
+                                 <span class="add-on">电子邮箱：</span>
+                                <![endif]-->
+                                 <input type="email" name="username" value="{{ username }}" placeholder="电子邮箱">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend pull-left">
+                                <!--[if lt IE 9]>
+                                <span class="add-on">　　密码：</span>
+                                <![endif]-->
+                                <input type="password" name="password" value="{{ password }}" placeholder="密码">
+                            </div>
+                            <div class="pull-left">&nbsp;&nbsp;</div>
+                            <div class="input-prepend">
+                                <!--[if lt IE 9]>
+                                <span class="add-on">密码确认：</span>
+                                <![endif]-->
+                                <input type="password" name="password_confirm" placeholder="密码确认">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">                        
+                        <button type="submit" class="btn btn-primary">注册</button>
+                    </div>
+                </form>
+                <br>
+
+                <form method="post" action="{{ route('c-a', ['auth', 'login']) }}">
+                    <input type="hidden" name="from" value="{{ from }}">
+                    <legend><h3 class="form-title">我已经有微博推账号，登录后即可绑定微博账号。</h3></legend>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend pull-left">
+                                <!--[if lt IE 9]>
+                                 <span class="add-on">　用户名：</span>
+                                <![endif]-->
+                                 <input type="email" name="username" value="{{ username }}" placeholder="电子邮箱">
+                            </div>
+                            <div class="pull-left">&nbsp;&nbsp;</div>
+                            <div class="input-prepend">
+                                <!--[if lt IE 9]>
+                                 <span class="add-on">　　密码：</span>
+                                <![endif]-->
+                                <input type="password" name="password" value="{{ password }}" placeholder="密码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <button type="submit" class="btn btn-success">登录</button>
+                    </div>
+                </form>
+            </div>
+            <div align="center"><a class="btn btn-inverse" href="{{ from }}">跳过</a></div>
+        </div>
+    </div>
+{% endblock %}

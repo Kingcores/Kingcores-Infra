@@ -1,0 +1,18 @@
+<?php
+
+namespace {{ namespace }};
+
+use Bluefin\App;
+use Bluefin\Controller;
+
+class {{ name }}Controller extends Controller
+{
+{% for actionName, actionInfo in actions %}
+    public function {{ actionName }}Action()
+    {
+        //TODO: write your action code here
+
+        $this->_view->title = "{{ actionInfo.title }}";
+    }
+{% endfor %}
+}

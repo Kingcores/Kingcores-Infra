@@ -1,0 +1,30 @@
+{% extends "WBT/bootstrap.twig" %}
+
+{% block css_link %}
+    <link href="/styles/auth.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="offset1 logo-area">
+                <h1 class="logo-text">微博推</h1>
+                <a href="http://www.weibotui.com" title="微博推 品牌的影响力">
+                    <img src="/images/logo.png" alt="微博推">
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+{% block main %}{% endblock %}
+</div>
+
+<footer class="bottom">
+    <div class="container copyright">
+        <span>Copyright &copy; 2011-2013 <a href="http://www.kingcores.com">金果创新</a> 版权所有 京ICP备11034128号-3</span><br>&nbsp;
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,3 @@
+add_user_preference:
+  - { add: { entity_member: { system.user: { preferences|?: json|comment=用户偏好|='{"home_role":"weibo_owner"}' } } } }
+

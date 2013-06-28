@@ -1,0 +1,47 @@
+{% extends "WBT/home.twig" %}
+
+{% set actionName = context('gateway.action') %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="banner-mod">
+                    <div class="banner-mod-inner banner-mod-tk">
+                        <div class="clearfix">
+                            <a href="#" class="pull-left">
+                                <img src="{{ context('auth.weibotui.profile_avatar', '/images/avatar_default2.png') }}" class="img-polaroid">
+                            </a>
+                            <p class="banner-sub-block pull-left">
+                                <span class="text24">Hi, {{ context('auth.weibotui.profile_nick_name') }}</span><br>
+                                <span class="text14">{{ context('auth.weibotui.username') }}</span><br>
+                                <a href="#" class="btn btn-info" style="margin-top: 10px;">管理</a>
+                            </p>
+                            <p class="banner-sub-block pull-left">
+                                <span class="text14">账户余额：</span><br>
+                                <span class="text24">{{ userAsset.income_balance|number_format(2, '.', ',') }} 元</span><br>
+                                <a href="javascript:bluefinBH.ajaxDialog('/form/user_deposit/show');" class="btn btn-warning" style="margin-top: 10px;">结算</a>&nbsp;<a href="{{ route('m-c-a', ['home','advertiser','deposit_record_list']) }}" class="btn btn-link" style="margin-top: 20px;">收入记录</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="dropdown{% if location[1] == 'account' %} active{% endif %}">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">交易查询<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li{% if location[2] == 'income_record_list' %} class="active"{% endif %}><a href="{{ route('m-c-a', ['home','tuike','income_record_list']) }}">收入记录</a></li>
+                            <li{% if location[2] == 'payroll_record_list' %} class="active"{% endif %}><a href="{{ route('m-c-a', ['home','tuike','payroll_record_list']) }}">结算记录</a></li>
+                        </ul>
+                    </li>
+                    <li{{ (actionName == 'weibo_inventory_list') ? ' class="active"' : '' }}><a href="{{ route('m-c-a', ['weibo_inventory_list']) }}">渠道管理</a></li>
+                    <li{{ (actionName == 'weibo_order_list') ? ' class="active"' : '' }}><a href="{{ route('m-c-a', ['weibo_order_list']) }}">推广任务</a></li>
+                </ul>
+            </div>
+        </div>
+        {% block tuikeContent %}{% endblock %}
+    </div>
+{% endblock %}

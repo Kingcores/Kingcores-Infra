@@ -1,0 +1,80 @@
+WBT:
+  sitemap:
+    Home:
+      index:
+        title: "微博推 - 首页"
+        menu:
+          - "顶部导航"
+      login:
+        title: "微博推 - 登录"
+        form:
+          - "登录表单"
+      register:
+        title: "微博推 - 注册"
+      logout:
+        title: "微博推 - 退出登录"
+      toLogin:
+        redirect: %redirect_url%
+
+    Weibo\Space:
+      index:
+        title: "微博推 - 我的微视界"
+
+    Weibo\Alliance:
+      index:
+        title: "微博推 - 我的微工会"
+
+    Weibo\Account:
+      index:
+        title: "微博推 - 微博账号设置"
+      change:
+        title: "微博推 - 微博账号切换"
+
+    Weibo\Operation:
+      post:
+        title: "微博推 - 发微博"
+
+    User\Account:
+      index:
+        title: "微博推 - 用户账号设置"
+
+    User\Profle:
+      index:
+        title: "微博推 - 用户资料"
+
+    Enterprise\Tui:
+      index:
+        title: "微博推 - 企业"
+
+    Agent\Tui:
+      index:
+        title: "微博推 - 代理"
+
+    Order\Prepaid:
+      index:
+        title: "微博推 - 充值"
+      list:
+        title: "微博推 - 充值记录"
+
+  menu:
+    "Role Changer":
+      -
+        location: Home.index
+        label:
+      -
+        location: Enter\Tui.index
+        label:
+      -
+        location: Agent\Tui.index
+        label:
+
+    "顶部导航":
+      -
+        location: Home.login
+        label: "登录"
+
+  form:
+    "登录表单":
+      -
+        action: Home.toLogin
+

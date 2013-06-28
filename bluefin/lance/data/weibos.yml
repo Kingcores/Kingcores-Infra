@@ -1,0 +1,26 @@
+weibo:
+  -
+    uid: '1882037885'
+    type: weibo
+    user: { username: weibotui@kingcores.com }
+    display_name: 微博推
+    avatar_s: 'http://tp2.sinaimg.cn/1882037885/50/5639647767/1'
+    avatar_l: 'http://tp2.sinaimg.cn/1882037885/180/5639647767/1'
+    location: 'XX'
+    gender: male
+    description: 'XX'
+    url: 'http://e.weibo.com/weibotui'
+    wbt_home: '/w1882037885'
+    num_follower: 3265
+    num_following: 101
+    num_post: 68
+    num_like: 1
+
+weibo_token:
+  -
+    weibo: { uid: '1882037885' }
+    access_token: '2.00lBq3DCgORCdCc895c3c1b50oT7YK'
+    remind_in: 668507
+    expires_in: 668507
+    app_key: '2409085682'
+    app_secret: 'a084ff59d3588b62e40e81c06186a703'

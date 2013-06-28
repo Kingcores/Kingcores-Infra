@@ -1,0 +1,9 @@
+<ul{{ component.renderAttributes|raw }}>
+{% for link in component.components %}
+{% if link.isDropdown %}
+  <li class="dropdown{% if link.active %} active{% endif %}"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ link.activeLinkLabel }} <b class="caret"></b></a>{{ link|raw }}</li>
+{% else %}
+  <li{% if link.active %} class="active"{% endif %}>{{ link|raw }}</li>
+{% endif %}
+{% endfor %}
+</ul>

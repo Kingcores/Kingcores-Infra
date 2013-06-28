@@ -1,0 +1,17 @@
+so:
+  host: so.weibotui.com
+  route: /
+  namespace: SO
+  action: home.index
+
+so_id:
+  host: so.weibotui.com
+  route: /:homeToken
+  namespace: SO
+  action: home.id
+
+so_c-a:
+  host: so.weibotui.com
+  route: /:controller/:action
+  namespace: SO
+  action: "{{route.controller}}.{{route.action}}"

@@ -1,0 +1,14 @@
+weibo:
+  -
+    uid: 1882037885
+    user: { username: weibotui@kingcores.com }
+    weibo_profile: '{"id":1882037885,"idstr":"1882037885","screen_name":"微博推","name":"微博推","province":"11","city":"5","location":"北京 朝阳区","description":"微博推（weibotui.com） 平台即将上线， 敬请关注。 微博推广，就用微博推！","url":"http://www.weibotui.com","profile_image_url":"http://tp2.sinaimg.cn/1882037885/50/5639647767/1","profile_url":"weibotui","domain":"weibotui","weihao":"","gender":"m","followers_count":4023,"friends_count":104,"statuses_count":10,"favourites_count":1,"created_at":"Sat Dec 04 14:17:49 +0800 2010","following":false,"allow_all_act_msg":true,"geo_enabled":true,"verified":true,"verified_type":2,"remark":"","status":{"created_at":"Thu Sep 20 22:20:40 +0800 2012","id":3492460112052087,"mid":"3492460112052087","idstr":"3492460112052087","text":"#iPhone5#明天21日全球开卖，美国649美元，约人民币4088元，加拿大699加币，约人民币4536元，英国529英镑，约人民币5565元，新加坡948新加坡币，约人民币4834元，香港5588港币，约人民币4554元。你会马上买吗？","source":"<a href=\\"http://dingshi.sinaapp.com\\" rel=\\"nofollow\\">定时围脖</a>","favorited":false,"truncated":false,"in_reply_to_status_id":"","in_reply_to_user_id":"","in_reply_to_screen_name":"","geo":null,"reposts_count":0,"comments_count":0,"attitudes_count":0,"mlevel":0,"visible":{"type":0,"list_id":0}},"allow_all_comment":true,"avatar_large":"http://tp2.sinaimg.cn/1882037885/180/5639647767/1","verified_reason":"微博推（weibotui.com）官方微博","follow_me":false,"online_status":1,"bi_followers_count":9,"lang":"zh-cn"}'
+
+weibo_token:
+  -
+    weibo: { uid: 1882037885 }
+    access_token: '2.00lBq3DCgORCdC94fea88f53nPU7aD'
+    remind_in: 668507
+    expires_in: 668507
+    app_key: '2409085682'
+    app_secret: 'a084ff59d3588b62e40e81c06186a703'

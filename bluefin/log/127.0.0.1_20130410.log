@@ -1,0 +1,123 @@
+[2013-04-10 14:18:22 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-10 14:18:22 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-10 14:18:22 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-10 14:18:22 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-10 14:18:22 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-10 14:18:22 CST][debug][diag]Read session[haaapdi18jsrbq3is6ks4k8532]: 
+[2013-04-10 14:18:22 CST][debug][default]Found route: json
+[2013-04-10 14:18:22 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-10 14:18:22 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [[10001,"int"]]
+[2013-04-10 14:18:22 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [["1R2Yj32m34DmaiAaOn1p4zq0b54b0f7de16c4067","text"]]
+[2013-04-10 14:18:22 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 14:18:22 CST][debug][diag]TRANSACTION BEGUN.
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [["1R2Yj32m34DmaiAaOn1p4zq0b54b0f7de16c4067","text"]]
+[2013-04-10 14:18:22 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [["1R2Yj32m34DmaiAaOn1p4zq0b54b0f7de16c4067","text"],["2013-04-11 14:18:22","datetime"],["sso sna payment","text"],[10001,"int"]]
+[2013-04-10 14:18:22 CST][debug][diag]INSERT SQL: INSERT INTO `oauth_token` (`_created_at`, `access_token`, `expires`, `scope`, `client`) VALUES (NOW(), ?, ?, ?, ?)
+[2013-04-10 14:18:22 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-04-10 14:18:22 CST][info][default]Execution time: 0.14181995391846(s).
+[2013-04-10 14:18:22 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-10 14:18:22 CST][debug][default]REQ: /api/open/user/get_user_profile
+[2013-04-10 14:18:22 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-10 14:18:22 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-10 14:18:22 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-10 14:18:22 CST][debug][diag]Read session[tebrk85g06rsonkghle6mvs8s2]: 
+[2013-04-10 14:18:22 CST][debug][default]Found route: json
+[2013-04-10 14:18:22 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-10 14:18:22 CST][debug][default]Dispatching to service "UserService.getUserProfile" ...
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [["1R2Yj32m34DmaiAaOn1p4zq0b54b0f7de16c4067","text"]]
+[2013-04-10 14:18:22 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 14:18:22 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-10 14:18:22 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`user_id`=? LIMIT 0,1
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [["1R2Yj32m34DmaiAaOn1p4zq0b54b0f7de16c4067","text"]]
+[2013-04-10 14:18:22 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [[100000,"int"],["1R2Yj32m34DmaiAaOn1p4zq0b54b0f7de16c4067","text"]]
+[2013-04-10 14:18:22 CST][debug][diag]UPDATE SQL: UPDATE `oauth_token` SET `user`=? WHERE `access_token`=?
+[2013-04-10 14:18:22 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-10 14:18:22 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`user_id`=? LIMIT 0,1
+[2013-04-10 14:18:22 CST][info][default]Execution time: 0.14361596107483(s).
+[2013-04-10 15:49:32 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-10 15:49:32 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-10 15:49:32 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-10 15:49:32 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-10 15:49:32 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-10 15:49:32 CST][debug][diag]Read session[4b3pdd586b330buq7nrkkq84o3]: 
+[2013-04-10 15:49:32 CST][debug][default]Found route: json
+[2013-04-10 15:49:32 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-10 15:49:32 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-10 15:49:32 CST][debug][diag]PARAMS: [[10001,"int"]]
+[2013-04-10 15:49:32 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-10 15:49:32 CST][debug][diag]PARAMS: [["28IJ1o3Bj5829AdpmrdKj0Z4cbdd221bb0c151b9","text"]]
+[2013-04-10 15:49:32 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 15:49:32 CST][debug][diag]TRANSACTION BEGUN.
+[2013-04-10 15:49:32 CST][debug][diag]PARAMS: [["28IJ1o3Bj5829AdpmrdKj0Z4cbdd221bb0c151b9","text"]]
+[2013-04-10 15:49:32 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 15:49:32 CST][debug][diag]PARAMS: [["28IJ1o3Bj5829AdpmrdKj0Z4cbdd221bb0c151b9","text"],["2013-04-11 15:49:32","datetime"],["sso sna payment","text"],[10001,"int"]]
+[2013-04-10 15:49:32 CST][debug][diag]INSERT SQL: INSERT INTO `oauth_token` (`_created_at`, `access_token`, `expires`, `scope`, `client`) VALUES (NOW(), ?, ?, ?, ?)
+[2013-04-10 15:49:32 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-04-10 15:49:32 CST][info][default]Execution time: 0.13236904144287(s).
+[2013-04-10 15:49:33 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-10 15:49:33 CST][debug][default]REQ: /api/open/user/get_user_profile
+[2013-04-10 15:49:33 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-10 15:49:33 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-10 15:49:33 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-10 15:49:33 CST][debug][diag]Read session[ome7vvpmmcdr40hvqtlpkinmp6]: 
+[2013-04-10 15:49:33 CST][debug][default]Found route: json
+[2013-04-10 15:49:33 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-10 15:49:33 CST][debug][default]Dispatching to service "UserService.getUserProfile" ...
+[2013-04-10 15:49:33 CST][debug][diag]PARAMS: [["28IJ1o3Bj5829AdpmrdKj0Z4cbdd221bb0c151b9","text"]]
+[2013-04-10 15:49:33 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 15:49:33 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-10 15:49:33 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-10 15:49:33 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`user_id`=? LIMIT 0,1
+[2013-04-10 15:49:33 CST][debug][diag]PARAMS: [["28IJ1o3Bj5829AdpmrdKj0Z4cbdd221bb0c151b9","text"]]
+[2013-04-10 15:49:33 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 15:49:33 CST][debug][diag]PARAMS: [[100000,"int"],["28IJ1o3Bj5829AdpmrdKj0Z4cbdd221bb0c151b9","text"]]
+[2013-04-10 15:49:33 CST][debug][diag]UPDATE SQL: UPDATE `oauth_token` SET `user`=? WHERE `access_token`=?
+[2013-04-10 15:49:33 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-10 15:49:33 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`user_id`=? LIMIT 0,1
+[2013-04-10 15:49:33 CST][info][default]Execution time: 0.14522004127502(s).
+[2013-04-10 16:59:50 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-10 16:59:50 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-10 16:59:50 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-10 16:59:50 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-10 16:59:50 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-10 16:59:50 CST][debug][diag]Read session[aq8beov9160c6adk08t76ra9k0]: 
+[2013-04-10 16:59:50 CST][debug][default]Found route: json
+[2013-04-10 16:59:50 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-10 16:59:50 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [[10001,"int"]]
+[2013-04-10 16:59:50 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [["ZJY1n2ke40rbwDiztjg16Ad710684ff561301a24","text"]]
+[2013-04-10 16:59:50 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 16:59:50 CST][debug][diag]TRANSACTION BEGUN.
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [["ZJY1n2ke40rbwDiztjg16Ad710684ff561301a24","text"]]
+[2013-04-10 16:59:50 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [["ZJY1n2ke40rbwDiztjg16Ad710684ff561301a24","text"],["2013-04-11 16:59:50","datetime"],["sso sna payment","text"],[10001,"int"]]
+[2013-04-10 16:59:50 CST][debug][diag]INSERT SQL: INSERT INTO `oauth_token` (`_created_at`, `access_token`, `expires`, `scope`, `client`) VALUES (NOW(), ?, ?, ?, ?)
+[2013-04-10 16:59:50 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-04-10 16:59:50 CST][info][default]Execution time: 0.14448499679565(s).
+[2013-04-10 16:59:50 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-10 16:59:50 CST][debug][default]REQ: /api/open/user/get_user_profile
+[2013-04-10 16:59:50 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-10 16:59:50 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-10 16:59:50 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-10 16:59:50 CST][debug][diag]Read session[jqrlo3hi1l9l1hnd01m1c8s4h7]: 
+[2013-04-10 16:59:50 CST][debug][default]Found route: json
+[2013-04-10 16:59:50 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-10 16:59:50 CST][debug][default]Dispatching to service "UserService.getUserProfile" ...
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [["ZJY1n2ke40rbwDiztjg16Ad710684ff561301a24","text"]]
+[2013-04-10 16:59:50 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 16:59:50 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-10 16:59:50 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`user_id`=? LIMIT 0,1
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [["ZJY1n2ke40rbwDiztjg16Ad710684ff561301a24","text"]]
+[2013-04-10 16:59:50 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [[100000,"int"],["ZJY1n2ke40rbwDiztjg16Ad710684ff561301a24","text"]]
+[2013-04-10 16:59:50 CST][debug][diag]UPDATE SQL: UPDATE `oauth_token` SET `user`=? WHERE `access_token`=?
+[2013-04-10 16:59:50 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-10 16:59:50 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`user_id`=? LIMIT 0,1
+[2013-04-10 16:59:50 CST][info][default]Execution time: 0.15796279907227(s).

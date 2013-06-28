@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }} | 微博推 - 微博推广，就用微博推</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="微博推,微博推广,微博营销,微博赚钱,推客,社会化网络营销, SNM">
+    <meta name="description" content="微博推广，就用微博推。微博推是一个基于社会化媒体的精准营销服务平台。">
+    <meta name="author" content="金果创新（北京）科技有限公司">
+    <link type="text/css" href="./libs/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" href="./styles/index.css" rel="stylesheet">
+    <script src="../../libs/jquery/jquery.min.js"></script>
+    <script src="../../libs/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="top">
+        <div class="logo pull-left">
+            <h1>微博推</h1>
+            <a href="http://weibotui.com" title="微博推">
+                <img src="/images/logo.png" alt="微博推">
+            </a>
+        </div>
+        <div class="banner pull-left">
+            <span>社会化媒体营销平台</span>
+        </div>
+{% set auth = _.auth.weibotui._ %}
+{% if auth %}
+        <div class="pull-right login">
+            <ul class="nav nav-pills">
+                <li class="dropdown active ">
+                    <a class="dropdown-toggle" role="button" data-toggle="dropdown" href="{{ my_url('user/home') }}">{{ auth.profile_nick_name }}<b class="caret"></b></a>
+                    <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop5">
+                        <li><a tabindex="-1" href="{{ my_url('auth/logout') }}">退出登录</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+{% else %}
+        <div class="login pull-right">
+            <a href="{{ my_url('auth/index') }}" class="btn btn-primary btn-large">&nbsp;&nbsp;登录&nbsp;&nbsp;</a>
+        </div>
+{% endif %}
+    </div>
+    <div class="content">
+        <div class="s1">每个粉丝都是品牌代言人</div>
+        <div class="s2">把推广变成关注您的客户！</div>
+        <div class="s3"><img src="./images/index/p2.png"/>关注&nbsp;&nbsp;让喜欢你的客户更喜欢你
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./images/index/p3.png"/>推广&nbsp;&nbsp;让喜欢你的客户代言</div>
+        {% if loginProfile %}
+        <div class="register"></div>
+        {% else %}
+        <div class="register"><a href="{{ my_url('register') }}" class="btn btn-warning btn-large btn-register">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;免费注册&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+        {% endif %}
+        <div class="s4">
+            <!--<span style="display:block;margin-top:50px;font-size:50px;color:#00b32a">不管你的企业有多大</span>-->
+        </div>
+        <div class="s5"></div>
+        <div class="s6"></div>
+        <div class="s7"></div>
+        <div class="s8"></div>
+        <div>
+            <a href="{{ my_url('auth/index') }}" class="btn btn-primary btn-large btn-exp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;立即体验&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><br>
+            <img src="../../../images/index/t6.png"/>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="container copyright">
+            <span><a href="http://www.kingcores.com/?page_id=98" target="_blank">工作机会</a> | <a href="http://www.kingcores.com/?page_id=81" target="_blank">联系我们</a> | <a href="http://e.weibo.com/1882037885/zbFb8fn0y" target="_blank">意见反馈</a></span><br>
+            <span>Copyright &copy; 2011-2013 <a href="http://www.kingcores.com" target="_blank">金果创新</a> 版权所有 京ICP备11034128号-3</span><br>&nbsp;
+        </div>
+    </div>
+</div>
+</body>
+</html>

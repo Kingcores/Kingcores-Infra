@@ -1,0 +1,65 @@
+{% extends "WBT/auth.twig" %}
+
+{% block main %}
+    <div class="row content-area">
+        <div class="offset2 span8">
+            <div class="login-unit">
+{% if _eventMessage %}
+                <div id="eventMessage" class="alert {{ _eventAlertClass }}"><button type="button" class="close" data-dismiss="alert">×</button>
+                 <strong>{{ _eventMessage|raw }}</strong>
+                </div>
+{% endif %}
+                {{ form|raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_foot_script %}
+{{ parent() }}
+    <script type="text/javascript">
+        var pauseTime,
+            pauseTimer;
+
+        function authCodeRecoveryTimer(button)
+        {
+            if (--pauseTime == 0)
+            {
+                clearInterval(pauseTimer);
+                button.removeAttr('disabled').html("发送验证码");
+            }
+            else
+            {
+                button.html("发送成功，"+ pauseTime +"秒后可重新发送");
+            }
+        }
+
+        function sendMobileAuthCode() {
+            var mobile = $("#form1Mobile").val(),
+                button = $("#form1MobileAuthCodeButton"),
+                msg = $("#form1MobileAuthCodeMsgBlock");
+
+            button.attr('disabled', 'disabled').html("正在发送...");
+            msg.addClass('hide').html('');
+
+            var post_data = {'mobile':mobile};
+
+            $.ajax({
+                type:'post',
+                url: 'http://www.weibotui.com/api/message/sms/send_auth_code',
+                data:post_data,
+                datatype:'JSON',
+                success:function(data) {
+                    if(data.errno == 0) {
+                        pauseTime = 60;
+                        button.attr('disabled', 'disabled').html("发送成功，"+ pauseTime +"秒后可重新发送");
+                        pauseTimer = setInterval(authCodeRecoveryTimer, 1000, button);
+                    } else {
+                        button.removeAttr('disabled').html("发送失败，重新发送");
+                        msg.removeClass('hide').html(data.error);
+                    }
+                }
+            });
+        }
+    </script>
+{% endblock %}

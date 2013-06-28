@@ -1,0 +1,17 @@
+#namespace: <project config>
+app:
+  sample:
+    db:
+      sample1: db1
+      sample2: db1
+
+db_server:
+  db1:
+    type: mysql
+    host: 127.0.0.1
+    port: 3306
+    username: root
+    password: root、
+
+
+

@@ -1,0 +1,43 @@
+@charset"utf-8";
+
+body{background-color:#ffffff;}
+
+/*LOGO*/
+.logo-area{margin-top: 10px;}
+.logo-text{display: none;}
+
+/*CONTENT*/
+.content-area{padding-top: 40px;}
+
+#authCarousel{
+    margin-top: 50px;
+}
+
+.error-form{padding-top:50px;}
+
+.status-title{color:#3ea3ea;}
+.bottom{padding-top:40px;}
+.copyright{
+	text-align: center;
+}
+.label-large{
+    font-size: 16px;
+    line-height: 20px;
+}
+.form-divider{border-bottom: 1px solid #e5e5e5;}
+.form-gap{line-height: 10px;}
+.div-gap{margin-bottom: 10px;}
+
+.hero-unit-ie{padding: 40px 60px 20px 60px;}
+.carousel-caption { background: rgba(51,51,51,0.75);}
+.tips {margin-bottom: 10px;}
+
+.login-unit {
+    padding: 30px 60px;
+    margin-bottom: 30px;
+    border:2px solid #d9d9d9;
+    background-color: #ffffff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}

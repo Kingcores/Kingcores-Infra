@@ -1,0 +1,102 @@
+{% extends "WBT/auth.twig" %}
+
+{% block main %}
+    <div class="row content-area">
+        <div class="offset2 span8">
+            <div class="login-unit">
+{% if _eventMessage %}
+                <div id="eventMessage" class="alert {{ _eventAlertClass }}"><button type="button" class="close" data-dismiss="alert">×</button>
+                 <strong>{{ _eventMessage|raw }}</strong>
+                </div>
+{% endif %}
+                <form method="post" action="{{ my_url() }}">
+                    <legend><h3 class="form-title">我还没有微博推账号，快速注册一个。</h3></legend>
+                    <p class="text-info"><i class="icon-info-sign"></i> 成功注册后，您将可以通过微博推来管理您的多个社交媒体账号。</p>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend">
+                                <!--[if lt IE 9]>
+                                 <span class="add-on">电子邮箱：</span>
+                                <![endif]-->
+                                 <input type="email" name="username" value="{{ username }}" placeholder="电子邮箱">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend pull-left">
+                                <!--[if lt IE 9]>
+                                <span class="add-on">　　密码：</span>
+                                <![endif]-->
+                                <input type="password" name="password" value="{{ password }}" placeholder="密码">
+                            </div>
+                            <div class="pull-left">&nbsp;&nbsp;</div>
+                            <div class="input-prepend">
+                                <!--[if lt IE 9]>
+                                <span class="add-on">密码确认：</span>
+                                <![endif]-->
+                                <input type="password" name="password_confirm" placeholder="密码确认">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label class="checkbox">
+                              <input id="inputEula" type="checkbox" name="eula">
+                              我已阅读并同意微博推<a href="javascript:bluefinBH.ajaxDialog('/register/eula', {closeButton: true});">用户协议（请点击阅读）</a>。
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">                        
+                        <button id="buttonSubmit" type="submit" class="btn btn-primary" disabled>注册</button>
+                    </div>
+                </form>
+
+                <form method="post" action="{{ bindUrl }}">
+                    <legend><h3 class="form-title">我已经有微博推账号，登录后即可绑定微博账号。</h3></legend>
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="input-prepend pull-left">
+                                <!--[if lt IE 9]>
+                                 <span class="add-on">　用户名：</span>
+                                <![endif]-->
+                                 <input type="email" name="username" value="{{ username }}" placeholder="电子邮箱">
+                            </div>
+                            <div class="pull-left">&nbsp;&nbsp;</div>
+                            <div class="input-prepend">
+                                <!--[if lt IE 9]>
+                                 <span class="add-on">　　密码：</span>
+                                <![endif]-->
+                                <input type="password" name="password" value="{{ password }}" placeholder="密码">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <button type="submit" class="btn btn-success">登录</button>
+                    </div>
+                </form>
+            </div>
+{% if skip %}
+            <div align="center"><a class="btn btn-inverse" href="http://so.weibotui.com/?_sso=0">跳过</a></div>
+{% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block doc_ready %}
+{{ parent() }}
+
+            function checkEula() {
+                if ($(this).attr('checked') == 'checked')
+                {
+                    $('#buttonSubmit').removeAttr('disabled');
+                }
+                else
+                {
+                    $('#buttonSubmit').attr('disabled', 'disabled');
+                }
+            }
+
+            $('#inputEula').click(checkEula);
+
+{% endblock %}

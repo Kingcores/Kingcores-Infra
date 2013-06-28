@@ -1,0 +1,6 @@
+-- TABLE tuike
+
+ALTER TABLE `tuike`
+ADD CONSTRAINT `fk_tuike_user` FOREIGN KEY (`user`)
+REFERENCES `user` (`user_id`) ON UPDATE RESTRICT ON DELETE CASCADE;
+

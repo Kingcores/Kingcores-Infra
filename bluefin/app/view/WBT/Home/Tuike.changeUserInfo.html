@@ -1,0 +1,42 @@
+{% extends "WBT/home.tuike.twig" %}
+
+{% block css_link %}
+{{ parent() }}
+    <!--<link href="/libs/bootstrap/css/docs.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">-->
+{% endblock %}
+
+{% block homeRoleContent %}
+<div class="row">
+    <div class="span4">
+        <div class="bs-docs bs-docs-userinfo thumbnail">
+            <form method="post" action="{{ route('m-c-a', ['home','tuike','change_user_info']) }}">
+                <div class="controls">
+                    <div style="float:left;width: 80px;text-align: right; margin-top: 5px;">用户名：</div>
+                    <input class="input-large" type="email" id="inputUsername" value="{{ username }}" name="username" placeholder="电子邮箱" autocomplete="off" disabled="disabled">
+                    <span class="help-inline tips"></span>
+                </div>
+                <div class="controls">
+                    <div style="float:left;width: 80px;text-align: right;margin-top: 5px;">手机：</div>
+                    <input class="input-large" type="text" id="inputMobile" value="{{ profile.mobile }}" name="mobile" placeholder="手机号" autocomplete="off" disabled="disabled">
+                    <span class="help-inline tips"></span>
+                </div>
+                <div class="controls">
+                    <div style="float:left;width: 80px;text-align: right;margin-top: 5px;">QQ：</div>
+                    <input class="input-large" type="text" id="inputQQ" value="{{ profile.qq }}" name="qq" placeholder="QQ号码" autocomplete="off">
+                    <span class="help-inline tips"></span>
+                </div>
+                <div class="controls">
+                    <div style="float:left;width: 80px;text-align: right;margin-top: 5px;">支付宝：</div>
+                    <input class="input-large" type="text" id="inputAlipay" value="{{ alipay }}" name="alipay" placeholder="支付宝帐号" autocomplete="off">
+                    <span class="help-inline tips"></span>
+                </div>
+                <div class="controls" style="padding: 10px 0px;">
+                    <div style="float:left;width: 80px;text-align: right;">&nbsp;</div>
+                    <button type="submit" class="btn btn-primary">保存</button>
+                    <a type="cancel" class="btn" href="{{ route('m-c-a', ['home','tuike','sns_account']) }}">取消</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

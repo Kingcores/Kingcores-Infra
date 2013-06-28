@@ -1,0 +1,66 @@
+<form{{ component.renderAttributes|raw }}>
+    {% if component.ajaxForm %}<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>{% endif %}
+    <fieldset>
+{% if component.legend %}
+        <legend{% if component.titleClass %} class="{{ component.titleClass }}"{% endif %}>{{ component.legend|raw }}</legend>
+{% endif %}
+{% set continueInline = false %}
+{% for child in component.components %}
+{% set id = child.attributes.id %}
+{% if child.attributes.type == 'hidden' or child.attributes.type == 'custom' %}
+{{ child|raw }}
+{% else %}
+{% if not continueInline %}
+        <div class="control-group">
+{% if child.label %}
+            <label class="control-label" for="{{ id }}">{{ child.label|raw }}{% if child.clientSide.required and component.showRequired %}<span style="color: red;">*</span>{{ component.labelColon }}{% else %}{{ component.labelColon }} {% endif %}</label>
+{% endif %}
+            <div class="controls">
+{% endif %}
+{% if child.viewProperties.inline %}
+{% set continueInline = true %}
+{% endif %}
+{% if child.viewProperties.prepend %}
+                <div class="input-prepend{% if continueInline %} pull-left{% endif %}">
+                    <span class="add-on">{{ child.viewProperties.alt }}</span>
+                    {{ child|raw }}
+                </div>
+{% else %}
+{% if continueInline %}
+{% set nothing = child.addClass('pull-left') %}
+{% endif %}
+                {{ child|raw }}
+{% endif %}
+{% set inlineEnd = continueInline %}
+{% set continueInline = child.viewProperties.inline %}
+{% if continueInline %}
+                <div class="pull-left">&nbsp;&nbsp;</div>
+{% else %}
+                <span id="{{ id }}MsgInline" class="help-line"></span>
+{% if inlineEnd %}
+                <div class="clearfix"></div>
+{% endif %}
+                <span id="{{ id }}MsgBlock" class="help-block">{{ child.clientSide.message|raw }}</span>
+            </div>
+        </div>
+{% endif %}
+{% endif %}
+{% endfor %}
+        <div class="control-group">
+            <div class="controls">
+{% for child in component.buttons %}
+                {{ child|raw }}
+{% endfor %}
+{% if component.showRequired %}
+                <span id="{{ component.attributes.id }}Msg" class="help-block">{{ text('<br>Fields with "<span style="color:red;">*</span>" is required.', 'view')|raw }}</span>
+{% endif %}
+            </div>
+        </div>
+    </fieldset>
+</form>
+{% set _fileUpload = component.getView.get('_fileUpload') %}
+{% if _fileUpload %}
+{% for id, action in _fileUpload %}
+<input id="{{ id }}Up" class="file-upload hide" type="file" name="file" data-url="{{ action }}" multiple>
+{% endfor %}
+{% endif %}

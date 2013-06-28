@@ -1,0 +1,19 @@
+root:
+  route: /
+  namespace: {{ namespace }}
+  controller: Home.index
+
+c:
+  route: /:controller
+  namespace: {{ namespace }}
+  controller: {{ '"{{route.controller|P}}.index"' }}
+
+c-a:
+  route: /:controller/:action
+  namespace: {{ namespace }}
+  controller: {{ '"{{route.controller|P}}.{{route.action|C}}"' }}
+
+m-c-a:
+  route: /:module/:controller/:action
+  namespace: {{ namespace }}
+  controller: {{ '"{{route.module|P}}\{{route.controller|P}}.{{route.action|C}}"' }}

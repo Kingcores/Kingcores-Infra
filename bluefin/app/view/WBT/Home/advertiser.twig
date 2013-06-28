@@ -1,0 +1,65 @@
+{% extends "WBT/home.twig" %}
+
+{% set actionName = context('gateway.action') %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="banner-mod">
+                    <div class="banner-mod-inner banner-mod-ad">
+                        <div class="clearfix">
+                            <a href="#" class="pull-left">
+                                <img src="{{ loginProfile.profile_avatar|default('/images/avatar_default2.png') }}" class="img-polaroid">
+                            </a>
+                            <p class="banner-sub-block pull-left">
+                                <span class="text24">Hi, {{ loginProfile.profile_nick_name }}</span><br>
+                                <span class="text14">{{ loginProfile.username }}</span><br>
+                                <a href="#" class="btn btn-info" style="margin-top: 10px;">管理</a>
+                            </p>
+                            <p class="banner-sub-block pull-left">
+                                <span class="text14">账户余额：</span><br>
+                                <span class="text24">{{ userAsset.deposit_balance|number_format(2, '.', ',') }} 元</span><br>
+                                <a href="javascript:bluefinBH.ajaxDialog('/form/user_deposit/show');" class="btn btn-warning" style="margin-top: 10px;">充值</a>&nbsp;<a href="{{ route('m-c-a', ['home','advertiser','deposit_record_list']) }}" class="btn btn-link" style="margin-top: 20px;">充值记录</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <ul class="nav nav-tabs">
+                    <li class="dropdown{% if location[1] == 'account' %} active{% endif %}">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">交易查询<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li{% if location[2] == 'deposit_record_list' %} class="active"{% endif %}><a href="{{ route('m-c-a', ['home','advertiser','deposit_record_list']) }}">充值记录</a></li>
+                            <li{% if location[2] == 'expense_record_list' %} class="active"{% endif %}><a href="{{ route('m-c-a', ['home','advertiser','expense_record_list']) }}">消费记录</a></li>
+                        </ul>
+
+                    </li>
+                    <li{% if location[1] == 'campaign' %} class="active"{% endif %}><a href="{{ route('m-c-a', ['weibo_campaign_list']) }}">微博推广</a></li>
+                    <li{% if location[1] == 'inventory' %} class="active"{% endif %}><a href="{{ route('m-c-a', ['weibo_inventory_list']) }}">微博渠道</a></li>
+
+                    {% set dropdownstyle = '' %}
+                    {% if actionName == 'changePassword' or actionName == 'changeUserInfo' %}
+                    {% set dropdownstyle = 'active' %}
+                    {% endif %}
+                    <li class="dropdown {{dropdownstyle}}">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">用户中心 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+
+                            <li><a href="{{ route('m-c-a', ['home','advertiser','change_user_info']) }}">用户信息</a></li>
+
+                            <li><a href="{{ route('m-c-a', ['home','advertiser','change_password']) }}">修改密码</a></li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        {% block adversiterContent %}{% endblock %}
+    </div>
+{% endblock %}

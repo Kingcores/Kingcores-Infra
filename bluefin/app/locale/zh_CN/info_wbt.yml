@@ -1,0 +1,3 @@
+200000010: '帐号注册成功，请尽快登录邮箱 [%username%] 完成帐号激活。同时，您的 <span class="label label-warning">%type%</span> 帐号 [%sna_name%] 已经与新注册的 <span class="label label-info">微博推</span> 帐 [%username%] 号绑定成功。'
+200000001: '您的 <span class="label label-warning">%type%</span> 帐号 [%sna_name%] 已经与您的 <span class="label label-info">微博推</span> 帐号 [%username%] 绑定成功。'
+200000002: ''

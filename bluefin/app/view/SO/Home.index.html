@@ -1,0 +1,83 @@
+{% extends "SO/bootstrap.twig" %}
+
+{% block css_link %}
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 60px;
+      }
+
+      /* Custom container */
+      .container {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+      .container > hr {
+        margin: 60px 0;
+      }
+
+      .masthead {
+          margin: 10px 80px;
+      }
+
+      .logo{
+          background: url(/images/logo.png) no-repeat;
+          text-indent: -9999px;
+          width: 175px;
+          height: 100px;
+      }
+
+      /* Main marketing message and sign up button */
+      .jumbotron {
+        margin: 40px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 100px;
+        line-height: 1;
+      }
+      .jumbotron .lead {
+        font-size: 24px;
+        line-height: 1.25;
+        margin-bottom: 40px;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+      .footer {
+          text-align: center;
+      }
+
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="masthead">
+            <div>
+                <h1 class="logo pull-left">微博推</h1>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <h1>Social in One</h1>
+
+            <p class="lead">微博推整合社交（SIO, Social in One）管理平台，帮助您轻松管理多个主流社会化媒体帐号，实现帐号间的内容同步，掌握这些帐号的统计数据，以及监测社会化媒体上的舆情。</p>
+            <a class="btn btn-large btn-success" href="{{ loginUrl }}">开始体验</a>
+        </div>
+
+        <hr>
+
+        <div class="footer">
+            <p>&copy; 金果创新（北京）科技有限公司</p>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}
+
+{% block js_link_foot %}
+    <script src="/libs/wbt/sdk.js"></script>
+{% endblock %}

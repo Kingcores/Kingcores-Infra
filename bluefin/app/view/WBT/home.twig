@@ -1,0 +1,75 @@
+{% extends "WBT/bootstrap.twig" %}
+
+{% block css_link %}
+    <link href="/styles/home.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<header class="top">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <h2 class="logo">微博推 <span class="label label-success logo-addon"> 营销管理 </span></h2>
+            </div>
+            <div class="span3">
+                &nbsp;
+            </div>
+            <div class="span5">
+                <ul class="nav nav-pills pull-right">
+                    <li class="active">
+                        <a href="/home/weibotui/index">首页</a>
+                    </li>
+                    <li><a href="http://so.weibotui.com">社交管理</a></li>
+{% if loginProfile %}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">
+                            {{ loginProfile.profile_nick_name }}
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                        </ul>
+                    </li>
+                    <li><a href="/auth/logout">退出</a></li>
+{% else %}
+                    <li><a href="{{ path('auth/index', {'_from': context('gateway.path')}) }}">登录</a></li>
+{% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% if _eventMessage %}
+<div id="eventMessage" class="alert{{ _eventAlertClass }}"><button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>{{ _eventMessage|raw }}</strong>
+</div>
+{% endif %}
+
+<section id="content">
+    {% block main %}{% endblock %}
+</section>
+
+<footer class="bottom">
+    <div class="navbar bottom-bar">
+        <div class="navbar-inner bottom-bar-inner">
+            Copyright &copy; 2011-2013 <a class="label label-warning" href="http://www.kingcores.com">金果创新</a> 版权所有&nbsp;&nbsp;京ICP备11034128号-3
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block doc_ready %}
+{{ parent() }}
+{% if _eventMessage %}
+          $('#eventMessage').fadeOut(15000, function () {
+              var msg = $(this);
+              msg.alert('close');
+              msg.remove();
+          });
+{% endif %}
+{% endblock %}
+{% block js_link_foot %}
+    <script src="/libs/wbt/sdk.js"></script>
+{% endblock %}

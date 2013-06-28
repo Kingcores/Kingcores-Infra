@@ -1,0 +1,9 @@
+all: 全部
+'#': ''
+'Page: %current%/%total%': 页数：%current%/%total%
+'Total: %total%': '总计：%total% 项'
+'No data.': 暂无数据。
+N/A: 无
+Operations: 操作
+'<br>Fields with "<span style="color:red;">*</span>" is required.': '<br>标有 <span style="color:red;">*</span> 的项目为必填项。'
+(required): （必填）

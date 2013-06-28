@@ -1,0 +1,6 @@
+-- TABLE weibo
+
+ALTER TABLE `weibo`
+ADD CONSTRAINT `fk_weibo_user` FOREIGN KEY (`user`)
+REFERENCES `user` (`user_id`) ON UPDATE RESTRICT ON DELETE CASCADE;
+

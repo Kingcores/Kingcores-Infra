@@ -1,0 +1,23 @@
+{% extends "WBT/Weixin/wx.twig" %}
+
+{% block tuikeContent %}
+
+<div class="row">
+    <div class="span5">
+        {{ keywordNavBar|raw }}
+    </div>
+    <div class="span7">
+        {{ contentNavBar|raw }}
+    </div>
+</div>
+<div class="row">
+      <div class="span5">
+        {{ keywordTable|raw }}
+      </div>
+
+      <div class="span7">
+        {{ contentTable|raw }}
+      </div>
+</div>
+
+{% endblock %}

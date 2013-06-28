@@ -1,0 +1,66 @@
+weibotui:
+  comment: '微博推'
+  locale: zh_CN
+  namespace: WBT
+
+  db:
+    type: mysql
+    adapter: PDO_MYSQL
+    engine: InnoDB
+    charset: utf8
+    connection:
+      host: 172.16.250.131
+      port: 3306
+      username: root
+      password: root
+      dbname: weibotui
+
+  entities:
+    personal_profile: person.personal_profile
+    user: system.user
+    admin: system.admin
+    user_with_role: system.user_with_role
+    admin_with_role: system.admin_with_role
+    user_login_record: system.user_login_record
+    admin_login_record: system.admin_login_record
+    weibo: weibo.weibo
+    weibo_token: weibo.weibo_token
+    weibo_topic: weibo.weibo_topic
+    weibo_login_record: weibo.weibo_login_record
+    corporate: corporate.corporate
+    staff_in_corporate: corporate.staff_in_corporate
+    weibo_inventory: inventory.weibo_inventory
+    corporate_asset: asset.corporate_asset
+    tuike_asset: asset.tuike_asset
+
+  auth:
+    -
+      name: weibotui
+      authUrl: "/auth/index"
+      responseUrl: "/auth/login"
+      modelClass: "\WBT\Model\Weibotui\User"
+      captchaClass: "\Bluefin\Captcha\Recaptcha"
+      identityColumn: username
+      credentialColumn: password
+      numFailureNeedCaptcha: -1
+      dataColumns:
+        - user_id
+        - profile.nick_name
+        - profile.gender
+        - profile.avatar
+      persistence:
+        type: session
+        namespace: auth.weibotui
+
+  data:
+    init:
+      - roles.yml
+      - admins.yml
+      - country.sql
+      - province.sql
+      - city.sql
+      - capital_city.sql
+      - district.sql
+      - topic_categories.yml
+      - users.yml
+      - weibos.yml

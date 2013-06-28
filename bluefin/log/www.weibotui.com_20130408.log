@@ -1,0 +1,1304 @@
+[2013-04-08 16:12:40 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 16:12:40 CST][debug][default]REQ: /
+[2013-04-08 16:12:40 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 16:12:40 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 16:12:40 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 16:12:40 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: 
+[2013-04-08 16:12:40 CST][debug][default]Found route: root
+[2013-04-08 16:12:40 CST][verbose][default]Dispatching route: WBT > Home > index
+[2013-04-08 16:12:40 CST][info][default]Execution time: 0.18896102905273(s).
+[2013-04-08 16:18:36 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 16:18:36 CST][debug][default]REQ: /
+[2013-04-08 16:18:36 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 16:18:36 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 16:18:36 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 16:18:36 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:2:{s:7:"counter";i:0;s:10:"created_at";i:1365408760;}
+[2013-04-08 16:18:36 CST][debug][default]Found route: root
+[2013-04-08 16:18:36 CST][verbose][default]Dispatching route: WBT > Home > index
+[2013-04-08 16:18:36 CST][info][default]Execution time: 0.15538001060486(s).
+[2013-04-08 16:18:43 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 16:18:43 CST][debug][default]REQ: /
+[2013-04-08 16:18:43 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 16:18:43 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 16:18:43 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 16:18:43 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:1;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365409116;}
+[2013-04-08 16:18:43 CST][debug][default]Found route: root
+[2013-04-08 16:18:43 CST][verbose][default]Dispatching route: WBT > Home > index
+[2013-04-08 16:18:43 CST][info][default]Execution time: 0.15106582641602(s).
+[2013-04-08 16:18:55 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 16:18:55 CST][debug][default]REQ: /auth/index
+[2013-04-08 16:18:55 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 16:18:55 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 16:18:55 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 16:18:55 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:2;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365409123;}
+[2013-04-08 16:18:55 CST][debug][default]Found route: c-a
+[2013-04-08 16:18:55 CST][verbose][default]Dispatching route: WBT > Auth > index
+[2013-04-08 16:18:55 CST][info][default]Execution time: 0.18977093696594(s).
+[2013-04-08 18:10:02 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:10:02 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21
+[2013-04-08 18:10:02 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:10:02 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:10:02 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:10:02 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:3;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365409134;}
+[2013-04-08 18:10:02 CST][debug][default]Found route: c-a
+[2013-04-08 18:10:02 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:10:02 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:10:02 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:10:02 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:10:02 CST][info][default]Execution time: 0.14231610298157(s).
+[2013-04-08 18:11:57 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:11:57 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21
+[2013-04-08 18:11:57 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:11:57 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:11:57 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:11:57 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:4;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365415802;}
+[2013-04-08 18:11:57 CST][debug][default]Found route: c-a
+[2013-04-08 18:11:57 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:11:57 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:11:57 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:11:57 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:11:57 CST][info][default]Execution time: 0.13321781158447(s).
+[2013-04-08 18:12:48 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:12:48 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21
+[2013-04-08 18:12:48 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:12:48 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:12:48 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:12:48 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:5;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365415917;}
+[2013-04-08 18:12:48 CST][debug][default]Found route: c-a
+[2013-04-08 18:12:48 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:12:48 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:12:48 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:12:48 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:12:48 CST][info][default]Execution time: 0.19231700897217(s).
+[2013-04-08 18:13:30 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:13:30 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21
+[2013-04-08 18:13:30 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:13:30 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:13:30 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:13:30 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:6;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365415968;}
+[2013-04-08 18:13:30 CST][debug][default]Found route: c-a
+[2013-04-08 18:13:30 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:13:31 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:13:31 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:13:31 CST][debug][default][file:WBTOAuth2.php][line:27][fun:verify]DUMP var: ''
+[2013-04-08 18:13:31 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:13:31 CST][info][default]Execution time: 0.13257002830505(s).
+[2013-04-08 18:15:45 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:15:45 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=2fc82f1f32ec5904c50d4d4491ce9e59
+[2013-04-08 18:15:45 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:15:45 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:15:45 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:15:45 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:7;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365416010;}
+[2013-04-08 18:15:45 CST][debug][default]Found route: c-a
+[2013-04-08 18:15:45 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:15:45 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:15:45 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:15:45 CST][debug][default][file:WBTOAuth2.php][line:27][fun:verify]DUMP var: ''
+[2013-04-08 18:15:45 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:15:45 CST][info][default]Execution time: 0.13392305374146(s).
+[2013-04-08 18:16:32 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:16:32 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 18:16:32 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:16:32 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:16:32 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:16:32 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:8;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365416145;}
+[2013-04-08 18:16:32 CST][debug][default]Found route: c-a
+[2013-04-08 18:16:32 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:16:32 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:16:32 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:16:32 CST][debug][default][file:WBTOAuth2.php][line:27][fun:verify]DUMP var: 'www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard'
+[2013-04-08 18:16:32 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:16:32 CST][info][default]Execution time: 0.14196681976318(s).
+[2013-04-08 18:17:25 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:17:25 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 18:17:25 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:17:25 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:17:25 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:17:25 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:9;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365416192;}
+[2013-04-08 18:17:25 CST][debug][default]Found route: c-a
+[2013-04-08 18:17:25 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:17:25 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:17:25 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:17:25 CST][debug][default][file:WBTOAuth2.php][line:27][fun:verify]DUMP var: 'www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard'
+[2013-04-08 18:17:25 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:17:25 CST][info][default]Execution time: 0.16526293754578(s).
+[2013-04-08 18:19:42 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:19:42 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 18:19:42 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:19:42 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:19:42 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:19:42 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:10;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365416245;}
+[2013-04-08 18:19:42 CST][debug][default]Found route: c-a
+[2013-04-08 18:19:42 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:19:42 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:19:42 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:19:42 CST][debug][default][file:WBTOAuth2.php][line:31][fun:verify]DUMP var: 'b712d025d94604401b1f8503077cb65e'
+[2013-04-08 18:19:42 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:19:42 CST][info][default]Execution time: 0.14112114906311(s).
+[2013-04-08 18:20:52 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:20:52 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 18:20:52 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:20:52 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:20:52 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:20:52 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:11;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365416382;}
+[2013-04-08 18:20:52 CST][debug][default]Found route: c-a
+[2013-04-08 18:20:52 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:20:52 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:20:52 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:20:52 CST][debug][default][file:WBTOAuth2.php][line:31][fun:verify]DUMP var: 'a2145c2ba9e80b92dd2bd8d403bf3a6d'
+[2013-04-08 18:20:52 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 18:20:52 CST][info][default]Execution time: 0.1415228843689(s).
+[2013-04-08 18:24:19 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:24:19 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e
+[2013-04-08 18:24:19 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:24:19 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:24:19 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:24:19 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:12;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365416452;}
+[2013-04-08 18:24:19 CST][debug][default]Found route: c-a
+[2013-04-08 18:24:19 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:24:19 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:24:19 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:24:19 CST][debug][default][file:WBTOAuth2.php][line:31][fun:verify]DUMP var: 'a2145c2ba9e80b92dd2bd8d403bf3a6d'
+[2013-04-08 18:24:19 CST][info][default]Execution time: 0.34853887557983(s).
+[2013-04-08 18:25:16 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:25:16 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e
+[2013-04-08 18:25:16 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:25:16 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:25:16 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:25:16 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:13;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365416659;}
+[2013-04-08 18:25:16 CST][debug][default]Found route: c-a
+[2013-04-08 18:25:16 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:25:16 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:25:16 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:25:16 CST][info][default]Request Exception: Bad Request
+[2013-04-08 18:25:16 CST][info][default]Execution time: 0.12155890464783(s).
+[2013-04-08 18:31:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:31:21 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e
+[2013-04-08 18:31:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:31:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:31:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:31:21 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:14;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365416716;}
+[2013-04-08 18:31:21 CST][debug][default]Found route: c-a
+[2013-04-08 18:31:21 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:31:21 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:31:21 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:31:21 CST][info][default]Request Exception: Forbidden
+[2013-04-08 18:31:21 CST][info][default]Execution time: 0.12025308609009(s).
+[2013-04-08 18:41:36 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49766',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417696.7976,
+  'REQUEST_TIME' => 1365417696,
+)
+[2013-04-08 18:41:36 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:41:36 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49766',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417696.7976,
+  'REQUEST_TIME' => 1365417696,
+)
+[2013-04-08 18:41:36 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e
+[2013-04-08 18:41:36 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:41:36 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:41:36 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:41:36 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:15;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365417081;}
+[2013-04-08 18:41:36 CST][debug][default]Found route: c-a
+[2013-04-08 18:41:36 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:41:36 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49766',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417696.7976,
+  'REQUEST_TIME' => 1365417696,
+)
+[2013-04-08 18:41:36 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:41:36 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:41:36 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49766',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417696.7976,
+  'REQUEST_TIME' => 1365417696,
+)
+[2013-04-08 18:41:36 CST][info][default]Request Exception: Forbidden
+[2013-04-08 18:41:36 CST][info][default]Execution time: 0.12766408920288(s).
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49852',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTPS' => 'on',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.5957,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:53 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49852',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTPS' => 'on',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.5957,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:53 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e
+[2013-04-08 18:45:53 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:45:53 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:45:53 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:45:53 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:16;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365417696;}
+[2013-04-08 18:45:53 CST][debug][default]Found route: c-a
+[2013-04-08 18:45:53 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49852',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTPS' => 'on',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.5957,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:53 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:45:53 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49852',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTPS' => 'on',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.5957,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:53 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 18:45:53 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 18:45:53 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 18:45:53 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 18:45:53 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 18:45:53 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=33GAwC9VA5N0bv8VLtxLeh0ac057e8a9".
+[2013-04-08 18:45:53 CST][info][default]Execution time: 0.14696097373962(s).
+[2013-04-08 18:45:54 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49854',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.9974,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:54 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:45:54 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49854',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.9974,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:54 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8
+[2013-04-08 18:45:54 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:45:54 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:45:54 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:45:54 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:17;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365417953;}
+[2013-04-08 18:45:54 CST][debug][default]Found route: c-a
+[2013-04-08 18:45:54 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:45:54 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49854',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.9974,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:54 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:45:54 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:45:54 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49854',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365416660',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417953.9974,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:54 CST][info][default]Execution time: 0.24073004722595(s).
+[2013-04-08 18:46:11 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49852',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTPS' => 'on',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417971.669,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:46:11 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:46:11 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49852',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTPS' => 'on',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417971.669,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:46:11 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8
+[2013-04-08 18:46:11 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:46:11 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:46:11 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:46:11 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:18;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365417953;}
+[2013-04-08 18:46:11 CST][debug][default]Found route: c-a
+[2013-04-08 18:46:11 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:46:11 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49852',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTPS' => 'on',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417971.669,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:46:11 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:46:11 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:46:11 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '49',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49852',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '443',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTPS' => 'on',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CONTENT_LENGTH' => '49',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_ORIGIN' => 'http://www.weibotui.com',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417971.669,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:46:11 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 18:46:11 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 18:46:11 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 18:46:11 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 18:46:11 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 18:46:11 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=1gR0h66Vt5y0am01oTLph4b12e9ccf6c".
+[2013-04-08 18:46:11 CST][info][default]Execution time: 0.14413690567017(s).
+[2013-04-08 18:46:12 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49854',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417972.025,
+  'REQUEST_TIME' => 1365417972,
+)
+[2013-04-08 18:46:12 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:46:12 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49854',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417972.025,
+  'REQUEST_TIME' => 1365417972,
+)
+[2013-04-08 18:46:12 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99
+[2013-04-08 18:46:12 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:46:12 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:46:12 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:46:12 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:19;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365417971;}
+[2013-04-08 18:46:12 CST][debug][default]Found route: c-a
+[2013-04-08 18:46:12 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:46:12 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49854',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417972.025,
+  'REQUEST_TIME' => 1365417972,
+)
+[2013-04-08 18:46:12 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:46:12 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:46:12 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/auth/authorize&redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99',
+  'REQUEST_METHOD' => 'GET',
+  'CONTENT_TYPE' => '',
+  'CONTENT_LENGTH' => '',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1gR0h66Vt5y0am01oTLph4b12e9ccf6c&client_id=10000&signature=f3732e93ff763a411140ebae63bccc99',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '172.16.250.1',
+  'REMOTE_PORT' => '49854',
+  'SERVER_ADDR' => '172.16.250.131',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_HOST' => 'www.weibotui.com',
+  'HTTP_CONNECTION' => 'keep-alive',
+  'HTTP_CACHE_CONTROL' => 'max-age=0',
+  'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22',
+  'HTTP_REFERER' => 'http://www.weibotui.com/auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D33GAwC9VA5N0bv8VLtxLeh0ac057e8a9&client_id=10000&signature=39500d0962ee3fe8b48101be9c1303c8',
+  'HTTP_ACCEPT_ENCODING' => 'gzip,deflate,sdch',
+  'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8',
+  'HTTP_ACCEPT_CHARSET' => 'GBK,utf-8;q=0.7,*;q=0.3',
+  'HTTP_COOKIE' => 'PHPSESSID=871i4qa0rfllq9e9ms4oham4k6; Hm_lvt_51bca52b92e4249c303120508e4a5956=1363790483,1364719703; Hm_lpvt_51bca52b92e4249c303120508e4a5956=1365417954',
+  'PHP_SELF' => '/index.php',
+  'REQUEST_TIME_FLOAT' => 1365417972.025,
+  'REQUEST_TIME' => 1365417972,
+)
+[2013-04-08 18:46:12 CST][info][default]Execution time: 0.23819208145142(s).
+[2013-04-08 18:48:22 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:48:22 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e
+[2013-04-08 18:48:22 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:48:22 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:48:22 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:48:22 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:20;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365417972;}
+[2013-04-08 18:48:22 CST][debug][default]Found route: c-a
+[2013-04-08 18:48:22 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:48:22 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:48:22 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:48:22 CST][info][default]Execution time: 0.31238317489624(s).
+[2013-04-08 18:48:35 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:48:35 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=b712d025d94604401b1f8503077cb65e
+[2013-04-08 18:48:35 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:48:35 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:48:35 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:48:35 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:21;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365418102;}
+[2013-04-08 18:48:35 CST][debug][default]Found route: c-a
+[2013-04-08 18:48:35 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:48:35 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:48:35 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:48:35 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 18:48:35 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 18:48:35 CST][debug][default][file:AuthController.php][line:102][fun:authorizeAction]DUMP var: 0
+[2013-04-08 18:48:35 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 18:48:35 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 18:48:35 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 18:48:35 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=4esrgf3G844R9nVq1pOeOIx0e7189bd6".
+[2013-04-08 18:48:35 CST][info][default]Execution time: 0.14643287658691(s).
+[2013-04-08 18:48:35 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:48:35 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D4esrgf3G844R9nVq1pOeOIx0e7189bd6&client_id=10000&signature=343e83921a5ea897d368a2833197570a
+[2013-04-08 18:48:35 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:48:35 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:48:35 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:48:35 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:22;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365418115;}
+[2013-04-08 18:48:35 CST][debug][default]Found route: c-a
+[2013-04-08 18:48:35 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 18:48:35 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:48:35 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:48:35 CST][info][default]Execution time: 0.24205088615417(s).
+[2013-04-08 23:24:34 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:24:34 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D4esrgf3G844R9nVq1pOeOIx0e7189bd6&client_id=10000&signature=343e83921a5ea897d368a2833197570a
+[2013-04-08 23:24:34 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:24:34 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:24:34 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:24:34 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:23;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365418115;}
+[2013-04-08 23:24:34 CST][debug][default]Found route: c-a
+[2013-04-08 23:24:34 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:24:35 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:24:35 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:24:35 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:24:35 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 23:24:35 CST][debug][default][file:AuthController.php][line:102][fun:authorizeAction]DUMP var: 0
+[2013-04-08 23:24:35 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:24:35 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 23:24:35 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 23:24:35 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=1Fzjrwc9V4yobzCRoADYrfU3ce6362c7".
+[2013-04-08 23:24:35 CST][info][default]Execution time: 0.2179651260376(s).
+[2013-04-08 23:24:35 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:24:35 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1Fzjrwc9V4yobzCRoADYrfU3ce6362c7&client_id=10000&signature=6f67a066541c98e4cd60c57bbe8c147e
+[2013-04-08 23:24:35 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:24:35 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:24:35 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:24:35 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:24;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365434674;}
+[2013-04-08 23:24:35 CST][debug][default]Found route: c-a
+[2013-04-08 23:24:35 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:24:35 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:24:35 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:24:35 CST][info][default]Execution time: 0.30461096763611(s).
+[2013-04-08 23:27:10 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:27:10 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1Fzjrwc9V4yobzCRoADYrfU3ce6362c7&client_id=10000&signature=6f67a066541c98e4cd60c57bbe8c147e
+[2013-04-08 23:27:10 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:27:10 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:27:10 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:27:10 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:25;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365434675;}
+[2013-04-08 23:27:10 CST][debug][default]Found route: c-a
+[2013-04-08 23:27:10 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:27:10 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:27:10 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:27:10 CST][info][default]Execution time: 0.27585911750793(s).
+[2013-04-08 23:27:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:27:21 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D1Fzjrwc9V4yobzCRoADYrfU3ce6362c7&client_id=10000&signature=6f67a066541c98e4cd60c57bbe8c147e
+[2013-04-08 23:27:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:27:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:27:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:27:21 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:26;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365434830;}
+[2013-04-08 23:27:21 CST][debug][default]Found route: c-a
+[2013-04-08 23:27:21 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:27:21 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:27:21 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:27:21 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:27:21 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 23:27:21 CST][debug][default][file:AuthController.php][line:102][fun:authorizeAction]DUMP var: 0
+[2013-04-08 23:27:21 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:27:21 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 23:27:21 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 23:27:21 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=3WEZ5LIg4KZbcKOR15XaJm010c28337e".
+[2013-04-08 23:27:21 CST][info][default]Execution time: 0.15072393417358(s).
+[2013-04-08 23:27:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:27:21 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D3WEZ5LIg4KZbcKOR15XaJm010c28337e&client_id=10000&signature=d44fde1ae20156db263b5c0887de6f81
+[2013-04-08 23:27:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:27:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:27:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:27:21 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:27;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365434841;}
+[2013-04-08 23:27:21 CST][debug][default]Found route: c-a
+[2013-04-08 23:27:21 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:27:22 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:27:22 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:27:22 CST][info][default]Execution time: 0.25849199295044(s).
+[2013-04-08 23:50:08 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:50:08 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D3WEZ5LIg4KZbcKOR15XaJm010c28337e&client_id=10000&signature=d44fde1ae20156db263b5c0887de6f81
+[2013-04-08 23:50:08 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:50:08 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:50:08 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:50:08 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:28;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365434841;}
+[2013-04-08 23:50:08 CST][debug][default]Found route: c-a
+[2013-04-08 23:50:08 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:50:08 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:50:08 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:50:08 CST][info][default]Request Exception: Invalid signature!
+[2013-04-08 23:50:08 CST][info][default]Execution time: 0.20996594429016(s).
+[2013-04-08 23:51:42 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:51:42 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 23:51:42 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:51:42 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:51:42 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:51:42 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:29;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436208;}
+[2013-04-08 23:51:42 CST][debug][default]Found route: c-a
+[2013-04-08 23:51:42 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:51:42 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:51:42 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:51:42 CST][info][default]Execution time: 0.26697206497192(s).
+[2013-04-08 23:51:55 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:51:55 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 23:51:55 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:51:55 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:51:55 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:51:55 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:30;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436302;}
+[2013-04-08 23:51:55 CST][debug][default]Found route: c-a
+[2013-04-08 23:51:55 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:51:55 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:51:55 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:51:55 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:51:55 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 23:51:55 CST][debug][default][file:AuthController.php][line:102][fun:authorizeAction]DUMP var: 0
+[2013-04-08 23:51:55 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:51:55 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 23:51:55 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 23:51:55 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=3EzisE6lr4lH85JjO4F4kT5d2554c46f".
+[2013-04-08 23:51:55 CST][info][default]Execution time: 0.16492199897766(s).
+[2013-04-08 23:51:55 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:51:55 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D3EzisE6lr4lH85JjO4F4kT5d2554c46f&client_id=10000&signature=a42731872d634a85a0722c527ef1f617
+[2013-04-08 23:51:55 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:51:55 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:51:55 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:51:55 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:31;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436315;}
+[2013-04-08 23:51:55 CST][debug][default]Found route: c-a
+[2013-04-08 23:51:55 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:51:55 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:51:55 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:51:55 CST][info][default]Execution time: 0.33998394012451(s).
+[2013-04-08 23:56:43 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:56:43 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 23:56:43 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:56:43 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:56:43 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:56:43 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:32;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436315;}
+[2013-04-08 23:56:43 CST][debug][default]Found route: c-a
+[2013-04-08 23:56:43 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:56:43 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:56:43 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:56:43 CST][info][default]Execution time: 0.26956415176392(s).
+[2013-04-08 23:56:54 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:56:54 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 23:56:54 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:56:54 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:56:54 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:56:54 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:33;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436603;}
+[2013-04-08 23:56:54 CST][debug][default]Found route: c-a
+[2013-04-08 23:56:54 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:56:54 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:56:54 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:56:54 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:56:54 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 23:56:54 CST][debug][default][file:AuthController.php][line:102][fun:authorizeAction]DUMP var: 0
+[2013-04-08 23:56:54 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:56:54 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 23:56:54 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 23:56:54 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=49Yz99bWa5008MGCIycK%21%21L8518fc57b".
+[2013-04-08 23:56:54 CST][info][default]Execution time: 0.14604878425598(s).
+[2013-04-08 23:56:55 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:56:55 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D49Yz99bWa5008MGCIycK%2521%2521L8518fc57b&client_id=10000&signature=a4a75857319d15261a9bdcff302067c6
+[2013-04-08 23:56:55 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:56:55 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:56:55 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:56:55 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:34;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436614;}
+[2013-04-08 23:56:55 CST][debug][default]Found route: c-a
+[2013-04-08 23:56:55 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:56:55 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:56:55 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:56:55 CST][info][default]Execution time: 0.25199413299561(s).
+[2013-04-08 23:58:20 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:58:20 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard%3Fticket%3D49Yz99bWa5008MGCIycK%2521%2521L8518fc57b&client_id=10000&signature=a4a75857319d15261a9bdcff302067c6
+[2013-04-08 23:58:20 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:58:20 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:58:20 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:58:20 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:35;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436614;}
+[2013-04-08 23:58:20 CST][debug][default]Found route: c-a
+[2013-04-08 23:58:20 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][default][file:AuthController.php][line:102][fun:authorizeAction]DUMP var: 0
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 23:58:21 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=3WlT6d8%21O4otaqrR0KCcNlHfd542d2d2".
+[2013-04-08 23:58:21 CST][info][default]Execution time: 0.16109204292297(s).
+[2013-04-08 23:59:04 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:59:04 CST][debug][default]REQ: /
+[2013-04-08 23:59:04 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:59:04 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:59:04 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:59:04 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:36;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436700;}
+[2013-04-08 23:59:04 CST][debug][default]Found route: root
+[2013-04-08 23:59:04 CST][verbose][default]Dispatching route: WBT > Home > index
+[2013-04-08 23:59:04 CST][info][default]Execution time: 0.15128207206726(s).
+[2013-04-08 23:59:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:59:21 CST][debug][default]REQ: /
+[2013-04-08 23:59:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:59:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:59:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:59:21 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:37;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436744;}
+[2013-04-08 23:59:21 CST][debug][default]Found route: root
+[2013-04-08 23:59:21 CST][verbose][default]Dispatching route: WBT > Home > index
+[2013-04-08 23:59:21 CST][info][default]Execution time: 0.22759079933167(s).
+[2013-04-08 23:59:23 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:59:23 CST][debug][default]REQ: /auth/index
+[2013-04-08 23:59:23 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:59:23 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:59:23 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:59:23 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:38;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436761;}
+[2013-04-08 23:59:23 CST][debug][default]Found route: c-a
+[2013-04-08 23:59:23 CST][verbose][default]Dispatching route: WBT > Auth > index
+[2013-04-08 23:59:23 CST][info][default]Execution time: 0.18207406997681(s).
+[2013-04-08 23:59:25 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:59:25 CST][debug][default]REQ: /auth/index
+[2013-04-08 23:59:25 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:59:25 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:59:25 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:59:25 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:39;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436762;}
+[2013-04-08 23:59:25 CST][debug][default]Found route: c-a
+[2013-04-08 23:59:25 CST][verbose][default]Dispatching route: WBT > Auth > index
+[2013-04-08 23:59:25 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:59:25 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-04-08 23:59:25 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-04-08 23:59:25 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`nick_name` AS profile_nick_name,pp.`gender` AS profile_gender,pp.`avatar` AS profile_avatar,pp.`description` AS profile_description FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-04-08 23:59:25 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-08 23:59:25 CST][debug][diag]SELECT SQL: SELECT `role` FROM `user_with_role` WHERE `user`=?
+[2013-04-08 23:59:25 CST][debug][diag]PARAMS: [["32b6451fde9d47339e38d5cbb1c5f292","uuid"],["172.16.250.1","ipv4"],[100000,"int"],["weibotui","text"]]
+[2013-04-08 23:59:25 CST][debug][diag]INSERT SQL: INSERT INTO `user_login_record` (`user_login_record_id`, `_created_at`, `ip_address`, `user`, `type`) VALUES (?, NOW(), ?, ?, ?)
+[2013-04-08 23:59:25 CST][debug][default]Redirected to "http://www.weibotui.com/home/weibotui/index".
+[2013-04-08 23:59:25 CST][info][default]Execution time: 0.14224195480347(s).
+[2013-04-08 23:59:25 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:59:25 CST][debug][default]REQ: /home/weibotui/index
+[2013-04-08 23:59:25 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:59:25 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:59:25 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:59:25 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:4:{s:7:"counter";i:40;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436765;s:4:"auth";a:1:{i:0;s:8:"weibotui";}}auth.weibotui|a:18:{s:7:"user_id";s:6:"100000";s:11:"_created_at";s:19:"2013-04-08 23:44:12";s:11:"_updated_at";s:19:"2013-04-08 23:44:13";s:11:"_is_deleted";s:1:"0";s:8:"username";s:22:"weibotui@kingcores.com";s:8:"password";s:32:"e1058f57f7ebf9eb48bb1b39320813e4";s:13:"password_salt";s:8:"55477231";s:11:"preferences";s:2:"{}";s:6:"status";s:9:"activated";s:17:"nonactivated_time";s:19:"2013-04-08 23:44:12";s:14:"activated_time";s:19:"2013-04-08 23:44:12";s:13:"disabled_time";N;s:10:"status_log";s:12:"nonactivated";s:7:"profile";s:32:"EA16237DD9D448EFAC79D68313A504E7";s:17:"profile_nick_name";s:9:"微博推";s:14:"profile_gender";s:4:"male";s:14:"profile_avatar";s:30:"/upload/user/100000/avatar.png";s:19:"profile_description";N;}role.weibotui|a:4:{i:0;s:10:"advertiser";i:1;s:7:"sn_user";i:2;s:5:"staff";i:3;s:5:"tuike";}
+[2013-04-08 23:59:25 CST][debug][default]Found route: m-c-a
+[2013-04-08 23:59:25 CST][verbose][default]Dispatching route: WBT > Home > Weibotui > index
+[2013-04-08 23:59:25 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-08 23:59:25 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`_updated_at`,`deposit_balance`,`income_balance`,`points`,`user` FROM `user_asset` WHERE `user`=? LIMIT 0,1
+[2013-04-08 23:59:25 CST][info][default]Execution time: 0.30141305923462(s).
+[2013-04-08 23:59:29 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:59:29 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=a6b8f7c029e32842b370fb507abba743
+[2013-04-08 23:59:29 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:59:29 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:59:29 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:59:29 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:4:{s:7:"counter";i:41;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365436765;s:4:"auth";a:1:{i:0;s:8:"weibotui";}}auth.weibotui|a:18:{s:7:"user_id";s:6:"100000";s:11:"_created_at";s:19:"2013-04-08 23:44:12";s:11:"_updated_at";s:19:"2013-04-08 23:44:13";s:11:"_is_deleted";s:1:"0";s:8:"username";s:22:"weibotui@kingcores.com";s:8:"password";s:32:"e1058f57f7ebf9eb48bb1b39320813e4";s:13:"password_salt";s:8:"55477231";s:11:"preferences";s:2:"{}";s:6:"status";s:9:"activated";s:17:"nonactivated_time";s:19:"2013-04-08 23:44:12";s:14:"activated_time";s:19:"2013-04-08 23:44:12";s:13:"disabled_time";N;s:10:"status_log";s:12:"nonactivated";s:7:"profile";s:32:"EA16237DD9D448EFAC79D68313A504E7";s:17:"profile_nick_name";s:9:"微博推";s:14:"profile_gender";s:4:"male";s:14:"profile_avatar";s:30:"/upload/user/100000/avatar.png";s:19:"profile_description";N;}role.weibotui|a:4:{i:0;s:10:"advertiser";i:1;s:7:"sn_user";i:2;s:5:"staff";i:3;s:5:"tuike";}
+[2013-04-08 23:59:29 CST][debug][default]Found route: c-a
+[2013-04-08 23:59:29 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-08 23:59:29 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:59:29 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:59:29 CST][info][default]Execution time: 0.29700613021851(s).

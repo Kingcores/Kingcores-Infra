@@ -1,0 +1,71 @@
+{% extends "SO/bootstrap.twig" %}
+
+{% set actionName = context('gateway.action') %}
+
+{% block css_link %}
+    <link href="/styles/home.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<header class="top">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <h2 class="logo">微博推 <span class="label label-info logo-addon"> 社交管理 </span></h2>
+            </div>
+            <div class="span3">
+                &nbsp;
+            </div>
+            <div class="span5">
+                <ul class="nav nav-pills pull-right">
+                    <li{% if actionName == 'dashboard' %} class="active"{% endif %}>
+                        <a href="/">首页</a>
+                    </li>
+{% if loginProfile %}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="{{ context('app.root') }}{{ loginProfile.home_token }}" title="{{ loginProfile.display_name }}">
+                            {{ loginProfile.display_name }}
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- links -->
+                            <li><a tabindex="-1" href="{{ route('m-c-a', ['user', 'account', 'setting']) }}">帐号设置</a></li>
+                            <li class="divider"></li>
+                            <li><a tabindex="-1" href="/account/logout">退出登录</a></li>
+                        </ul>
+                    </li>
+{% else %}
+                    <li><a href="http://www.weibotui.com/auth/index?_from={{ context('gateway.url')|url_encode }}">登录</a></li>
+{% endif %}
+                    <li><a href="#">帮助</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id="content">
+<div class="container">
+{% if _eventMessage %}
+    <div id="eventMessage" class="alert{{ _eventAlertClass }}"><button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>{{ _eventMessage|raw }}</strong>
+    </div>
+{% endif %}
+{% block main %}{% endblock %}
+</div>
+</section>
+
+<footer class="bottom">
+    <div class="navbar bottom-bar">
+        <div class="navbar-inner bottom-bar-inner">
+            Copyright &copy; 2011-2013 <a class="label label-warning" href="http://www.kingcores.com">金果创新</a> 版权所有&nbsp;&nbsp;京ICP备11034128号-3
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block js_link_foot %}
+    <script src="/libs/wbt/sdk.js"></script>
+{% endblock %}

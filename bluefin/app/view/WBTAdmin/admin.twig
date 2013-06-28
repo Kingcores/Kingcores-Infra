@@ -1,0 +1,59 @@
+{% extends "WBTAdmin/bootstrap.twig" %}
+
+{% block body %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">微博推业务管理</a>
+      <div class="nav-collapse collapse">
+        <p class="navbar-text pull-right">
+          <a href="#" class="navbar-link">{{ _.auth.wbt_admin.profile_display_name }}</a>
+        </p>
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="padding-top: 60px;">
+  <div class="row-fluid">
+    <div class="span3">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">用户管理</li>
+          <li><a href="/user/online_list">在线用户</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div><!--/span-->
+    <div class="span9">
+
+                <ul class="breadcrumb">
+                  <li><a href="/home">管理系统</a> <span class="divider">/</span></li>
+                  <li><a href="/user">用户管理</a> <span class="divider">/</span></li>
+                  <li class="active">在线用户</li>
+                </ul>
+
+      <div class="row-fluid">
+{% block content %}{% endblock %}
+      </div><!--/row-->
+    </div><!--/span-->
+  </div><!--/row-->
+
+  <hr>
+
+  <footer>
+    <p>&copy;<a href="http://www.kingcores.com">金果创新</a> 2012</p>
+  </footer>
+{% endblock %}

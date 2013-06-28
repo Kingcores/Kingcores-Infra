@@ -1,0 +1,13 @@
+oauth_client:
+  -
+    oauth_client_id: 10000
+    name: 微博推社交管理
+    secret: 46f1ee3fb5e6833b645cb55bedeeb053
+    level: private_client
+    redirect_uri: http://so.weibotui.com
+  -
+    oauth_client_id: 10001
+    name: 长微博高级版
+    secret: b084ff59d3588b62e40e81c06186a709
+    level: private_client
+    redirect_uri: http://cwb.weibotui.com

@@ -1,0 +1,9 @@
+1ffffffff: 登录失败，请重试。
+1fffffffe: 用户名或密码错误。
+1fffffffd: 用户名或密码错误。
+1fffffffc: 验证码错误或已失效，请重试。
+1fffffff6: 该帐号已被停用。
+4ffffffff: 支付宝支付失败。
+4fffffffe: 支付宝返回结果验证失败。
+3fffffffe: 此帐号激活链接无效或已失效。
+3ffffffff: 此帐号还未激活。

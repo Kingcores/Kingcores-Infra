@@ -1,0 +1,32 @@
+{% extends "WBT/home.twig" %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="banner-mod">
+                    <div class="banner-mod-inner">
+                        <div class="clearfix">
+                            <div class="banner-sub-block pull-left">
+                                <a href="#">
+                                    <img src="{{ loginProfile.profile_avatar|default('/images/avatar_default2.png') }}" class="img-polaroid">
+                                </a>
+                            </div>
+                            <div class="banner-sub-block pull-left">
+                                <p class="p-tight">
+                                    <span class="text18">你好，</span><span class="text18 text-info">{{ loginProfile.profile_nick_name }}</span>
+                                </p>
+                                <p class="p-tight">
+                                    <span class="text14">{{ loginProfile.profile_description|slice(0,20)|default('个人简介') }}</span> <a class="text14" href="javascript:bluefinBH.ajaxDialog('/form/personal_description/show');">修改</a>
+                                </p>
+                                <p class="p-tight-bottom">
+                                    <span class="text14">您的帐号还未激活，请点击</span> <a href="/home/weibotui/activate">发送激活邮件</a><span class="text14">，到 </span><span class="text-success">{{ loginProfile.username }}</span><span> 进行帐号激活。</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

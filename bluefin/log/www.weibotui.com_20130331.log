@@ -1,0 +1,78 @@
+[2013-03-31 11:57:18 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 11:57:18 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21
+[2013-03-31 11:57:18 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 11:57:18 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 11:57:18 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 11:57:18 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: 
+[2013-03-31 11:57:18 CST][debug][default]Found route: c-a
+[2013-03-31 11:57:18 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-03-31 11:57:18 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-03-31 11:57:18 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-03-31 11:57:18 CST][info][default]Execution time: 0.35742211341858(s).
+[2013-03-31 11:57:25 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 11:57:25 CST][debug][default]REQ: /
+[2013-03-31 11:57:25 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 11:57:25 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 11:57:25 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 11:57:25 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:2:{s:7:"counter";i:0;s:10:"created_at";i:1364702237;}
+[2013-03-31 11:57:25 CST][debug][default]Found route: root
+[2013-03-31 11:57:25 CST][verbose][default]Dispatching route: WBT > Home > index
+[2013-03-31 11:57:25 CST][info][default]Execution time: 0.20880389213562(s).
+[2013-03-31 12:00:04 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 12:00:04 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21
+[2013-03-31 12:00:04 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 12:00:04 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 12:00:04 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 12:00:04 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:1;s:10:"created_at";i:1364702237;s:10:"updated_at";i:1364702245;}
+[2013-03-31 12:00:04 CST][debug][default]Found route: c-a
+[2013-03-31 12:00:04 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-03-31 12:00:04 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-03-31 12:00:04 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-03-31 12:00:05 CST][info][default]Execution time: 0.36061310768127(s).
+[2013-03-31 12:00:13 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 12:00:13 CST][debug][default]REQ: /register?_from=B64L2F1dGgvYXV0aG9yaXplP3JlZGlyZWN0X3VyaT1odHRwJTNBJTJGJTJGc28ud2VpYm90dWkuY29tJTJGaG9tZSUyRmRhc2hib2FyZCZjbGllbnRfaWQ9MTAwMDAmc2lnbmF0dXJlPWRmMTE5YTc5NDdiODgzYzc2YzdkY2JlOGYzNWQzYzIxJnJlcXVlc3Q9M1NPV2RxOFBzNCUyMU05R09MODZDeDdDaWNmNDhiYmI3MQ%3D%3D&request=3SOWdq8Ps4%21M9GOL86Cx7Cicf48bbb71
+[2013-03-31 12:00:13 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 12:00:13 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 12:00:13 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 12:00:13 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:2;s:10:"created_at";i:1364702237;s:10:"updated_at";i:1364702404;}
+[2013-03-31 12:00:13 CST][debug][default]Found route: c
+[2013-03-31 12:00:13 CST][verbose][default]Dispatching route: WBT > Register > index
+[2013-03-31 12:00:13 CST][debug][diag]Source url: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21&request=3SOWdq8Ps4%21M9GOL86Cx7Cicf48bbb71
+[2013-03-31 12:00:13 CST][info][default]Execution time: 0.33245587348938(s).
+[2013-03-31 12:00:14 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 12:00:14 CST][debug][default]REQ: /register/eula
+[2013-03-31 12:00:14 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 12:00:14 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 12:00:14 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 12:00:14 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:3;s:10:"created_at";i:1364702237;s:10:"updated_at";i:1364702413;}
+[2013-03-31 12:00:14 CST][debug][default]Found route: c-a
+[2013-03-31 12:00:14 CST][verbose][default]Dispatching route: WBT > Register > eula
+[2013-03-31 12:00:14 CST][info][default]Execution time: 0.11337900161743(s).
+[2013-03-31 16:48:30 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 16:48:30 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21
+[2013-03-31 16:48:30 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 16:48:30 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 16:48:30 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 16:48:30 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:4;s:10:"created_at";i:1364702237;s:10:"updated_at";i:1364702414;}
+[2013-03-31 16:48:30 CST][debug][default]Found route: c-a
+[2013-03-31 16:48:30 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-03-31 16:48:30 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-03-31 16:48:30 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-03-31 16:48:30 CST][info][default]Execution time: 0.249027967453(s).
+[2013-03-31 16:48:51 CST][info][default]--------------------------------------------------------------------------------
+[2013-03-31 16:48:51 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&client_id=10000&signature=df119a7947b883c76c7dcbe8f35d3c21
+[2013-03-31 16:48:51 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-03-31 16:48:51 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-03-31 16:48:51 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-03-31 16:48:51 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:3:{s:7:"counter";i:5;s:10:"created_at";i:1364702237;s:10:"updated_at";i:1364719710;}
+[2013-03-31 16:48:51 CST][debug][default]Found route: c-a
+[2013-03-31 16:48:51 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-03-31 16:48:51 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-03-31 16:48:51 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-03-31 16:48:51 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-31 16:48:51 CST][debug][diag]SELECT SQL: SELECT `user_id`,`_created_at`,`_updated_at`,`_is_deleted`,`username`,`password`,`password_salt`,`preferences`,`status`,`nonactivated_time`,`activated_time`,`disabled_time`,`status_log`,HEX(`profile`) AS profile FROM `user` WHERE `username`=? LIMIT 0,1
+[2013-03-31 16:48:51 CST][debug][diag]PARAMS: [["weibotui@kingcores.com","email"]]
+[2013-03-31 16:48:51 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`username`=? LIMIT 0,1
+[2013-03-31 16:48:51 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-03-31 16:48:51 CST][debug][default]Redirected to "http://so.weibotui.com/home/dashboard?ticket=3SGPXUgTt40j9q5YozFmiLWa7804f40c".
+[2013-03-31 16:48:51 CST][info][default]Execution time: 0.15620398521423(s).

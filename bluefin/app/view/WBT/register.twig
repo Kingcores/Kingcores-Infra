@@ -1,0 +1,28 @@
+{% extends "WBT/bootstrap.twig" %}
+
+{% block css_link %}
+    <link href="/styles/register.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="box-body">
+        <div>
+            <h2 class="logo pull-left">微博推</h2>
+            {% if _from %}<a class="btn btn-link top-right-link pull-right" href="{{ _from }}">返回</a>{% else %}<a class="btn btn-link top-right-link pull-right" href="{{ my_url('auth/index') }}">已经有微博推账号？点击这里登录</a>{% endif %}
+        </div>
+        <div class="clearfix"></div>
+{% if _eventMessage %}
+        <div id="eventMessage" class="alert{{ _eventAlertClass }}"><button type="button" class="close" data-dismiss="alert">×</button>
+         <strong>{{ _eventMessage|raw }}</strong>
+        </div>
+{% endif %}
+        <div class="well-register">
+{% block content %}{% endblock %}
+        </div>
+    </div>
+    <div class="text-align-center">
+        <span>Copyright &copy; 2011-2013 <a href="http://www.kingcores.com">金果创新</a> 版权所有 京ICP备11034128号-3</span>
+    </div>
+</div>
+{% endblock %}

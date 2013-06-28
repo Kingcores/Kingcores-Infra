@@ -1,0 +1,15 @@
+{% extends "WBT/register.twig" %}
+
+{% block content %}
+                <legend><h4 class="status-title">离注册成功还差最后一步。</h4></legend>
+                <div class="progress">
+                    <div class="bar bar-success" style="width: 33%;">第1步：填写信息</div>
+                    <div class="bar bar-info" style="width: 33%;">第2步：激活帐号</div>
+                    <div class="bar" style="width: 34%;">第3步：注册成功</div>
+                </div>
+                <div>
+                    尊敬的用户：<br>　　您好，微博推已经向您的邮箱 <span class="text-success">{{email}}</span> 发送了激活确认邮件。请您登录邮箱按照邮件中的提示操作。<hr>
+                    如果您的邮箱已经通过验证，请点击{% if _from %} <a href="{{ _from }}">继续</a> 您的访问。{% else %} <a href="{{ my_url('home/weibotui/index') }}">开始</a> 使用微博推平台。{% endif %}<br><br>
+                    如果您的邮箱没有收到相关邮件，请点击 <a href="{{resendUrl}}"> 重发 </a>，系统将再次发送激活确认邮件到你邮箱。<br><br>
+                </div>
+{% endblock %}

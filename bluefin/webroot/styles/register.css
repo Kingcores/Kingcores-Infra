@@ -1,0 +1,38 @@
+@charset"utf-8";
+
+body{background-color:#ffffff;}
+
+.box-body{
+    max-width: 500px;
+    margin: 20px auto 20px;
+}
+
+/*LOGO*/
+.logo {
+    margin: 0 0 4px 0;
+    background: url(/images/logo_mini.png) no-repeat;
+    text-indent: 40px;
+}
+
+.alert {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.well-register {
+    padding: 20px 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border:2px solid #d9d9d9;
+    background-color: #ffffff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 0 5px rgba(198, 198, 198, 1);
+    -moz-box-shadow: 0 0 5px rgba(198, 198, 198, 1);
+    box-shadow: 0 0 5px rgba(198, 198, 198, 1);
+}
+
+.top-right-link {
+    margin-top: 10px;
+}

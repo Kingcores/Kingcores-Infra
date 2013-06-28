@@ -1,0 +1,9 @@
+<div{{ component.renderAttributes|raw }}>
+  <ul>
+    <li{% if component.startPage == 1 %} class="disabled"{% endif %}><a href="#" data-page="1">«</a></li>
+{% for i in range(component.startPage, component.endPage) %}
+    <li{% if component.currentPage == i %} class="active"{% endif %}><a href="#" data-page="{{ i }}">{{ i }}</a></li>
+{% endfor %}
+    <li{% if component.endPage == component.totalPages %} class="disabled"{% endif %}><a href="#" data-page="{{ component.totalPages }}">»</a></li>
+  </ul>
+</div>

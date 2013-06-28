@@ -1,0 +1,12 @@
+[2013-04-11 17:51:30 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-11 17:51:30 CST][debug][default]REQ: /auth/authorize?redirect_uri=http%3A%2F%2Fso.weibotui.com%2Fhome%2Fdashboard&request=3zaisreQV4KwadN1y2vsUuq23a130952&client_id=10000&signature=d8ba31198b3f091d3d50e54d05e7077c
+[2013-04-11 17:51:30 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-11 17:51:30 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-11 17:51:30 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-11 17:51:30 CST][debug][diag]Read session[871i4qa0rfllq9e9ms4oham4k6]: app|a:4:{s:7:"counter";i:288;s:10:"created_at";i:1365408760;s:10:"updated_at";i:1365584363;s:4:"auth";a:1:{i:0;s:8:"weibotui";}}
+[2013-04-11 17:51:30 CST][debug][default]Found route: c-a
+[2013-04-11 17:51:30 CST][verbose][default]Dispatching route: WBT > Auth > authorize
+[2013-04-11 17:51:30 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-11 17:51:30 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-11 17:51:30 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-11 17:51:30 CST][info][default]Execution time: 0.33089089393616(s).

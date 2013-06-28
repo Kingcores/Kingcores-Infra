@@ -1,0 +1,36 @@
+{% extends "WBTAdmin/bootstrap.twig" %}
+
+{% block body %}
+<div class="container content-area">
+    <div class="row">
+        <div class="offset4 span4">
+            <div class="login-unit">
+                <form method="post" action="{{ _.gateway.path }}">
+                    <legend><h3>微博推业务管理系统</h3></legend>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="text" id="inputUsername" name="username" placeholder="用户名">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <input type="password" id="inputPassword" name="password" placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">登录</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <a href="http://www.weibotui.com">微博推推广</a> | <a href="http://so.weibotui.com">微博推社交</a> | <a href="http://wx.weibotui.com">微博推微信</a>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_req_token" value="{{ _requestToken }}">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+admin:
+  -
+    username: admin
+    password: admin
+    status: activated
+
+admin_with_role:
+  -
+    admin: { username: admin }
+    role: { role_name: administrators }

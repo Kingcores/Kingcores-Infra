@@ -1,0 +1,15 @@
+sample1:
+  comment: 'sample1'
+  locale: zh_CN
+
+  db:
+    type: mysql
+    adapter: PDO_MYSQL
+    engine: InnoDB
+    charset: utf8
+    connection:
+      host: 127.0.0.1
+      port: 3306
+      username: root
+      password: root、
+      dbname: sample1

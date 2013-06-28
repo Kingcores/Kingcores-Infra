@@ -1,0 +1,83 @@
+{% extends "WBT/auth.twig" %}
+
+{% block main %}
+    <div class="row">
+        <div class="span8 offset2 bound-form">
+            <div class="hero-unit">
+                <form method="post" action="{{ route() }}">
+                    <legend><h4 class="form-title">注册成为微博推平台推客。</h4></legend>                      <div class="control-group">
+                      <label class="control-label" for="inputUsername"><i class="icon-envelope"></i>用户名：</label>
+                      <div class="controls">
+                          <input class="input-large" type="email" id="inputUsername" value="{{ username }}" name="username" placeholder="电子邮箱">
+                          <span class="help-inline hide">错误提示</span>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword"><i class="icon-asterisk"></i>密码：</label>
+                        <div class="controls">
+                          <input class="input-large" type="password" id="inputPassword" value="{{ password }}" name="password" placeholder="密码">
+                          <input class="input-large" type="password" id="inputPasswordConfirm" name="password_confirm" placeholder="密码确认">
+                            <span class="help-block hide">错误提示</span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                      <label class="control-label" for="inputMobile"><i class="icon-user"></i>手机号码：</label>
+                      <div class="controls">
+                          <input class="input-medium" type="text" id="inputMobile" name="mobile" value="{{ mobile }}" placeholder="手机号码">
+                          <span class="help-inline">错误提示</span>
+                      </div>
+                    </div>
+                    <div class="control-group">
+                          <label class="control-label" for="inputAuthCode"><i
+                                  class="icon-certificate"></i>验证码：</label>
+                          <div class="controls">
+                              <input class="input-small" type="text" id="inputAuthCode" name="auth_code"
+                                     placeholder="验证码">
+                               <span class="help-inline">
+                                   <a href="javascript:refresh_auth_code()">
+                                      <img id="auth_code_img" src="../../raw/auth_image.php" width="100"
+                                           height="35"/></a>
+                               </span>
+                               <span class="help-inline"><a href="javascript:refresh_auth_code()">换一张验证码</a></span>
+                               <span class="help-inline hide">错误提示</span>
+                          </div>
+                        </div>
+                    <div class="control-group">
+                        <label class="control-label" for="textSerivceTerms"><i class="icon-file"></i>推客协议：（<i class="icon-share-alt"></i><a href="#">全文阅读</a>）</label>
+                        <div class="controls">
+                            <textarea id="textSerivceTerms" style="width: 97%;" rows="3" readonly>&nbsp;
+                            </textarea>
+                        </div>
+                        <div class="controls">
+                            <label class="checkbox">
+                              <input id="inputEula" type="checkbox" name="eula">
+                              我同意以上协议
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <input type="hidden" name="from" value="{{ from }}">
+                        <button id="buttonSubmit" type="submit" class="btn btn-primary" disabled>注册</button>
+                        <a href="{{ from }}" class="btn">取消</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block doc_ready %}
+{{ parent() }}
+
+            $('#inputEula').click(function() {
+                if ($(this).attr('checked') == 'checked')
+                {
+                    $('#buttonSubmit').removeAttr('disabled');
+                }
+                else
+                {
+                    $('#buttonSubmit').attr('disabled', 'disabled');
+                }
+            });
+
+{% endblock %}

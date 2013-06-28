@@ -1,0 +1,47 @@
+#企业信息模式
+
+#------------------------------------------------------------------------------
+#预编译指令
+!commentLocale: zh_CN
+
+#------------------------------------------------------------------------------
+#有限状态表
+
+$corporate_status:
+  comment: '企业状态'
+  states:
+    unverified: '未审核'
+    verified: '已审核'
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+#企业可以由用户添加，用户添加后，自动成为该企业的管理员
+#企业管理员可以转移企业所有权
+
+corporate:
+  comment: '企业'
+  with: [ auto_increment_id, update_timestamp, logical_deletion ]
+  has:
+    name: core.name
+    short_name: core.short_name
+    address: address.address
+    website: url|comment=企业网址
+    description: text|comment=企业简介
+    admin: system.user|comment=管理员
+    status: corporate_status|=unverified
+  keys:
+    name|u: name
+    short_name|u: short_name
+    admin|u: admin
+
+#------------------------------------------------------------------------------
+#复杂关系定义
+
+&staff_in_corporate:
+  comment: '企业包含的员工用户'
+  with: [ auto_increment_id, create_timestamp ]
+  between:
+    user: system.user
+    company: corporate
+

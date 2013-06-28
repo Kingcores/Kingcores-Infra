@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }} | 微博推业务管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="金果创新（北京）科技有限公司">
+    <link type="text/css" href="/libs/jquery-bootstrap/css/custom-theme/jquery-ui-1.9.2.custom.css" rel="stylesheet" />
+    <link type="text/css" href="/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="/libs/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="/libs/bluefin/bootstrap-addons.css" rel="stylesheet">
+    <link type="text/css" href="/libs/bootstrap-timepicker/compiled/timepicker.css" rel="stylesheet">
+    <link type="text/css" href="/styles/admin.css" rel="stylesheet">
+{% block css_link %}{% endblock %}
+{% block js_link_head %}{% endblock %}
+{% block extra_head %}{% endblock %}
+    <link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body>
+{% block body %}{% endblock %}
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/jquery-bootstrap/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/libs/bluefin/bootstrap-helpers.js"></script>
+{% block js_link_foot %}{% endblock %}
+{% block extra_foot_script %}{% endblock %}
+    <script type="text/javascript">
+       $(function (){
+{% if _eventMessage %}
+           bluefinBH.showInfo('{{ _eventMessage }}');
+{% endif %}
+{% if _errorMessage %}
+           bluefinBH.showError('{{ _errorMessage }}');
+{% endif %}
+{% block doc_ready %}{% endblock %}
+       });
+    </script>
+    <!--[if IE]>
+    <script>
+        $(function (){
+            bluefinBH.showInfo('建议不要使用IE浏览器使用本系统。');
+        });
+    </script>
+    <![endif]-->
+</body>
+</html>

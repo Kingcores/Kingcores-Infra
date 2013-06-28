@@ -1,0 +1,251 @@
+@charset"utf-8";
+
+body {
+    background-color: #f2f2f2;
+}
+
+.top {
+    height: 42px;
+    padding-top: 5px;
+    background-color: #c2c2c2;
+    background: -moz-linear-gradient(#fafafa, #c2c2c2);
+    background: -webkit-linear-gradient(#fafafa, #c2c2c2);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#c2c2c2')";
+    border-bottom: 1px solid #9a9a9a;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4), 0 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin: 0 0 4px 0;
+    background: url(/images/logo_mini.png) no-repeat;
+    text-indent: 40px;
+}
+
+.logo-addon {
+    text-indent: 0;
+}
+
+.top-search {
+    margin: 4px 0;
+}
+
+#content {
+    padding-top: 20px;
+}
+
+.form-unit {
+    padding: 30px 60px;
+    margin-bottom: 30px;
+    border:2px solid #d9d9d9;
+    background-color: #ffffff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.btn-toolbar {
+    margin: 0;
+}
+
+.thumbnail {
+    background-color: #fff;
+}
+
+.th-content {
+    padding: 5px 10px;
+}
+
+.th-content-img {
+    padding: 10px;
+    text-align: center;
+}
+
+.th-content-img img {
+    max-height: 500px;
+}
+
+.th-content-gray {
+    padding: 10px;
+    background: #f2f2f2;
+}
+
+.retweet-text {
+    margin: 0 0 0 55px;
+}
+
+.retweet-text2 {
+    margin: 0 0 0 20px;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+}
+
+.bottom-bar {
+    margin-bottom: 0;
+}
+
+.bottom-bar-inner {
+    background-color: #08c;
+    background: -moz-linear-gradient(top, #0ae, #08c);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#0ae), to(#08c));
+    background: -webkit-linear-gradient(top, #0ae, #08c);
+    background: -o-linear-gradient(top, #0ae, #08c);
+    background: linear-gradient(to bottom, #0ae, #08c);
+    background-repeat: repeat-x;
+    border: 1px solid #07b;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00aaee', endColorstr='#ff0088cc', GradientType=0)";
+    *zoom: 1;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    text-align: center;
+    padding-top: 8px;
+    color: #fff;
+    min-height: 28px;
+}
+
+.user-info span a {
+    color: #ffffff;
+}
+
+.hover-option {
+    width: 100%;
+    text-align: center
+}
+
+.weibo-content {
+    width: 515px;
+    resize: none
+}
+
+.btn-link {
+    padding: 0 4px;
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.navbar-label {
+    padding: 5px 5px;
+    margin: 5px 5px;
+    font-size: 16px;
+}
+
+.banner-mod {
+    display: block;
+    background: #f6f6f6;
+    -moz-box-shadow: inset 0 0 1px #fff;
+    -webkit-box-shadow: inset 0 0 1px #fff;
+    box-shadow: inset 0 0 1px #fff;
+    width: 100%;
+    border: 1px solid #f1f1f1;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.banner-mod .banner-mod-inner {
+    c
+    padding: 40px 25px 20px 25px;
+    display: block;
+    margin: 7px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 0 20px #f1f1f1 inset;
+    -webkit-box-shadow: 0 0 20px #f1f1f1 inset;
+    box-shadow: 0 0 20px #f1f1f1 inset;
+    border: 1px solid #e1e1e1;
+    background: #fff;
+}
+
+.banner-sub-block {
+    padding: 5px 10px;
+}
+
+.labeled-box {
+  position: relative;
+  margin: 0;
+  padding: 29px 19px 14px;
+  *padding-top: 19px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+.labeled-box:after {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  padding: 3px 7px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #9da0a4;
+  -webkit-border-radius: 4px 0 4px 0;
+     -moz-border-radius: 4px 0 4px 0;
+          border-radius: 4px 0 4px 0;
+}
+
+.labeled-weibo:after {
+    content: "新浪微博";
+}
+
+.labeled-qq-weibo:after {
+    content: "腾讯微博";
+}
+
+/* weighted number */
+.text-xxl-red {
+    font-size: 20px;
+    color: #b94a48;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+.text-xl-orange {
+    font-size: 18px;
+    color: #c09853;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+.text-l-green {
+    font-size: 16px;
+    color: #468847;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+.text-m-blue {
+    font-size: 14px;
+    color: #3a87ad;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+.text-s-grey {
+    font-size: 12px;
+    color: #999999;
+    line-height: 20px;
+    vertical-align: bottom;
+}
+
+/* user asset panel */
+p.p-tight {
+    margin-bottom: 0;
+    padding-bottom: 6px;
+}
+
+p.p-tight-bottom {
+    margin-bottom: 0;
+    margin-top: 6px;
+}
+

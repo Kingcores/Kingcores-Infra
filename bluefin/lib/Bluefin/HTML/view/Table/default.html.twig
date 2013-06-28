@@ -1,0 +1,42 @@
+<table{{ component.renderAttributes|raw }}>
+{% if component.label %}
+  <caption>{{ component.label }}</caption>
+{% endif %}
+  <thead>
+    <tr>
+{% if component.showRecordNo %}
+      <th>{{ text('#', 'view') }}</th>
+{% endif %}
+{% for column in component.headers %}
+      <th{% if column.headerStyle %} style="{{ column.headerStyle }}"{% endif %}>{{ column.name }}</th>
+{% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+{% if component.data %}
+{% for row in component.data %}
+    <tr>
+{% if component.showRecordNo %}
+      <td>{{ component.baseRecordNo + loop.index }}</td>
+{% endif %}
+{% for col in row %}
+{% set column = component.headers[loop.index-1] %}
+      <td{% if column.cellStyle %} style="{{ column.cellStyle }}"{% endif %}>{{ col|raw }}</td>
+{% endfor %}
+    </tr>
+{% endfor %}
+{% else %}
+    <tr>
+      <td colspan="{{ component.numColumns }}">{{ text('No data.', 'view') }}</td>
+    </tr>
+{% endif %}
+{% if component.paging %}
+    <tr>
+      <td colspan="{{ component.numColumns }}">{{ text('Page: %current%/%total%', 'view', {'%current%': component.paging.currentPage, '%total%': component.paging.totalPages }) }}&nbsp;&nbsp;{{ text('Total: %total%', 'view', {'%total%': component.paging.totalRows}) }}</td>
+    </tr>
+{% endif %}
+  </tbody>
+</table>
+{% if component.paging %}
+{{ component.paging|raw }}
+{% endif %}

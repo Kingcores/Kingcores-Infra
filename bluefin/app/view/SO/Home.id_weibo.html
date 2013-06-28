@@ -1,0 +1,205 @@
+{% extends "SO/home.twig" %}
+
+{% block css_link %}
+{{ parent() }}
+    <link href="/libs/jquery-lightbox/css/jquery.lightbox-0.5.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<div class="container">
+            <ul class="thumbnails">
+                <li class="span3">
+                    <div class="thumbnail">
+                        <div class="th-content-img">
+                            <img src="{{ showingProfile.avatar_large }}" alt="微博用户信息">
+                        </div>
+                        <div class="th-content">
+                            <p>
+                                <span class="badge badge-success">&nbsp;{{ showingProfile.screen_name }}&nbsp;</span>
+                                <div id="i{{ showingProfile.id }}"></div>
+                            </p>
+                            <div id='{{ showingProfile.id }}' class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; ">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h5 id="send-weibo-label">发布微博</h5>
+                                </div>
+                                <div style="margin:5px 15px 0px 15px;">
+                                    <span>分享身边的新鲜事儿</span><span id="w{{ showingProfile.id }}_warn" style="float:right">还能输入<em>140</em>字</span>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="">
+                                        <textarea rows="5" id="w{{ showingProfile.id }}" class="weibo-content" name="status" onkeyup="checkText('w{{ showingProfile.id }}', 'btn{{ showingProfile.id }}', 'w{{ showingProfile.id }}_warn', 140)"></textarea>
+                                    </div>
+                                    <div>
+                                        <div id="" style="float: left"><a href="javascript:;" onclick="$('#faceWrap').hide();showFace('w{{ showingProfile.id }}')"><i class="icon-heart"></i>表情</a></div>
+                                        <div style="float:left"><i class="icon-picture"></i>图片</div>
+                                        <div style="float:left"><a href="javascript:;" onclick="insertTopic('', 'w{{ showingProfile.id }}')"><i class="icon-bullhorn"></i>话题</a></div>
+                                        <div style="float:right"><input id="co{{ showingProfile.id }}" type="checkbox" style="margin-bottom: 8px;" onchange="toggleById('datepicker{{ showingProfile.id }}');">定时发布</div>
+                                        <div id='datepicker{{ showingProfile.id }}' style="clear:both;float:right;display: none">发布时间：{{ datetimePicker.setID('dt' ~ showingProfile.id) }}{{ datetimePicker|raw }}</div>
+                                        <div class="faceWrap" id="w{{ showingProfile.id }}_wrap"></div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="btn{{ showingProfile.id }}" uid="{{ showingProfile.id }}"class="btn btn-primary updata-weibo">发布</button>
+                                </div>
+                            </div>
+                            <a  class="btn btn-small btn-danger" data-toggle="modal" href="#{{ showingProfile.id }}"><i class="icon-edit"></i>发布微博</a>
+                            <hr class="soften">
+                            <p>{{ showingProfile.location }}</p>
+                            <p><span class="label label-warning">我的新浪微博</span><br><a
+                                    href="{{ weiboToken.weibo_url }}">{{ weiboToken.weibo_url }}</a>
+                            </p>
+                            <p>{{ showingProfile.description }}</p>
+                            <div class="user-info">
+                                <span class="label label-success"><a href="http://weibo.com/{{ showingProfile.id }}/follow" target="_blank">{{ showingProfile.friends_count }}关注</a></span>
+                                <span class="label label-success">&nbsp;<a href="http://weibo.com/{{ showingProfile.id }}/fans" target="_blank">{{ showingProfile.followers_count }}粉丝</a></span>
+                                <span class="label label-success">&nbsp;<a href="http://weibo.com/{{ showingProfile.id }}/profile" target="_blank">{{ showingProfile.statuses_count }}微博</a></span>
+                            </div>
+                            <p></p>
+                            <p align="center">
+                                <script type="text/javascript" charset="utf-8">
+                                    (function(){
+                                      var _w = 142 , _h = 66;
+                                      var param = {
+                                        url:location.href,
+                                        type:'4',
+                                        count:'1',
+                                        appkey:'{{ weiboToken.app_key }}',
+                                        title: '我在使用微博推展示我的个性微博。',
+                                        pic:'{{ showingProfile.avatar_large }}',
+                                        ralateUid:'{{ showingProfile.id }}',
+                                        language:'zh_cn',
+                                        rnd:new Date().valueOf()
+                                      };
+                                      var temp = [];
+                                      for( var p in param ){
+                                        temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+                                      }
+                                      document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+                                    })()
+                                </script>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                {% for message in userTimeline.statuses %}
+                {% set raw_msg = message.retweeted_status ? message.retweeted_status : message %}
+                <!-- 转发的原创 -->
+                <li class="span3">
+                    <div class="thumbnail">
+                        {% if raw_msg.bmiddle_pic %}
+                        <div class="th-content-img">
+                            <a href="{{ raw_msg.bmiddle_pic }}" alt="微博图片">
+                                <img src="{{ raw_msg.bmiddle_pic }}" alt="微博图片">
+                            </a>
+                        </div>
+                        {% endif %}
+                        <div class="th-content">
+                            <p><a href="http://weibo.com/{{ raw_msg.user.id }}" target="_blank">@{{ raw_msg.user.screen_name }}</a> ：{{ raw_msg.text }}</p>
+                            <ul class="nav nav-pills">
+                                <li class="pull-right"><a
+                                        href="http://api.t.sina.com.cn/{{ raw_msg.user.id }}/statuses/{{ raw_msg.id }}" target="_blank">评论({{ raw_msg.comments_count }})</a></li>
+                                <li class="pull-right"><a
+                                        href="http://api.t.sina.com.cn/{{ raw_msg.user.id }}/statuses/{{ raw_msg.id }}" target="_blank">转发({{ raw_msg.reposts_count }})</a></li>
+                            </ul>
+                        </div>
+                        <!--<p>{{ raw_msg.user.created_at }}</p>-->
+                        {% if message.retweeted_status %}
+                        <div class="th-content-gray">
+                            <div class="clearfix">
+                                <a href="http://weibo.com/{{ message.user.id }}" target="_blank" title="{{ message.user.screen_name }}" class="pull-left">
+                                    <img src="{{ message.user.profile_image_url }}"
+                                         alt="{{ message.user.screen_name }} 头像">
+                                </a>
+
+                                <p class="retweet-text"><a href="http://weibo.com/{{ message.user.id }}" target="_blank">{{ message.user.screen_name }}</a>：{{ message.text }}
+                                </p>
+                            </div>
+                            <!--<p>{{ message.user.created_at }}</p>-->
+                        </div>
+                        {% endif %}
+                        <div id="i{{ message.id }}" style="position: absolute; z-index: 100; width: 80%"></div>
+                        <hr style="margin: 5px 0px">
+                        <div class="clearfix">
+                            <div class="hover-option ">
+                                {% set repost_msg = message.retweeted_status ? "//@"~message.user.screen_name~":"~message.text : "" %}
+                                <a class="btn btn" title="赞"><i class="icon-thumbs-up"></i>赞</a>
+                                <a id="z{{ message.id }}" class="btn btn" title="转发" data-toggle="modal" href="#model{{ message.id }}"><i class="icon-retweet"></i>转发</a>
+
+                                <div id="model{{ message.id }}" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-body">
+                                        <textarea id="repost{{message.id}}" class="weibo-content" rows="5">{{ repost_msg }}</textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+                                        <button userid="{{ message.user.id }}" weiboid="{{ message.id }}" class="btn btn-primary repost-weibo">转发</button>
+                                    </div>
+                                </div>
+
+                                <a class="btn btn" href="" title="评论"><i class="icon-comment"></i>评论</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+</div>
+<div class="row">
+    &nbsp;<br>&nbsp;
+</div>
+{% endblock %}
+
+{% block js_link_foot %}
+    <script src="/libs/jquery-lightbox/js/jquery.lightbox-0.5.min.js"></script>
+    <script src="/libs/masonry/jquery.masonry.min.js"></script>
+    <script>
+        $(function(){
+            $(".repost-weibo").click(function(){
+                var weiboid = $(this).attr("weiboid");
+                var userid = $(this).attr("userid");
+                var repost_text = $("#repost"+weiboid).val();
+
+                $("#model"+weiboid).modal('hide');
+                var post_data = {'text':repost_text,'uid':userid,'rt_weiboid':weiboid};
+                $.ajax({
+                    type:'post',
+                    url:'http://t.weibotui.com/api/weibo/sina/send',
+                    data:post_data,
+                    datatype:'json',
+                    async:false,
+                    success:function(data){
+                        data = eval('(' +  data + ')');
+                        if(data.errno == 0){
+                            $("#i" + weiboid).html('<div class="alert alert-success fade in"><button type="button" class="close" data-dismiss="alert">×</button><span>转发成功</span></div>');
+                        } else{
+                            $("#i" + weiboid).html('<div class="alert alert-danger fade in"><button type="button" class="close" data-dismiss="alert">×</button><span>转发失败</span></div>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+{{ parent() }}
+{% endblock %}
+
+{% block doc_ready %}
+{{ parent() }}
+
+            var $container = $('.thumbnails');
+            $container.imagesLoaded(function(){
+            $container.masonry({
+                itemSelector : '.span3'
+                });
+            });
+
+            $(".th-content-img a").lightBox(
+                settings = jQuery.extend({
+                    imageLoading:	'/libs/jquery-lightbox/images/lightbox-ico-loading.gif',
+                    imageBtnPrev:	'/libs/jquery-lightbox/images/lightbox-btn-prev.gif',
+                    imageBtnNext:	'/libs/jquery-lightbox/images/lightbox-btn-next.gif',
+                    imageBtnClose:	'/libs/jquery-lightbox/images/lightbox-btn-close.gif',
+                    imageBlank:		'/libs/jquery-lightbox/images/lightbox-blank.gif'
+                })
+            );
+
+{% endblock %}

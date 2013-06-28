@@ -1,0 +1,9 @@
+SET @@foreign_key_checks = 0;
+
+{% for entity in schema.getModelEntities %}
+-- TABLE {{ entity.getCodeName }}
+TRUNCATE TABLE `{{ entity.getCodeName }}`;
+
+{% endfor %}
+
+SET @@foreign_key_checks = 1;

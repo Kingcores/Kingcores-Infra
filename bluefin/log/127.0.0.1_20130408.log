@@ -1,0 +1,236 @@
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/api/open/oauth/client&',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '51',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/api/open/oauth/client',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '127.0.0.1',
+  'REMOTE_PORT' => '43756',
+  'SERVER_ADDR' => '127.0.0.1',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_USER_AGENT' => 'wbt-oauth2-client',
+  'HTTP_HOST' => '127.0.0.1',
+  'HTTP_ACCEPT' => 'application/json',
+  'HTTP_AUTHORIZATION' => 'Basic MTAwMDA6YTIxNDVjMmJhOWU4MGI5MmRkMmJkOGQ0MDNiZjNhNmQ=',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_CONTENT_LENGTH' => '51',
+  'PHP_SELF' => '/index.php',
+  'PHP_AUTH_USER' => '10000',
+  'PHP_AUTH_PW' => 'a2145c2ba9e80b92dd2bd8d403bf3a6d',
+  'REQUEST_TIME_FLOAT' => 1365417953.854,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:53 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:45:53 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/api/open/oauth/client&',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '51',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/api/open/oauth/client',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '127.0.0.1',
+  'REMOTE_PORT' => '43756',
+  'SERVER_ADDR' => '127.0.0.1',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_USER_AGENT' => 'wbt-oauth2-client',
+  'HTTP_HOST' => '127.0.0.1',
+  'HTTP_ACCEPT' => 'application/json',
+  'HTTP_AUTHORIZATION' => 'Basic MTAwMDA6YTIxNDVjMmJhOWU4MGI5MmRkMmJkOGQ0MDNiZjNhNmQ=',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_CONTENT_LENGTH' => '51',
+  'PHP_SELF' => '/index.php',
+  'PHP_AUTH_USER' => '10000',
+  'PHP_AUTH_PW' => 'a2145c2ba9e80b92dd2bd8d403bf3a6d',
+  'REQUEST_TIME_FLOAT' => 1365417953.854,
+  'REQUEST_TIME' => 1365417953,
+)
+[2013-04-08 18:45:53 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-08 18:45:53 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:45:53 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:45:53 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:45:53 CST][debug][diag]Read session[69m2h23311kbhmt2lnrcgdeal1]: 
+[2013-04-08 18:45:53 CST][debug][default]Found route: json
+[2013-04-08 18:45:53 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-08 18:45:53 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-08 18:45:53 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:45:53 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:46:11 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/api/open/oauth/client&',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '51',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/api/open/oauth/client',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '127.0.0.1',
+  'REMOTE_PORT' => '43768',
+  'SERVER_ADDR' => '127.0.0.1',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_USER_AGENT' => 'wbt-oauth2-client',
+  'HTTP_HOST' => '127.0.0.1',
+  'HTTP_ACCEPT' => 'application/json',
+  'HTTP_AUTHORIZATION' => 'Basic MTAwMDA6YTIxNDVjMmJhOWU4MGI5MmRkMmJkOGQ0MDNiZjNhNmQ=',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_CONTENT_LENGTH' => '51',
+  'PHP_SELF' => '/index.php',
+  'PHP_AUTH_USER' => '10000',
+  'PHP_AUTH_PW' => 'a2145c2ba9e80b92dd2bd8d403bf3a6d',
+  'REQUEST_TIME_FLOAT' => 1365417971.902,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:46:11 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:46:11 CST][debug][default][file:Request.php][line:295][fun:isSecure]DUMP var: array (
+  'USER' => 'www',
+  'HOME' => '/home/www',
+  'FCGI_ROLE' => 'RESPONDER',
+  'SCRIPT_FILENAME' => '/mnt/hgfs/Kingcores-WBT/src/webroot/index.php',
+  'QUERY_STRING' => '_r=/api/open/oauth/client&',
+  'REQUEST_METHOD' => 'POST',
+  'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'CONTENT_LENGTH' => '51',
+  'SCRIPT_NAME' => '/index.php',
+  'REQUEST_URI' => '/api/open/oauth/client',
+  'DOCUMENT_URI' => '/index.php',
+  'DOCUMENT_ROOT' => '/mnt/hgfs/Kingcores-WBT/src/webroot',
+  'SERVER_PROTOCOL' => 'HTTP/1.1',
+  'GATEWAY_INTERFACE' => 'CGI/1.1',
+  'SERVER_SOFTWARE' => 'nginx',
+  'REMOTE_ADDR' => '127.0.0.1',
+  'REMOTE_PORT' => '43768',
+  'SERVER_ADDR' => '127.0.0.1',
+  'SERVER_PORT' => '80',
+  'SERVER_NAME' => 'localhost',
+  'REDIRECT_STATUS' => '200',
+  'HTTP_USER_AGENT' => 'wbt-oauth2-client',
+  'HTTP_HOST' => '127.0.0.1',
+  'HTTP_ACCEPT' => 'application/json',
+  'HTTP_AUTHORIZATION' => 'Basic MTAwMDA6YTIxNDVjMmJhOWU4MGI5MmRkMmJkOGQ0MDNiZjNhNmQ=',
+  'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+  'HTTP_CONTENT_LENGTH' => '51',
+  'PHP_SELF' => '/index.php',
+  'PHP_AUTH_USER' => '10000',
+  'PHP_AUTH_PW' => 'a2145c2ba9e80b92dd2bd8d403bf3a6d',
+  'REQUEST_TIME_FLOAT' => 1365417971.902,
+  'REQUEST_TIME' => 1365417971,
+)
+[2013-04-08 18:46:11 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-08 18:46:11 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:46:11 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:46:11 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:46:11 CST][debug][diag]Read session[0aur1f7kvjpojgcis4rudconp0]: 
+[2013-04-08 18:46:11 CST][debug][default]Found route: json
+[2013-04-08 18:46:11 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-08 18:46:11 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-08 18:46:12 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:46:12 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 18:48:35 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 18:48:35 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-08 18:48:35 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 18:48:35 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 18:48:35 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 18:48:35 CST][debug][diag]Read session[uho09ffe9id3quu7k4u5lfhrv0]: 
+[2013-04-08 18:48:35 CST][debug][default]Found route: json
+[2013-04-08 18:48:35 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-08 18:48:35 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-08 18:48:35 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 18:48:35 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:24:35 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:24:35 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-08 23:24:35 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:24:35 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:24:35 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:24:35 CST][debug][diag]Read session[ceuqfarnl4njarddr31ftc0r54]: 
+[2013-04-08 23:24:35 CST][debug][default]Found route: json
+[2013-04-08 23:24:35 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-08 23:24:35 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-08 23:24:35 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:24:35 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:27:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:27:21 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-08 23:27:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:27:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:27:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:27:21 CST][debug][diag]Read session[r9nnmmdleol34l19gq1h02ogq3]: 
+[2013-04-08 23:27:21 CST][debug][default]Found route: json
+[2013-04-08 23:27:21 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-08 23:27:21 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-08 23:27:21 CST][debug][default][file:OAuth2.php][line:613][fun:grantAccessToken]DUMP var: array (
+  0 => '10000',
+  1 => 'a2145c2ba9e80b92dd2bd8d403bf3a6d',
+)
+[2013-04-08 23:27:21 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:27:21 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:58:21 CST][debug][default]REQ: /api/open/oauth/client
+[2013-04-08 23:58:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:58:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:58:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:58:21 CST][debug][diag]Read session[nfl54ct2dpsbkair4f8ipmg791]: 
+[2013-04-08 23:58:21 CST][debug][default]Found route: json
+[2013-04-08 23:58:21 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-08 23:58:21 CST][debug][default]Dispatching to service "OAuthService.client" ...
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [[10000,"int"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT `oauth_client_id`,`name`,`secret`,`redirect_uri`,`level` FROM `oauth_client` WHERE `oauth_client_id`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [["3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021","text"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][diag]TRANSACTION BEGUN.
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [["3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021","text"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [["3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021","text"],["2013-04-09 23:58:21","datetime"],["sso sna payment","text"],[10000,"int"]]
+[2013-04-08 23:58:21 CST][debug][diag]INSERT SQL: INSERT INTO `oauth_token` (`_created_at`, `access_token`, `expires`, `scope`, `client`) VALUES (NOW(), ?, ?, ?, ?)
+[2013-04-08 23:58:21 CST][debug][diag]TRANSACTION COMMITTED.
+[2013-04-08 23:58:21 CST][info][default]Execution time: 0.1464958190918(s).
+[2013-04-08 23:58:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-08 23:58:21 CST][debug][default]REQ: /api/open/user/get_user_profile
+[2013-04-08 23:58:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-08 23:58:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-08 23:58:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-08 23:58:21 CST][debug][diag]Read session[vapuo2ebch1f3vhrlot079o485]: 
+[2013-04-08 23:58:21 CST][debug][default]Found route: json
+[2013-04-08 23:58:21 CST][verbose][default]Dispatching route: Bluefin > Service > invoke
+[2013-04-08 23:58:21 CST][debug][default]Dispatching to service "UserService.getUserProfile" ...
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [["3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021","text"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][diag]Redis cache [127.0.0.1:6379#1] is enabled.
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`user_id`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [["3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021","text"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT `_created_at`,`access_token`,`expires`,`scope`,`session_data`,`client`,`user` FROM `oauth_token` WHERE `access_token`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [[100000,"int"],["3Cpvix5qO4VIadKdaGhN7Eu341cb260688440021","text"]]
+[2013-04-08 23:58:21 CST][debug][diag]UPDATE SQL: UPDATE `oauth_token` SET `user`=? WHERE `access_token`=?
+[2013-04-08 23:58:21 CST][debug][diag]PARAMS: [[100000,"int"]]
+[2013-04-08 23:58:21 CST][debug][diag]SELECT SQL: SELECT us.`user_id`,us.`_created_at`,us.`_updated_at`,us.`_is_deleted`,us.`username`,us.`password`,us.`password_salt`,us.`preferences`,us.`status`,us.`nonactivated_time`,us.`activated_time`,us.`disabled_time`,us.`status_log`,HEX(us.`profile`) AS profile,pp.`personal_profile_id` AS profile_personal_profile_id,pp.`_updated_at` AS profile__updated_at,pp.`_is_deleted` AS profile__is_deleted,pp.`first_name` AS profile_first_name,pp.`last_name` AS profile_last_name,pp.`display_name` AS profile_display_name,pp.`nick_name` AS profile_nick_name,pp.`photo` AS profile_photo,pp.`avatar` AS profile_avatar,pp.`email` AS profile_email,pp.`email_verified` AS profile_email_verified,pp.`id_no` AS profile_id_no,pp.`birthday` AS profile_birthday,pp.`mobile` AS profile_mobile,pp.`mobile_verified` AS profile_mobile_verified,pp.`home_phone` AS profile_home_phone,pp.`office_phone` AS profile_office_phone,pp.`homepage` AS profile_homepage,pp.`qq` AS profile_qq,pp.`description` AS profile_description,pp.`extra` AS profile_extra,pp.`user` AS profile_user,pp.`gender` AS profile_gender,pp.`address` AS profile_address,pp.`name_order` AS profile_name_order FROM `user` AS us LEFT JOIN `personal_profile` AS pp ON us.`profile` = pp.`personal_profile_id` WHERE us.`user_id`=? LIMIT 0,1
+[2013-04-08 23:58:21 CST][info][default]Execution time: 0.17352819442749(s).

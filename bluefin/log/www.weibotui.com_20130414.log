@@ -1,0 +1,9 @@
+[2013-04-14 16:22:41 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-14 16:22:41 CST][debug][default]REQ: /
+[2013-04-14 16:22:41 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-14 16:22:41 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-14 16:22:41 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-14 16:22:41 CST][debug][diag]Read session[lggt5elnlbg093difljb692ts2]: 
+[2013-04-14 16:22:41 CST][debug][default]Found route: root
+[2013-04-14 16:22:41 CST][verbose][default]Dispatching route: WBT > Home > index
+[2013-04-14 16:22:41 CST][info][default]Execution time: 0.19556999206543(s).

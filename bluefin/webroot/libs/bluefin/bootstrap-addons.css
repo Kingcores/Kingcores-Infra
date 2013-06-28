@@ -1,0 +1,108 @@
+.label, .badge, .progress .bar {
+    font-size: 14px;
+}
+
+.label-large {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.text14 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.text18 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.text24 {
+    font-size: 24px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.modal-lite {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1050;
+  width: 400px;
+  margin-left: -200px;
+  outline: none;
+}
+
+.modal-lite.fade {
+  top: -25%;
+  -webkit-transition: opacity 0.3s linear, top 0.3s ease-out;
+     -moz-transition: opacity 0.3s linear, top 0.3s ease-out;
+       -o-transition: opacity 0.3s linear, top 0.3s ease-out;
+          transition: opacity 0.3s linear, top 0.3s ease-out;
+}
+
+.modal-lite.fade.in {
+  top: 50%;
+}
+
+.modal-lite .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+
+.modal-lite .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+
+.modal-lite .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+hr.soften {
+   height: 1px;
+   margin: 5px 0;
+   background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+   background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+   background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+   background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+   border: 0;
+}
+
+hr.vertical {
+   width: 1px;
+   margin: 0 5px;
+   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+   background-image:    -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+   background-image:     -ms-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+   background-image:      -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+   border: 0;
+}
+
+a.with-btn-inline {
+  margin-top: 10px;
+}
+
+.form-horizontal .control-label {
+    text-align: left;
+    margin-left: 100px;
+    width: 80px;
+}
+
+div.gap10 {
+    margin-bottom: 10px;
+}
+
+div.gap20 {
+    margin-bottom: 20px;
+}
+
+.legend {
+    color:#3ea3ea;
+}
+
+.radio.inline,
+.checkbox.inline {
+    white-space:nowrap
+}

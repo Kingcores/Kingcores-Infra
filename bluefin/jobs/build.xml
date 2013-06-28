@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="lance_jobs" default="usage">
+
+    <taskdef name="rock" classname="RockTask" />
+    <taskdef name="lance" classname="LanceTask" />
+    <taskdef name="render" classname="RenderTask" />
+    <taskdef name="runlist" classname="RunListTask" />
+
+    <!-- ============================================  -->
+    <!-- Target: usage                                 -->
+    <!-- ============================================  -->
+    <target name="usage">
+        <echo msg="Usage:" />
+        <echo msg="  phing create_project" />
+        <echo msg="      - Create a new project." />
+        <echo msg="  phing add_database" />
+        <echo msg="      - Add a new database into the project." />
+        <echo msg="  phing create_database" />
+        <echo msg="      - Create the database structure in database server." />
+        <echo msg="  phing create_model" />
+        <echo msg="      - Create model classes for accessing the database." />
+        <echo msg="  phing run_list" />
+        <echo msg="      - Run a job list." />
+        <echo msg="  phing create_site" />
+        <echo msg="      - Create controller classes by sitemap." />
+        <echo msg="  phing migrate" />
+        <echo msg="      - Migrate database to a higher version." />
+        <echo msg="  phing all" />
+        <echo msg="      - Run all jobs one-by-one except 'reinit'." />
+        <echo msg="  phing release" />
+        <echo msg="      - Run release jobs to release a deployable package." />
+        <echo msg="  phing clear_cache" />
+        <echo msg="      - Clear runtime cache." />
+        <echo msg="  phing clear_generated" />
+        <echo msg="      - Delete generated files." />
+        <echo msg="  phing reinit" />
+        <echo msg="      - Re-Initialize a project." />
+        <echo msg="Usage:" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: rock                                  -->
+    <!-- ============================================  -->
+    <target name="rock">
+        <available file="../project.yml" property="project_file_exist" value="1" />
+        <fail msg="../project.yml does not exist!" unless="project_file_exist" />
+
+        <rock />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: change_project                        -->
+    <!-- ============================================  -->
+    <target name="change_project">
+        <if>
+            <not>
+                <isset property="targetProject" />
+            </not>
+            <then>
+                <propertyprompt propertyName="targetProject" promptText="Please enter the target project namespace (pascal naming)" />
+            </then>
+        </if>
+        <echo file="current.project" append="false" msg="currentProject=${targetProject}${line.separator}" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: create_project                        -->
+    <!-- ============================================  -->
+    <target name="create_project">
+        <chown file="../" user="www" group="www" verbose="true" />
+        <propertyprompt propertyName="namespace" promptText="Please enter the new project namespace (pascal naming)" />
+        <propertyprompt propertyName="php.user" promptText="Which user do you use to run php process" defaultValue="www" />
+        <propertyprompt propertyName="php.group" promptText="Which group do you use to run group process" defaultValue="www" />
+
+        <lance type="project" params="{ namespace: ${namespace}, user: ${php.user}, group: ${php.group} }" />
+
+        <phingcall target="change_project">
+            <property name="targetProject" value="${namespace}" />
+        </phingcall>
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: create_project_finished               -->
+    <!-- ============================================  -->
+    <target name="create_project_finished">
+        <available file="current.project" property="create_project_finished_1" value="1" />
+        <fail msg="Current project file 'current.project' not found. Please run create_project first." unless="create_project_finished_1" />
+
+        <property file="current.project" />
+
+        <available file="../${currentProject}.project.lock" property="create_project_finished_2" value="1" />
+        <fail msg="Project '${currentProject}' has not been created yet. Please run create_project first." unless="create_project_finished_2" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: add_database                          -->
+    <!-- ============================================  -->
+    <target name="add_database" depends="create_project_finished">
+        <available file="database.properties" property="db.exist" value="1" />
+
+        <if>
+            <equals arg1="${db.exist}" arg2="1" />
+            <then>
+                <echo msg="Database properties:" />
+                <exec command="cat ./database.properties" dir="${application.startdir}"/>
+
+                <propertyprompt propertyName="dbExistConfirm" defaultValue="y"
+                                promptText="A previous database properties file 'database.properties' exists. Do you want to use it? (y/n)" />
+
+                <if>
+                    <equals arg1="${dbExistConfirm}" arg2="n" />
+                    <then>
+                        <delete file="database.properties" />
+                        <property name="db.needInput" value="1" />
+                    </then>
+                </if>
+            </then>
+            <else>
+                <property name="db.needInput" value="1" />
+            </else>
+        </if>
+
+        <if>
+            <equals arg1="${db.needInput}" arg2="1" />
+            <then>
+                <!-- input parameters -->
+                <propertyprompt propertyName="db.name" promptText="Please enter the database name" />
+
+                <propertyprompt propertyName="db.type" promptText="Please enter the database type" defaultValue="mysql" />
+                <if>
+                 <equals arg1="${db.type}" arg2="mysql" />
+                 <then>
+                     <propertyprompt propertyName="db.engine" promptText="Please enter the database engine" defaultValue="InnoDB" />
+                     <propertyprompt propertyName="db.charset" promptText="Please enter the default database charset" defaultValue="utf8" />
+                 </then>
+                </if>
+                <propertyprompt propertyName="db.host" promptText="Please enter the database host" defaultValue="localhost" />
+                <propertyprompt propertyName="db.port" promptText="Please enter the database port" defaultValue="3306" />
+                <propertyprompt propertyName="db.user" promptText="Please enter the database username" defaultValue="root" />
+                <propertyprompt propertyName="db.pass" promptText="Please enter the database password" />
+
+                <!-- write parameters to a file -->
+                <echo file="database.properties" append="false" msg="lance=${db.name}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.name=${db.name}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="namespace=${currentProject}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.type=${db.type}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.engine=${db.engine}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.charset=${db.charset}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.host=${db.host}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.port=${db.port}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.user=${db.user}${line.separator}"/>
+                <echo file="database.properties" append="true" msg="db.pass=${db.pass}${line.separator}"/>
+            </then>
+            <else>
+                <property file="database.properties" />
+            </else>
+        </if>
+
+        <render from="project/database.yml.twig" to="lance/${db.name}.yml" with="database.properties" />
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: add_database_finished                 -->
+    <!-- ============================================  -->
+    <target name="add_database_finished">
+        <available file="database.properties" property="add_database_finished_1" value="1" />
+        <fail msg="Database properties file 'database.properties' not found. Please run add_database first." unless="add_database_finished_1" />
+
+        <property file="database.properties" />
+
+        <available file="../lance/${lance}.yml" property="add_database_finished_2" value="1" />
+        <fail msg="Database properties file 'lance/${lance}.yml' not found. Please run add_database first." unless="add_database_finished_2" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: create_database                       -->
+    <!-- ============================================  -->
+    <target name="create_database" depends="add_database_finished">
+        <if>
+            <not>
+                <isset property="createDatabaseConfirm" />
+            </not>
+            <then>
+                <propertyprompt propertyName="createDatabaseConfirm" defaultValue="n"
+                                promptText="This job will override existing SQL files and rebuild the '${db.name}' database. Are you sure to continue? (y/n)" />
+            </then>
+        </if>
+
+        <if>
+         <equals arg1="${createDatabaseConfirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+
+        <delete file="../app/locale/zh_CN/metadata.yml" />
+
+        <lance type="database" params="lance: ${lance}" />
+
+        <exec command="mysql -h${db.host} -P${db.port} --default-character-set=${db.charset} -u${db.user} -p${db.pass} &lt; ../app/schema/create_${lance}.sql"
+             dir="${application.startdir}"
+            checkreturn="true" />
+
+        <runlist lanceName="${lance}" dbName="${db.name}" dbHost="${db.host}" dbPort="${db.port}" dbCharset="${db.charset}" dbUser="${db.user}" dbPass="${db.pass}" listName="../app/schema/rebuild_${lance}.lst" />
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: create_database_finished              -->
+    <!-- ============================================  -->
+    <target name="create_database_finished">
+        <available file="../app/schema/create_${lance}.sql" property="create_database_finished" value="1" />
+        <fail msg="Database '${db.name}' has not been created yet. Please run create_database first." unless="create_database_finished" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: create_model                          -->
+    <!-- ============================================  -->
+    <target name="create_model" depends="add_database_finished">
+        <if>
+            <not>
+                <isset property="createModelConfirm" />
+            </not>
+            <then>
+                <propertyprompt propertyName="createModelConfirm" defaultValue="n"
+                                promptText="This job will override existing model files for '${db.name}' database. Are you sure to continue? (y/n)" />
+            </then>
+        </if>
+
+        <if>
+         <equals arg1="${createModelConfirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+
+        <lance type="model" params="${db.name}" />
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: create_model_finished                 -->
+    <!-- ============================================  -->
+    <target name="create_model_finished">
+        <available file="../app/lib/${namespace}/Model" property="create_model_finished" value="1" />
+        <fail msg="Model classes has not been created yet. Please run create_model first." unless="create_model_finished" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: run_list                              -->
+    <!-- ============================================  -->
+    <target name="run_list" depends="add_database_finished, create_model_finished">
+        <if>
+            <not>
+                <isset property="actionName" />
+            </not>
+            <then>
+                <propertyprompt propertyName="actionName" defaultValue="init"
+                                promptText="Please enter the action that you want to execute" />
+            </then>
+        </if>
+        <if>
+            <not>
+                <isset property="runListConfirm" />
+            </not>
+            <then>
+                <propertyprompt propertyName="runListConfirm" defaultValue="n"
+                                promptText="This job will run '${actionName}_${db.name}.lst' file against '${db.name}' database. Are you sure to continue? (y/n)" />
+            </then>
+        </if>
+
+        <if>
+         <equals arg1="${runListConfirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+
+        <runlist lanceName="${lance}" dbName="${db.name}" dbHost="${db.host}" dbPort="${db.port}" dbCharset="${db.charset}" dbUser="${db.user}" dbPass="${db.pass}" listName="../app/schema/${actionName}_${lance}.lst" />
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: create_site                           -->
+    <!-- ============================================  -->
+    <target name="create_site" depends="create_project_finished">
+
+        <available file="../lance/site/${currentProject}.yml" property="site.etc.exist" value="1" />
+
+        <fail msg="Site configuration file 'lance/site/${currentProject}.yml' not found. Job aborts!" unless="site.etc.exist" />
+
+        <lance type="site" params="${currentProject}" />
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: migrate                               -->
+    <!-- ============================================  -->
+    <target name="migrate" depends="add_database_finished, create_model_finished">
+
+        <echo msg="Current version:" />
+
+        <lance type="show_file" params="../app/ver.lock" />
+
+        <echo msg="Available target versions:" />
+
+        <lance type="enum" params="migration" />
+
+        <propertyprompt propertyName="targetVersion"
+                                        promptText="Please enter a target version number to migrate" />
+
+        <lance type="check_version" params="${targetVersion}" />
+
+        <propertyprompt propertyName="migrateConfirm" defaultValue="n"
+                                promptText="This job will migrate current database to version '${targetVersion}'. Are you sure to continue? (y/n)" />
+
+        <if>
+         <equals arg1="${migrateConfirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+
+        <lance type="migration" params="${targetVersion}" />
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: all                                   -->
+    <!-- ============================================  -->
+    <target name="all">
+        <phingcall target="create_project" />
+        <phingcall target="add_database" />
+        <phingcall target="create_database" />
+        <phingcall target="create_model" />
+        <phingcall target="create_site" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: go_dev                                -->
+    <!-- ============================================  -->
+    <target name="dev">
+        <property name="createDatabaseConfirm" value="y" />
+        <phingcall target="create_database" />
+        <property name="createModelConfirm" value="y" />
+        <phingcall target="create_model" />
+        <property name="runListConfirm" value="y" />
+        <property name="actionName" value="init" override="true" />
+        <phingcall target="run_list" />
+        <property name="actionName" value="test" override="true" />
+        <phingcall target="run_list" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: go_test                               -->
+    <!-- ============================================  -->
+    <target name="test">
+        <property name="runListConfirm" value="y" />
+        <property name="actionName" value="rebuild" override="true" />
+        <phingcall target="run_list" />
+        <property name="actionName" value="init" override="true" />
+        <phingcall target="run_list" />
+        <property name="actionName" value="test" override="true" />
+        <phingcall target="run_list" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: go_prod                               -->
+    <!-- ============================================  -->
+    <target name="prod">
+
+
+        <property name="runListConfirm" value="y" />
+        <property name="actionName" value="rebuild" override="true" />
+        <phingcall target="run_list" />
+        <property name="actionName" value="init" override="true" />
+        <phingcall target="run_list" />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: release                               -->
+    <!-- ============================================  -->
+    <target name="release" depends="create_project_finished">
+
+        <delete dir="./temp" />
+        <mkdir dir="./temp" />
+
+        <tstamp>
+          <format property="TIMESTAMP" pattern="%Y%m%d_%H%M" locale="zh_CN"/>
+        </tstamp>
+
+        <copy todir="./temp" verbose="true">
+            <fileset dir="../">
+                <include name="app/**" />
+                <include name="lib/**" />
+                <include name="webroot/**" />
+            </fileset>
+        </copy>
+
+        <tar destfile="./${currentProject}_${TIMESTAMP}.tar.gz" includeemptydirs="true" compression="gzip">
+            <fileset dir="./temp">
+                <include name="**/**" />
+            </fileset>
+        </tar>
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: clear_cache                           -->
+    <!-- ============================================  -->
+    <target name="clear_cache">
+
+        <propertyprompt propertyName="confirm" defaultValue="n"
+                                promptText="This job will deleted all runtime cache files. Are you sure to continue? (y/n)" />
+
+        <if>
+         <equals arg1="${confirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+
+        <delete>
+            <fileset dir="../">
+                <include name="cache/**" />
+            </fileset>
+        </delete>
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: clear_cache                           -->
+    <!-- ============================================  -->
+    <target name="clear_generated" depends="create_project_finished">
+
+        <propertyprompt propertyName="confirm" defaultValue="n"
+                                promptText="This job will deleted all generated files. Are you sure to continue? (y/n)" />
+
+        <if>
+         <equals arg1="${confirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+
+        <delete>
+            <fileset dir="../">
+                <include name="app/schema/**" />
+                <include name="app/lib/${currentProject}/Model/**" />
+            </fileset>
+        </delete>
+
+        <echo msg="done." />
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: reinit                                -->
+    <!-- ============================================  -->
+    <target name="reinit">
+        <propertyprompt propertyName="reinitConfirm" defaultValue="n"
+                        promptText="This job will delete some project files. Are you sure to continue? (y/n)" />
+        <if>
+         <equals arg1="${reinitConfirm}" arg2="n" />
+         <then>
+           <fail msg="Canceled by user." />
+         </then>
+        </if>
+        <lance type="re_init" />
+        <delete file="database.properties" />
+        <echo msg="done." />
+    </target>
+
+</project>

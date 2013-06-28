@@ -1,0 +1,29 @@
+#账户资产模式
+
+#------------------------------------------------------------------------------
+#预编译指令
+!commentLocale: zh_CN
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+corporate_asset:
+  comment: '账户资产'
+  with: [ update_timestamp ]
+  has:
+    corporate: corporate.corporate
+    deposit: money|comment=储值余额
+    points: int|comment=积分
+  keys:
+    pk: corporate
+
+tuike_asset:
+  comment: '账户资产'
+  with: [ update_timestamp ]
+  has:
+    user: system.user
+    deposit: money|comment=储值余额
+    points: int|comment=积分
+    credit: int|comment=信用
+  keys:
+    pk: user

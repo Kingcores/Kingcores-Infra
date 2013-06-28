@@ -1,0 +1,31 @@
+#虚拟货物
+
+#------------------------------------------------------------------------------
+#预编译指令
+!commentLocale: zh_CN
+
+#------------------------------------------------------------------------------
+#自定义类型
+
+
+#------------------------------------------------------------------------------
+#枚举类型
+
+@inventory_type:
+  comment: '货物类型'
+  values:
+    weibo_post: '微博发布'
+    weibo_forward: '微博转发'
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+weibo_inventory:
+  comment: '微博渠道'
+  with: [ auto_increment_id, create_timestamp, update_timestamp, logical_deletion ]
+  has:
+    weibo: weibo.weibo
+    type: inventory_type
+    original_price: money|comment=原价
+    current_price: money|comment=现价
+

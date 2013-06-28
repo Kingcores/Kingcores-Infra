@@ -1,0 +1,18 @@
+user:
+  -
+    username: weibotui@kingcores.com
+    password: wbt@2003q4!
+
+user_with_role:
+  -
+    user: { username: weibotui@kingcores.com }
+    role: { role_name: weibo_owner }
+  -
+    user: { username: weibotui@kingcores.com }
+    role: { role_name: tuike }
+  -
+    user: { username: weibotui@kingcores.com }
+    role: { role_name: advertiser }
+  -
+    user: { username: weibotui@kingcores.com }
+    role: { role_name: staff }

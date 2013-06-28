@@ -1,0 +1,91 @@
+{% extends "WBT/home.tuike.twig" %}
+
+{% block css_link %}
+{{ parent() }}
+    <link href="/libs/bootstrap/css/docs.css" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+{% endblock %}
+
+{% block homeRoleContent %}
+<div class="row">
+    <div class="span12">
+        <ul class="thumbnails">
+{% for weiboTokenProfile in weiboTokenProfiles %}
+{% set weiboProfile = weiboTokenProfile.weibo_profile %}
+{% if weiboProfile %}
+            <li class="span3">
+                <div class="bs-docs bs-docs-weibo thumbnail">
+                    <div class="th-content-img">
+                        <img src="{{ weiboProfile.avatar_large }}" alt="微博用户信息">
+                    </div>
+                    <div class="th-content">
+                        <div>
+                            <span class="badge badge-success">&nbsp;{{ weiboProfile.screen_name }}&nbsp;</span>
+                            <div id="i{{ weiboProfile.id }}"></div>
+                        </div>
+                        <hr class="soften">
+                        <div id='{{ weiboProfile.id }}' class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; ">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                <h5 id="send-weibo-label">发布微博</h5>
+                            </div>
+                            <div style="margin:5px 15px 0px 15px;">
+                                <span>分享身边的新鲜事儿</span><span id="w{{ weiboProfile.id }}_warn" style="float:right">还能输入<em>140</em>字</span>
+                            </div>
+                            <div class="modal-body">
+                                <div class="">
+                                    <textarea rows="5" id="w{{ weiboProfile.id }}" class="weibo-content" name="status" onkeyup="checkText('w{{ weiboProfile.id }}', 'btn{{ weiboProfile.id }}', 'w{{ weiboProfile.id }}_warn', 140)"></textarea>
+                                    <span id="img{{ weiboProfile.id }}"></span>
+                                </div>
+                                <div>
+                                    <div id="" style="float: left"><a href="javascript:;" onclick="showFace('w{{ weiboProfile.id }}')"><i class="icon-heart"></i>表情</a></div>
+                                    <div style="float:left"><a href="javascript:;" onclick="showImgUpload('w{{ weiboProfile.id }}')"><i class="icon-picture"></i>图片</a></div>
+                                    <div style="float:left"><a href="javascript:;" onclick="insertTopic('', 'w{{ weiboProfile.id }}')"><i class="icon-bullhorn"></i>话题</a></div>
+                                    <div style="float:right"><input id="co{{ weiboProfile.id }}" type="checkbox" style="margin-bottom: 8px;" onchange="toggleById('datepicker{{ weiboProfile.id }}');">定时发布</div>
+                                    <div id="datepicker{{ weiboProfile.id }}" style="clear:both;float:right;display: none">发布时间：{{ datetimePicker.setID('dt' ~ weiboProfile.id) }}{{ datetimePicker|raw }}</div>
+                                    <div class="faceWrap" id="w{{ weiboProfile.id }}_wrap"></div>
+                                    <div class="imgWrap" id="w{{ weiboProfile.id }}_img"></div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="btn{{ weiboProfile.id }}" uid="{{ weiboProfile.id }}" class="btn btn-primary updata-weibo" >发布</button>
+                            </div>
+                        </div>
+                        <a class="btn btn-small btn-danger" data-toggle="modal" href="#{{ weiboProfile.id }}"><i class="icon-edit"></i>发布微博</a>
+                        <a class="btn btn-success btn-small" href="{{ route('id', [ 'w' ~ weiboProfile.id ]) }}"><i class="icon-list"></i>浏览微博</a>
+                        <hr class="soften">
+                        <div><strong>授权期限：</strong>{{ weiboTokenProfile.expires_at|date("Y-m-d H:i:s") }}</div>
+                        <hr class="soften">
+                        <div><strong>微博简介：</strong><br>{{ weiboProfile.description }}</div>
+                        <hr class="soften">
+                        <div class="user-info">
+                            <span class="label label-success"><a href="http://weibo.com/{{ weiboProfile.id }}/follow" target="_blank">{{ weiboProfile.friends_count }}关注</a></span>
+                            <span class="label label-success">&nbsp;<a href="http://weibo.com/{{ weiboProfile.id }}/fans" target="_blank">{{ weiboProfile.followers_count }}粉丝</a></span>
+                            <span class="label label-success">&nbsp;<a href="http://weibo.com/{{ weiboProfile.id }}/profile" target="_blank">{{ weiboProfile.statuses_count }}微博</a></span>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+            </li>
+{% endif %}
+{% endfor %}
+            <li class="span3">
+                <div class="bs-docs bs-docs-weibo thumbnail">
+                    <div class="th-content-img">
+                        <a onclick="_hmt.push(['_trackEvent', '第三方账号', '{{ auth.weibo.name }}', '添加新微博1'])"
+                           href="{{ auth.weibo.entry }}"><img src="/images/avatar_add.png" alt="添加微博账户"></a>
+                    </div>
+                    <div class="th-content">
+                        <p><span class="badge badge-info">&nbsp;管理多个微博&nbsp;</span></p>
+
+                        <p>可以添加多个SNS帐号，以获取更多推广任务。</p>
+
+                        <p align="center"><a class="btn btn-info"
+                                             onclick="_hmt.push(['_trackEvent', '第三方账号', '{{ auth.weibo.name }}', '添加新微博2'])"
+                                             href="{{ auth.weibo.entry }}">添加新浪微博</a></p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

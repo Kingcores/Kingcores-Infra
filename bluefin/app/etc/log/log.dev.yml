@@ -1,0 +1,15 @@
+default:
+  -
+    type: file
+    path: <?php echo ROOT; ?>/log
+    filename: "{{gateway.host}}_{{app.timestamp|date='Ymd'}}.log"
+    level: 7
+    channels: { default: true, diag: true }
+
+alipay:
+  -
+    type: csv
+    path: <?php echo ROOT; ?>/log
+    filename: "alipay_{{app.timestamp|date='Ymd'}}.log"
+    level: 7
+    fields: [ "{{this.timestamp|date='Y-m-d H:i:s T'}}", "{{this.level}}", "{{this.message.status}}", "{{this.message.text}}", "{{ this.message.data|yaml }}" ]

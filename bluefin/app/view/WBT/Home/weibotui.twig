@@ -1,0 +1,88 @@
+{% extends "WBT/home.twig" %}
+
+{% set actionName = context('gateway.action') %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="banner-mod">
+                    <div class="banner-mod-inner">
+                        <div class="clearfix">
+                            <div class="banner-sub-block pull-left">
+                                <a href="#">
+                                    <img src="{{ loginProfile.profile_avatar|default('/images/avatar_default2.png') }}" class="img-polaroid">
+                                </a>
+                            </div>
+                            <div class="banner-sub-block pull-left">
+                                <p class="p-tight">
+                                    <span class="text18">你好，</span><span class="text18 text-info">{{ loginProfile.profile_nick_name }}</span>
+                                </p>
+                                <p class="p-tight">
+                                    <span class="text14">{{ loginProfile.profile_description|slice(0,20)|default('微博推广，就用微博推。') }}</span> <a class="text14 btn btn-link" href="javascript:bluefinBH.ajaxDialog('/form/personal_description/show');">修改</a>
+                                </p>
+                                <p class="p-tight-bottom">
+                                    <a href="#" class="btn btn-info">管理</a>
+                                </p>
+                            </div>
+{% if 'tuike' in userRoles %}
+                            <div class="banner-sub-block pull-right">
+                                <p class="p-tight">
+                                    <span class="text14"><strong>收入结余</strong></span>
+                                </p>
+                                <p class="p-tight">
+                                    <span class="text18 text-success">{{ userAsset.income_balance|number_format(2, '.', ',') }} 元</span>
+                                </p>
+                                <p class="p-tight-bottom">
+                                    <a href="javascript:bluefinBH.ajaxDialog('/form/user_deposit/show');" class="btn btn-success">结算</a>&nbsp;<a href="{{ my_url('home/tuike/income_record_list') }}" class="btn btn-link with-btn-inline">收入记录</a>
+                                </p>
+                            </div>
+{% else %}
+                            <div class="banner-sub-block pull-right">
+                                <p class="p-tight">
+                                    <span class="text14"><strong>还不是推客？</strong></span>
+                                </p>
+                                <p class="p-tight">
+                                    <span class="text18 text-success">拥有社交媒体帐号，即可成为推客。</span>
+                                </p>
+                                <p class="p-tight-bottom">
+                                    <a href="/register/tuike?_from={{ my_url() }}" class="btn btn-success">我想当推客</a>
+                                </p>
+                            </div>
+{% endif %}
+                            <div class="banner-sub-block pull-right">
+                                <hr class="vertical" size="80">
+                            </div>
+{% if 'advertiser' in userRoles %}
+                            <div class="banner-sub-block pull-right">
+                                <p class="p-tight">
+                                    <span class="text14"><strong>储值余额</strong></span>
+                                </p>
+                                <p class="p-tight">
+                                    <span class="text18 text-success">{{ userAsset.deposit_balance|number_format(2, '.', ',') }} 元</span>
+                                </p>
+                                <p class="p-tight-bottom">
+                                    <a href="javascript:bluefinBH.ajaxDialog('/form/user_deposit/show');" class="btn btn-warning">充值</a>&nbsp;<a href="{{ my_url('home/advertiser/deposit_record_list') }}" class="btn btn-link with-btn-inline">充值记录</a>
+                                </p>
+                            </div>
+{% else %}
+                            <div class="banner-sub-block pull-right">
+                                <p class="p-tight">
+                                    <span class="text14"><strong>还不是广告主？</strong></span>
+                                </p>
+                                <p class="p-tight">
+                                    <span class="text18 text-warning">广告主可以发布付费推广任务给推客。</span>
+                                </p>
+                                <p class="p-tight-bottom">
+                                    <a href="#" class="btn btn-warning">我需要营销推广</a>
+                                </p>
+                            </div>
+{% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}

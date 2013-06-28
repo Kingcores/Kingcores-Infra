@@ -1,0 +1,7 @@
+l1:
+  type: redis
+  options: { host: 127.0.0.1, port: 6379, password: redis, database: 1 }
+
+session:
+  type: redis
+  options: { host: 127.0.0.1, port: 6379, password: redis, database: 0, prefix: 'ss:', lifetime: 259200 }

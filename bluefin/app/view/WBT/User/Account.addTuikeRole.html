@@ -1,0 +1,55 @@
+{% extends "WBT/auth.twig" %}
+
+{% block main %}
+    <div class="row">
+        <div class="span8 offset2 bound-form">
+            <div class="hero-unit">
+                <form method="post" action="{{ route() }}">
+                    <legend><h4 class="form-title">注册成为微博推平台“推客”。</h4></legend>
+{% if profiles.mobile %}
+                    <div class="control-group">
+                      <label class="control-label" for="inputMobile"><i class="icon-user"></i>手机号码：</label>
+                      <div class="controls">
+                          <input class="input-medium" type="text" id="inputMobile" name="mobile" value="{{ mobile }}" placeholder="手机号码">
+                      </div>
+                    </div>
+{% endif %}
+                    <div class="control-group">
+                        <label class="control-label" for="textSerivceTerms"><i class="icon-file"></i>推客协议：（<i class="icon-share-alt"></i><a href="#">全文阅读</a>）</label>
+                        <div class="controls">
+                            <textarea id="textSerivceTerms" style="width: 97%;" rows="3" readonly>&nbsp;
+                            </textarea>
+                        </div>
+                        <div class="controls">
+                            <label class="checkbox">
+                              <input id="inputEula" type="checkbox" name="eula">
+                              我同意以上协议
+                            </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <input type="hidden" name="from" value="{{ from }}">
+                        <button id="buttonSubmit" type="submit" class="btn btn-primary" disabled>注册</button>
+                        <a href="{{ from }}" class="btn">取消</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block doc_ready %}
+{{ parent() }}
+
+            $('#inputEula').click(function() {
+                if ($(this).attr('checked') == 'checked')
+                {
+                    $('#buttonSubmit').removeAttr('disabled');
+                }
+                else
+                {
+                    $('#buttonSubmit').attr('disabled', 'disabled');
+                }
+            });
+
+{% endblock %}

@@ -1,0 +1,55 @@
+#微博模式
+
+#------------------------------------------------------------------------------
+#预编译指令
+!commentLocale: zh_CN
+
+#------------------------------------------------------------------------------
+#自定义类型
+
+#------------------------------------------------------------------------------
+#数据实体定义
+
+weibo:
+  comment: '微博账号'
+  with: [ create_timestamp ]
+  has:
+    uid: int|comment=微博ID
+    user|?: system.user
+    weibo_profile|?: json|comment=微博档案
+  keys:
+    pk: uid
+
+#每个微博对应不同的app_key可以有不同的access_token
+weibo_token:
+  comment: '微博令牌'
+  with: [ auto_increment_id, update_timestamp ]
+  has:
+    weibo: weibo
+    access_token: password|comment=令牌
+    remind_in: int|comment=提醒时间
+    expires_in: int|comment=过期时间
+    app_key: text|<=20|comment=应用密钥
+    app_secret: password|comment=应用密码
+  keys:
+    token_per_app|u: [ weibo, app_key ]
+    access_token|u: access_token
+
+weibo_login_record:
+  comment: '微博登录记录'
+  with: [ auto_uuid, create_timestamp ]
+  has:
+    weibo: weibo
+    ip_address: ipv4|=@"{{app.session.ip}}"|comment=登录地址
+
+#------------------------------------------------------------------------------
+#复杂关系定义
+
+&weibo_topic:
+  comment: '微博话题标定'
+  with: [ auto_increment_id ]
+  between:
+    weibo: weibo
+    catetory: semantic.topic_category
+  has:
+    confidence: float|comment=置信度

@@ -1,0 +1,36 @@
+[2013-04-12 22:44:48 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-12 22:44:48 CST][debug][default]REQ: /
+[2013-04-12 22:44:48 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-12 22:44:48 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-12 22:44:48 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-12 22:44:48 CST][debug][diag]Read session[mdk8ireo01ffebbh0sm3t2u7n3]: 
+[2013-04-12 22:44:48 CST][debug][default]Found route: root
+[2013-04-12 22:44:48 CST][verbose][default]Dispatching route: WBT > Home > index
+[2013-04-12 22:44:48 CST][info][default]Execution time: 0.16630291938782(s).
+[2013-04-12 22:44:50 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-12 22:44:50 CST][debug][default]REQ: /auth/index
+[2013-04-12 22:44:50 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-12 22:44:50 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-12 22:44:50 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-12 22:44:50 CST][debug][diag]Read session[mdk8ireo01ffebbh0sm3t2u7n3]: app|a:2:{s:7:"counter";i:0;s:10:"created_at";i:1365777888;}
+[2013-04-12 22:44:50 CST][debug][default]Found route: c-a
+[2013-04-12 22:44:50 CST][verbose][default]Dispatching route: WBT > Auth > index
+[2013-04-12 22:44:50 CST][info][default]Execution time: 0.19416809082031(s).
+[2013-04-12 22:44:52 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-12 22:44:52 CST][debug][default]REQ: /register
+[2013-04-12 22:44:52 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-12 22:44:52 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-12 22:44:52 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-12 22:44:52 CST][debug][diag]Read session[mdk8ireo01ffebbh0sm3t2u7n3]: app|a:3:{s:7:"counter";i:1;s:10:"created_at";i:1365777888;s:10:"updated_at";i:1365777890;}
+[2013-04-12 22:44:52 CST][debug][default]Found route: c
+[2013-04-12 22:44:52 CST][verbose][default]Dispatching route: WBT > Register > index
+[2013-04-12 22:44:53 CST][info][default]Execution time: 0.2808210849762(s).
+[2013-04-12 22:44:53 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-12 22:44:53 CST][debug][default]REQ: /register/eula
+[2013-04-12 22:44:53 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-12 22:44:53 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-12 22:44:53 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-12 22:44:53 CST][debug][diag]Read session[mdk8ireo01ffebbh0sm3t2u7n3]: app|a:3:{s:7:"counter";i:2;s:10:"created_at";i:1365777888;s:10:"updated_at";i:1365777892;}
+[2013-04-12 22:44:53 CST][debug][default]Found route: c-a
+[2013-04-12 22:44:53 CST][verbose][default]Dispatching route: WBT > Register > eula
+[2013-04-12 22:44:53 CST][info][default]Execution time: 0.13962197303772(s).

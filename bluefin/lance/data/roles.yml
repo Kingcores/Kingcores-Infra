@@ -1,0 +1,13 @@
+admin_role:
+  -
+    role_name: administrators
+    display_name: 管理员
+  -
+    role_name: sales
+    display_name: 销售
+  -
+    role_name: customer_service
+    display_name: 客服
+  -
+    role_name: finance
+    display_name: 财务

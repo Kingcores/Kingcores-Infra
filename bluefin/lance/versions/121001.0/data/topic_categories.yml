@@ -1,0 +1,4 @@
+topic_category:
+    - { code: news, name: '新闻' }
+    - { code: fashion, name: '时尚' }
+    - { code: diet, name: '饮食' }

@@ -1,0 +1,294 @@
+[2013-04-09 00:46:09 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 00:46:09 CST][debug][default]REQ: /
+[2013-04-09 00:46:09 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 00:46:09 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 00:46:09 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 00:46:09 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:25;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365436756;}
+[2013-04-09 00:46:09 CST][debug][default]Found route: so
+[2013-04-09 00:46:09 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 00:46:10 CST][info][default]Execution time: 0.18013215065002(s).
+[2013-04-09 01:01:07 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:01:07 CST][debug][default]REQ: /
+[2013-04-09 01:01:07 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:01:07 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:01:07 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:01:07 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:26;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365439569;}
+[2013-04-09 01:01:07 CST][debug][default]Found route: so
+[2013-04-09 01:01:07 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 01:01:07 CST][info][default]Execution time: 0.16972494125366(s).
+[2013-04-09 01:03:29 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:03:29 CST][debug][default]REQ: /
+[2013-04-09 01:03:29 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:03:29 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:03:29 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:03:29 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:27;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365440467;}
+[2013-04-09 01:03:29 CST][debug][default]Found route: so
+[2013-04-09 01:03:29 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 01:03:29 CST][info][default]Execution time: 0.1496729850769(s).
+[2013-04-09 01:04:39 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:04:39 CST][debug][default]REQ: /
+[2013-04-09 01:04:39 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:04:39 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:04:39 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:04:39 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:28;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365440609;}
+[2013-04-09 01:04:39 CST][debug][default]Found route: so
+[2013-04-09 01:04:39 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 01:04:39 CST][info][default]Execution time: 0.14834403991699(s).
+[2013-04-09 01:21:10 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:21:10 CST][debug][default]REQ: /home/dashboard?ticket=3o8reA5IR4tZ8nUBTVlccIj180ab2741
+[2013-04-09 01:21:10 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:21:10 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:21:10 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:21:10 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:29;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365440679;}
+[2013-04-09 01:21:10 CST][debug][default]Found route: so_c-a
+[2013-04-09 01:21:10 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-09 01:21:10 CST][debug][default][file:WBTClient.php][line:191][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 17:21:10 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=iev59vtilgeb4kiim1hijk5m64; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-09 01:21:10 CST][debug][default][file:WBTClient.php][line:192][fun:_send]DUMP body: '{"access_token":"aNcHM7fW4MicwnUwmb36oP27322dd43fa6791b84","expires_in":86400,"token_type":"bearer","scope":"sso sna payment"}'
+[2013-04-09 01:21:11 CST][debug][default][file:WBTClient.php][line:191][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Mon, 08 Apr 2013 17:21:11 GMT',
+  3 => 'Content-Type: application/json;charset=utf-8',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=hdspqigpo40uv1viq6j3ffudd3; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-09 01:21:11 CST][debug][default][file:WBTClient.php][line:192][fun:_send]DUMP body: '{"user_id":"100000","username":"weibotui@kingcores.com","preferences":[],"status":"activated","profile_nick_name":"\\u5fae\\u535a\\u63a8","profile_display_name":"\\u91d1\\u679c\\u5fae\\u535a\\u63a8","profile_photo":null,"profile_avatar":"\\/upload\\/user\\/100000\\/avatar.png","profile_gender":"male","profile_homepage":null,"profile_description":null}'
+[2013-04-09 01:21:11 CST][debug][default]Redirected to "/home/dashboard".
+[2013-04-09 01:21:11 CST][info][default]Execution time: 0.66040301322937(s).
+[2013-04-09 01:21:11 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:21:11 CST][debug][default]REQ: /home/dashboard
+[2013-04-09 01:21:11 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:21:11 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:21:11 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:21:11 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:30;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365441670;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100000";s:8:"username";s:22:"weibotui@kingcores.com";s:12:"display_name";s:9:"微博推";s:6:"avatar";s:30:"/upload/user/100000/avatar.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"aNcHM7fW4MicwnUwmb36oP27322dd43fa6791b84";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-04-09 01:21:11 CST][debug][default]Found route: so_c-a
+[2013-04-09 01:21:11 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-09 01:21:11 CST][debug][diag]PARAMS: [[100000,"int"],["2409085682","text"]]
+[2013-04-09 01:21:11 CST][debug][diag]SELECT SQL: SELECT wt.`access_token`,wt.`expires_at`,we.`weibo_id` AS weibo_id,we.`_created_at` AS _created_at,we.`_updated_at` AS _updated_at,we.`uid` AS uid,we.`display_name` AS display_name,we.`url` AS url,we.`avatar_s` AS avatar_s,we.`avatar_l` AS avatar_l,we.`location` AS location,we.`description` AS description,we.`profile` AS profile,we.`wbt_home` AS wbt_home,we.`num_follower` AS num_follower,we.`num_following` AS num_following,we.`num_post` AS num_post,we.`num_like` AS num_like,we.`type` AS type,we.`user` AS user,we.`gender` AS gender FROM `weibo_token` AS wt LEFT JOIN `weibo` AS we ON wt.`weibo` = we.`weibo_id` WHERE we.`user`=? AND wt.`app_key`=? ORDER BY `_created_at`
+[2013-04-09 01:21:11 CST][info][default]Execution time: 0.3623640537262(s).
+[2013-04-09 01:21:24 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:21:24 CST][debug][default]REQ: /account/logout
+[2013-04-09 01:21:24 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:21:24 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:21:24 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:21:24 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:31;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365441671;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100000";s:8:"username";s:22:"weibotui@kingcores.com";s:12:"display_name";s:9:"微博推";s:6:"avatar";s:30:"/upload/user/100000/avatar.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"aNcHM7fW4MicwnUwmb36oP27322dd43fa6791b84";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-04-09 01:21:24 CST][debug][default]Found route: so_c-a
+[2013-04-09 01:21:24 CST][verbose][default]Dispatching route: SO > Account > logout
+[2013-04-09 01:21:24 CST][debug][default]Redirected to "/".
+[2013-04-09 01:21:24 CST][info][default]Execution time: 0.14521813392639(s).
+[2013-04-09 01:21:24 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:21:24 CST][debug][default]REQ: /
+[2013-04-09 01:21:24 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:21:24 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:21:24 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:21:24 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:32;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365441683;}
+[2013-04-09 01:21:24 CST][debug][default]Found route: so
+[2013-04-09 01:21:24 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 01:21:24 CST][info][default]Execution time: 0.21493077278137(s).
+[2013-04-09 01:25:34 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:25:34 CST][debug][default]REQ: /
+[2013-04-09 01:25:34 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:25:34 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:25:34 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:25:34 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:33;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365441684;}
+[2013-04-09 01:25:34 CST][debug][default]Found route: so
+[2013-04-09 01:25:34 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 01:25:34 CST][info][default]Execution time: 0.26297879219055(s).
+[2013-04-09 01:36:49 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 01:36:49 CST][debug][default]REQ: /
+[2013-04-09 01:36:49 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 01:36:49 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 01:36:49 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 01:36:49 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:34;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365441934;}
+[2013-04-09 01:36:49 CST][debug][default]Found route: so
+[2013-04-09 01:36:49 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 01:36:49 CST][info][default]Execution time: 0.17240285873413(s).
+[2013-04-09 14:01:21 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 14:01:21 CST][debug][default]REQ: /
+[2013-04-09 14:01:21 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 14:01:21 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 14:01:21 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 14:01:21 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:35;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365442609;}
+[2013-04-09 14:01:21 CST][debug][default]Found route: so
+[2013-04-09 14:01:21 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 14:01:21 CST][info][default]Execution time: 0.17146301269531(s).
+[2013-04-09 15:01:16 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 15:01:16 CST][debug][default]REQ: /home/dashboard?ticket=4cOAM9f%2154ax8DZBf8mL1bi1fc2682d2
+[2013-04-09 15:01:16 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 15:01:16 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 15:01:16 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 15:01:16 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:36;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365487281;}
+[2013-04-09 15:01:16 CST][debug][default]Found route: so_c-a
+[2013-04-09 15:01:16 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-09 15:01:16 CST][debug][default][file:WBTClient.php][line:191][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Tue, 09 Apr 2013 07:01:16 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=uj1r34phci0anor8k5d8s3p9l6; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-09 15:01:16 CST][debug][default][file:WBTClient.php][line:192][fun:_send]DUMP body: '{"access_token":"2wTTS65b84NOaTu7A1V!OaQf814f8af78ada9878","expires_in":86400,"token_type":"bearer","scope":"sso sna payment"}'
+[2013-04-09 15:01:16 CST][debug][default][file:WBTClient.php][line:191][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Tue, 09 Apr 2013 07:01:16 GMT',
+  3 => 'Content-Type: application/json;charset=utf-8',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=u8op94fp5pju1ur4u5vcnfchb5; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-09 15:01:16 CST][debug][default][file:WBTClient.php][line:192][fun:_send]DUMP body: '{"user_id":"100006","username":"rockie@goldenglamor.com","preferences":[],"status":"activated","profile_nick_name":"rockie","profile_display_name":null,"profile_photo":null,"profile_avatar":"\\/images\\/avatar_default2.png","profile_gender":"male","profile_homepage":null,"profile_description":null}'
+[2013-04-09 15:01:16 CST][debug][default]Redirected to "/home/dashboard".
+[2013-04-09 15:01:16 CST][info][default]Execution time: 0.35677599906921(s).
+[2013-04-09 15:01:17 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 15:01:17 CST][debug][default]REQ: /home/dashboard
+[2013-04-09 15:01:17 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 15:01:17 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 15:01:17 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 15:01:17 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:37;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365490876;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100006";s:8:"username";s:23:"rockie@goldenglamor.com";s:12:"display_name";s:6:"rockie";s:6:"avatar";s:27:"/images/avatar_default2.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"2wTTS65b84NOaTu7A1V!OaQf814f8af78ada9878";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-04-09 15:01:17 CST][debug][default]Found route: so_c-a
+[2013-04-09 15:01:17 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-09 15:01:17 CST][debug][diag]PARAMS: [[100006,"int"],["2409085682","text"]]
+[2013-04-09 15:01:17 CST][debug][diag]SELECT SQL: SELECT wt.`access_token`,wt.`expires_at`,we.`weibo_id` AS weibo_id,we.`_created_at` AS _created_at,we.`_updated_at` AS _updated_at,we.`uid` AS uid,we.`display_name` AS display_name,we.`url` AS url,we.`avatar_s` AS avatar_s,we.`avatar_l` AS avatar_l,we.`location` AS location,we.`description` AS description,we.`profile` AS profile,we.`wbt_home` AS wbt_home,we.`num_follower` AS num_follower,we.`num_following` AS num_following,we.`num_post` AS num_post,we.`num_like` AS num_like,we.`type` AS type,we.`user` AS user,we.`gender` AS gender FROM `weibo_token` AS wt LEFT JOIN `weibo` AS we ON wt.`weibo` = we.`weibo_id` WHERE we.`user`=? AND wt.`app_key`=? ORDER BY `_created_at`
+[2013-04-09 15:01:17 CST][info][default]Execution time: 0.24051308631897(s).
+[2013-04-09 15:44:41 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 15:44:41 CST][debug][default]REQ: /account/logout
+[2013-04-09 15:44:41 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 15:44:41 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 15:44:41 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 15:44:41 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:38;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365490876;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100006";s:8:"username";s:23:"rockie@goldenglamor.com";s:12:"display_name";s:6:"rockie";s:6:"avatar";s:27:"/images/avatar_default2.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"2wTTS65b84NOaTu7A1V!OaQf814f8af78ada9878";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-04-09 15:44:41 CST][debug][default]Found route: so_c-a
+[2013-04-09 15:44:41 CST][verbose][default]Dispatching route: SO > Account > logout
+[2013-04-09 15:44:41 CST][debug][default]Redirected to "/".
+[2013-04-09 15:44:41 CST][info][default]Execution time: 0.092681884765625(s).
+[2013-04-09 15:44:41 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 15:44:41 CST][debug][default]REQ: /
+[2013-04-09 15:44:41 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 15:44:41 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 15:44:41 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 15:44:41 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:39;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365493481;}
+[2013-04-09 15:44:41 CST][debug][default]Found route: so
+[2013-04-09 15:44:41 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 15:44:41 CST][info][default]Execution time: 0.16416311264038(s).
+[2013-04-09 16:15:32 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 16:15:32 CST][debug][default]REQ: /
+[2013-04-09 16:15:32 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 16:15:32 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 16:15:32 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 16:15:32 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:40;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365493481;}
+[2013-04-09 16:15:32 CST][debug][default]Found route: so
+[2013-04-09 16:15:32 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 16:15:32 CST][info][default]Execution time: 0.15794205665588(s).
+[2013-04-09 16:16:00 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 16:16:00 CST][debug][default]REQ: /home/dashboard?ticket=4cZ0K37Pf4%219cH2Q9cvMGFD6b33ddb8e
+[2013-04-09 16:16:00 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 16:16:00 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 16:16:00 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 16:16:00 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:41;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365495332;}
+[2013-04-09 16:16:00 CST][debug][default]Found route: so_c-a
+[2013-04-09 16:16:00 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-09 16:16:00 CST][debug][default][file:WBTClient.php][line:191][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Tue, 09 Apr 2013 08:16:00 GMT',
+  3 => 'Content-Type: application/json',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=sirigbfrkf8d187bqctug8fcd7; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-09 16:16:00 CST][debug][default][file:WBTClient.php][line:192][fun:_send]DUMP body: '{"access_token":"33EYXxd2y4cQ8mq1iQVo0Rg4a778a7dcc6a00e3d","expires_in":86400,"token_type":"bearer","scope":"sso sna payment"}'
+[2013-04-09 16:16:00 CST][debug][default][file:WBTClient.php][line:191][fun:_send]DUMP header: array (
+  0 => 'HTTP/1.1 200 OK',
+  1 => 'Server: nginx/1.2.1',
+  2 => 'Date: Tue, 09 Apr 2013 08:16:00 GMT',
+  3 => 'Content-Type: application/json;charset=utf-8',
+  4 => 'Transfer-Encoding: chunked',
+  5 => 'Connection: keep-alive',
+  6 => 'X-Powered-By: PHP/5.4.11',
+  7 => 'Set-Cookie: PHPSESSID=sb1bqn7e1muaeo51a745ech9m1; path=/',
+  8 => 'Expires: Thu, 19 Nov 1981 08:52:00 GMT',
+  9 => 'Pragma: no-cache',
+  10 => 'Cache-Control: no-store',
+)
+[2013-04-09 16:16:00 CST][debug][default][file:WBTClient.php][line:192][fun:_send]DUMP body: '{"user_id":"100000","username":"weibotui@kingcores.com","preferences":[],"status":"activated","profile_nick_name":"\\u5fae\\u535a\\u63a8","profile_display_name":"\\u91d1\\u679c\\u5fae\\u535a\\u63a8","profile_photo":null,"profile_avatar":"\\/upload\\/user\\/100000\\/avatar.png","profile_gender":"male","profile_homepage":null,"profile_description":null}'
+[2013-04-09 16:16:00 CST][debug][default]Redirected to "/home/dashboard".
+[2013-04-09 16:16:00 CST][info][default]Execution time: 0.3678879737854(s).
+[2013-04-09 16:16:00 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 16:16:00 CST][debug][default]REQ: /home/dashboard
+[2013-04-09 16:16:00 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 16:16:00 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 16:16:00 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 16:16:00 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:42;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365495360;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100000";s:8:"username";s:22:"weibotui@kingcores.com";s:12:"display_name";s:9:"微博推";s:6:"avatar";s:30:"/upload/user/100000/avatar.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"33EYXxd2y4cQ8mq1iQVo0Rg4a778a7dcc6a00e3d";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-04-09 16:16:00 CST][debug][default]Found route: so_c-a
+[2013-04-09 16:16:00 CST][verbose][default]Dispatching route: SO > Home > dashboard
+[2013-04-09 16:16:00 CST][debug][diag]PARAMS: [[100000,"int"],["2409085682","text"]]
+[2013-04-09 16:16:00 CST][debug][diag]SELECT SQL: SELECT wt.`access_token`,wt.`expires_at`,we.`weibo_id` AS weibo_id,we.`_created_at` AS _created_at,we.`_updated_at` AS _updated_at,we.`uid` AS uid,we.`display_name` AS display_name,we.`url` AS url,we.`avatar_s` AS avatar_s,we.`avatar_l` AS avatar_l,we.`location` AS location,we.`description` AS description,we.`profile` AS profile,we.`wbt_home` AS wbt_home,we.`num_follower` AS num_follower,we.`num_following` AS num_following,we.`num_post` AS num_post,we.`num_like` AS num_like,we.`type` AS type,we.`user` AS user,we.`gender` AS gender FROM `weibo_token` AS wt LEFT JOIN `weibo` AS we ON wt.`weibo` = we.`weibo_id` WHERE we.`user`=? AND wt.`app_key`=? ORDER BY `_created_at`
+[2013-04-09 16:16:00 CST][info][default]Execution time: 0.24026107788086(s).
+[2013-04-09 16:16:03 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 16:16:03 CST][debug][default]REQ: /account/logout
+[2013-04-09 16:16:03 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 16:16:03 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 16:16:03 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 16:16:03 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:4:{s:7:"counter";i:43;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365495360;s:13:"login_profile";a:5:{s:8:"weibotui";b:1;s:7:"user_id";s:6:"100000";s:8:"username";s:22:"weibotui@kingcores.com";s:12:"display_name";s:9:"微博推";s:6:"avatar";s:30:"/upload/user/100000/avatar.png";}}wbt_client:10000|a:4:{s:12:"access_token";s:40:"33EYXxd2y4cQ8mq1iQVo0Rg4a778a7dcc6a00e3d";s:10:"expires_in";i:86400;s:10:"token_type";s:6:"bearer";s:5:"scope";s:15:"sso sna payment";}
+[2013-04-09 16:16:03 CST][debug][default]Found route: so_c-a
+[2013-04-09 16:16:03 CST][verbose][default]Dispatching route: SO > Account > logout
+[2013-04-09 16:16:03 CST][debug][default]Redirected to "/".
+[2013-04-09 16:16:03 CST][info][default]Execution time: 0.089720010757446(s).
+[2013-04-09 16:16:03 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 16:16:03 CST][debug][default]REQ: /
+[2013-04-09 16:16:03 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 16:16:03 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 16:16:03 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 16:16:03 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:44;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365495363;}
+[2013-04-09 16:16:03 CST][debug][default]Found route: so
+[2013-04-09 16:16:03 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 16:16:03 CST][info][default]Execution time: 0.140949010849(s).
+[2013-04-09 16:16:09 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 16:16:09 CST][debug][default]REQ: /
+[2013-04-09 16:16:09 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 16:16:09 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 16:16:09 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 16:16:09 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:45;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365495363;}
+[2013-04-09 16:16:09 CST][debug][default]Found route: so
+[2013-04-09 16:16:09 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 16:16:09 CST][info][default]Execution time: 0.15257811546326(s).
+[2013-04-09 16:51:04 CST][info][default]--------------------------------------------------------------------------------
+[2013-04-09 16:51:04 CST][debug][default]REQ: /
+[2013-04-09 16:51:04 CST][debug][diag]Redis cache [127.0.0.1:6379#0] is enabled.
+[2013-04-09 16:51:04 CST][debug][diag]Custom session handler based-on 'session' cache persistence is constructed.
+[2013-04-09 16:51:04 CST][debug][diag]Session 'PHPSESSID' is opened at ''.
+[2013-04-09 16:51:04 CST][debug][diag]Read session[ev1hs9tm7jmps8o3ssh5d0l4e7]: app|a:3:{s:7:"counter";i:46;s:10:"created_at";i:1365415799;s:10:"updated_at";i:1365495369;}
+[2013-04-09 16:51:04 CST][debug][default]Found route: so
+[2013-04-09 16:51:04 CST][verbose][default]Dispatching route: SO > Home > index
+[2013-04-09 16:51:04 CST][info][default]Execution time: 0.15342402458191(s).
