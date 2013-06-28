@@ -1,0 +1,15 @@
+lance:
+  timezone: Asia/Shanghai
+  phpInternalEncoding: UTF-8
+
+log:
+  -
+    type: file
+    path: <?php echo ROOT; ?>/log
+    filename: "lance_{{app.timestamp|date='Ymd'}}.log"
+    level: 7
+    channels: { core: true, diag: true }
+  -
+    type: console
+    levels: 5
+    channels: { core: true, report: true }
